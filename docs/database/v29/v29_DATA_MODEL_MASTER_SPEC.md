@@ -2,7 +2,7 @@
 
 ## 1. Účel datového modelu
 
-Tento dokument definuje hlavní datový model pro sjednocený program LOSKOT FVE & LPS STUDIO PRO, který zahrnuje moduly FVE, LPS/DEHN, CAD/mapa, dokumenty, databáze zařízení a exporty. Cílem je vytvořit konzistentní a ucelený datový základ pro všechny části aplikace.
+Tento dokument definuje hlavní datový model pro sjednocený program LOSKOT FVE & LPS STUDIO PRO, který zahrnuje moduly FVE, LPS/DEHN, CAD/mapa, dokumenty, databáze zařízení a exporty. Cílem je vytvořit konzistentní a ucelený datový základ pro všechny části aplikace. Viz také `docs/database/v29/v29_ENTITY_RELATION_OVERVIEW.md` pro přehled vztahů mezi entitami.
 
 ## 2. Zásada jednoho společného projektu pro FVE + LPS
 
