@@ -1,0 +1,37 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/roadmap/v29_COMPLETION_CHECKLIST.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 200 řádků.
+
+Dokument musí obsahovat:
+1. Přehled, co je ve v29 hotové.
+2. Datový model.
+3. JSON schémata.
+4. Sample projekty.
+5. SQLite návrh.
+6. Import/export kontrakty.
+7. Validace.
+8. QA pravidla.
+9. Co ještě chybí do v29.
+10. Co se má přesunout do v30.
+11. Připravenost na data layer implementation.
+12. Připravenost na UI napojení.
+13. Připravenost na Windows/Tauri.
+14. Rizika.
+15. Checklist před uzavřením v29.
+16. Doporučené další kroky.
+
+Po dokončení vytvoř commit:
+v29 completion checklist
