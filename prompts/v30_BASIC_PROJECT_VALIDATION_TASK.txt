@@ -1,0 +1,47 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden soubor:
+src/validation/basicProjectValidation.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřidávej závislosti do package.json.
+- Bezpečné chování: žádná bílá obrazovka kvůli validační chybě.
+
+Soubor má exportovat:
+- VALIDATION_STATUS
+- createValidationIssue(input)
+- validateRequiredSections(project)
+- validateDataModelVersion(project)
+- validateProjectInfo(project)
+- validateBasicProject(project)
+
+validateBasicProject musí vracet:
+{
+  ok,
+  status,
+  errors,
+  warnings,
+  info,
+  summary
+}
+
+Kontroly:
+- project existuje,
+- dataModelVersion existuje,
+- projectId existuje,
+- projectInfo existuje,
+- hlavní sekce existují: building, roofs, fve, lps, cad, documents, exports, qa.
+- při chybách vrátit errors, neházet výjimku.
+
+Po dokončení vytvoř commit:
+v30 basic project validation
