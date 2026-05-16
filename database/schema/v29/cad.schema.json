@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loskot.com/schemas/v29/cad",
+  "title": "CAD Modul",
+  "description": "Schéma pro modul CAD v LOSKOT FVE & LPS STUDIO PRO v29.",
+  "type": "object",
+  "properties": {
+    "layers": {
+      "type": "array",
+      "description": "Seznam definovaných vrstev v CAD.",
+      "items": {
+        "$ref": "#/$defs/layer"
+      }
+    },
+    "objects": {
+      "type": "array",
+      "description": "Seznam všech objektů v CAD.",
+      "items": {
+        "$ref": "#/$defs/object"
+      }
+    },
+    "view": {
+      "type": "object",
+      "description": "Aktuální pohled na kreslicí plochu.",
+      "properties": {
+        "center": {"$ref": "#/$defs/point2d"},
+        "zoom": {"type": "number"}
+      },
+      "required": ["center", "zoom"]
+    },
+    "scale": {
+      "type": "number",
+      "description": "Aktuální měřítko výkresu."
+    },
+    "grid": {
+      "type": "object",
+      "description": "Nastavení mřížky.",
+      "properties": {
+        "visible": {"type": "boolean"},
+        "spacing": {"type": "number"}
+      },
+      "required": ["visible", "spacing"]
+    },
+    "snap": {
+      "type": "object",
+      "description": "Nastavení přichytávání.",
+      "properties": {
+        "enabled": {"type": "boolean"},
+        "toGrid": {"type": "boolean"},
+        "toObjectPoints": {"type": "boolean"}
+      },
+      "required": ["enabled"]
+    },
+    "selectedObjects": {
+      "type": "array",
+      "description": "Pole ID vybraných objektů.",
+      "items": {"type": "string"}
+    },
+    "lastEdit": {
+      "type": "object",
+      "description": "Informace o posledním provedeném úkonu.",
+      "properties": {
+        "timestamp": {"$ref": "shared-definitions.schema.json#/$defs/timestamp"},
+        "user": {"type": "string"},
+        "action": {"type": "string"},
+        "details": {"type": "string"}
+      },
+      "required": ["timestamp", "user", "action"]
+    },
+    "warnings": {
+      "type": "array",
+      "description": "Seznam varování souvisejících s CAD.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {"type": "string"},
+          "message": {"type": "string"},
+          "severity": {"$ref": "shared-definitions.schema.json#/$defs/severity"}
+        },
+        "required": ["code", "message", "severity"]
+      }
+    },
+    "qaStatus": {
+      "$ref": "shared-definitions.schema.json#/$defs/qaStatus"
+    }
+  },
+  "required": [
+    "layers",
+    "objects",
+    "view",
+    "scale",
+    "grid",
+    "snap",
+    "selectedObjects",
+    "lastEdit",
+    "qaStatus"
+  ],
+  "$defs": {
+    "layer": {
+      "type": "object",
+      "description": "Definice CAD vrstvy.",
+      "properties": {
+        "layerId": {"$ref": "shared-definitions.schema.json#/$defs/id"},
+        "name": {"type": "string"},
+        "type": {"type": "string", "description": "Typ vrstvy (např. 'budova', 'FVE', 'LPS')."},
+        "visible": {"type": "boolean", "default": true},
+        "locked": {"type": "boolean", "default": false},
+        "opacity": {"type": "number", "minimum": 0, "maximum": 1, "default": 1},
+        "order": {"type": "integer", "description": "Pořadí vrstvy pro vykreslování."},
+        "colorHint": {"type": "string", "description": "Návrh barvy vrstvy (např. hex kód)."},
+        "notes": {
+          "type": "array",
+          "description": "Poznámky k vrstvě.",
+          "items": {"$ref": "shared-definitions.schema.json#/$defs/note"}
+        }
+      },
+      "required": ["layerId", "name", "type", "order"]
+    },
+    "object": {
+      "type": "object",
+      "description": "Definice CAD objektu.",
+      "properties": {
+        "objectId": {"$ref": "shared-definitions.schema.json#/$defs/id"},
+        "layerId": {"type": "string", "description": "ID vrstvy, ke které objekt patří."},
+        "entityType": {"type": "string", "description": "Typ entity, na kterou objekt odkazuje (např. 'building', 'pv_array', 'inverter')."},
+        "entityRef": {"$ref": "shared-definitions.schema.json#/$defs/entityRef"},
+        "geometryType": {
+          "type": "string",
+          "enum": ["point", "line", "polygon", "polyline", "circle", "arc"]
+        },
+        "points": {
+          "type": "array",
+          "description": "Pole bodů definujících geometrii objektu.",
+          "items": {"$ref": "shared-definitions.schema.json#/$defs/point2d"}
+        },
+        "position": {"$ref": "shared-definitions.schema.json#/$defs/point2d"},
+        "rotation": {"type": "number", "description": "Rotace objektu ve stupních."},
+        "dimensions": {"$ref": "shared-definitions.schema.json#/$defs/dimensions"},
+        "style": {
+          "type": "object",
+          "description": "Vzhled objektu.",
+          "properties": {
+            "color": {"type": "string"},
+            "fillColor": {"type": "string"},
+            "strokeWidth": {"type": "number"},
+            "lineStyle": {"type": "string"}
+          }
+        },
+        "locked": {"type": "boolean", "default": false},
+        "notes": {
+          "type": "array",
+          "description": "Poznámky k objektu.",
+          "items": {"$ref": "shared-definitions.schema.json#/$defs/note"}
+        }
+      },
+      "required": ["objectId", "layerId", "entityType", "entityRef", "geometryType", "points"]
+    }
+  }
+}
