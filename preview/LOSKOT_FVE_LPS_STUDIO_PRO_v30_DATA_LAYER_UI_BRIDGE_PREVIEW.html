@@ -7,6 +7,240 @@
 <style>
 :root{--bg:#0b1118;--panel:#111b26;--panel2:#162230;--panel3:#0f1823;--line:#26384a;--txt:#e7eef7;--muted:#93a6ba;--acc:#f3b33d;--acc2:#ffd36b;--ok:#4ade80;--warn:#facc15;--bad:#fb7185;--blue:#60a5fa;--pv:#38bdf8;--lps:#f59e0b;--spd:#a78bfa}*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:radial-gradient(circle at 30% 0,#182638,#0b1118 45%,#070b10);color:var(--txt);font:14px/1.45 Segoe UI,Roboto,Arial,sans-serif;overflow:hidden}.app{height:100vh;display:grid;grid-template-columns:270px 1fr 340px;grid-template-rows:60px 1fr 132px}.top{grid-column:1/4;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,#0d1621,#111d2a)}.brand{display:flex;gap:12px;align-items:center}.logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 160deg,var(--acc),#fff1b8,var(--pv),var(--lps),var(--acc));box-shadow:0 0 24px #f3b33d55}.brand h1{font-size:16px;margin:0;letter-spacing:.4px}.brand small{color:var(--muted)}.status{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.pill{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#0d1722;color:var(--muted);white-space:nowrap}.pill.ok{color:var(--ok);border-color:#285c3a}.pill.fve{color:var(--pv);border-color:#1e4e62}.pill.lps{color:var(--lps);border-color:#6b4a13}.side{border-right:1px solid var(--line);background:#0b131d;padding:12px;overflow:auto}.section-title{font-size:11px;color:#72869a;margin:14px 8px 7px;text-transform:uppercase;letter-spacing:.12em}.nav button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px solid transparent;background:transparent;color:#b8c8d8;padding:10px 11px;border-radius:10px;cursor:pointer;text-align:left}.nav button:hover{background:#122032}.nav button.active{background:linear-gradient(90deg,#1b2c3e,#132032);border-color:#36506b;color:#fff}.nav .tag{font-size:10px;padding:2px 6px;border-radius:999px;background:#1e3043;color:#9fb3c8}.main{padding:14px;overflow:auto}.right{border-left:1px solid var(--line);background:#0b131d;padding:12px;overflow:auto}.bottom{grid-column:1/4;border-top:1px solid var(--line);background:#081018;display:grid;grid-template-columns:270px 1fr 340px}.mini{padding:10px 12px;border-right:1px solid var(--line);overflow:auto}.log,pre{font-family:Consolas,Menlo,monospace;font-size:12px;color:#98abc0}.module-title{font-size:24px;margin:2px 0 4px}.sub{color:var(--muted);margin:0 0 12px}.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}.card{background:linear-gradient(180deg,#121e2b,#0f1823);border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 40px #0006;overflow:hidden}.card h2{font-size:15px;margin:0;padding:14px 15px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}.card .body{padding:14px}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.kpi{background:#0c1520;border:1px solid #223346;border-radius:14px;padding:12px}.kpi b{display:block;font-size:22px}.kpi span{color:var(--muted);font-size:12px}.table{width:100%;border-collapse:collapse}.table td,.table th{border-bottom:1px solid #213144;padding:8px;text-align:left;vertical-align:top}.table th{color:#8fa4b8;font-size:12px}.notice{border:1px dashed #425a72;background:#0c1722;border-radius:14px;padding:12px;color:#b8c8d8}.cadWrap{height:430px;border-radius:14px;border:1px solid #2b4055;background:#09111a;overflow:hidden}.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.tools button,.primary,label.fileBtn{border:1px solid #36506b;background:#132236;color:#dce8f5;border-radius:10px;padding:8px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}.tools button:hover,.primary:hover,label.fileBtn:hover{border-color:var(--acc)}input[type=file]{display:none}.qaRow{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #223346;padding:9px 0;gap:10px}.dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:8px}.okdot{background:var(--ok)}.warndot{background:var(--warn)}.baddot{background:var(--bad)}.muted{color:var(--muted)}.badge{font-size:11px;border:1px solid #32475d;background:#101b27;border-radius:999px;padding:3px 7px;color:#9fb3c8}.schema{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.schemaItem{border:1px solid #2b4055;background:#0c1520;border-radius:12px;padding:10px}.schemaItem b{display:block;color:#fff}.schemaItem span{font-size:11px;color:var(--muted)}.err{position:fixed;inset:auto 20px 20px auto;background:#2a1118;border:1px solid #7f1d1d;color:#fecdd3;border-radius:12px;padding:12px;max-width:560px;z-index:99}.fallback{border:1px solid #7f1d1d;background:#1c1118;border-radius:14px;padding:14px;color:#fecdd3}textarea{width:100%;min-height:245px;background:#071019;color:#cfe2f6;border:1px solid #30475e;border-radius:12px;padding:12px;resize:vertical}.lock{color:#f7c86a}.twoTone{display:inline-flex;gap:6px}.twoTone i{font-style:normal;padding:2px 7px;border-radius:999px;border:1px solid #28445c}.twoTone i:first-child{color:var(--pv)}.twoTone i:last-child{color:var(--lps)}@media(max-width:1100px){body{overflow:auto}.app{height:auto;min-height:100vh;grid-template-columns:1fr;grid-template-rows:auto}.top,.bottom{grid-column:auto}.side,.right{border:0}.bottom{grid-template-columns:1fr}.grid,.split,.grid3{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.schema{grid-template-columns:repeat(2,1fr)}}
 </style>
+
+<!-- V31_HEAD_FVE_EDITOR_FINAL -->
+<script>
+window.__v31FveEditorLoaded = true;
+
+(function(){
+  function esc(v){
+    try{
+      if(v === undefined || v === null) return "—";
+      return String(v).replace(/[&<>"']/g, function(c){
+        return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+      });
+    }catch(e){ return "—"; }
+  }
+
+  function byId(id){
+    return document.getElementById(id);
+  }
+
+  function ensureProject(){
+    if(!window.project || typeof window.project !== "object"){
+      window.project = {};
+    }
+    if(!window.project.fve || typeof window.project.fve !== "object"){
+      window.project.fve = {};
+    }
+    return window.project;
+  }
+
+  function ensurePanels(){
+    var project = ensureProject();
+
+    if(!Array.isArray(project.fve.v31Panels)){
+      project.fve.v31Panels = [];
+
+      for(var i = 0; i < 18; i++){
+        var col = i % 6;
+        var row = Math.floor(i / 6);
+
+        project.fve.v31Panels.push({
+          id: "P-" + String(i + 1).padStart(2, "0"),
+          label: String(i + 1),
+          x: 70 + col * 70,
+          y: 72 + row * 50,
+          w: 54,
+          h: 34,
+          stringId: i < 9 ? "S1" : "S2"
+        });
+      }
+    }
+
+    if(!Array.isArray(window.v31SelectedPanelIds)){
+      window.v31SelectedPanelIds = [];
+    }
+
+    return project.fve.v31Panels;
+  }
+
+  function isSelected(id){
+    return window.v31SelectedPanelIds && window.v31SelectedPanelIds.indexOf(id) >= 0;
+  }
+
+  window.v31TogglePanelSelection = function(id){
+    ensurePanels();
+
+    if(!Array.isArray(window.v31SelectedPanelIds)){
+      window.v31SelectedPanelIds = [];
+    }
+
+    var index = window.v31SelectedPanelIds.indexOf(id);
+
+    if(index >= 0){
+      window.v31SelectedPanelIds.splice(index, 1);
+    }else{
+      window.v31SelectedPanelIds.push(id);
+    }
+
+    window.renderV31FveWorkspace();
+  };
+
+  window.v31SelectAllPanels = function(){
+    var panels = ensurePanels();
+    window.v31SelectedPanelIds = panels.map(function(panel){ return panel.id; });
+    window.renderV31FveWorkspace();
+  };
+
+  window.v31SelectPartialPanels = function(){
+    var panels = ensurePanels();
+    window.v31SelectedPanelIds = panels
+      .filter(function(panel, index){ return index % 2 === 0; })
+      .map(function(panel){ return panel.id; });
+
+    window.renderV31FveWorkspace();
+  };
+
+  window.v31ClearPanelSelection = function(){
+    window.v31SelectedPanelIds = [];
+    window.renderV31FveWorkspace();
+  };
+
+  window.v31MoveSelectedPanels = function(dx, dy){
+    var panels = ensurePanels();
+    var selected = window.v31SelectedPanelIds || [];
+    var moved = 0;
+
+    panels.forEach(function(panel){
+      if(selected.indexOf(panel.id) >= 0){
+        panel.x = Number(panel.x || 0) + dx;
+        panel.y = Number(panel.y || 0) + dy;
+        moved++;
+      }
+    });
+
+    window.renderV31FveWorkspace();
+
+    try{
+      if(typeof window.log === "function"){
+        window.log("v31 FVE: posunuto panelů " + moved);
+      }
+    }catch(e){}
+  };
+
+  function renderPanelSvg(){
+    var panels = ensurePanels();
+
+    var panelSvg = panels.map(function(panel){
+      var selected = isSelected(panel.id);
+      var fill = selected ? "#fbbf24" : "#1e40af";
+      var stroke = selected ? "#fde68a" : "#93c5fd";
+      var textColor = selected ? "#111827" : "#e0f2fe";
+
+      return "" +
+        "<g onclick=\"v31TogglePanelSelection('" + esc(panel.id) + "')\" style=\"cursor:pointer\">" +
+          "<rect x=\"" + esc(panel.x) + "\" y=\"" + esc(panel.y) + "\" width=\"" + esc(panel.w) + "\" height=\"" + esc(panel.h) + "\" rx=\"4\" fill=\"" + fill + "\" stroke=\"" + stroke + "\" stroke-width=\"2\"></rect>" +
+          "<line x1=\"" + esc(Number(panel.x) + 6) + "\" y1=\"" + esc(Number(panel.y) + 6) + "\" x2=\"" + esc(Number(panel.x) + Number(panel.w) - 6) + "\" y2=\"" + esc(Number(panel.y) + Number(panel.h) - 6) + "\" stroke=\"rgba(255,255,255,.35)\" stroke-width=\"1\"></line>" +
+          "<text x=\"" + esc(Number(panel.x) + Number(panel.w) / 2) + "\" y=\"" + esc(Number(panel.y) + Number(panel.h) / 2 + 4) + "\" text-anchor=\"middle\" fill=\"" + textColor + "\" font-size=\"11\" font-family=\"monospace\">" + esc(panel.label) + "</text>" +
+        "</g>";
+    }).join("");
+
+    return "" +
+      "<svg viewBox=\"0 0 620 340\" style=\"width:100%;height:390px;background:#07111c;border:1px solid #26384f;border-radius:14px\">" +
+        "<rect x=\"42\" y=\"38\" width=\"510\" height=\"245\" rx=\"12\" fill=\"#0f172a\" stroke=\"#334155\" stroke-width=\"2\"></rect>" +
+        "<text x=\"58\" y=\"62\" fill=\"#94a3b8\" font-size=\"12\" font-family=\"monospace\">FVE panel layout — kliknutím označíš panel</text>" +
+        panelSvg +
+      "</svg>";
+  }
+
+  function statsTable(){
+    var panels = ensurePanels();
+    var selected = window.v31SelectedPanelIds || [];
+    var strings = {};
+
+    panels.forEach(function(panel){
+      strings[panel.stringId || "bez stringu"] = true;
+    });
+
+    return "" +
+      "<table class=\"table\">" +
+        "<tr><td>Panely celkem</td><td>" + esc(panels.length) + "</td></tr>" +
+        "<tr><td>Vybrané panely</td><td>" + esc(selected.length) + "</td></tr>" +
+        "<tr><td>Stringy</td><td>" + esc(Object.keys(strings).length) + "</td></tr>" +
+        "<tr><td>Režim</td><td>v31 bulk move preview</td></tr>" +
+      "</table>";
+  }
+
+  window.renderV31FveWorkspace = function(){
+    try{
+      ensurePanels();
+
+      var view = byId("view");
+
+      if(!view){
+        alert("Nenalezen hlavní panel view.");
+        return;
+      }
+
+      view.innerHTML =
+        "<h1 class=\"module-title\">FVE panely — výběr a hromadný přesun v31</h1>" +
+        "<div class=\"tools\">" +
+          "<button class=\"primary\" onclick=\"v31SelectAllPanels()\">Označit vše</button>" +
+          "<button onclick=\"v31SelectPartialPanels()\">Označit část</button>" +
+          "<button onclick=\"v31ClearPanelSelection()\">Zrušit výběr</button>" +
+          "<button onclick=\"v31MoveSelectedPanels(-10,0)\">←</button>" +
+          "<button onclick=\"v31MoveSelectedPanels(10,0)\">→</button>" +
+          "<button onclick=\"v31MoveSelectedPanels(0,-10)\">↑</button>" +
+          "<button onclick=\"v31MoveSelectedPanels(0,10)\">↓</button>" +
+        "</div>" +
+        "<div class=\"split\">" +
+          "<div class=\"card\"><h2>CAD/FVE náhled</h2><div class=\"body\">" + renderPanelSvg() + "</div></div>" +
+          "<div class=\"card\"><h2>Výběr panelů</h2><div class=\"body\">" +
+            "<div class=\"notice\">Klikni na panel pro výběr. Šipkami posuneš všechny vybrané panely najednou.</div>" +
+            statsTable() +
+          "</div></div>" +
+        "</div>";
+
+      try{
+        if(typeof window.inspector === "function") window.inspector();
+        if(typeof window.qa === "function") window.qa();
+      }catch(e){}
+    }catch(err){
+      var fallback = byId("view");
+      if(fallback){
+        fallback.innerHTML = "<div class=\"fallback\"><h2>FVE panel editor spadl bezpečně</h2><pre>" + esc(err.message) + "</pre></div>";
+      }else{
+        alert("FVE panel editor selhal bezpečně: " + err.message);
+      }
+    }
+  };
+
+  function wireButton(){
+    var btn = document.getElementById("v31TopFvePanelsBtn");
+
+    if(btn){
+      btn.onclick = function(){
+        window.renderV31FveWorkspace();
+      };
+      btn.textContent = "v31 FVE panely";
+    }
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", wireButton);
+  }else{
+    setTimeout(wireButton, 0);
+  }
+
+  setTimeout(wireButton, 100);
+  setTimeout(wireButton, 500);
+  setTimeout(wireButton, 1000);
+
+  console.log("V31_HEAD_FVE_EDITOR_FINAL loaded");
+})();
+</script>
+
 </head>
 <body>
 <div id="app" class="app">
