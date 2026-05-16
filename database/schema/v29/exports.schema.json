@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loskot.com/schemas/v29/exports",
+  "title": "Exporty projektu",
+  "description": "Definice pro správu exportů projektu v LOSKOT FVE & LPS STUDIO PRO v29.",
+  "type": "object",
+  "properties": {
+    "exportProfiles": {
+      "description": "Seznam konfigurovaných profilů pro export dat.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/exportProfile"
+      }
+    },
+    "exportHistory": {
+      "description": "Historie provedených exportů.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/exportHistoryEntry"
+      }
+    },
+    "packages": {
+      "description": "Informace o exportovaných balíčcích.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/exportPackage"
+      }
+    },
+    "printSettings": {
+      "description": "Nastavení pro tiskové výstupy.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/printSetting"
+      }
+    },
+    "warnings": {
+      "description": "Seznam varování souvisejících s exporty.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/warning"
+      }
+    },
+    "qaStatus": {
+      "$ref": "shared-definitions.schema.json#/$defs/qaStatus"
+    }
+  },
+  "required": [
+    "exportProfiles",
+    "exportHistory",
+    "packages",
+    "printSettings",
+    "warnings",
+    "qaStatus"
+  ],
+  "$defs": {
+    "exportProfile": {
+      "type": "object",
+      "description": "Konfigurace jednoho profilu pro export.",
+      "properties": {
+        "profileId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "description": "Název profilu."
+        },
+        "type": {
+          "type": "string",
+          "description": "Typ exportu (např. 'projekt', 'dokumentace', 'report')."
+        },
+        "includedSections": {
+          "description": "Seznam sekcí projektu, které mají být zahrnuty do exportu.",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fileNamingRule": {
+          "type": "string",
+          "description": "Pravidlo pro pojmenování výstupních souborů."
+        },
+        "outputFormat": {
+          "type": "string",
+          "description": "Formát výstupního souboru (např. 'json', 'pdf', 'docx')."
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "Příznak, zda je profil aktivní."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Další poznámky k profilu."
+        }
+      },
+      "required": [
+        "profileId",
+        "name",
+        "type",
+        "includedSections",
+        "fileNamingRule",
+        "outputFormat",
+        "enabled"
+      ]
+    },
+    "exportHistoryEntry": {
+      "type": "object",
+      "description": "Záznam o jednom provedeném exportu.",
+      "properties": {
+        "exportId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "profileId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "exportedAt": {
+          "$ref": "shared-definitions.schema.json#/$defs/timestamp"
+        },
+        "exportedBy": {
+          "type": "string",
+          "description": "Uživatel, který export provedl."
+        },
+        "outputFile": {
+          "$ref": "shared-definitions.schema.json#/$defs/fileReference"
+        },
+        "status": {
+          "$ref": "shared-definitions.schema.json#/$defs/status"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Další poznámky k exportu."
+        }
+      },
+      "required": [
+        "exportId",
+        "profileId",
+        "exportedAt",
+        "exportedBy",
+        "outputFile",
+        "status"
+      ]
+    },
+    "exportPackage": {
+      "type": "object",
+      "description": "Metadata pro balíček exportovaných souborů.",
+      "properties": {
+        "packageId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "profileId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "createdAt": {
+          "$ref": "shared-definitions.schema.json#/$defs/timestamp"
+        },
+        "status": {
+          "$ref": "shared-definitions.schema.json#/$defs/status"
+        },
+        "files": {
+          "description": "Seznam souborů zahrnutých v balíčku.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/fileReference"
+          }
+        },
+        "manifest": {
+          "type": "string",
+          "description": "Obsah manifestu balíčku (např. JSON string)."
+        },
+        "checksum": {
+          "type": "string",
+          "description": "Kontrolní součet balíčku (např. SHA256)."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Další poznámky k balíčku."
+        }
+      },
+      "required": [
+        "packageId",
+        "profileId",
+        "createdAt",
+        "status",
+        "files",
+        "checksum"
+      ]
+    },
+    "printSetting": {
+      "type": "object",
+      "description": "Nastavení pro konkrétní tiskový výstup.",
+      "properties": {
+        "settingId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "description": "Název nastavení tisku."
+        },
+        "printerName": {
+          "type": "string",
+          "description": "Název tiskárny."
+        },
+        "paperSize": {
+          "type": "string",
+          "description": "Velikost papíru."
+        },
+        "orientation": {
+          "type": "string",
+          "enum": ["portrait", "landscape"],
+          "description": "Orientace tisku."
+        },
+        "enabled": {
+          "type": "boolean",
+          "description": "Příznak, zda je nastavení aktivní."
+        },
+        "notes": {
+          "type": "string",
+          "description": "Další poznámky k nastavení."
+        }
+      },
+      "required": [
+        "settingId",
+        "name",
+        "printerName",
+        "paperSize",
+        "orientation",
+        "enabled"
+      ]
+    },
+    "warning": {
+      "type": "object",
+      "description": "Varování související s exportem.",
+      "properties": {
+        "warningId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "code": {
+          "type": "string",
+          "description": "Kód varování."
+        },
+        "message": {
+          "type": "string",
+          "description": "Text varování."
+        },
+        "severity": {
+          "$ref": "shared-definitions.schema.json#/$defs/severity"
+        },
+        "relatedEntityId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "createdAt": {
+          "$ref": "shared-definitions.schema.json#/$defs/timestamp"
+        }
+      },
+      "required": [
+        "warningId",
+        "code",
+        "message",
+        "severity",
+        "createdAt"
+      ]
+    }
+  }
+}
