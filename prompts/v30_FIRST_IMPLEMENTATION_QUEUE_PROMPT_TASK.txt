@@ -1,0 +1,37 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden textový prompt pro další běh:
+prompts/v30_FIRST_DATA_LAYER_IMPLEMENTATION_QUEUE.txt
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+
+Prompt musí připravit budoucí v30 implementační frontu, ale zatím ji nespouštět.
+
+Budoucí fronta má obsahovat:
+1. src/data/projectModel.js nebo .ts podle aktuální struktury.
+2. src/data/loadSampleProject.
+3. src/validation/basicProjectValidation.
+4. src/validation/referenceValidation.
+5. src/importExport/jsonImportPreview.
+6. src/importExport/jsonExportProject.
+7. tests/data/basic validation smoke test.
+8. Dokumentaci k použití.
+
+Prompt musí přísně zakázat:
+- změnu UI,
+- změnu HTML preview,
+- změnu CSS,
+- změnu přepínání obrazovek,
+- zásah do Classic PRO vzhledu.
+
+Po dokončení vytvoř commit:
+v30 first implementation queue prompt
