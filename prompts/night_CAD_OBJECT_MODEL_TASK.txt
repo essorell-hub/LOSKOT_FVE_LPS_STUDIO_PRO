@@ -1,0 +1,6 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+Vytvoř pouze soubor src/cad/objectModel.js.
+Neměň HTML, CSS, preview, UI, PROJECT_STATE_UNIFIED.md ani CHANGELOG.md.
+Nepřidávej závislosti.
+Exportuj: createCadObject, normalizeCadObject, selectCadObject, clearCadSelection, moveCadObjects, getCadObjectSummary.
+Podporuj geometryType: point, polyline, polygon, rect, circle.
