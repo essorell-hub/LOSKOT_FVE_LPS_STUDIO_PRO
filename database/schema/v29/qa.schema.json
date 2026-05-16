@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loskot.com/schemas/v29/qa",
+  "title": "QA Kontrola",
+  "description": "Schéma pro záznam výsledků a stavu QA kontrol projektu.",
+  "type": "object",
+  "properties": {
+    "checks": {
+      "type": "array",
+      "description": "Seznam provedených kontrol.",
+      "items": {
+        "$ref": "#/$defs/check"
+      }
+    },
+    "score": {
+      "type": "number",
+      "description": "Celkové skóre QA kontroly (např. procentuální úspěšnost)."
+    },
+    "status": {
+      "$ref": "database/schema/v29/shared-definitions.schema.json#/$defs/status",
+      "description": "Celkový stav QA (např. 'schváleno', 'zamítnuto', 'probíhá')."
+    },
+    "errors": {
+      "type": "integer",
+      "description": "Počet nalezených chyb."
+    },
+    "warnings": {
+      "type": "integer",
+      "description": "Počet nalezených varování."
+    },
+    "lastRunAt": {
+      "$ref": "database/schema/v29/shared-definitions.schema.json#/$defs/timestamp",
+      "description": "Čas poslední spuštění QA kontroly."
+    },
+    "summary": {
+      "type": "string",
+      "description": "Stručné shrnutí výsledků QA."
+    },
+    "relatedEntities": {
+      "type": "array",
+      "description": "Odkazy na související entity, kterých se QA týká.",
+      "items": {
+        "$ref": "database/schema/v29/shared-definitions.schema.json#/$defs/entityRef"
+      }
+    }
+  },
+  "required": [
+    "checks",
+    "score",
+    "status",
+    "errors",
+    "warnings",
+    "lastRunAt",
+    "summary"
+  ],
+  "$defs": {
+    "check": {
+      "type": "object",
+      "description": "Jednotlivá QA kontrola.",
+      "properties": {
+        "checkId": {
+          "$ref": "database/schema/v29/shared-definitions.schema.json#/$defs/id",
+          "description": "Unikátní identifikátor kontroly."
+        },
+        "category": {
+          "type": "string",
+          "description": "Kategorie kontroly (např. 'validace dat', 'výkon', 'bezpečnost')."
+        },
+        "title": {
+          "type": "string",
+          "description": "Název kontroly."
+        },
+        "severity": {
+          "$ref": "database/schema/v29/shared-definitions.schema.json#/$defs/severity",
+          "description": "Závažnost kontroly."
+        },
+        "status": {
+          "$ref": "database/schema/v29/shared-definitions.schema.json#/$defs/status",
+          "description": "Stav této konkrétní kontroly (např. 'úspěch', 'selhání', 'přeskočeno')."
+        },
+        "message": {
+          "type": "string",
+          "description": "Zpráva popisující výsledek kontroly."
+        },
+        "relatedEntityRef": {
+          "$ref": "database/schema/v29/shared-definitions.schema.json#/$defs/entityRef",
+          "description": "Odkaz na entitu, ke které se kontrola vztahuje."
+        },
+        "expectedValue": {
+          "description": "Očekávaná hodnota nebo stav."
+        },
+        "actualValue": {
+          "description": "Skutečně zjištěná hodnota nebo stav."
+        },
+        "recommendation": {
+          "type": "string",
+          "description": "Doporučení pro nápravu nebo zlepšení."
+        },
+        "createdAt": {
+          "$ref": "database/schema/v29/shared-definitions.schema.json#/$defs/timestamp",
+          "description": "Čas vytvoření záznamu kontroly."
+        }
+      },
+      "required": [
+        "checkId",
+        "category",
+        "title",
+        "severity",
+        "status",
+        "message",
+        "createdAt"
+      ]
+    }
+  }
+}
