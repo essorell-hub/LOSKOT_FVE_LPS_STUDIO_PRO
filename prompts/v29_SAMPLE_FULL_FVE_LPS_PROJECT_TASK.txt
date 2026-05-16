@@ -1,0 +1,67 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON soubor:
+database/sample-projects/v29/v29_full_fve_lps_project.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Data musí být realistická, ale fiktivní.
+- Nepoužívej osobní údaje skutečných osob.
+- Výstup drž přiměřeně krátký.
+
+Projekt musí obsahovat:
+- projectId
+- dataModelVersion: "v29"
+- appVersion
+- projectInfo
+- building
+- roofs
+- fve
+- lps
+- cad
+- documents
+- exports
+- qa
+- migrationHistory
+
+FVE část:
+- minimálně 12 panelů,
+- 2 stringy,
+- 1 střídač,
+- DC trasy,
+- AC trasa,
+- SPD DC,
+- SPD AC,
+- datasheet reference,
+- základní výpočtové hodnoty.
+
+LPS část:
+- lpsClass,
+- riskAssessment,
+- airTerminals,
+- downConductors,
+- hvi,
+- earthing,
+- spd,
+- lpz,
+- normativeChecks.
+
+CAD část:
+- vrstvy pro střechu, panely, LPS, DC trasy, poznámky,
+- objekty navázané na entity.
+
+QA část:
+- několik OK kontrol,
+- několik warning kontrol,
+- celkový stav warning.
+
+Po dokončení vytvoř commit:
+v29 sample full fve lps project
