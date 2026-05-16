@@ -1,0 +1,58 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden SQL soubor:
+database/sqlite/v29/001_init_v29_schema.sql
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nevytvářej binární databázi.
+- Pouze SQL textový soubor.
+- Používej SQLite syntaxi.
+- Nepoužívej DROP TABLE.
+- Používej CREATE TABLE IF NOT EXISTS.
+- Každá tabulka má mít created_at a updated_at, kde to dává smysl.
+
+Vytvoř tabulky:
+- projects
+- buildings
+- cadastral_info
+- roofs
+- roof_planes
+- roof_obstacles
+- fve_panels
+- fve_strings
+- inverters
+- optimizers
+- dc_routes
+- ac_routes
+- lps_risk_assessments
+- lps_air_terminals
+- lps_downconductors
+- lps_hvi
+- earthing
+- spd_devices
+- lpz_zones
+- cad_layers
+- cad_objects
+- documents
+- datasheets
+- exports
+- qa_checks
+- audit_log
+- app_settings
+- reference_values
+
+Použij TEXT primární klíče.
+Použij project_id pro vazbu na projects.
+Použij foreign keys tam, kde to dává smysl.
+Na začátek dej PRAGMA foreign_keys = ON;
+
+Po dokončení vytvoř commit:
+v29 sqlite init schema
