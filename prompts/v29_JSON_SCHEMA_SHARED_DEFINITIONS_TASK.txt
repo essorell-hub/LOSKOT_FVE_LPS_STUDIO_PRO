@@ -1,0 +1,32 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON Schema soubor:
+database/schema/v29/shared-definitions.schema.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Použij JSON Schema Draft 2020-12.
+- Piš popisy česky.
+- Výstup drž přiměřeně krátký.
+
+Schéma musí obsahovat:
+- $schema
+- $id
+- title
+- description
+- type: object
+- $defs
+
+V $defs vytvoř:
+id, timestamp, uuid, status, severity, point2d, point3d, polygon2d, dimensions, address, cadastralInfo, personOrCompany, contact, layerRef, objectRef, entityRef, qaStatus, auditEntry, fileReference, note.
+
+Po dokončení vytvoř commit:
+v29 json schema shared definitions
