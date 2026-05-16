@@ -1,8 +1,14 @@
-model: openrouter/anthropic/claude-sonnet-4.5
+# LOSKOT FVE & LPS STUDIO PRO - bezpečný Aider režim přes Gemini
+
+model: gemini
 
 git: true
 auto-commits: true
 dirty-commits: false
+attribute-author: true
+attribute-committer: true
+attribute-co-authored-by: true
+
 show-diffs: true
 auto-lint: false
 auto-test: false
