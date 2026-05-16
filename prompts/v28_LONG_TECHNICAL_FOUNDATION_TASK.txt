@@ -1,0 +1,185 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Toto je dlouhý bezpečný úkol pro v28 TECHNICAL FOUNDATION.
+
+DŮLEŽITÉ:
+Projekt je sjednocený program FVE + LPS/DEHN + CAD/mapa + dokumenty + databáze + exporty.
+Uživatel není programátor.
+Vše musí být praktické, české, technické a použitelné.
+
+Přísná pravidla:
+- Neupravuj žádný HTML soubor.
+- Neupravuj žádné CSS.
+- Neupravuj žádný JS aplikační soubor.
+- Neupravuj preview složku.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Neměň Classic PRO vzhled.
+- Nevytvářej ZIP.
+- Nevytvářej build/dist/node_modules.
+- Neprováděj žádný zásah, který by mohl způsobit bílou obrazovku.
+- Vytvářej pouze dokumentaci a promptové soubory.
+
+Povoleno upravit/vytvořit pouze tyto soubory:
+- docs/audit/v28_TECHNICAL_FOUNDATION_AUDIT.md
+- docs/qa/v28_MANUAL_QA_TEST_PLAN.md
+- docs/qa/v28_WHITE_SCREEN_PREVENTION_PLAN.md
+- docs/windows/v28_WINDOWS_BUILD_PREVIEW_PLAN.md
+- docs/database/v28_SQLITE_DATA_LAYER_PLAN.md
+- docs/modules/fve/v28_FVE_MODULE_PLAN.md
+- docs/modules/lps/v28_LPS_DEHN_MODULE_PLAN.md
+- docs/modules/cad/v28_CAD_MAP_MODULE_PLAN.md
+- docs/roadmap/v29_NEXT_DEVELOPMENT_PLAN.md
+- prompts/v29_SAFE_INCREMENTAL_DEVELOPMENT_PROMPT.txt
+
+Úkol 1:
+Vytvoř docs/audit/v28_TECHNICAL_FOUNDATION_AUDIT.md.
+Obsah:
+1. Současný stav projektu.
+2. Jaké soubory a složky jsou důležité.
+3. Jaké preview soubory existují.
+4. Stav v28 preview.
+5. Stav dokumentace.
+6. Stav skriptů.
+7. Rizika dalšího vývoje.
+8. Co se nesmí měnit.
+9. Co je nutné před Windows buildem.
+10. Doporučení pro další malé kroky.
+
+Úkol 2:
+Vytvoř docs/qa/v28_MANUAL_QA_TEST_PLAN.md.
+Obsah:
+1. Ruční test otevření HTML preview.
+2. Kontrola, že není bílá obrazovka.
+3. Kontrola menu.
+4. Kontrola FVE části.
+5. Kontrola LPS/DEHN části.
+6. Kontrola CAD/mapa části.
+7. Kontrola dokumentů/exportů.
+8. Kontrola skriptů.
+9. Kontrola Git stavu.
+10. Tabulka: test, očekávaný výsledek, skutečný výsledek, stav OK/CHYBA.
+
+Úkol 3:
+Vytvoř docs/qa/v28_WHITE_SCREEN_PREVENTION_PLAN.md.
+Obsah:
+1. Proč vzniká bílá obrazovka.
+2. Jak jí zabránit ve sjednocené aplikaci.
+3. Safe Module Loader pravidla.
+4. Error Boundary pravidla.
+5. Fallback obrazovky.
+6. Logování chyby.
+7. Zásada: chyba modulu nesmí shodit shell.
+8. Checklist před každou větší změnou.
+
+Úkol 4:
+Vytvoř docs/windows/v28_WINDOWS_BUILD_PREVIEW_PLAN.md.
+Obsah:
+1. Co je Windows Build Preview.
+2. Co zatím není ostrý build.
+3. Co musí být připravené před Tauri.
+4. Kontrola Node.js.
+5. Kontrola npm.
+6. Kontrola Rust.
+7. Kontrola Tauri.
+8. Doporučená struktura složek.
+9. Postup pro neprogramátora.
+10. Rizika Windows buildu.
+
+Úkol 5:
+Vytvoř docs/database/v28_SQLITE_DATA_LAYER_PLAN.md.
+Obsah:
+1. Proč databáze.
+2. Jaký projektový model ukládat.
+3. Tabulky: projects, buildings, roofs, fve_panels, strings, inverters, lps_air_termination, downconductors, spd, documents, exports, qa_checks.
+4. JSON fallback.
+5. Import/export.
+6. Migrace verzí projektu.
+7. Rizika nekonzistence dat.
+8. Doporučený postup pro v29.
+
+Úkol 6:
+Vytvoř docs/modules/fve/v28_FVE_MODULE_PLAN.md.
+Obsah:
+1. Cíl FVE modulu.
+2. Panely.
+3. Stringy.
+4. Střídače.
+5. Optimalizátory.
+6. DC trasy.
+7. SPD DC/AC.
+8. Výpočty napětí/proudu/stringů.
+9. Datasheety.
+10. Reporty a exporty.
+11. Vazba na CAD/mapu.
+12. Vazba na LPS/LPZ.
+
+Úkol 7:
+Vytvoř docs/modules/lps/v28_LPS_DEHN_MODULE_PLAN.md.
+Obsah:
+1. Cíl LPS/DEHN modulu.
+2. Výpočet rizika.
+3. Třída LPS.
+4. Jímací soustava.
+5. Svody.
+6. HVI.
+7. Uzemnění.
+8. LPZ.
+9. SPD.
+10. Koordinace s FVE.
+11. Normové kontroly.
+12. Reporty.
+
+Úkol 8:
+Vytvoř docs/modules/cad/v28_CAD_MAP_MODULE_PLAN.md.
+Obsah:
+1. Cíl CAD/mapa modulu.
+2. Střecha.
+3. Střešní roviny.
+4. Panely.
+5. Jímače.
+6. Svody.
+7. HVI.
+8. DC trasy.
+9. Přesouvání objektů.
+10. Vrstvy.
+11. Export náhledu.
+12. Vazba na výpočty.
+
+Úkol 9:
+Vytvoř docs/roadmap/v29_NEXT_DEVELOPMENT_PLAN.md.
+Obsah:
+1. Co má být v29.
+2. Malé bezpečné kroky.
+3. Co má dělat Aider.
+4. Co má dělat ChatGPT mega balík.
+5. Jak chránit vzhled.
+6. Jak chránit přepínání obrazovek.
+7. Jak chránit proti bílé obrazovce.
+8. Doporučené commity.
+9. Testovací postup.
+10. Rozhodnutí před v29.
+
+Úkol 10:
+Vytvoř prompts/v29_SAFE_INCREMENTAL_DEVELOPMENT_PROMPT.txt.
+Prompt musí být připravený pro další bezpečný Aider běh.
+Musí obsahovat:
+- navázání na v28,
+- zákaz změny vzhledu,
+- zákaz změny HTML shellu,
+- zákaz mazání souborů,
+- povolení jen dokumentace nebo jednoho přesně určeného modulu,
+- požadavek na malý commit,
+- požadavek na kontrolu git diff.
+
+Styl:
+- česky,
+- technicky,
+- prakticky,
+- pro neprogramátora,
+- žádná obecná omáčka,
+- konkrétní kontrolní body.
+
+Po dokončení vytvoř commit:
+v28 technical foundation documentation pack
