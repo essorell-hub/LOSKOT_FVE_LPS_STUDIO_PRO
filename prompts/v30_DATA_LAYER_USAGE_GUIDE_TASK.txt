@@ -1,0 +1,38 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/data-layer/v30/v30_DATA_LAYER_USAGE_GUIDE.md
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 200 řádků.
+
+Dokument musí popsat:
+1. Co obsahuje v30 první datová vrstva.
+2. projectModel.js.
+3. sampleProjectLoader.js.
+4. basicProjectValidation.js.
+5. referenceValidation.js.
+6. qaStatusEngine.js.
+7. jsonImportPreview.js.
+8. jsonExportProject.js.
+9. smoke testy.
+10. Jak to použít bez UI.
+11. Jak to později napojit do Project Inspectoru.
+12. Jak to později napojit do QA semaforu.
+13. Jak to později napojit do import/export tlačítek.
+14. Jak to chrání proti bílé obrazovce.
+15. Rizika a další kroky.
+
+Po dokončení vytvoř commit:
+v30 data layer usage guide
