@@ -1,7 +1,3 @@
-Tento prompt generuje obsah pro soubor `prompts/v30_FIRST_DATA_LAYER_IMPLEMENTATION_QUEUE.txt`.
-
-Obsah souboru `prompts/v30_FIRST_DATA_LAYER_IMPLEMENTATION_QUEUE.txt`:
-```
 # LOSKOT FVE & LPS STUDIO PRO - v30 Implementační fronta - Datová vrstva
 
 ## Úkol: Příprava implementační fronty pro datovou vrstvu (v30)
@@ -30,7 +26,3 @@ Tento prompt připravuje další kroky pro implementaci datové vrstvy. Zatím n
 ---
 
 Tento prompt slouží jako příprava pro další iteraci vývoje, zaměřenou na datovou vrstvu.
-```
-
-Po vygenerování tohoto obsahu do souboru `prompts/v30_FIRST_DATA_LAYER_IMPLEMENTATION_QUEUE.txt`, proveď následující commit:
-`git commit -m "v30 first implementation queue prompt"`
