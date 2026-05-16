@@ -1,0 +1,48 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden soubor:
+src/validation/qaStatusEngine.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřidávej závislosti do package.json.
+- Bezpečné chování.
+
+Soubor má importovat:
+- validateBasicProject z basicProjectValidation.js
+- validateProjectReferences z referenceValidation.js
+
+Soubor má exportovat:
+- QA_STATUS
+- getWorstStatus(statuses)
+- buildQaSummary(results)
+- runProjectQa(project)
+
+runProjectQa musí:
+- spustit základní validaci,
+- spustit referenční validaci,
+- vrátit {
+    ok,
+    status,
+    score,
+    errors,
+    warnings,
+    checks,
+    summary,
+    createdAt
+  }
+
+Stavy:
+ok, warning, error, critical, pending.
+
+Po dokončení vytvoř commit:
+v30 qa status engine
