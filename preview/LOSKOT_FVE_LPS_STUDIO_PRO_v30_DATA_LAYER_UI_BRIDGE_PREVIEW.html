@@ -363,10 +363,9 @@ nav(); render(); log('v30 DATA LAYER UI BRIDGE PREVIEW inicializována bez bíl�
 
   function patchHeader(){
     try{
-      var txt = document.body.innerHTML;
-      if(txt.indexOf("v27 PRODUCTION HANDOFF PACKAGING PREVIEW") !== -1){
-        document.body.innerHTML = document.body.innerHTML.replaceAll("v27 PRODUCTION HANDOFF PACKAGING PREVIEW", "v30 DATA LAYER UI BRIDGE PREVIEW");
-      }
+      // Bezpečná verze: nepřepisuje document.body.innerHTML,
+      // aby nezničila později vložené skripty v31.
+      document.title = document.title.replace("v27 PRODUCTION HANDOFF PACKAGING PREVIEW", "v30 DATA LAYER UI BRIDGE PREVIEW");
     }catch(e){}
   }
 
@@ -1173,6 +1172,270 @@ nav(); render(); log('v30 DATA LAYER UI BRIDGE PREVIEW inicializována bez bíl�
   };
 
   console.log("V31_FORCE_FVE_PANEL_WORKSPACE_FUNCTION applied");
+})();
+</script>
+
+
+<!-- V31_FORCE_FVE_EDITOR_FINAL -->
+<script>
+(function(){
+  function esc(v){
+    try{
+      if(v === undefined || v === null) return "—";
+      return String(v).replace(/[&<>"']/g, function(c){
+        return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+      });
+    }catch(e){ return "—"; }
+  }
+
+  function byId(id){
+    return document.getElementById(id);
+  }
+
+  function ensurePanels(){
+    try{
+      if(!window.project || typeof window.project !== "object") window.project = {};
+      if(!window.project.fve || typeof window.project.fve !== "object") window.project.fve = {};
+
+      if(!Array.isArray(window.project.fve.v31Panels)){
+        window.project.fve.v31Panels = [];
+
+        for(var i = 0; i < 18; i++){
+          var col = i % 6;
+          var row = Math.floor(i / 6);
+
+          window.project.fve.v31Panels.push({
+            id: "P-" + String(i + 1).padStart(2, "0"),
+            label: String(i + 1),
+            x: 70 + col * 70,
+            y: 70 + row * 48,
+            w: 54,
+            h: 34,
+            stringId: i < 9 ? "S1" : "S2"
+          });
+        }
+      }
+
+      if(!Array.isArray(window.v31SelectedPanelIds)){
+        window.v31SelectedPanelIds = [];
+      }
+
+      return window.project.fve.v31Panels;
+    }catch(err){
+      console.error("ensurePanels failed safely", err);
+      return [];
+    }
+  }
+
+  function selected(id){
+    return Array.isArray(window.v31SelectedPanelIds) && window.v31SelectedPanelIds.indexOf(id) >= 0;
+  }
+
+  window.v31TogglePanelSelection = function(id){
+    ensurePanels();
+
+    if(!Array.isArray(window.v31SelectedPanelIds)){
+      window.v31SelectedPanelIds = [];
+    }
+
+    var index = window.v31SelectedPanelIds.indexOf(id);
+
+    if(index >= 0){
+      window.v31SelectedPanelIds.splice(index, 1);
+    }else{
+      window.v31SelectedPanelIds.push(id);
+    }
+
+    window.renderV31FveWorkspace();
+  };
+
+  window.v31SelectAllPanels = function(){
+    var panels = ensurePanels();
+    window.v31SelectedPanelIds = panels.map(function(panel){ return panel.id; });
+    window.renderV31FveWorkspace();
+  };
+
+  window.v31SelectPartialPanels = function(){
+    var panels = ensurePanels();
+    window.v31SelectedPanelIds = panels
+      .filter(function(panel, index){ return index % 2 === 0; })
+      .map(function(panel){ return panel.id; });
+
+    window.renderV31FveWorkspace();
+  };
+
+  window.v31ClearPanelSelection = function(){
+    window.v31SelectedPanelIds = [];
+    window.renderV31FveWorkspace();
+  };
+
+  window.v31MoveSelectedPanels = function(dx, dy){
+    var panels = ensurePanels();
+    var ids = window.v31SelectedPanelIds || [];
+    var moved = 0;
+
+    panels.forEach(function(panel){
+      if(ids.indexOf(panel.id) >= 0){
+        panel.x = Number(panel.x || 0) + dx;
+        panel.y = Number(panel.y || 0) + dy;
+        moved++;
+      }
+    });
+
+    window.renderV31FveWorkspace();
+
+    try{
+      if(typeof window.log === "function"){
+        window.log("v31 FVE: posunuto panelů " + moved);
+      }
+    }catch(e){}
+  };
+
+  function renderPanelSvg(){
+    var panels = ensurePanels();
+
+    var body = panels.map(function(panel){
+      var isSelected = selected(panel.id);
+      var fill = isSelected ? "#fbbf24" : "#1e40af";
+      var stroke = isSelected ? "#fde68a" : "#93c5fd";
+      var textColor = isSelected ? "#111827" : "#e0f2fe";
+
+      return '' +
+        '<g onclick="v31TogglePanelSelection(\\'' + esc(panel.id) + '\\')" style="cursor:pointer">' +
+          '<rect x="' + esc(panel.x) + '" y="' + esc(panel.y) + '" width="' + esc(panel.w) + '" height="' + esc(panel.h) + '" rx="4" fill="' + fill + '" stroke="' + stroke + '" stroke-width="2"></rect>' +
+          '<line x1="' + esc(Number(panel.x) + 6) + '" y1="' + esc(Number(panel.y) + 6) + '" x2="' + esc(Number(panel.x) + Number(panel.w) - 6) + '" y2="' + esc(Number(panel.y) + Number(panel.h) - 6) + '" stroke="rgba(255,255,255,.35)" stroke-width="1"></line>' +
+          '<text x="' + esc(Number(panel.x) + Number(panel.w) / 2) + '" y="' + esc(Number(panel.y) + Number(panel.h) / 2 + 4) + '" text-anchor="middle" fill="' + textColor + '" font-size="11" font-family="monospace">' + esc(panel.label) + '</text>' +
+        '</g>';
+    }).join("");
+
+    return '' +
+      '<svg viewBox="0 0 620 340" style="width:100%;height:390px;background:#07111c;border:1px solid #26384f;border-radius:14px">' +
+        '<rect x="42" y="38" width="510" height="245" rx="12" fill="#0f172a" stroke="#334155" stroke-width="2"></rect>' +
+        '<text x="58" y="62" fill="#94a3b8" font-size="12" font-family="monospace">FVE panel layout — kliknutím označíš panel</text>' +
+        body +
+      '</svg>';
+  }
+
+  function statsTable(){
+    var panels = ensurePanels();
+    var selectedIds = window.v31SelectedPanelIds || [];
+    var strings = {};
+
+    panels.forEach(function(panel){
+      strings[panel.stringId || "bez stringu"] = true;
+    });
+
+    return '' +
+      '<table class="table">' +
+        '<tr><td>Panely celkem</td><td>' + esc(panels.length) + '</td></tr>' +
+        '<tr><td>Vybrané panely</td><td>' + esc(selectedIds.length) + '</td></tr>' +
+        '<tr><td>Stringy</td><td>' + esc(Object.keys(strings).length) + '</td></tr>' +
+        '<tr><td>Režim</td><td>v31 bulk move preview</td></tr>' +
+      '</table>';
+  }
+
+  window.renderV31FveWorkspace = function(){
+    try{
+      ensurePanels();
+
+      var view = byId("view");
+
+      if(!view){
+        alert("Nenalezen hlavní panel view.");
+        return;
+      }
+
+      view.innerHTML =
+        '<h1 class="module-title">FVE panely — výběr a hromadný přesun v31</h1>' +
+        '<div class="tools">' +
+          '<button class="primary" onclick="v31SelectAllPanels()">Označit vše</button>' +
+          '<button onclick="v31SelectPartialPanels()">Označit část</button>' +
+          '<button onclick="v31ClearPanelSelection()">Zrušit výběr</button>' +
+          '<button onclick="v31MoveSelectedPanels(-10,0)">←</button>' +
+          '<button onclick="v31MoveSelectedPanels(10,0)">→</button>' +
+          '<button onclick="v31MoveSelectedPanels(0,-10)">↑</button>' +
+          '<button onclick="v31MoveSelectedPanels(0,10)">↓</button>' +
+        '</div>' +
+        '<div class="split">' +
+          '<div class="card"><h2>CAD/FVE náhled</h2><div class="body">' + renderPanelSvg() + '</div></div>' +
+          '<div class="card"><h2>Výběr panelů</h2><div class="body">' +
+            '<div class="notice">Klikni na panel pro výběr. Šipkami posuneš všechny vybrané panely najednou.</div>' +
+            statsTable() +
+          '</div></div>' +
+        '</div>';
+
+      try{
+        if(typeof window.inspector === "function") window.inspector();
+        if(typeof window.qa === "function") window.qa();
+      }catch(e){}
+    }catch(err){
+      var view = byId("view");
+
+      if(view){
+        view.innerHTML = '<div class="fallback"><h2>FVE panel editor spadl bezpečně</h2><pre>' + esc(err.message) + '</pre></div>';
+      }else{
+        alert("FVE panel editor selhal bezpečně: " + err.message);
+      }
+    }
+  };
+
+  function forceTopButton(){
+    try{
+      var btn = document.getElementById("v31TopFvePanelsBtn");
+
+      if(btn){
+        btn.onclick = function(){
+          window.renderV31FveWorkspace();
+        };
+        return;
+      }
+
+      var top = document.querySelector(".topbar, header, .head, .toolbar");
+
+      if(!top){
+        var divs = document.querySelectorAll("div");
+        for(var i = 0; i < divs.length; i++){
+          var text = divs[i].innerText || "";
+          if(text.indexOf("FVE aktivní") !== -1 || text.indexOf("Safe Module Loader") !== -1){
+            top = divs[i];
+            break;
+          }
+        }
+      }
+
+      if(!top) top = document.body;
+
+      btn = document.createElement("button");
+      btn.id = "v31TopFvePanelsBtn";
+      btn.textContent = "v31 FVE panely";
+      btn.onclick = function(){
+        window.renderV31FveWorkspace();
+      };
+      btn.style.marginLeft = "8px";
+      btn.style.border = "1px solid #36506b";
+      btn.style.background = "#0b1724";
+      btn.style.color = "#dbeafe";
+      btn.style.borderRadius = "10px";
+      btn.style.padding = "7px 12px";
+      btn.style.cursor = "pointer";
+
+      top.appendChild(btn);
+    }catch(err){
+      console.warn("forceTopButton failed safely", err);
+    }
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", forceTopButton);
+  }else{
+    forceTopButton();
+  }
+
+  setTimeout(forceTopButton, 100);
+  setTimeout(forceTopButton, 500);
+  setTimeout(forceTopButton, 1200);
+
+  console.log("V31_FORCE_FVE_EDITOR_FINAL applied");
 })();
 </script>
 
