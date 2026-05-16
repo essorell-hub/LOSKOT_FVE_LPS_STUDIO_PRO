@@ -1,0 +1,37 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON Schema soubor:
+database/schema/v29/lps.schema.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Použij JSON Schema Draft 2020-12.
+- Používej odkazy na shared-definitions.schema.json, pokud to dává smysl.
+- Piš popisy česky.
+- Výstup drž přiměřeně krátký.
+
+Schéma LPS musí obsahovat:
+riskAssessment, lpsClass, airTermination, airTerminals, mesh, downConductors, hvi, earthing, spd, lpz, normativeChecks, warnings, qaStatus.
+
+Risk assessment musí obsahovat:
+riskAssessmentId, method, lpsClassResult, inputParameters, calculatedRisks, acceptedRisks, status, notes.
+
+Air terminal musí obsahovat:
+terminalId, roofPlaneId, type, height, position, protectionRadius, connectedTo, cadObjectRef, notes.
+
+Down conductor musí obsahovat:
+downConductorId, facadeRef, route, material, crossSection, connectionPoint, earthingRef, cadObjectRef, notes.
+
+LPZ musí obsahovat:
+lpzId, name, level, boundaryDescription, relatedObjects, spdRefs, notes.
+
+Po dokončení vytvoř commit:
+v29 json schema lps
