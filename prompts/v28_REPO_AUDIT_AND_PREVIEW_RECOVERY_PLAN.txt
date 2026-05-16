@@ -1,0 +1,43 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Cíl:
+Vytvoř důkladný audit aktuálního repozitáře a plán bezpečného pokračování do v28.
+
+Přísná pravidla:
+- Neupravuj žádné HTML preview soubory.
+- Neupravuj CSS.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřepisuj Classic PRO vzhled.
+- Neprováděj žádný zásah do aplikace.
+- Vytvářej pouze dokumentaci.
+
+Vytvoř nebo aktualizuj pouze tyto soubory:
+- docs/audit/v28_REPO_AUDIT.md
+- docs/roadmap/v28_SAFE_CONTINUATION_PLAN.md
+
+Obsah dokumentu docs/audit/v28_REPO_AUDIT.md:
+1. Přehled aktuálních souborů v repozitáři.
+2. Jaké preview soubory jsou dostupné.
+3. Konstatování, že v preview složce jsou pouze v20 a v21, pokud je to tak.
+4. Jaké části projektu existují: docs, scripts, prompts, preview, package.json, src, src-tauri, database, pokud existují.
+5. Rizika pro pokračování v28.
+6. Riziko změny Classic PRO vzhledu.
+7. Riziko bílé obrazovky.
+8. Riziko, že v27 není v repozitáři a nelze z něj kopírovat HTML.
+9. Doporučení, jak bezpečně pokračovat.
+
+Obsah dokumentu docs/roadmap/v28_SAFE_CONTINUATION_PLAN.md:
+1. Bezpečný plán pokračování do v28.
+2. Varianta A: obnovit nebo doplnit chybějící v27 preview ze ZIP balíku.
+3. Varianta B: vytvořit v28 z posledního dostupného v21 preview, ale jasně označit jako fallback.
+4. Varianta C: vytvořit nový v28 preview až po ručním schválení vzhledu.
+5. Přesný postup pro neprogramátora.
+6. Git kroky.
+7. Kontrolní checklist před commitem.
+8. Co se nesmí měnit.
+9. Doporučené další úkoly pro Aider po malých částech.
+
+Na konci vytvoř commit:
+v28 repo audit and safe continuation plan
