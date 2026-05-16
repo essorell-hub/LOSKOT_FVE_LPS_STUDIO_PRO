@@ -1,0 +1,6 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+Vytvoř pouze soubor src/export/exportPackageModel.js.
+Neměň HTML, CSS, preview, UI, PROJECT_STATE_UNIFIED.md ani CHANGELOG.md.
+Nepřidávej závislosti.
+Exportuj: createExportPackageManifest, addExportItem, validateExportPackageManifest, createExportPackageSummary.
+Exportní položky: project-json, technical-report-pdf, technical-report-docx, drawings, datasheets, qa-report, database-backup, changelog.
