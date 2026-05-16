@@ -38,3 +38,43 @@ Dokument musí obsahovat:
 
 Po dokončení vytvoř commit:
 v29 qa traffic light rules
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/qa/v29/v29_QA_TRAFFIC_LIGHT_RULES.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 180 řádků.
+
+Dokument musí obsahovat:
+1. Účel QA semaforu.
+2. Stav OK.
+3. Stav WARNING.
+4. Stav ERROR.
+5. Stav CRITICAL.
+6. Stav PENDING.
+7. Výpočet celkového stavu projektu.
+8. Priorita chyb.
+9. FVE QA pravidla.
+10. LPS QA pravidla.
+11. CAD QA pravidla.
+12. Dokumenty QA pravidla.
+13. Export QA pravidla.
+14. SQLite QA pravidla.
+15. Import QA pravidla.
+16. Jak zobrazovat chyby uživateli.
+17. Jak zabránit bílé obrazovce.
+18. Jak logovat QA výsledek.
+19. Checklist.
+
+Po dokončení vytvoř commit:
+v29 qa traffic light rules
