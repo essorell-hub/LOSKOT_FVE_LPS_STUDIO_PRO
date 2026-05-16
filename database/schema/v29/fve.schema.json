@@ -66,12 +66,14 @@
       "type": "object",
       "properties": {
         "peakPowerWp": {
-          "description": "Celkový instalovaný výkon FVE v kWp.",
-          "type": "number"
+          "description": "Celkový instalovaný výkon FVE v Wp.",
+          "type": "number",
+          "unit": "Wp"
         },
         "annualYieldKwh": {
           "description": "Očekávaná roční výroba FVE v kWh.",
-          "type": "number"
+          "type": "number",
+          "unit": "kWh"
         }
       }
     },

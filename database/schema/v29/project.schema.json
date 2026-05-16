@@ -81,22 +81,88 @@
     },
     "fve": {
       "type": "object",
-      "description": "Nastavení a komponenty pro s FVE.",
+      "description": "Nastavení a komponenty pro FVE.",
       "properties": {
-        "arrays": {
+        "panels": {
+          "description": "Seznam fotovoltaických panelů.",
           "type": "array",
-          "items": { "$ref": "fve.schema.json#/properties/arrays/items" }
+          "items": { "$ref": "fve.schema.json#/$defs/panel" }
+        },
+        "strings": {
+          "description": "Seznam DC stringů.",
+          "type": "array",
+          "items": { "$ref": "fve.schema.json#/$defs/string" }
         },
         "inverters": {
+          "description": "Seznam střídačů.",
           "type": "array",
-          "items": { "$ref": "fve.schema.json#/properties/inverters/items" }
+          "items": { "$ref": "fve.schema.json#/$defs/inverter" }
         },
-        "dcSystems": {
+        "optimizers": {
+          "description": "Seznam optimizérů.",
           "type": "array",
-          "items": { "$ref": "fve.schema.json#/properties/dcSystems/items" }
+          "items": { "$ref": "fve.schema.json#/$defs/optimizer" }
+        },
+        "dcRoutes": {
+          "description": "Seznam DC tras.",
+          "type": "array",
+          "items": { "$ref": "fve.schema.json#/$defs/dcRoute" }
+        },
+        "acRoutes": {
+          "description": "Seznam AC tras.",
+          "type": "array",
+          "items": { "$ref": "fve.schema.json#/$defs/acRoute" }
+        },
+        "spdDc": {
+          "description": "Seznam DC přepěťových ochran.",
+          "type": "array",
+          "items": { "$ref": "fve.schema.json#/$defs/spd" }
+        },
+        "spdAc": {
+          "description": "Seznam AC přepěťových ochran.",
+          "type": "array",
+          "items": { "$ref": "fve.schema.json#/$defs/spd" }
+        },
+        "calculations": {
+          "description": "Výsledky FVE výpočtů.",
+          "type": "object",
+          "properties": {
+            "peakPowerWp": {
+              "description": "Celkový instalovaný výkon FVE v Wp.",
+              "type": "number",
+              "unit": "Wp"
+            },
+            "annualYieldKwh": {
+              "description": "Očekávaná roční výroba FVE v kWh.",
+              "type": "number",
+              "unit": "kWh"
+            }
+          }
+        },
+        "datasheets": {
+          "description": "Odkazy na datové listy komponent.",
+          "type": "array",
+          "items": { "$ref": "shared-definitions.schema.json#/$defs/fileReference" }
+        },
+        "warnings": {
+          "description": "Seznam varování týkajících se FVE konfigurace.",
+          "type": "array",
+          "items": { "$ref": "shared-definitions.schema.json#/$defs/auditEntry" }
+        },
+        "qaStatus": {
+          "description": "Stav kontroly kvality FVE modulu.",
+          "$ref": "shared-definitions.schema.json#/$defs/qaStatus"
         }
       },
-      "required": ["arrays", "inverters", "dcSystems"]
+      "required": [
+        "panels",
+        "strings",
+        "inverters",
+        "dcRoutes",
+        "acRoutes",
+        "calculations",
+        "qaStatus"
+      ]
     },
     "lps": {
       "type": "object",
