@@ -1,0 +1,34 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/qa/v29/v29_IMPORT_EXPORT_QA_CHECKLIST.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 160 řádků.
+
+Dokument musí obsahovat:
+1. Kontrola importu validního JSON.
+2. Kontrola importu nevalidního JSON.
+3. Kontrola importu starší verze.
+4. Kontrola migrationHistory.
+5. Kontrola exportu plného projektu.
+6. Kontrola exportu části projektu.
+7. Kontrola manifestu.
+8. Kontrola checksum polí.
+9. Kontrola QA výsledků.
+10. Kontrola warningů.
+11. Kontrola rollbacku.
+12. Kontrola, že export nemění projekt.
+13. Tabulka test / očekávaný výsledek / skutečný výsledek / stav.
+
+Po dokončení vytvoř commit:
+v29 import export qa checklist
