@@ -1,0 +1,35 @@
+{
+  "contractVersion": "v29",
+  "packageId": "unique-package-id-placeholder",
+  "projectId": "project-id-placeholder",
+  "packageType": "FullExport",
+  "createdAt": "2026-05-16T10:00:00Z",
+  "createdByAppVersion": "v21",
+  "files": [
+    {
+      "fileId": "file-id-placeholder-1",
+      "relativePath": "path/to/file1.ext",
+      "fileType": "Data",
+      "required": true,
+      "checksum": "sha256-checksum-placeholder-1",
+      "relatedEntityRefs": ["entity-ref-1", "entity-ref-2"]
+    }
+  ],
+  "manifest": {
+    "description": "Export balíčku projektu pro LOSKOT FVE & LPS STUDIO PRO.",
+    "version": "1.0"
+  },
+  "checksums": {
+    "algorithm": "SHA-256",
+    "value": "overall-checksum-placeholder"
+  },
+  "qaSummary": {
+    "passed": true,
+    "warnings": [],
+    "errors": []
+  },
+  "warnings": [
+    "Varování: Toto je pouze vzorový export."
+  ],
+  "notes": "Tento kontrakt definuje strukturu exportního balíčku projektu."
+}
