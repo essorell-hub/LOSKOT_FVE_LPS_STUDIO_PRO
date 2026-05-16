@@ -1,0 +1,41 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/validation/v29/v29_JSON_VALIDATION_GUIDE.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 180 řádků.
+
+Dokument musí obsahovat:
+1. Účel validace JSON projektu.
+2. Validace proti JSON schématům.
+3. Validace povinných sekcí.
+4. Validace povinných polí.
+5. Validace datových typů.
+6. Validace referencí mezi entitami.
+7. Validace FVE části.
+8. Validace LPS/DEHN části.
+9. Validace CAD/mapa části.
+10. Validace documents.
+11. Validace exports.
+12. Validace qa.
+13. Validace migrationHistory.
+14. Chování při warning.
+15. Chování při error.
+16. Chování při critical.
+17. Doporučený postup před importem.
+18. Doporučený postup před exportem.
+19. Rizika.
+20. Checklist.
+
+Po dokončení vytvoř commit:
+v29 json validation guide
