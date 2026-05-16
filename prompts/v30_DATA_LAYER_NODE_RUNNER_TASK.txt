@@ -1,0 +1,43 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden soubor:
+tests/data/v30_data_layer_node_runner.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřidávej závislosti do package.json.
+- Test nesmí vyžadovat internet.
+- Test nesmí vytvářet build.
+
+Soubor má být jednoduchý ruční smoke runner pro Node.
+
+Má otestovat:
+- import z src/data/index.js
+- import z src/validation/index.js
+- import z src/importExport/index.js
+- createEmptyProject
+- normalizeProject
+- createProjectStore
+- createAppProjectState
+- runProjectQa
+- createImportPreviewFromObject
+- createProjectExportObject
+
+Pokud projektový module systém není jasný:
+- napiš runner tak, aby měl jasné komentáře,
+- použij bezpečný async main,
+- chybu vypiš do console.error,
+- process.exitCode = 1 při chybě,
+- žádné UI.
+
+Po dokončení vytvoř commit:
+v30 data layer node runner
