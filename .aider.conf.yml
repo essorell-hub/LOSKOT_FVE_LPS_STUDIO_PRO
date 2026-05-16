@@ -1,0 +1,22 @@
+model: openrouter/anthropic/claude-sonnet-4.5
+
+git: true
+auto-commits: true
+dirty-commits: false
+show-diffs: true
+auto-lint: false
+auto-test: false
+check-update: false
+
+map-tokens: 4096
+map-refresh: auto
+
+pretty: true
+stream: true
+dark-mode: true
+chat-language: cs
+commit-language: cs
+
+read:
+  - PROJECT_STATE_UNIFIED.md
+  - CHANGELOG.md

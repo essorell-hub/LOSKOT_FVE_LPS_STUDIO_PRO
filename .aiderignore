@@ -1,0 +1,14 @@
+*.zip
+*.exe
+*.msi
+*.pdf
+*.docx
+*.xlsx
+node_modules/
+dist/
+build/
+target/
+.git/
+.env
+archive/
+backups/

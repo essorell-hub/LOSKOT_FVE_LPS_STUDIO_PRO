@@ -142,3 +142,7 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
 .aider*
+
+# Keep Aider project config tracked
+!.aider.conf.yml
+!.aiderignore
