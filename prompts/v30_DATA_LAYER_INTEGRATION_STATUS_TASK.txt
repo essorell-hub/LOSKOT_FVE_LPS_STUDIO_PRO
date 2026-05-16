@@ -1,0 +1,41 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/data-layer/v30/v30_DATA_LAYER_INTEGRATION_STATUS.md
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 220 řádků.
+
+Dokument musí popsat:
+1. Co je ve v30 data layer hotové.
+2. projectModel.
+3. sampleProjectLoader.
+4. projectStore.
+5. projectStateAdapter.
+6. basic validation.
+7. reference validation.
+8. QA status engine.
+9. JSON import preview.
+10. JSON export helper.
+11. index soubory.
+12. smoke testy.
+13. Co ještě není napojené do UI.
+14. Jak bezpečně napojit Project Inspector.
+15. Jak bezpečně napojit QA semafor.
+16. Jak bezpečně napojit import/export tlačítka.
+17. Rizika.
+18. Doporučený další krok.
+
+Po dokončení vytvoř commit:
+v30 data layer integration status
