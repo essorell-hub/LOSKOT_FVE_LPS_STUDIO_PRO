@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loskot.com/schemas/v29/roof",
+  "title": "Střecha",
+  "description": "Informace o střeše objektu.",
+  "type": "object",
+  "properties": {
+    "roofId": {
+      "$ref": "shared-definitions.schema.json#/$defs/uuid",
+      "description": "Unikátní identifikátor střechy."
+    },
+    "buildingId": {
+      "$ref": "shared-definitions.schema.json#/$defs/uuid",
+      "description": "Identifikátor budovy, ke které střecha patří."
+    },
+    "roofType": {
+      "type": "string",
+      "description": "Typ střechy (např. 'sedlová', 'valbová', 'plochá')."
+    },
+    "planes": {
+      "type": "array",
+      "description": "Jednotlivé roviny střechy.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "planeId": {
+            "$ref": "shared-definitions.schema.json#/$defs/uuid",
+            "description": "Unikátní identifikátor roviny střechy."
+          },
+          "name": {
+            "type": "string",
+            "description": "Název roviny (např. 'Severní strana')."
+          },
+          "polygon": {
+            "$ref": "shared-definitions.schema.json#/$defs/polygon2d",
+            "description": "Geometrie roviny definovaná polygonem."
+          },
+          "slope": {
+            "type": "number",
+            "description": "Sklon roviny ve stupních.",
+            "minimum": 0,
+            "maximum": 90
+          },
+          "orientation": {
+            "type": "number",
+            "description": "Orientace roviny ve stupních (azimut).",
+            "minimum": 0,
+            "maximum": 360
+          },
+          "usableArea": {
+            "type": "number",
+            "description": "Využitelná plocha roviny v m²."
+          },
+          "restrictedArea": {
+            "type": "number",
+            "description": "Omezená plocha roviny v m² (např. kvůli střešním oknům, komínům)."
+          },
+          "assignedPvPanels": {
+            "type": "integer",
+            "description": "Počet přiřazených fotovoltaických panelů."
+          },
+          "assignedAirTerminals": {
+            "type": "integer",
+            "description": "Počet přiřazených vzdušných svodičů."
+          },
+          "notes": {
+            "type": "array",
+            "description": "Poznámky k rovině.",
+            "items": { "$ref": "shared-definitions.schema.json#/$defs/note" }
+          }
+        },
+        "required": [
+          "planeId",
+          "name",
+          "polygon",
+          "slope",
+          "orientation",
+          "usableArea",
+          "restrictedArea",
+          "assignedPvPanels",
+          "assignedAirTerminals"
+        ]
+      }
+    },
+    "ridgeLines": {
+      "type": "array",
+      "description": "Hřebeny střechy.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "lineId": { "$ref": "shared-definitions.schema.json#/$defs/uuid" },
+          "startPoint": { "$ref": "shared-definitions.schema.json#/$defs/point3d" },
+          "endPoint": { "$ref": "shared-definitions.schema.json#/$defs/point3d" }
+        },
+        "required": ["lineId", "startPoint", "endPoint"]
+      }
+    },
+    "eaves": {
+      "type": "array",
+      "description": "Okapy střechy.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "eaveId": { "$ref": "shared-definitions.schema.json#/$defs/uuid" },
+          "startPoint": { "$ref": "shared-definitions.schema.json#/$defs/point3d" },
+          "endPoint": { "$ref": "shared-definitions.schema.json#/$defs/point3d" }
+        },
+        "required": ["eaveId", "startPoint", "endPoint"]
+      }
+    },
+    "valleys": {
+      "type": "array",
+      "description": "Úžlabí střechy.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "valleyId": { "$ref": "shared-definitions.schema.json#/$defs/uuid" },
+          "startPoint": { "$ref": "shared-definitions.schema.json#/$defs/point3d" },
+          "endPoint": { "$ref": "shared-definitions.schema.json#/$defs/point3d" }
+        },
+        "required": ["valleyId", "startPoint", "endPoint"]
+      }
+    },
+    "obstacles": {
+      "type": "array",
+      "description": "Překážky na střeše (např. komíny, vikýře).",
+      "items": {
+        "type": "object",
+        "properties": {
+          "obstacleId": { "$ref": "shared-definitions.schema.json#/$defs/uuid" },
+          "name": { "type": "string" },
+          "position": { "$ref": "shared-definitions.schema.json#/$defs/point3d" },
+          "dimensions": { "$ref": "shared-definitions.schema.json#/$defs/dimensions" }
+        },
+        "required": ["obstacleId", "name", "position", "dimensions"]
+      }
+    },
+    "safetyZones": {
+      "type": "array",
+      "description": "Bezpečnostní zóny na střeše.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "zoneId": { "$ref": "shared-definitions.schema.json#/$defs/uuid" },
+          "name": { "type": "string" },
+          "polygon": { "$ref": "shared-definitions.schema.json#/$defs/polygon2d" }
+        },
+        "required": ["zoneId", "name", "polygon"]
+      }
+    },
+    "slope": {
+      "type": "number",
+      "description": "Celkový průměrný sklon střechy ve stupních.",
+      "minimum": 0,
+      "maximum": 90
+    },
+    "orientation": {
+      "type": "number",
+      "description": "Celková průměrná orientace střechy ve stupních (azimut).",
+      "minimum": 0,
+      "maximum": 360
+    },
+    "material": {
+      "type": "string",
+      "description": "Materiál střechy (např. 'taška', 'plech', 'šindel')."
+    },
+    "geometryNotes": {
+      "type": "string",
+      "description": "Poznámky týkající se geometrie střechy."
+    },
+    "cadLayerRef": {
+      "$ref": "shared-definitions.schema.json#/$defs/layerRef",
+      "description": "Odkaz na vrstvu v CAD systému."
+    },
+    "qaStatus": {
+      "$ref": "shared-definitions.schema.json#/$defs/qaStatus",
+      "description": "Stav kvality a kontroly střechy."
+    },
+    "notes": {
+      "type": "array",
+      "description": "Obecné poznámky ke střeše.",
+      "items": { "$ref": "shared-definitions.schema.json#/$defs/note" }
+    }
+  },
+  "required": [
+    "roofId",
+    "buildingId",
+    "roofType",
+    "planes",
+    "slope",
+    "orientation",
+    "material",
+    "cadLayerRef",
+    "qaStatus"
+  ]
+}
