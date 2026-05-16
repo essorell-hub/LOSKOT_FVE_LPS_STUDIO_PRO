@@ -1,0 +1,35 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON soubor:
+database/sample-projects/v29/v29_roof_geometry_project.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Data musí být fiktivní.
+- Výstup drž přiměřeně krátký.
+
+Projekt má být zaměřený na geometrii:
+- budova s jasnou geometrií,
+- minimálně 2 střešní roviny,
+- polygon bodů pro každou rovinu,
+- hřeben,
+- okapy,
+- překážka na střeše,
+- safety zone,
+- CAD vrstvy,
+- CAD objekty,
+- několik FVE panelů umístěných na roofPlane,
+- několik LPS prvků navázaných na roofPlane.
+
+FVE a LPS nemusejí být úplně plné, ale musí ukázat vazbu na geometrii.
+
+Po dokončení vytvoř commit:
+v29 sample roof geometry project
