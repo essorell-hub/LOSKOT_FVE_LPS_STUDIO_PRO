@@ -1,0 +1,42 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden soubor:
+src/data/projectModel.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřidávej závislosti do package.json.
+- Kód musí být samostatný a bezpečný.
+- Pokud vstup chybí nebo je poškozený, vrať bezpečný fallback, ne výjimku pro UI.
+
+Soubor má exportovat:
+- DATA_MODEL_VERSION = "v29"
+- createEmptyProject()
+- normalizeProject(project)
+- getProjectSummary(project)
+- safeGetProjectSection(project, sectionName, fallbackValue)
+
+createEmptyProject musí vrátit základní prázdný projekt s:
+projectId, dataModelVersion, appVersion, createdAt, updatedAt, projectInfo, building, roofs, fve, lps, cad, documents, exports, qa, migrationHistory.
+
+normalizeProject:
+- doplní chybějící sekce,
+- zachová neznámá pole,
+- nepoškodí původní data,
+- doplní updatedAt,
+- vrátí objekt { ok, project, warnings }.
+
+getProjectSummary:
+- vrátí stručný souhrn pro Project Inspector.
+
+Po dokončení vytvoř commit:
+v30 project model adapter
