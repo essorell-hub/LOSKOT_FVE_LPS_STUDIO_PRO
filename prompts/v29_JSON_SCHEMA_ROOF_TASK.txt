@@ -21,7 +21,7 @@ Přísná pravidla:
 Schéma roof musí obsahovat:
 roofId, buildingId, roofType, planes, ridgeLines, eaves, valleys, obstacles, safetyZones, slope, orientation, material, geometryNotes, cadLayerRef, qaStatus, notes.
 
-Objekt plane musí obsahovat:
+Plane musí obsahovat:
 planeId, name, polygon, slope, orientation, usableArea, restrictedArea, assignedPvPanels, assignedAirTerminals, notes.
 
 Po dokončení vytvoř commit:
