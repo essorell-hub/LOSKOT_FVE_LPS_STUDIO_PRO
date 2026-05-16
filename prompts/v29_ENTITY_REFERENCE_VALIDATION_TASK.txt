@@ -1,0 +1,43 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/validation/v29/v29_ENTITY_REFERENCE_VALIDATION.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 180 řádků.
+
+Dokument musí obsahovat:
+1. Účel kontroly referencí.
+2. projectId reference.
+3. buildingId reference.
+4. roofId reference.
+5. roofPlaneId reference.
+6. panelId reference.
+7. stringId reference.
+8. inverterId reference.
+9. dcRouteId reference.
+10. airTerminalId reference.
+11. downConductorId reference.
+12. hviId reference.
+13. lpzId reference.
+14. spdId reference.
+15. cad layerRef.
+16. cad objectRef.
+17. document fileRef.
+18. QA relatedEntityRef.
+19. Co dělat při chybějící referenci.
+20. Co dělat při osiřelé entitě.
+21. Co dělat při cyklické referenci.
+22. Checklist.
+
+Po dokončení vytvoř commit:
+v29 entity reference validation
