@@ -1,0 +1,46 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON soubor:
+database/sample-projects/v29/v29_minimal_project.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Data musí být fiktivní.
+- Nepoužívej osobní údaje skutečných osob.
+- Výstup drž přiměřeně krátký.
+
+Projekt musí obsahovat:
+- projectId
+- dataModelVersion: "v29"
+- appVersion
+- createdAt
+- updatedAt
+- projectInfo
+- building
+- roofs
+- fve
+- lps
+- cad
+- documents
+- exports
+- qa
+- migrationHistory
+
+Minimal project:
+- jedna fiktivní stavba,
+- jedna jednoduchá sedlová nebo plochá střecha,
+- FVE modul prázdný, ale strukturálně připravený,
+- LPS modul prázdný, ale strukturálně připravený,
+- CAD vrstvy prázdné nebo základní,
+- QA status pending.
+
+Po dokončení vytvoř commit:
+v29 sample minimal project
