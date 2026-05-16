@@ -1,0 +1,43 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden dokument:
+docs/database/v29/v29_ENTITY_RELATION_OVERVIEW.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Výstup max 140 řádků.
+- Piš česky, technicky a prakticky.
+
+Obsah dokumentu:
+1. Účel dokumentu.
+2. Přehled hlavních entit.
+3. Vazba project → building.
+4. Vazba building → roofs.
+5. Vazba roofs → roofPlanes.
+6. Vazba roofPlanes → pvPanels.
+7. Vazba pvPanels → strings.
+8. Vazba strings → inverters.
+9. Vazba FVE → DC routes / AC routes / SPD.
+10. Vazba LPS → roof geometry.
+11. Vazba air terminals → roofPlanes.
+12. Vazba downconductors → building facades.
+13. Vazba HVI → jímací soustava / svody / LPZ.
+14. Vazba SPD → rozvaděče / LPZ / FVE.
+15. Vazba CAD objects → vrstvy / entity.
+16. Vazba documents → project.
+17. Vazba exports → project.
+18. Vazba QA checks → entity references.
+19. Tabulka: entita / ID / rodič / účel.
+20. Pravidla mazání a zachování referencí.
+21. Rizika neplatných vazeb.
+22. Doporučení pro další krok.
+
+Po dokončení vytvoř commit:
+v29 entity relation overview
