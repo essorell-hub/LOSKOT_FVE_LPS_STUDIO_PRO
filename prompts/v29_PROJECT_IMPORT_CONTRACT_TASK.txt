@@ -1,0 +1,41 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON soubor:
+database/contracts/v29/project-import-contract.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Popisy mohou být česky.
+- Výstup drž přiměřeně krátký.
+
+Kontrakt musí obsahovat:
+- contractVersion
+- name
+- acceptedDataModelVersions
+- requiredSections
+- optionalSections
+- validationSteps
+- migrationSteps
+- errorHandling
+- fallbackBehavior
+- rejectedConditions
+- warnings
+- notes
+
+Zahrň pravidla:
+- neplatný JSON se neimportuje,
+- starší dataModelVersion se pokusí migrovat,
+- neznámá pole se nezahazují bez varování,
+- při chybě se nesmí poškodit aktuální projekt,
+- import má mít preview/confirm krok.
+
+Po dokončení vytvoř commit:
+v29 project import contract
