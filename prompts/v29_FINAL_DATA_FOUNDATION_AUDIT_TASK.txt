@@ -1,0 +1,33 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/audit/v29/v29_FINAL_DATA_FOUNDATION_AUDIT.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 220 řádků.
+
+Zkontroluj a popiš stav těchto oblastí:
+1. Datový model v29.
+2. JSON schémata.
+3. Sample projekty.
+4. SQLite návrh.
+5. Import/export kontrakty.
+6. Validační pravidla.
+7. QA pravidla.
+8. Dokumentace.
+9. Připravenost pro v30.
+10. Rizika před implementací.
+11. Co se nesmí při v30 rozbít.
+12. Doporučený postup v30.
+
+Po dokončení vytvoř commit:
+v29 final data foundation audit
