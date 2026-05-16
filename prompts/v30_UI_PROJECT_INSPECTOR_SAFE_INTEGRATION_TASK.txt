@@ -1,0 +1,38 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Toto je prompt pro další bezpečný krok, zatím ho nespouštěj automaticky.
+
+Cíl dalšího kroku:
+Bezpečně napojit Project Inspector na v30 datovou vrstvu.
+
+Přísná pravidla:
+- Zachovat Classic PRO vzhled.
+- Neměnit layout.
+- Neměnit barvy.
+- Neměnit menu.
+- Neměnit přepínání obrazovek.
+- Neměnit CAD preview vzhled.
+- Neměnit mapu.
+- Neměnit FVE/LPS/CAD interakce.
+- Nesmí vzniknout bílá obrazovka.
+- Každý import z datové vrstvy musí být obalen fallbackem.
+- Při chybě zobrazit warning v Project Inspectoru, ne shodit aplikaci.
+- Nejprve najít skutečný soubor Project Inspectoru.
+- Zasáhnout jen minimálně.
+
+Povolený cíl:
+- pouze soubor/soubory Project Inspectoru po jejich ověření
+- případně jeden malý adapter soubor
+
+Zakázané:
+- plošné přepisování App komponenty
+- změny CSS
+- změny preview HTML
+- změny routeru/menu
+
+Požadovaný výsledek:
+- Project Inspector zobrazí summary z getSafeInspectorData
+- pokud data nejsou k dispozici, zobrazí fallback
+- UI zůstane stejné
+- commit:
+v30 safe project inspector data integration
