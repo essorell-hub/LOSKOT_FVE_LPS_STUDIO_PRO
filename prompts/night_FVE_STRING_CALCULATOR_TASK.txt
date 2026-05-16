@@ -1,0 +1,6 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+Vytvoř pouze soubor src/fve/stringCalculator.js.
+Neměň HTML, CSS, preview, UI, PROJECT_STATE_UNIFIED.md ani CHANGELOG.md.
+Nepřidávej závislosti.
+Exportuj: calculatePanelPowerKw, calculateStringTotals, calculateFveTotals, validateStringVoltage, createFveCalculationSummary.
+Výsledky: panelCount, totalKwp, strings, warnings.
