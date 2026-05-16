@@ -1,0 +1,36 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/export/v29/v29_IMPORT_EXPORT_GUIDE.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 180 řádků.
+
+Dokument musí obsahovat:
+1. Účel import/export vrstvy.
+2. Import JSON projektu.
+3. Export JSON projektu.
+4. Export dokumentačního balíčku.
+5. Export QA výsledků.
+6. Export CAD náhledu.
+7. Vazba na SQLite.
+8. Vazba na JSON schémata.
+9. Chování při chybě.
+10. Preview/confirm krok při importu.
+11. Rollback pravidla.
+12. Manifest exportního balíčku.
+13. Doporučený postup pro neprogramátora.
+14. QA checklist před exportem.
+15. Rizika.
+
+Po dokončení vytvoř commit:
+v29 import export guide
