@@ -28,18 +28,20 @@ function createEmptyProject() {
 
 function normalizeProject(project) {
     const warnings = [];
-    const originalProject = JSON.parse(JSON.stringify(project)); // Deep clone to preserve original data
+    // Create a deep clone to ensure we don't modify the original object passed into the function
+    // and to preserve original fields that might not be in the current schema.
+    const originalProjectClone = JSON.parse(JSON.stringify(project || {}));
     const now = new Date();
     const timestamp = now.toISOString();
 
-    // Ensure project has a structure, provide fallback if null/undefined
-    project = project || {};
+    // Ensure the project object itself is at least an empty object if null/undefined
+    const workingProject = project || {};
 
-    // Add or update updatedAt timestamp
-    project.updatedAt = timestamp;
+    // Update timestamp
+    workingProject.updatedAt = timestamp;
 
-    // Add missing top-level sections with fallbacks
-    const requiredSections = [
+    // Ensure essential top-level sections exist, adding them with fallbacks if missing.
+    const requiredTopLevelSections = [
         { name: "projectId", fallback: uuidv4() },
         { name: "dataModelVersion", fallback: DATA_MODEL_VERSION },
         { name: "appVersion", fallback: APP_VERSION },
@@ -56,21 +58,22 @@ function normalizeProject(project) {
         { name: "migrationHistory", fallback: [] }
     ];
 
-    requiredSections.forEach(({ name, fallback }) => {
-        if (project[name] === undefined || project[name] === null) {
-            project[name] = fallback;
-            warnings.push(`Missing section '${name}', added with fallback value.`);
+    requiredTopLevelSections.forEach(({ name, fallback }) => {
+        if (workingProject[name] === undefined || workingProject[name] === null) {
+            workingProject[name] = fallback;
+            // Only warn if the fallback is different from what might have been in the original clone
+            if (originalProjectClone[name] !== fallback) {
+                warnings.push(`Missing top-level section '${name}', added with fallback value.`);
+            }
         }
     });
 
-    // Preserve unknown fields by making a deep copy of the original project and then merging
-    // This ensures that any fields not explicitly handled here are kept.
-    const normalized = { ...originalProject, ...project };
+    // Merge the potentially modified workingProject back into a clone of the original.
+    // This ensures that any fields present in the original project but not explicitly handled
+    // here are preserved. The workingProject values take precedence if they were added/modified.
+    const normalized = { ...originalProjectClone, ...workingProject };
 
-    // Ensure nested arrays/objects are also handled if they were missing and are now added
-    // Example: if 'roofs' was missing and added as [], ensure its elements are processed if any exist in originalProject
-    // This is a simplified approach; a more robust solution might recursively normalize nested structures.
-
+    // If there were issues (warnings), return them. Otherwise, return empty.
     if (warnings.length > 0) {
         return { ok: true, project: normalized, warnings: warnings };
     } else {
@@ -112,7 +115,8 @@ function safeGetProjectSection(project, sectionName, fallbackValue) {
     if (!project || typeof project !== 'object') {
         return fallbackValue;
     }
-    if (project.hasOwnProperty(sectionName)) {
+    // Use hasOwnProperty for a more robust check against prototype properties
+    if (Object.prototype.hasOwnProperty.call(project, sectionName)) {
         return project[sectionName];
     }
     return fallbackValue;
