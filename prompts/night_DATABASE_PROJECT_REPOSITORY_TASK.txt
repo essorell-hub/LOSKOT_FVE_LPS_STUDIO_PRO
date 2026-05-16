@@ -1,0 +1,7 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+Vytvoř pouze soubor src/database/projectRepositoryPreview.js.
+Neměň HTML, CSS, preview, UI, PROJECT_STATE_UNIFIED.md ani CHANGELOG.md.
+Nepřidávej závislosti.
+Nepoužívej skutečné SQLite připojení, jde o preview repository vrstvu.
+Exportuj: createEmptyProjectRecord, normalizeProjectRecord, saveProjectPreview, loadProjectPreview, listProjectsPreview, deleteProjectPreview, createRepositorySummary.
+Store může být obyčejný JS objekt nebo Map fallback.
