@@ -487,3 +487,492 @@
     }
   }
 }
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loskot.com/schemas/v29/fve",
+  "title": "FVE",
+  "description": "Schéma pro fotovoltaickou elektrárnu (FVE).",
+  "type": "object",
+  "properties": {
+    "panels": {
+      "description": "Seznam fotovoltaických panelů.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/panel"
+      }
+    },
+    "strings": {
+      "description": "Seznam DC stringů.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/string"
+      }
+    },
+    "inverters": {
+      "description": "Seznam střídačů.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/inverter"
+      }
+    },
+    "optimizers": {
+      "description": "Seznam optimizérů.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/optimizer"
+      }
+    },
+    "dcRoutes": {
+      "description": "Seznam DC tras.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/dcRoute"
+      }
+    },
+    "acRoutes": {
+      "description": "Seznam AC tras.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/acRoute"
+      }
+    },
+    "spdDc": {
+      "description": "Seznam DC přepěťových ochran.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/spd"
+      }
+    },
+    "spdAc": {
+      "description": "Seznam AC přepěťových ochran.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/spd"
+      }
+    },
+    "calculations": {
+      "description": "Výsledky FVE výpočtů.",
+      "type": "object",
+      "properties": {
+        "peakPowerWp": {
+          "description": "Celkový instalovaný výkon FVE v kWp.",
+          "type": "number"
+        },
+        "annualYieldKwh": {
+          "description": "Očekávaná roční výroba FVE v kWh.",
+          "type": "number"
+        }
+      }
+    },
+    "datasheets": {
+      "description": "Odkazy na datové listy komponent.",
+      "type": "array",
+      "items": {
+        "$ref": "shared-definitions.schema.json#/$defs/fileReference"
+      }
+    },
+    "warnings": {
+      "description": "Seznam varování týkajících se FVE konfigurace.",
+      "type": "array",
+      "items": {
+        "$ref": "shared-definitions.schema.json#/$defs/auditEntry"
+      }
+    },
+    "qaStatus": {
+      "description": "Stav kontroly kvality FVE modulu.",
+      "$ref": "shared-definitions.schema.json#/$defs/qaStatus"
+    }
+  },
+  "required": [
+    "panels",
+    "strings",
+    "inverters",
+    "dcRoutes",
+    "acRoutes",
+    "calculations",
+    "qaStatus"
+  ],
+  "$defs": {
+    "panel": {
+      "description": "Definice jednoho FVE panelu.",
+      "type": "object",
+      "properties": {
+        "panelId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "roofPlaneId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id",
+          "description": "Odkaz na rovinu střechy, na které je panel umístěn."
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "Výrobce panelu."
+        },
+        "model": {
+          "type": "string",
+          "description": "Model panelu."
+        },
+        "powerWp": {
+          "description": "Nominální výkon panelu ve Wattech (peak).",
+          "type": "number",
+          "unit": "Wp"
+        },
+        "voc": {
+          "description": "Napětí naprázdno (Open Circuit Voltage) panelu.",
+          "type": "number",
+          "unit": "V"
+        },
+        "isc": {
+          "description": "Zkratový proud (Short Circuit Current) panelu.",
+          "type": "number",
+          "unit": "A"
+        },
+        "vmpp": {
+          "description": "Napětí v bodě maximálního výkonu (Voltage at Maximum Power).",
+          "type": "number",
+          "unit": "V"
+        },
+        "impp": {
+          "description": "Proud v bodě maximálního výkonu (Current at Maximum Power).",
+          "type": "number",
+          "unit": "A"
+        },
+        "dimensions": {
+          "$ref": "shared-definitions.schema.json#/$defs/dimensions"
+        },
+        "position": {
+          "$ref": "shared-definitions.schema.json#/$defs/point2d",
+          "description": "Pozice středu panelu v rámci roviny střechy nebo objektu."
+        },
+        "rotation": {
+          "description": "Rotace panelu ve stupních (např. od osy X).",
+          "type": "number",
+          "unit": "°"
+        },
+        "stringId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id",
+          "description": "Odkaz na DC string, ke kterému je panel připojen."
+        },
+        "optimizerId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id",
+          "description": "Odkaz na optimizér připojený k panelu (pokud existuje)."
+        },
+        "cadObjectRef": {
+          "$ref": "shared-definitions.schema.json#/$defs/objectRef",
+          "description": "Odkaz na odpovídající objekt v CAD."
+        },
+        "notes": {
+          "description": "Textové poznámky k panelu.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/note"
+          }
+        }
+      },
+      "required": [
+        "panelId",
+        "roofPlaneId",
+        "manufacturer",
+        "model",
+        "powerWp",
+        "voc",
+        "isc",
+        "vmpp",
+        "impp",
+        "dimensions",
+        "position",
+        "notes"
+      ]
+    },
+    "string": {
+      "description": "Definice jednoho DC stringu.",
+      "type": "object",
+      "properties": {
+        "stringId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "inverterId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id",
+          "description": "Odkaz na střídač, ke kterému je string připojen."
+        },
+        "panelIds": {
+          "description": "Seznam ID panelů ve stringu v pořadí zapojení.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/id"
+          }
+        },
+        "panelCount": {
+          "description": "Počet panelů ve stringu.",
+          "type": "integer",
+          "minimum": 1
+        },
+        "vocTotal": {
+          "description": "Celkové napětí stringu naprázdno.",
+          "type": "number",
+          "unit": "V"
+        },
+        "vmppTotal": {
+          "description": "Celkové napětí stringu v bodě maximálního výkonu.",
+          "type": "number",
+          "unit": "V"
+        },
+        "currentA": {
+          "description": "Proud protékající stringem.",
+          "type": "number",
+          "unit": "A"
+        },
+        "polarity": {
+          "description": "Polarita stringu.",
+          "type": "string",
+          "enum": ["+", "-"]
+        },
+        "dcRouteId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id",
+          "description": "Odkaz na DC trasu, kterou string vede."
+        },
+        "warnings": {
+          "description": "Seznam varování týkajících se tohoto stringu.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/auditEntry"
+          }
+        }
+      },
+      "required": [
+        "stringId",
+        "inverterId",
+        "panelIds",
+        "panelCount",
+        "vocTotal",
+        "vmppTotal",
+        "currentA",
+        "polarity",
+        "dcRouteId"
+      ]
+    },
+    "inverter": {
+      "description": "Definice jednoho střídače.",
+      "type": "object",
+      "properties": {
+        "inverterId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "Výrobce střídače."
+        },
+        "model": {
+          "type": "string",
+          "description": "Model střídače."
+        },
+        "acPowerKw": {
+          "description": "Maximální AC výkon střídače v kW.",
+          "type": "number",
+          "unit": "kW"
+        },
+        "mpptCount": {
+          "description": "Počet MPPT trackerů střídače.",
+          "type": "integer"
+        },
+        "stringInputs": {
+          "description": "Počet vstupů pro stringy na střídači.",
+          "type": "integer"
+        },
+        "location": {
+          "description": "Umístění střídače v objektu.",
+          "type": "string"
+        },
+        "datasheetRef": {
+          "$ref": "shared-definitions.schema.json#/$defs/fileReference",
+          "description": "Odkaz na datový list střídače."
+        },
+        "notes": {
+          "description": "Textové poznámky ke střídači.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/note"
+          }
+        }
+      },
+      "required": [
+        "inverterId",
+        "manufacturer",
+        "model",
+        "acPowerKw",
+        "mpptCount",
+        "stringInputs",
+        "location"
+      ]
+    },
+    "optimizer": {
+      "description": "Definice jednoho optimizéru.",
+      "type": "object",
+      "properties": {
+        "optimizerId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "Výrobce optimizéru."
+        },
+        "model": {
+          "type": "string",
+          "description": "Model optimizéru."
+        },
+        "panelId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id",
+          "description": "Odkaz na panel, ke kterému je optimizér připojen."
+        },
+        "datasheetRef": {
+          "$ref": "shared-definitions.schema.json#/$defs/fileReference",
+          "description": "Odkaz na datový list optimizéru."
+        },
+        "notes": {
+          "description": "Textové poznámky k optimizéru.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/note"
+          }
+        }
+      },
+      "required": [
+        "optimizerId",
+        "manufacturer",
+        "model",
+        "panelId"
+      ]
+    },
+    "dcRoute": {
+      "description": "Definice jedné DC trasy (kabeláže).",
+      "type": "object",
+      "properties": {
+        "dcRouteId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "description": "Název DC trasy."
+        },
+        "cableType": {
+          "type": "string",
+          "description": "Typ použitého DC kabelu."
+        },
+        "lengthM": {
+          "description": "Délka trasy v metrech.",
+          "type": "number",
+          "unit": "m"
+        },
+        "voltageDropV": {
+          "description": "Napěťový úbytek na trase ve Voltech.",
+          "type": "number",
+          "unit": "V"
+        },
+        "warnings": {
+          "description": "Seznam varování týkajících se této DC trasy.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/auditEntry"
+          }
+        }
+      },
+      "required": [
+        "dcRouteId",
+        "name",
+        "cableType",
+        "lengthM",
+        "voltageDropV"
+      ]
+    },
+    "acRoute": {
+      "description": "Definice jedné AC trasy (kabeláže).",
+      "type": "object",
+      "properties": {
+        "acRouteId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "description": "Název AC trasy."
+        },
+        "cableType": {
+          "type": "string",
+          "description": "Typ použitého AC kabelu."
+        },
+        "lengthM": {
+          "description": "Délka trasy v metrech.",
+          "type": "number",
+          "unit": "m"
+        },
+        "voltageDropV": {
+          "description": "Napěťový úbytek na trase ve Voltech.",
+          "type": "number",
+          "unit": "V"
+        },
+        "warnings": {
+          "description": "Seznam varování týkajících se této AC trasy.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/auditEntry"
+          }
+        }
+      },
+      "required": [
+        "acRouteId",
+        "name",
+        "cableType",
+        "lengthM",
+        "voltageDropV"
+      ]
+    },
+    "spd": {
+      "description": "Definice přepěťové ochrany (SPD).",
+      "type": "object",
+      "properties": {
+        "spdId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "Výrobce SPD."
+        },
+        "model": {
+          "type": "string",
+          "description": "Model SPD."
+        },
+        "type": {
+          "description": "Typ SPD (např. Typ 1, Typ 2, Typ 3).",
+          "type": "string"
+        },
+        "voltage": {
+          "description": "Provozní napětí SPD.",
+          "type": "number",
+          "unit": "V"
+        },
+        "location": {
+          "description": "Umístění SPD (např. 'DC strana měniče', 'AC rozvaděč').",
+          "type": "string"
+        },
+        "datasheetRef": {
+          "$ref": "shared-definitions.schema.json#/$defs/fileReference",
+          "description": "Odkaz na datový list SPD."
+        },
+        "warnings": {
+          "description": "Seznam varování týkajících se tohoto SPD.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/auditEntry"
+          }
+        }
+      },
+      "required": [
+        "spdId",
+        "manufacturer",
+        "model",
+        "type",
+        "voltage",
+        "location"
+      ]
+    }
+  }
+}
