@@ -1,0 +1,119 @@
+{
+  "project": {
+    "name": "Sample QA Warning Project",
+    "version": "v29",
+    "description": "A sample project intentionally containing QA warnings.",
+    "qa": {
+      "status": "warning",
+      "warnings": [
+        {
+          "code": "MISSING_DATASHEET",
+          "message": "Panel datasheet is missing.",
+          "component": "PV Array - String 1"
+        },
+        {
+          "code": "UNCLOSED_SPD_CHECK",
+          "message": "SPD check has not been finalized.",
+          "component": "SPD Device A"
+        },
+        {
+          "code": "VOLTAGE_CHECK_REQUIRED",
+          "message": "String voltage requires further inspection.",
+          "component": "PV Array - String 2"
+        }
+      ],
+      "checks": [
+        {
+          "code": "LPS_RISK_REVIEW",
+          "message": "LPS risk assessment is pending review.",
+          "status": "review"
+        },
+        {
+          "code": "CAD_OBJECT_VERIFICATION",
+          "message": "CAD object requires final verification.",
+          "status": "unverified"
+        },
+        {
+          "code": "EXPORT_PACKAGE_STATUS",
+          "message": "Export package is in draft status.",
+          "status": "draft"
+        }
+      ]
+    }
+  },
+  "building": {
+    "address": "123 Warning Lane",
+    "city": "Sampletown",
+    "country": "Fictionalia"
+  },
+  "roof": {
+    "type": "Gable",
+    "pitch": 30,
+    "area": 100
+  },
+  "fve": {
+    "arrays": [
+      {
+        "id": "array1",
+        "name": "Main Array",
+        "strings": [
+          {
+            "id": "string1",
+            "name": "String 1",
+            "panel_count": 10,
+            "panel_model": "FictionalPanel 300W"
+          },
+          {
+            "id": "string2",
+            "name": "String 2",
+            "panel_count": 12,
+            "panel_model": "FictionalPanel 300W"
+          }
+        ],
+        "inverter": {
+          "model": "FictionalInverter 5kW"
+        }
+      }
+    ]
+  },
+  "lps": {
+    "riskAssessment": {
+      "level": "medium",
+      "description": "Standard risk assessment for a medium-sized building."
+    },
+    "protectionMeasures": {
+      "airTermination": "Simple mesh",
+      "downConductors": 2,
+      "earthElectrode": "Ring electrode"
+    }
+  },
+  "spd": {
+    "devices": [
+      {
+        "id": "spd_a",
+        "name": "SPD Device A",
+        "type": "Type 1",
+        "protectionLevel": "2.5kV"
+      }
+    ]
+  },
+  "cad": {
+    "objects": [
+      {
+        "id": "cad_obj_1",
+        "name": "Building Outline",
+        "type": "Polygon",
+        "verified": false
+      }
+    ]
+  },
+  "documents": [],
+  "exports": [
+    {
+      "id": "export1",
+      "name": "Main Export Package",
+      "format": "PDF",
+      "status": "draft"
+    }
+  ]
+}
