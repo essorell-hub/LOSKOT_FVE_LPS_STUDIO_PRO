@@ -1,0 +1,39 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/data-layer/v30/v30_DATA_LAYER_START_PLAN.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 220 řádků.
+
+Dokument musí být praktický plán pro první implementaci v30.
+
+Obsah:
+1. Cíl v30 data layer.
+2. Co už poskytuje v29.
+3. Povolené složky pro v30.
+4. Zakázané zásahy pro v30.
+5. Struktura src/data.
+6. Struktura src/validation.
+7. Struktura src/importExport.
+8. Jak načíst sample project.
+9. Jak validovat projekt.
+10. Jak vracet QA status.
+11. Jak zachovat JSON fallback.
+12. Jak později napojit SQLite.
+13. Jak později napojit UI.
+14. Ochrana proti bílé obrazovce.
+15. Testovací postup.
+16. Doporučené první commity.
+
+Po dokončení vytvoř commit:
+v30 data layer start plan
