@@ -1,0 +1,47 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden soubor:
+src/importExport/jsonImportPreview.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřidávej závislosti do package.json.
+- Import nesmí poškodit aktuální projekt.
+- Import preview nesmí rovnou ukládat data.
+
+Soubor má importovat:
+- normalizeProject z src/data/projectModel.js
+- runProjectQa z src/validation/qaStatusEngine.js
+
+Soubor má exportovat:
+- parseProjectJsonText(jsonText)
+- createImportPreviewFromText(jsonText)
+- createImportPreviewFromObject(rawObject)
+
+createImportPreviewFromText:
+- bezpečně parsuje JSON,
+- při chybě vrací { ok:false, status:"error", errors:[...] },
+- při úspěchu normalizuje projekt,
+- spustí QA,
+- vrátí preview objekt:
+{
+  ok,
+  status,
+  projectPreview,
+  qa,
+  warnings,
+  errors,
+  canImport
+}
+
+Po dokončení vytvoř commit:
+v30 json import preview
