@@ -1,0 +1,36 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/qa/v29/v29_SAMPLE_IMPORT_VALIDATION_PLAN.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 180 řádků.
+
+Dokument musí obsahovat:
+1. Účel testování importu sample projektů.
+2. Test v29_minimal_project.json.
+3. Test v29_full_fve_lps_project.json.
+4. Test v29_roof_geometry_project.json.
+5. Test v29_qa_warning_project.json.
+6. Kontrola JSON syntaxe.
+7. Kontrola JSON schémat.
+8. Kontrola referencí.
+9. Kontrola migrationHistory.
+10. Kontrola QA výsledků.
+11. Kontrola SQLite mapování.
+12. Očekávané warningy.
+13. Očekávané error stavy.
+14. Postup ručního testu.
+15. Tabulka test / očekávání / výsledek / stav.
+
+Po dokončení vytvoř commit:
+v29 sample import validation plan
