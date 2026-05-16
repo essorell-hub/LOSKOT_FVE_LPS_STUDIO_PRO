@@ -1,0 +1,5 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+Vytvoř nebo uprav pouze soubory src/fve/index.js, src/cad/index.js, src/lps/index.js, src/documents/index.js, src/database/index.js, src/export/index.js.
+Neměň HTML, CSS, preview, UI, PROJECT_STATE_UNIFIED.md ani CHANGELOG.md.
+Nepřidávej závislosti.
+Každý index má exportovat veřejné API svého modulu.
