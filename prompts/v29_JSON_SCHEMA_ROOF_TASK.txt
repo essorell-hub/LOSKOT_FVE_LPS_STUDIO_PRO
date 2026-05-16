@@ -1,0 +1,28 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON Schema soubor:
+database/schema/v29/roof.schema.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Použij JSON Schema Draft 2020-12.
+- Používej odkazy na shared-definitions.schema.json, pokud to dává smysl.
+- Piš popisy česky.
+- Výstup drž přiměřeně krátký.
+
+Schéma roof musí obsahovat:
+roofId, buildingId, roofType, planes, ridgeLines, eaves, valleys, obstacles, safetyZones, slope, orientation, material, geometryNotes, cadLayerRef, qaStatus, notes.
+
+Objekt plane musí obsahovat:
+planeId, name, polygon, slope, orientation, usableArea, restrictedArea, assignedPvPanels, assignedAirTerminals, notes.
+
+Po dokončení vytvoř commit:
+v29 json schema roof
