@@ -1,0 +1,31 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON Schema soubor:
+database/schema/v29/documents.schema.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Použij JSON Schema Draft 2020-12.
+- Používej odkazy na shared-definitions.schema.json, pokud to dává smysl.
+- Piš popisy česky.
+- Výstup drž přiměřeně krátký.
+
+Schéma documents musí obsahovat:
+documentTemplates, generatedDocuments, datasheets, attachments, approvals, warnings, qaStatus.
+
+Generated document:
+documentId, templateId, title, type, status, createdAt, updatedAt, fileRef, relatedEntities, notes.
+
+Datasheet:
+datasheetId, deviceType, manufacturer, model, fileRef, source, verified, relatedEntities, notes.
+
+Po dokončení vytvoř commit:
+v29 json schema documents
