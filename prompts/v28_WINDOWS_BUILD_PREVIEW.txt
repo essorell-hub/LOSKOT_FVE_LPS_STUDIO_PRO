@@ -1,0 +1,60 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+DŮLEŽITÉ:
+Nejsi v novém projektu. Navazuješ na aktuální stav repozitáře.
+Vždy nejdřív respektuj PROJECT_STATE_UNIFIED.md a CHANGELOG.md.
+
+Aktuální cíl:
+v28 WINDOWS BUILD PREVIEW
+
+Zachovej:
+- Classic PRO tmavý vzhled,
+- v27 production handoff,
+- module registry,
+- Safe Module Loader,
+- sdílený projektový model,
+- FVE modul,
+- LPS / DEHN modul,
+- SPD / LPZ modul,
+- CAD / mapa modul,
+- Dokumenty,
+- Databáze,
+- Exporty,
+- funkční přepínání obrazovek,
+- ochranu proti bílé obrazovce.
+
+Nesmíš:
+- zrušit Classic PRO vzhled,
+- odstranit žádnou obrazovku,
+- přepsat projekt na úplně jiný layout,
+- smazat v21/v22/v23/v24/v25/v26/v27 preview soubory,
+- ukládat ZIP, EXE, node_modules, dist nebo build výstupy do repozitáře,
+- měnit projekt tak, aby bez Node/Tauri nešel otevřít HTML fallback.
+
+Úkol v28:
+1. Aktualizuj PROJECT_STATE_UNIFIED.md na v28 WINDOWS BUILD PREVIEW.
+2. Aktualizuj CHANGELOG.md a přidej novou sekci v28 nahoře.
+3. Vytvoř nový HTML fallback preview:
+   preview/LOSKOT_FVE_LPS_STUDIO_PRO_v28_WINDOWS_BUILD_PREVIEW.html
+4. V HTML preview zachovej Classic PRO vzhled a doplň obrazovku "Windows Build".
+5. Vytvoř nebo aktualizuj:
+   scripts/check-environment-v28.bat
+   scripts/run-react-preview-v28.bat
+   scripts/run-tauri-preview-v28.bat
+   scripts/open-v28-html-preview.bat
+6. Vytvoř dokument:
+   docs/handoff/v28_WINDOWS_BUILD_PREVIEW_GUIDE.md
+7. Vytvoř kontrolní checklist:
+   docs/checklists/v28_WINDOWS_BUILD_PREVIEW_CHECKLIST.md
+8. Připrav package.json pouze pokud v repozitáři chybí nebo není použitelný.
+9. Připrav Tauri strukturu jen jako preview, bez ostrého Windows buildu.
+10. Zachovej HTML preview jako nouzový fallback.
+
+Výstup musí být praktický pro neprogramátora:
+- jasně pojmenované skripty,
+- jednoduchý návod,
+- žádné nutné ruční programování,
+- žádná bílá obrazovka při chybě modulu.
+
+Po dokončení vytvoř commit s významovou zprávou:
+v28 WINDOWS BUILD PREVIEW
