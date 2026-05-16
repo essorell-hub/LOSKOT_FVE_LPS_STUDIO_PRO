@@ -1,0 +1,21 @@
+{
+  "version": "v20",
+  "name": "LOSKOT FVE & LPS Studio PRO demo",
+  "fve": {
+    "panels": 36,
+    "panelWp": 450,
+    "inverter": "Sungrow 15 kW",
+    "strings": 3
+  },
+  "lps": {
+    "lpl": "LPL III",
+    "airTerminals": 8,
+    "downConductors": 4,
+    "hvi": 2
+  },
+  "spd": {
+    "dc": "T1+T2 DC",
+    "ac": "T1+T2 AC",
+    "lpz": ["LPZ 0A", "LPZ 0B", "LPZ 1", "LPZ 2"]
+  }
+}

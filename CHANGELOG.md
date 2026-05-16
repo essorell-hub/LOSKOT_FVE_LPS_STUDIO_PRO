@@ -1,8 +1,26 @@
 # CHANGELOG
 
-## v20 UNIFIED APP FOUNDATION - plán
+## v20 UNIFIED APP FOUNDATION
 
-- Inicializace sjednoceného repozitáře.
-- Příprava struktury pro FVE + LPS + SPD + CAD + dokumenty.
-- Příprava HTML preview.
-- Příprava budoucí React/Tauri/SQLite architektury.
+- Vytvořen první sjednocený základ programu LOSKOT FVE & LPS STUDIO PRO.
+- Přidán samostatný HTML preview soubor na dvojklik.
+- Zachován směr Classic PRO tmavého rozhraní.
+- Přidáno levé modulové menu.
+- Přidán Dashboard.
+- Přidán Project Inspector.
+- Přidán QA semafor.
+- Přidán FVE modul se základním výpočtem kWp.
+- Přidán LPS / DEHN modul jako základ pro další migraci.
+- Přidán SPD / LPZ modul.
+- Přidán CAD / Mapa modul.
+- Obnovena mapa alespoň jako technický placeholder.
+- Přidán JSON export projektu.
+- Přidána ochrana proti bílé obrazovce.
+
+## v21 SHARED PROJECT MODEL - plán
+
+- Samostatný projektový datový model.
+- JSON schema.
+- Příprava SQLite tabulek.
+- Rozdělení modulů na React strukturu.
+- Import starších funkcí FVE a LPS/DEHN.
