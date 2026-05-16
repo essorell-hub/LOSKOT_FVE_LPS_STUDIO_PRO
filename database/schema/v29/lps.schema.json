@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loskot.com/schemas/v29/lps",
+  "title": "LPS modul",
+  "description": "Schéma pro modul LPS (Ochrana před bleskem).",
+  "type": "object",
+  "properties": {
+    "riskAssessment": {
+      "description": "Posouzení rizika přepětí.",
+      "type": "object",
+      "properties": {
+        "riskAssessmentId": { "$ref": "#/$defs/id" },
+        "method": { "type": "string", "description": "Metoda posouzení rizika (např. 'Metoda založená na normě EN 62305-2')." },
+        "lpsClassResult": { "type": "string", "description": "Výsledná třída LPS." },
+        "inputParameters": { "type": "string", "description": "Vstupní parametry pro výpočet rizika." },
+        "calculatedRisks": { "type": "string", "description": "Vypočtená rizika." },
+        "acceptedRisks": { "type": "string", "description": "Akceptovaná rizika." },
+        "status": { "$ref": "#/$defs/status" },
+        "notes": { "$ref": "#/$defs/note" }
+      },
+      "required": ["riskAssessmentId", "method", "lpsClassResult", "status"]
+    },
+    "lpsClass": {
+      "description": "Třída LPS.",
+      "type": "string",
+      "enum": ["I", "II", "III", "IV"]
+    },
+    "airTermination": {
+      "description": "Systém jímačů.",
+      "type": "object",
+      "properties": {
+        "airTerminationId": { "$ref": "#/$defs/id" },
+        "type": { "type": "string", "description": "Typ jímače (např. ' Franklinova tyč', 'Napnuté lano', 'Síť')." },
+        "position": { "$ref": "#/$defs/point3d" },
+        "height": { "type": "number", "description": "Výška jímače nad chráněným objektem." },
+        "protectionRadius": { "type": "number", "description": "Ochranný poloměr jímače (dle zvolené metody)." },
+        "connectedTo": { "$ref": "#/$defs/entityRef", "description": "Odkaz na entitu, ke které je jímač připojen (např. svod)." },
+        "cadObjectRef": { "$ref": "#/$defs/cadastralInfo", "description": "Odkaz na objekt v CAD." },
+        "notes": { "$ref": "#/$defs/note" }
+      },
+      "required": ["airTerminationId", "type", "position"]
+    },
+    "airTerminals": {
+      "description": "Seznam všech jímačů na objektu.",
+      "type": "array",
+      "items": { "$ref": "#/properties/airTermination" }
+    },
+    "mesh": {
+      "description": "Systém jímající sítě.",
+      "type": "object",
+      "properties": {
+        "meshId": { "$ref": "#/$defs/id" },
+        "gridSize": { "type": "number", "description": "Velikost ok sítě." },
+        "meshType": { "type": "string", "description": "Typ sítě (např. 'rovnoběžná', 'křížová')." },
+        "notes": { "$ref": "#/$defs/note" }
+      },
+      "required": ["meshId", "gridSize"]
+    },
+    "downConductors": {
+      "description": "Seznam svodů.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "downConductorId": { "$ref": "#/$defs/id" },
+          "facadeRef": { "type": "string", "description": "Odkaz na fasádu objektu." },
+          "route": { "type": "string", "description": "Popis trasy svodu." },
+          "material": { "type": "string", "description": "Materiál svodu." },
+          "crossSection": { "type": "number", "description": "Průřez svodu v mm²." },
+          "connectionPoint": { "$ref": "#/$defs/point3d", "description": "Připojovací bod svodu." },
+          "earthingRef": { "$ref": "#/$defs/entityRef", "description": "Odkaz na uzemnění." },
+          "cadObjectRef": { "$ref": "#/$defs/cadastralInfo", "description": "Odkaz na objekt v CAD." },
+          "notes": { "$ref": "#/$defs/note" }
+        },
+        "required": ["downConductorId", "route", "material", "crossSection", "connectionPoint"]
+      }
+    },
+    "hvi": {
+      "description": "Vysokonapěťové oddělení.",
+      "type": "object",
+      "properties": {
+        "hviId": { "$ref": "#/$defs/id" },
+        "description": { "type": "string", "description": "Popis HVI." },
+        "distance": { "type": "number", "description": "Bezpečnostní vzdálenost." },
+        "notes": { "$ref": "#/$defs/note" }
+      },
+      "required": ["hviId", "description", "distance"]
+    },
+    "earthing": {
+      "description": "Uzemnění.",
+      "type": "object",
+      "properties": {
+        "earthingId": { "$ref": "#/$defs/id" },
+        "type": { "type": "string", "description": "Typ uzemnění (např. 'páskové', 'tyčové')." },
+        "resistance": { "type": "number", "description": "Hodnota zemního odporu v Ohmech." },
+        "description": { "type": "string", "description": "Popis uzemňovací soustavy." },
+        "notes": { "$ref": "#/$defs/note" }
+      },
+      "required": ["earthingId", "type", "resistance"]
+    },
+    "spd": {
+      "description": "Přepěťová ochranná zařízení (SPD).",
+      "type": "object",
+      "properties": {
+        "spdId": { "$ref": "#/$defs/id" },
+        "deviceType": { "type": "string", "description": "Typ SPD (např. 'Typ 1', 'Typ 2', 'Typ 3')." },
+        "manufacturer": { "type": "string" },
+        "model": { "type": "string" },
+        "ratedVoltage": { "type": "number", "description": "Jmenovité napětí SPD." },
+        "maxCurrent": { "type": "number", "description": "Maximální impulsní proud." },
+        "notes": { "$ref": "#/$defs/note" }
+      },
+      "required": ["spdId", "deviceType", "manufacturer", "model"]
+    },
+    "lpz": {
+      "description": "Zóny omezení přepětí (LPZ).",
+      "type": "object",
+      "properties": {
+        "lpzId": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "description": "Název zóny (např. 'LPZ 0', 'LPZ 1')." },
+        "level": { "type": "integer", "description": "Úroveň zóny (dle normy)." },
+        "boundaryDescription": { "type": "string", "description": "Popis hranic zóny." },
+        "relatedObjects": {
+          "type": "array",
+          "description": "Odkazy na související objekty (např. SPD).",
+          "items": { "$ref": "#/$defs/objectRef" }
+        },
+        "notes": { "$ref": "#/$defs/note" }
+      },
+      "required": ["lpzId", "name", "level"]
+    },
+    "normativeChecks": {
+      "description": "Normativní kontroly a výsledky.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "checkId": { "$ref": "#/$defs/id" },
+          "norm": { "type": "string", "description": "Norma, podle které byla kontrola provedena." },
+          "description": { "type": "string", "description": "Popis kontroly." },
+          "result": { "type": "boolean", "description": "Výsledek kontroly (true = vyhovuje)." },
+          "notes": { "type": "string" }
+        },
+        "required": ["checkId", "norm", "description", "result"]
+      }
+    },
+    "warnings": {
+      "description": "Varování a upozornění.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "warningId": { "$ref": "#/$defs/id" },
+          "severity": { "$ref": "#/$defs/severity" },
+          "message": { "type": "string", "description": "Text varování." },
+          "relatedEntity": { "$ref": "#/$defs/entityRef" }
+        },
+        "required": ["warningId", "severity", "message"]
+      }
+    },
+    "qaStatus": { "$ref": "shared-definitions.schema.json#/$defs/qaStatus" }
+  },
+  "required": [
+    "riskAssessment",
+    "lpsClass",
+    "airTerminals",
+    "mesh",
+    "downConductors",
+    "hvi",
+    "earthing",
+    "spd",
+    "lpz",
+    "normativeChecks",
+    "warnings",
+    "qaStatus"
+  ],
+  "allOf": [
+    {
+      "$ref": "shared-definitions.schema.json"
+    }
+  ]
+}
