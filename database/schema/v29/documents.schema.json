@@ -1,0 +1,274 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loskot.com/schemas/v29/documents",
+  "title": "Dokumenty",
+  "description": "Schéma pro správu dokumentů v projektu LOSKOT FVE & LPS STUDIO PRO v29.",
+  "type": "object",
+  "properties": {
+    "documentTemplates": {
+      "description": "Šablony pro generování dokumentů.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/documentTemplate"
+      }
+    },
+    "generatedDocuments": {
+      "description": "Vygenerované dokumenty projektu.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/generatedDocument"
+      }
+    },
+    "datasheets": {
+      "description": "Technické listy zařízení.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/datasheet"
+      }
+    },
+    "attachments": {
+      "description": "Přílohy k projektu.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/fileReference"
+      }
+    },
+    "approvals": {
+      "description": "Schválení dokumentů nebo částí projektu.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/approval"
+      }
+    },
+    "warnings": {
+      "description": "Varování týkající se dokumentace nebo projektu.",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/warning"
+      }
+    },
+    "qaStatus": {
+      "description": "Stav kvality a kontroly pro dokumenty.",
+      "$ref": "shared-definitions.schema.json#/$defs/qaStatus"
+    }
+  },
+  "required": [
+    "documentTemplates",
+    "generatedDocuments",
+    "datasheets",
+    "attachments",
+    "approvals",
+    "warnings",
+    "qaStatus"
+  ],
+  "$defs": {
+    "documentTemplate": {
+      "description": "Definice šablony dokumentu.",
+      "type": "object",
+      "properties": {
+        "templateId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "name": {
+          "type": "string",
+          "description": "Název šablony."
+        },
+        "description": {
+          "type": "string",
+          "description": "Popis šablony."
+        },
+        "version": {
+          "type": "string",
+          "description": "Verze šablony."
+        },
+        "fileRef": {
+          "$ref": "shared-definitions.schema.json#/$defs/fileReference"
+        }
+      },
+      "required": [
+        "templateId",
+        "name",
+        "version",
+        "fileRef"
+      ]
+    },
+    "generatedDocument": {
+      "description": "Informace o vygenerovaném dokumentu.",
+      "type": "object",
+      "properties": {
+        "documentId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "templateId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "title": {
+          "type": "string",
+          "description": "Název dokumentu."
+        },
+        "type": {
+          "type": "string",
+          "description": "Typ dokumentu (např. 'protokol', 'zpráva', 'výkaz')."
+        },
+        "status": {
+          "$ref": "shared-definitions.schema.json#/$defs/status"
+        },
+        "createdAt": {
+          "$ref": "shared-definitions.schema.json#/$defs/timestamp"
+        },
+        "updatedAt": {
+          "$ref": "shared-definitions.schema.json#/$defs/timestamp"
+        },
+        "fileRef": {
+          "$ref": "shared-definitions.schema.json#/$defs/fileReference"
+        },
+        "relatedEntities": {
+          "description": "Odkazy na související entity v projektu.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/entityRef"
+          }
+        },
+        "notes": {
+          "description": "Poznámky k dokumentu.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/note"
+          }
+        }
+      },
+      "required": [
+        "documentId",
+        "templateId",
+        "title",
+        "type",
+        "status",
+        "createdAt",
+        "updatedAt",
+        "fileRef"
+      ]
+    },
+    "datasheet": {
+      "description": "Informace o technickém listu zařízení.",
+      "type": "object",
+      "properties": {
+        "datasheetId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "deviceType": {
+          "type": "string",
+          "description": "Typ zařízení (např. 'invertor', 'panel', 'SPD')."
+        },
+        "manufacturer": {
+          "type": "string",
+          "description": "Výrobce zařízení."
+        },
+        "model": {
+          "type": "string",
+          "description": "Model zařízení."
+        },
+        "fileRef": {
+          "$ref": "shared-definitions.schema.json#/$defs/fileReference"
+        },
+        "source": {
+          "type": "string",
+          "description": "Zdroj technického listu (např. URL, název souboru)."
+        },
+        "verified": {
+          "type": "boolean",
+          "description": "Příznak, zda byl technický list ověřen."
+        },
+        "relatedEntities": {
+          "description": "Odkazy na související entity v projektu.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/entityRef"
+          }
+        },
+        "notes": {
+          "description": "Poznámky k technickému listu.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/note"
+          }
+        }
+      },
+      "required": [
+        "datasheetId",
+        "deviceType",
+        "manufacturer",
+        "model",
+        "fileRef",
+        "verified"
+      ]
+    },
+    "approval": {
+      "description": "Informace o schválení.",
+      "type": "object",
+      "properties": {
+        "approvalId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "approverName": {
+          "type": "string",
+          "description": "Jméno schvalující osoby/organizace."
+        },
+        "approvalDate": {
+          "$ref": "shared-definitions.schema.json#/$defs/timestamp"
+        },
+        "documentId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id",
+          "description": "Odkaz na schválený dokument (pokud se vztahuje na konkrétní dokument)."
+        },
+        "notes": {
+          "description": "Poznámky ke schválení.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/note"
+          }
+        }
+      },
+      "required": [
+        "approvalId",
+        "approverName",
+        "approvalDate"
+      ]
+    },
+    "warning": {
+      "description": "Informace o varování.",
+      "type": "object",
+      "properties": {
+        "warningId": {
+          "$ref": "shared-definitions.schema.json#/$defs/id"
+        },
+        "severity": {
+          "$ref": "shared-definitions.schema.json#/$defs/severity"
+        },
+        "message": {
+          "type": "string",
+          "description": "Text varování."
+        },
+        "details": {
+          "type": "string",
+          "description": "Podrobnější popis varování."
+        },
+        "relatedEntities": {
+          "description": "Odkazy na související entity.",
+          "type": "array",
+          "items": {
+            "$ref": "shared-definitions.schema.json#/$defs/entityRef"
+          }
+        },
+        "createdAt": {
+          "$ref": "shared-definitions.schema.json#/$defs/timestamp"
+        }
+      },
+      "required": [
+        "warningId",
+        "severity",
+        "message",
+        "createdAt"
+      ]
+    }
+  }
+}
