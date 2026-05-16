@@ -1,0 +1,6 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+Vytvoř pouze soubor src/fve/panelSelectionModel.js.
+Neměň HTML, CSS, preview, UI, PROJECT_STATE_UNIFIED.md ani CHANGELOG.md.
+Nepřidávej závislosti.
+Exportuj: createPanelSelectionState, selectAllPanels, selectPartialPanels, clearPanelSelection, togglePanelSelection, moveSelectedPanels, getPanelSelectionSummary.
+Používej immutable-friendly kopie a bezpečné fallbacky.
