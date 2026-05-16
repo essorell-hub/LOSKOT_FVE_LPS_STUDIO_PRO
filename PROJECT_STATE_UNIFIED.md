@@ -6,15 +6,15 @@ LOSKOT FVE & LPS STUDIO PRO
 
 ## Aktuální verze
 
-v20 UNIFIED APP FOUNDATION
+v21 SHARED PROJECT MODEL
 
 ## Stav
 
-Repozitář byl inicializován a v20 vytváří první sjednocený základ aplikace.
+Repozitář pokračuje ze základny `v20 UNIFIED APP FOUNDATION`. Verze v21 zachovává Classic PRO tmavý vzhled, levé modulové menu, dashboard, Project Inspector, CAD/mapa preview, JSON export a ochranu proti bílé obrazovce. Hlavní změna v21 je společný datový model projektu pro FVE + LPS, aby program nepůsobil jako samostatný hromosvodářský nástroj.
 
 ## Hlavní cíl
 
-Jeden společný program pro FVE, LPS/DEHN, SPD/LPZ, CAD/mapu, dokumenty, databáze zařízení, exporty a pozdější Windows aplikaci.
+Jeden společný program pro FVE, LPS/DEHN, SPD/LPZ, CAD/mapu, dokumenty, databáze zařízení, exporty a pozdější Windows aplikaci přes React/Tauri/SQLite.
 
 ## Zdrojové větve
 
@@ -24,6 +24,10 @@ LOSKOT FVE Studio PRO slouží jako zdroj pro:
 
 - datový model zakázky,
 - Project Inspector,
+- FVE panely,
+- stringy,
+- DC trasy,
+- měniče,
 - dokumenty,
 - databáze zařízení,
 - exportní balíčky,
@@ -41,6 +45,8 @@ LOSKOT DEHN Risk Tool Pro / LPS Studio slouží jako zdroj pro:
 - HVI,
 - svody,
 - zemnění,
+- SPD,
+- LPZ,
 - mapu a technický náhled.
 
 ## Nezrušit / nepoškodit
@@ -48,16 +54,19 @@ LOSKOT DEHN Risk Tool Pro / LPS Studio slouží jako zdroj pro:
 - Classic PRO tmavý vzhled.
 - Levé menu.
 - Dashboard.
+- Funkční přepínání obrazovek.
 - Project Inspector.
 - CAD preview.
 - Mapa nebo její technický placeholder.
 - Automatické náhledy.
 - JSON export.
+- JSON import jako základ budoucí databáze.
 - Ochrana proti bílé obrazovce.
 
 ## Cílové moduly
 
 - Dashboard
+- Sdílený projektový model
 - Project Inspector
 - FVE
 - LPS / DEHN
@@ -68,38 +77,104 @@ LOSKOT DEHN Risk Tool Pro / LPS Studio slouží jako zdroj pro:
 - Exporty
 - Nastavení
 
-## Stav v20
+## Sdílený datový model v21
+
+Model je rozdělen na samostatné sekce:
+
+- `zakazka`
+- `objekt`
+- `strecha`
+- `fve`
+- `lps`
+- `spd`
+- `lpz`
+- `cad`
+- `dokumenty`
+- `databaze`
+- `exporty`
+- `qa`
+
+Ukázkový JSON projekt je uložen zde:
+
+`database/sample-projects/LOSKOT_FVE_LPS_STUDIO_PRO_v21_sample_project.json`
+
+## Příprava na React/Tauri/SQLite
+
+v21 je pořád kontrolovatelný HTML preview soubor na dvojklik, ale datový model je připravený pro pozdější rozdělení do těchto vrstev:
+
+```text
+src/
+  app/
+  components/
+  modules/
+    dashboard/
+    project-model/
+    fve/
+    lps/
+    spd-lpz/
+    cad-map/
+    documents/
+    database/
+    exports/
+  engines/
+  database/
+  export/
+src-tauri/
+database/
+  sample-projects/
+```
+
+Navržené SQLite tabulky:
+
+- `projects`
+- `objects`
+- `roofs`
+- `pv_arrays`
+- `pv_strings`
+- `inverters`
+- `lps_components`
+- `spd_devices`
+- `lpz_zones`
+- `cad_objects`
+- `documents`
+- `exports`
+
+## Stav v21
 
 Hotovo:
 
-- samostatný HTML preview soubor na dvojklik,
-- Classic PRO dark shell,
-- funkční přepínání modulů,
-- sjednocený datový model projektu,
-- Project Inspector,
-- QA semafor,
-- CAD SVG preview,
-- mapa jako technický placeholder,
+- nový HTML preview soubor do `/preview`,
+- zachování Classic PRO shellu z v20,
+- zachování funkčního přepínání modulů,
+- výraznější prezentace jako společný FVE + LPS program,
+- samostatná obrazovka Sdílený model,
+- oddělení dat zakázka / objekt / střecha / FVE / LPS / SPD / LPZ / CAD / dokumenty / databáze / exporty,
+- ukázková data projektu,
 - JSON export,
-- ochrana proti bílé obrazovce.
+- JSON import s kontrolou povinných sekcí,
+- Project Inspector napojený na sdílený model,
+- QA semafor v21,
+- CAD preview se společnými FVE + LPS vrstvami,
+- ochrana proti bílé obrazovce přes bezpečné vykreslování modulu a globální zachytávání chyb.
 
 Není hotovo:
 
 - skutečný import starých HTML zdrojů,
 - plné normové výpočty,
-- SQLite databáze,
+- fyzická SQLite databáze,
 - React/Tauri build,
 - práce s reálnými mapovými podklady,
-- dokumentové šablony.
+- dokumentové šablony DOCX/PDF.
 
 ## Další verze
 
-v21 SHARED PROJECT MODEL
+v22 REACT TAURI SCAFFOLD
 
-Cíl:
+Doporučený cíl:
 
-- rozdělit projektový model do samostatných částí,
-- připravit JSON schema,
-- připravit import/export projektu,
-- navrhnout SQLite tabulky,
-- připravit React komponentovou strukturu.
+- převést současný HTML preview do čisté React struktury,
+- oddělit datový model do samostatného souboru,
+- oddělit FVE/LPS/SPD/LPZ/CAD moduly,
+- zachovat Classic PRO vzhled,
+- vytvořit první Tauri-ready strukturu,
+- připravit SQLite adapter bez ostrého zápisu do databáze.

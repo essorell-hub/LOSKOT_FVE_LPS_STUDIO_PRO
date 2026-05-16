@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LOSKOT FVE & LPS STUDIO PRO v21 SHARED PROJECT MODEL</title>
+<style>
+:root{--bg:#0b1118;--panel:#111b26;--panel2:#162230;--panel3:#0f1823;--line:#26384a;--txt:#e7eef7;--muted:#93a6ba;--acc:#f3b33d;--acc2:#ffd36b;--ok:#4ade80;--warn:#facc15;--bad:#fb7185;--blue:#60a5fa;--pv:#38bdf8;--lps:#f59e0b;--spd:#a78bfa}*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:radial-gradient(circle at 30% 0,#182638,#0b1118 45%,#070b10);color:var(--txt);font:14px/1.45 Segoe UI,Roboto,Arial,sans-serif;overflow:hidden}.app{height:100vh;display:grid;grid-template-columns:270px 1fr 340px;grid-template-rows:60px 1fr 132px}.top{grid-column:1/4;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,#0d1621,#111d2a)}.brand{display:flex;gap:12px;align-items:center}.logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 160deg,var(--acc),#fff1b8,var(--pv),var(--lps),var(--acc));box-shadow:0 0 24px #f3b33d55}.brand h1{font-size:16px;margin:0;letter-spacing:.4px}.brand small{color:var(--muted)}.status{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.pill{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#0d1722;color:var(--muted);white-space:nowrap}.pill.ok{color:var(--ok);border-color:#285c3a}.pill.fve{color:var(--pv);border-color:#1e4e62}.pill.lps{color:var(--lps);border-color:#6b4a13}.side{border-right:1px solid var(--line);background:#0b131d;padding:12px;overflow:auto}.section-title{font-size:11px;color:#72869a;margin:14px 8px 7px;text-transform:uppercase;letter-spacing:.12em}.nav button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px solid transparent;background:transparent;color:#b8c8d8;padding:10px 11px;border-radius:10px;cursor:pointer;text-align:left}.nav button:hover{background:#122032}.nav button.active{background:linear-gradient(90deg,#1b2c3e,#132032);border-color:#36506b;color:#fff}.nav .tag{font-size:10px;padding:2px 6px;border-radius:999px;background:#1e3043;color:#9fb3c8}.main{padding:14px;overflow:auto}.right{border-left:1px solid var(--line);background:#0b131d;padding:12px;overflow:auto}.bottom{grid-column:1/4;border-top:1px solid var(--line);background:#081018;display:grid;grid-template-columns:270px 1fr 340px}.mini{padding:10px 12px;border-right:1px solid var(--line);overflow:auto}.log,pre{font-family:Consolas,Menlo,monospace;font-size:12px;color:#98abc0}.module-title{font-size:24px;margin:2px 0 4px}.sub{color:var(--muted);margin:0 0 12px}.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}.card{background:linear-gradient(180deg,#121e2b,#0f1823);border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 40px #0006;overflow:hidden}.card h2{font-size:15px;margin:0;padding:14px 15px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}.card .body{padding:14px}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.kpi{background:#0c1520;border:1px solid #223346;border-radius:14px;padding:12px}.kpi b{display:block;font-size:22px}.kpi span{color:var(--muted);font-size:12px}.table{width:100%;border-collapse:collapse}.table td,.table th{border-bottom:1px solid #213144;padding:8px;text-align:left;vertical-align:top}.table th{color:#8fa4b8;font-size:12px}.notice{border:1px dashed #425a72;background:#0c1722;border-radius:14px;padding:12px;color:#b8c8d8}.cadWrap{height:430px;border-radius:14px;border:1px solid #2b4055;background:#09111a;overflow:hidden}.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.tools button,.primary,label.fileBtn{border:1px solid #36506b;background:#132236;color:#dce8f5;border-radius:10px;padding:8px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}.tools button:hover,.primary:hover,label.fileBtn:hover{border-color:var(--acc)}input[type=file]{display:none}.qaRow{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #223346;padding:9px 0;gap:10px}.dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:8px}.okdot{background:var(--ok)}.warndot{background:var(--warn)}.baddot{background:var(--bad)}.muted{color:var(--muted)}.badge{font-size:11px;border:1px solid #32475d;background:#101b27;border-radius:999px;padding:3px 7px;color:#9fb3c8}.schema{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.schemaItem{border:1px solid #2b4055;background:#0c1520;border-radius:12px;padding:10px}.schemaItem b{display:block;color:#fff}.schemaItem span{font-size:11px;color:var(--muted)}.err{position:fixed;inset:auto 20px 20px auto;background:#2a1118;border:1px solid #7f1d1d;color:#fecdd3;border-radius:12px;padding:12px;max-width:560px;z-index:99}.fallback{border:1px solid #7f1d1d;background:#1c1118;border-radius:14px;padding:14px;color:#fecdd3}textarea{width:100%;min-height:245px;background:#071019;color:#cfe2f6;border:1px solid #30475e;border-radius:12px;padding:12px;resize:vertical}.lock{color:#f7c86a}.twoTone{display:inline-flex;gap:6px}.twoTone i{font-style:normal;padding:2px 7px;border-radius:999px;border:1px solid #28445c}.twoTone i:first-child{color:var(--pv)}.twoTone i:last-child{color:var(--lps)}@media(max-width:1100px){body{overflow:auto}.app{height:auto;min-height:100vh;grid-template-columns:1fr;grid-template-rows:auto}.top,.bottom{grid-column:auto}.side,.right{border:0}.bottom{grid-template-columns:1fr}.grid,.split,.grid3{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.schema{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div id="app" class="app">
+<header class="top"><div class="brand"><div class="logo"></div><div><h1>LOSKOT FVE & LPS STUDIO PRO</h1><small>v21 SHARED PROJECT MODEL / společný FVE + LPS program</small></div></div><div class="status"><span class="pill fve">FVE aktivní</span><span class="pill lps">LPS / DEHN aktivní</span><span class="pill ok">bez bílé obrazovky</span><span class="pill">JSON import/export</span></div></header>
+<aside class="side"><div class="section-title">Hlavní moduly</div><nav class="nav" id="nav"></nav><div class="section-title">Zámek vzhledu</div><div class="notice"><b class="lock">Classic PRO vzhled je zachován.</b><br>v21 mění hlavně datový model, ne schválený tmavý shell ani přepínání obrazovek.</div><div class="section-title">Sdílený model</div><div class="notice">Zakázka → Objekt → Střecha → FVE → LPS → SPD → LPZ → CAD → Dokumenty → Databáze → Exporty.</div></aside>
+<main class="main"><div id="view"></div></main>
+<aside class="right"><div class="card"><h2>Project Inspector <span>LIVE</span></h2><div class="body" id="inspector"></div></div><br><div class="card"><h2>QA semafor v21</h2><div class="body" id="qa"></div></div><br><div class="card"><h2>Model health</h2><div class="body" id="health"></div></div></aside>
+<footer class="bottom"><div class="mini"><b>Náhledy</b><div class="log">[CAD] objekt / střecha / FVE / LPS / LPZ<br>[MAP] technický placeholder<br>[MODEL] sdílený JSON základ pro SQLite</div></div><div class="mini"><b>Technický log</b><div id="log" class="log"></div></div><div class="mini"><b>Export / import</b><br><button class="primary" onclick="exportJson()">Export JSON</button> <label class="fileBtn">Import JSON<input id="importFile" type="file" accept="application/json,.json" onchange="importJson(event)"></label></div></footer>
+</div>
+<script id="sampleProjectJson" type="application/json">{
+  "schemaVersion": "21.0.0",
+  "appVersion": "v21 SHARED PROJECT MODEL",
+  "meta": {
+    "program": "LOSKOT FVE & LPS STUDIO PRO",
+    "projectId": "FVE-LPS-DEMO-021",
+    "createdAt": "2026-05-16T00:00:00+02:00",
+    "updatedAt": "2026-05-16T00:00:00+02:00",
+    "language": "cs-CZ",
+    "status": "preview",
+    "sourceBase": "v20 UNIFIED APP FOUNDATION"
+  },
+  "zakazka": {
+    "nazev": "Administrativní objekt - společný návrh FVE + LPS",
+    "cisloZakazky": "FVE-LPS-DEMO-021",
+    "investor": "Interní demo investor",
+    "projektant": "LOSKOT FVE & LPS STUDIO PRO",
+    "mistoStavby": "Česká republika",
+    "kraj": "Jihomoravský kraj",
+    "katastralniUzemi": "Demo KÚ",
+    "parcelniCisla": [
+      "123/4",
+      "123/5"
+    ],
+    "stupenDokumentace": "studie / návrh pro koordinaci",
+    "poznamka": "Ukázková data pro ověření sdíleného datového modelu."
+  },
+  "objekt": {
+    "typ": "administrativní objekt",
+    "pudorys": {
+      "delkaM": 42,
+      "sirkaM": 18,
+      "vyskaM": 9.5
+    },
+    "konstrukce": "zděná / ocelové prvky",
+    "pozarnaVyskaM": 7.8,
+    "umisteniTechnologie": "střecha + technická místnost 1.NP"
+  },
+  "strecha": {
+    "typ": "sedlová",
+    "krytina": "plechová krytina",
+    "sklonStupne": 22,
+    "orientaceHrebene": "V-Z",
+    "roviny": [
+      {
+        "id": "roof-a",
+        "nazev": "jižní rovina",
+        "azimut": 180,
+        "plochaM2": 330,
+        "vyuzitelnaPlochaM2": 210
+      },
+      {
+        "id": "roof-b",
+        "nazev": "severní rovina",
+        "azimut": 0,
+        "plochaM2": 330,
+        "vyuzitelnaPlochaM2": 35
+      }
+    ],
+    "prekazky": [
+      {
+        "typ": "komín",
+        "x": 18,
+        "y": 7
+      },
+      {
+        "typ": "výlez",
+        "x": 30,
+        "y": 10
+      }
+    ]
+  },
+  "fve": {
+    "aktivni": true,
+    "system": "střešní FVE bez akumulace",
+    "panely": {
+      "pocet": 36,
+      "vykonWp": 450,
+      "typ": "mono half-cut 450 Wp",
+      "orientace": "na výšku",
+      "sklonStupne": 22
+    },
+    "stringy": [
+      {
+        "id": "S1",
+        "pocetPanelu": 12,
+        "mppt": 1,
+        "dcTrasa": "DC-01"
+      },
+      {
+        "id": "S2",
+        "pocetPanelu": 12,
+        "mppt": 1,
+        "dcTrasa": "DC-02"
+      },
+      {
+        "id": "S3",
+        "pocetPanelu": 12,
+        "mppt": 2,
+        "dcTrasa": "DC-03"
+      }
+    ],
+    "menice": [
+      {
+        "id": "INV-01",
+        "vyrobce": "Sungrow",
+        "typ": "SG15RT demo",
+        "vykonKw": 15,
+        "umisteni": "technická místnost"
+      }
+    ],
+    "optimalizatory": {
+      "pouzity": false,
+      "poznamka": "připraveno pro pozdější doplnění"
+    },
+    "dcTrasy": [
+      {
+        "id": "DC-01",
+        "delkaM": 28
+      },
+      {
+        "id": "DC-02",
+        "delkaM": 31
+      },
+      {
+        "id": "DC-03",
+        "delkaM": 34
+      }
+    ],
+    "vypocty": {
+      "instalovanyVykonKwp": 16.2,
+      "predbeznyRocniVynosKwh": 15800
+    }
+  },
+  "lps": {
+    "aktivni": true,
+    "normovyZaklad": "ČSN EN 62305 - pracovní model, finální kontrola později",
+    "tridaLps": "LPS III",
+    "lpl": "LPL III",
+    "jimaciSoustava": {
+      "typ": "mřížová + tyčové jímače",
+      "jimacePocet": 8,
+      "vodiceM": 118
+    },
+    "svody": [
+      {
+        "id": "SV-01",
+        "typ": "FeZn / fasáda",
+        "delkaM": 10
+      },
+      {
+        "id": "SV-02",
+        "typ": "FeZn / fasáda",
+        "delkaM": 10
+      },
+      {
+        "id": "SV-03",
+        "typ": "FeZn / fasáda",
+        "delkaM": 10
+      },
+      {
+        "id": "SV-04",
+        "typ": "FeZn / fasáda",
+        "delkaM": 10
+      }
+    ],
+    "hvi": {
+      "pouzito": true,
+      "pocetTras": 2,
+      "poznamka": "koordinační placeholder pro oddálený hromosvod u FVE"
+    },
+    "uzemneni": {
+      "typ": "obvodový zemnič",
+      "material": "FeZn 30x4",
+      "delkaM": 122,
+      "stav": "návrh"
+    },
+    "riziko": {
+      "stav": "předběžný návrh",
+      "vysledek": "pro detailní výpočet doplnit vstupní rizikové parametry"
+    }
+  },
+  "spd": {
+    "dc": {
+      "typ": "T1+T2 DC",
+      "umisteni": "u měniče / rozvaděč R-FVE",
+      "stav": "navrženo"
+    },
+    "ac": {
+      "typ": "T1+T2 AC",
+      "umisteni": "hlavní rozvaděč / podružný rozvaděč",
+      "stav": "navrženo"
+    },
+    "datoveLinky": {
+      "typ": "připraveno",
+      "stav": "čeká na MaR rozsah"
+    }
+  },
+  "lpz": {
+    "zony": [
+      {
+        "id": "LPZ-0A",
+        "popis": "venkovní prostor vystavený přímému úderu"
+      },
+      {
+        "id": "LPZ-0B",
+        "popis": "chráněný venkovní prostor v ochranném prostoru LPS"
+      },
+      {
+        "id": "LPZ-1",
+        "popis": "vnitřní rozvody po SPD T1/T2"
+      },
+      {
+        "id": "LPZ-2",
+        "popis": "citlivá technologie / MaR / monitoring"
+      }
+    ],
+    "koordinace": "připravena vazba FVE DC, AC, MaR a datové komunikace"
+  },
+  "cad": {
+    "jednotky": "m",
+    "meritko": "pracovní preview",
+    "vrstvy": [
+      "objekt",
+      "střecha",
+      "FVE panely",
+      "stringy",
+      "DC trasy",
+      "jímače",
+      "svody",
+      "HVI",
+      "zemnění",
+      "LPZ",
+      "mapa"
+    ],
+    "objekty": [
+      {
+        "id": "B-01",
+        "typ": "building",
+        "x": 80,
+        "y": 80,
+        "w": 620,
+        "h": 300
+      },
+      {
+        "id": "PV-GROUP-01",
+        "typ": "pv-array",
+        "x": 225,
+        "y": 140,
+        "cols": 12,
+        "rows": 3
+      },
+      {
+        "id": "LPS-RING-01",
+        "typ": "earthing-ring",
+        "x": 72,
+        "y": 388,
+        "w": 636,
+        "h": 34
+      }
+    ],
+    "mapa": {
+      "stav": "technický placeholder",
+      "budouciZdroj": "mapový podklad / katastr / situace"
+    }
+  },
+  "dokumenty": {
+    "sablony": [
+      "Technická zpráva FVE",
+      "Technická zpráva LPS",
+      "Protokol SPD/LPZ",
+      "Výkaz zařízení",
+      "JSON export projektu"
+    ],
+    "stav": "připraveno pro napojení šablon DOCX/PDF"
+  },
+  "databaze": {
+    "cil": "SQLite",
+    "tabulky": [
+      "projects",
+      "objects",
+      "roofs",
+      "pv_arrays",
+      "pv_strings",
+      "inverters",
+      "lps_components",
+      "spd_devices",
+      "lpz_zones",
+      "cad_objects",
+      "documents",
+      "exports"
+    ],
+    "sampleProjectPath": "database/sample-projects/LOSKOT_FVE_LPS_STUDIO_PRO_v21_sample_project.json"
+  },
+  "exporty": {
+    "jsonImportExport": true,
+    "pdf": false,
+    "docx": false,
+    "zipPack": true
+  },
+  "qa": {
+    "stav": "preview vyhovuje",
+    "polozky": [
+      {
+        "id": "QA-01",
+        "nazev": "Classic PRO vzhled zachován",
+        "stav": "ok"
+      },
+      {
+        "id": "QA-02",
+        "nazev": "Přepínání obrazovek zachováno",
+        "stav": "ok"
+      },
+      {
+        "id": "QA-03",
+        "nazev": "Sdílený datový model projektu",
+        "stav": "ok"
+      },
+      {
+        "id": "QA-04",
+        "nazev": "JSON import/export připraven",
+        "stav": "ok"
+      },
+      {
+        "id": "QA-05",
+        "nazev": "SQLite pouze příprava",
+        "stav": "warning"
+      },
+      {
+        "id": "QA-06",
+        "nazev": "Normové výpočty čekají na další verzi",
+        "stav": "warning"
+      }
+    ]
+  }
+}</script>
+<script>
+'use strict';
+const REQUIRED_SECTIONS=['zakazka','objekt','strecha','fve','lps','spd','lpz','cad','dokumenty','databaze','exporty'];
+const MODULES=[['dashboard','Dashboard','CORE'],['model','Sdílený model','JSON'],['fve','FVE modul','PV'],['lps','LPS / DEHN','LPS'],['spd','SPD / LPZ','SPD'],['cad','CAD / Mapa','CAD'],['docs','Dokumenty','DOC'],['db','Databáze','DB'],['export','Exporty','I/O'],['settings','Nastavení','CFG']];
+let active='dashboard';
+let project=safeParse(document.getElementById('sampleProjectJson').textContent);
+window.addEventListener('error',e=>showModuleError('Zachycena chyba aplikace: '+e.message));
+window.addEventListener('unhandledrejection',e=>showModuleError('Zachycena chyba promise: '+(e.reason&&e.reason.message?e.reason.message:e.reason)));
+function safeParse(txt){try{return JSON.parse(txt)}catch(e){showModuleError('Nelze načíst výchozí JSON model. Používám minimální nouzový model.');return {schemaVersion:'21.0.0',appVersion:'v21 fallback',zakazka:{nazev:'Nouzový projekt'},objekt:{},strecha:{},fve:{panely:{pocet:0,vykonWp:0},stringy:[]},lps:{jimaciSoustava:{jimacePocet:0},svody:[]},spd:{},lpz:{zony:[]},cad:{vrstvy:[]},dokumenty:{sablony:[]},databaze:{tabulky:[]},exporty:{jsonImportExport:true},qa:{polozky:[]}}}}
+function showModuleError(msg){const d=document.createElement('div');d.className='err';d.textContent=msg+' — aplikace zůstává spuštěná.';document.body.appendChild(d);setTimeout(()=>d.remove(),9000)}
+function escapeHtml(x){return String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function log(t){const el=document.getElementById('log');if(el)el.innerHTML='['+new Date().toLocaleTimeString()+'] '+escapeHtml(t)+'<br>'+el.innerHTML}
+function kwp(){const p=project.fve?.panely;return Math.round(((p?.pocet||0)*(p?.vykonWp||0)/1000)*100)/100}
+function nav(){document.getElementById('nav').innerHTML=MODULES.map(m=>`<button class="${active===m[0]?'active':''}" onclick="openModule('${m[0]}')"><span>${m[1]}</span><span class="tag">${m[2]}</span></button>`).join('')}
+function openModule(id){active=id;nav();render();log('Přepnut modul: '+id)}
+function safeView(fn){try{return fn()}catch(e){showModuleError('Chyba modulu '+active+': '+e.message);return `<div class="fallback"><b>Modul se nepodařilo vykreslit.</b><br>Aplikace pokračuje bez bílé obrazovky. Chyba: ${escapeHtml(e.message)}</div>`}}
+function tableRows(obj){return Object.entries(obj||{}).map(([k,v])=>`<tr><td>${escapeHtml(k)}</td><td>${escapeHtml(typeof v==='object'?JSON.stringify(v):v)}</td></tr>`).join('')}
+function inspector(){const el=document.getElementById('inspector');el.innerHTML=`<div class="qaRow"><span>Zakázka</span><b>${escapeHtml(project.zakazka?.cisloZakazky)}</b></div><div class="qaRow"><span>Program</span><b>FVE + LPS</b></div><div class="qaRow"><span>Výkon FVE</span><b>${kwp()} kWp</b></div><div class="qaRow"><span>Panely</span><b>${project.fve?.panely?.pocet||0}</b></div><div class="qaRow"><span>LPS</span><b>${escapeHtml(project.lps?.tridaLps)}</b></div><div class="qaRow"><span>Jímače</span><b>${project.lps?.jimaciSoustava?.jimacePocet||0}</b></div><div class="qaRow"><span>LPZ</span><b>${project.lpz?.zony?.length||0}</b></div>`}
+function qa(){const rows=project.qa?.polozky||[];document.getElementById('qa').innerHTML=rows.map(r=>`<div class="qaRow"><span><i class="dot ${r.stav==='ok'?'okdot':r.stav==='warning'?'warndot':'baddot'}"></i>${escapeHtml(r.nazev)}</span><b>${escapeHtml(r.stav)}</b></div>`).join('')}
+function health(){const ok=REQUIRED_SECTIONS.filter(s=>!!project[s]);const miss=REQUIRED_SECTIONS.filter(s=>!project[s]);document.getElementById('health').innerHTML=`<div class="qaRow"><span>Schema</span><b>${escapeHtml(project.schemaVersion)}</b></div><div class="qaRow"><span>Sekce OK</span><b>${ok.length}/${REQUIRED_SECTIONS.length}</b></div><div class="qaRow"><span>Chybí</span><b>${miss.length?escapeHtml(miss.join(', ')):'nic'}</b></div><div class="qaRow"><span>SQLite příprava</span><b>${project.databaze?.tabulky?.length||0} tabulek</b></div>`}
+function cadSvg(){let panels='';for(let r=0;r<3;r++){for(let c=0;c<12;c++){panels+=`<rect x="${205+c*34}" y="${132+r*48}" width="28" height="42" rx="3" fill="#12365b" stroke="#60a5fa"/><line x1="${209+c*34}" y1="${153+r*48}" x2="${229+c*34}" y2="${153+r*48}" stroke="#8ec5ff" opacity=".45"/>`}}let rods='';[[150,105],[640,105],[145,300],[645,300],[395,88],[395,315],[90,205],[700,205]].forEach(p=>{rods+=`<circle cx="${p[0]}" cy="${p[1]}" r="7" fill="#f3b33d"/><line x1="${p[0]}" y1="${p[1]}" x2="${p[0]}" y2="${p[1]-36}" stroke="#f3b33d" stroke-width="3"/>`});return `<svg viewBox="0 0 790 405" width="100%" height="100%"><defs><linearGradient id="r" x1="0" x2="1"><stop offset="0" stop-color="#26384a"/><stop offset="1" stop-color="#111b26"/></linearGradient></defs><rect width="790" height="405" fill="#08111a"/><rect x="60" y="75" width="680" height="275" rx="18" fill="#0c1520" stroke="#23374d"/><path d="M110 315 L395 70 L680 315 Z" fill="url(#r)" stroke="#435b73" stroke-width="3"/><path d="M395 70 L395 315" stroke="#708aa3" stroke-dasharray="6 6"/><path d="M125 315 H665" stroke="#94a3b8"/>${panels}${rods}<polyline points="100,355 220,378 395,388 570,378 690,355" fill="none" stroke="#4ade80" stroke-width="3"/><path d="M170 125 C220 95 280 95 330 125" fill="none" stroke="#a78bfa" stroke-width="3" stroke-dasharray="7 5"/><path d="M515 125 C560 95 620 95 665 125" fill="none" stroke="#a78bfa" stroke-width="3" stroke-dasharray="7 5"/><text x="24" y="32" fill="#93a6ba">v21 CAD preview: společný model FVE + LPS + LPZ + zemnění</text><text x="24" y="390" fill="#93a6ba">Vrstvy: ${escapeHtml((project.cad?.vrstvy||[]).join(' / '))}</text></svg>`}
+function dashboard(){return `<h1 class="module-title">Dashboard v21</h1><p class="sub">Sjednocený program pro FVE i LPS. v21 zavádí společný projektový model pro budoucí React/Tauri/SQLite.</p><div class="kpis"><div class="kpi"><b>${kwp()}</b><span>kWp FVE</span></div><div class="kpi"><b>${project.fve?.stringy?.length||0}</b><span>stringy</span></div><div class="kpi"><b>${project.lps?.jimaciSoustava?.jimacePocet||0}</b><span>LPS jímače</span></div><div class="kpi"><b>${project.databaze?.tabulky?.length||0}</b><span>SQLite tabulky</span></div></div><br><div class="grid"><div class="card"><h2>Společný CAD / mapa náhled <span class="twoTone"><i>FVE</i><i>LPS</i></span></h2><div class="body"><div class="cadWrap">${cadSvg()}</div></div></div><div class="card"><h2>v21 hlavní změna</h2><div class="body"><div class="notice">Aplikace už není prezentovaná jako samostatný hromosvodářský nástroj. Datový model je rozdělený pro zakázku, objekt, střechu, FVE, LPS, SPD, LPZ, CAD, dokumenty, databáze a exporty.</div><br><table class="table"><tr><td>Zdroj</td><td>${escapeHtml(project.meta?.sourceBase)}</td></tr><tr><td>JSON import/export</td><td>aktivní</td></tr><tr><td>React/Tauri</td><td>připravená struktura</td></tr><tr><td>SQLite</td><td>navržené tabulky</td></tr></table></div></div></div>`}
+function modelView(){return `<h1 class="module-title">Sdílený projektový model</h1><p class="sub">Základ budoucí databáze a společné komunikace mezi moduly.</p><div class="schema">${REQUIRED_SECTIONS.map(s=>`<div class="schemaItem"><b>${escapeHtml(s)}</b><span>${project[s]?'aktivní sekce':'chybí'}</span></div>`).join('')}</div><br><div class="card"><h2>Top-level JSON sekce</h2><div class="body"><table class="table"><tr><th>Sekce</th><th>Obsah</th></tr>${REQUIRED_SECTIONS.map(s=>`<tr><td><b>${escapeHtml(s)}</b></td><td>${escapeHtml(Object.keys(project[s]||{}).join(', '))}</td></tr>`).join('')}</table></div></div>`}
+function fveView(){return `<h1 class="module-title">FVE modul</h1><div class="split"><div class="card"><h2>FVE část modelu</h2><div class="body"><table class="table"><tr><td>Systém</td><td>${escapeHtml(project.fve?.system)}</td></tr><tr><td>Panely</td><td>${project.fve?.panely?.pocet} × ${project.fve?.panely?.vykonWp} Wp</td></tr><tr><td>Výkon</td><td>${kwp()} kWp</td></tr><tr><td>Měniče</td><td>${(project.fve?.menice||[]).map(i=>escapeHtml(i.typ)).join(', ')}</td></tr></table></div></div><div class="card"><h2>Stringy a DC trasy</h2><div class="body"><table class="table"><tr><th>ID</th><th>Panely</th><th>MPPT</th><th>Trasa</th></tr>${(project.fve?.stringy||[]).map(s=>`<tr><td>${escapeHtml(s.id)}</td><td>${s.pocetPanelu}</td><td>${s.mppt}</td><td>${escapeHtml(s.dcTrasa)}</td></tr>`).join('')}</table></div></div></div>`}
+function lpsView(){return `<h1 class="module-title">LPS / DEHN modul</h1><div class="grid"><div class="card"><h2>LPS část modelu</h2><div class="body"><table class="table"><tr><td>Třída LPS</td><td>${escapeHtml(project.lps?.tridaLps)}</td></tr><tr><td>LPL</td><td>${escapeHtml(project.lps?.lpl)}</td></tr><tr><td>Jímací soustava</td><td>${escapeHtml(project.lps?.jimaciSoustava?.typ)}</td></tr><tr><td>Jímače</td><td>${project.lps?.jimaciSoustava?.jimacePocet}</td></tr><tr><td>HVI</td><td>${project.lps?.hvi?.pouzito?'ano':'ne'} / ${project.lps?.hvi?.pocetTras||0} trasy</td></tr><tr><td>Zemnění</td><td>${escapeHtml(project.lps?.uzemneni?.typ)} ${project.lps?.uzemneni?.delkaM||0} m</td></tr></table></div></div><div class="card"><h2>Svody</h2><div class="body"><table class="table"><tr><th>ID</th><th>Typ</th><th>Délka</th></tr>${(project.lps?.svody||[]).map(s=>`<tr><td>${escapeHtml(s.id)}</td><td>${escapeHtml(s.typ)}</td><td>${s.delkaM} m</td></tr>`).join('')}</table></div></div></div>`}
+function spdView(){return `<h1 class="module-title">SPD / LPZ</h1><div class="split"><div class="card"><h2>SPD</h2><div class="body"><table class="table"><tr><td>DC</td><td>${escapeHtml(project.spd?.dc?.typ)} / ${escapeHtml(project.spd?.dc?.umisteni)}</td></tr><tr><td>AC</td><td>${escapeHtml(project.spd?.ac?.typ)} / ${escapeHtml(project.spd?.ac?.umisteni)}</td></tr><tr><td>Data</td><td>${escapeHtml(project.spd?.datoveLinky?.stav)}</td></tr></table></div></div><div class="card"><h2>LPZ zóny</h2><div class="body"><table class="table">${(project.lpz?.zony||[]).map(z=>`<tr><td><b>${escapeHtml(z.id)}</b></td><td>${escapeHtml(z.popis)}</td></tr>`).join('')}</table></div></div></div>`}
+function cadView(){return `<h1 class="module-title">CAD / Mapa</h1><p class="sub">Zachováno přepínání i náhled. v21 přidává vazbu CAD objektů na sdílený JSON model.</p><div class="tools"><button onclick="log('Vybrány všechny FVE panely pro budoucí přesun')">Označit FVE panely</button><button onclick="log('Vybrány LPS prvky pro budoucí editaci')">Označit LPS prvky</button><button onclick="log('Mapa zůstává technický placeholder')">Mapa</button></div><div class="card"><h2>Sjednocený CAD engine preview</h2><div class="body"><div class="cadWrap">${cadSvg()}</div></div></div>`}
+function docsView(){return `<h1 class="module-title">Dokumenty</h1><div class="card"><h2>Document Center</h2><div class="body"><table class="table"><tr><th>Šablona</th><th>Stav</th></tr>${(project.dokumenty?.sablony||[]).map(d=>`<tr><td>${escapeHtml(d)}</td><td>${escapeHtml(project.dokumenty?.stav)}</td></tr>`).join('')}</table></div></div>`}
+function dbView(){return `<h1 class="module-title">Databáze</h1><p class="sub">v21 připravuje tabulky pro SQLite, ale zatím zůstává jako HTML preview + JSON.</p><div class="card"><h2>Navržené SQLite tabulky</h2><div class="body"><table class="table"><tr><th>Tabulka</th><th>Účel</th></tr>${(project.databaze?.tabulky||[]).map(t=>`<tr><td>${escapeHtml(t)}</td><td>budoucí perzistence části sdíleného modelu</td></tr>`).join('')}</table></div></div>`}
+function exportView(){return `<h1 class="module-title">Exporty</h1><div class="split"><div class="card"><h2>JSON import/export</h2><div class="body"><div class="tools"><button class="primary" onclick="exportJson()">Exportovat projekt JSON</button><label class="fileBtn">Importovat JSON<input type="file" accept="application/json,.json" onchange="importJson(event)"></label><button onclick="previewJson()">Zobrazit JSON</button></div><textarea id="jsonPreview" spellcheck="false"></textarea></div></div><div class="card"><h2>Budoucí exporty</h2><div class="body"><table class="table">${tableRows(project.exporty)}</table></div></div></div>`}
+function settingsView(){return `<h1 class="module-title">Nastavení</h1><div class="notice"><b>Classic PRO je výchozí a zamčený směr UI.</b><br>Budoucí nastavení: lokální databáze SQLite, cesty exportních balíků, firemní šablony, katalogy zařízení, režim FVE/LPS a napojení na mapové podklady.</div>`}
+function render(){const map={dashboard,model:modelView,fve:fveView,lps:lpsView,spd:spdView,cad:cadView,docs:docsView,db:dbView,export:exportView,settings:settingsView};document.getElementById('view').innerHTML=safeView(map[active]||dashboard);inspector();qa();health()}
+function validateModel(obj){const missing=REQUIRED_SECTIONS.filter(s=>!obj[s]);return {ok:missing.length===0,missing}}
+function exportJson(){project.meta=project.meta||{};project.meta.updatedAt=new Date().toISOString();const txt=JSON.stringify(project,null,2);const blob=new Blob([txt],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='LOSKOT_FVE_LPS_STUDIO_PRO_v21_project.json';a.click();const p=document.getElementById('jsonPreview');if(p)p.value=txt;log('Export JSON dokončen')}
+function previewJson(){const p=document.getElementById('jsonPreview');if(p)p.value=JSON.stringify(project,null,2);log('Zobrazen aktuální JSON model')}
+function importJson(ev){const f=ev.target.files&&ev.target.files[0];if(!f)return;const reader=new FileReader();reader.onload=()=>{try{const obj=JSON.parse(reader.result);const v=validateModel(obj);if(!v.ok){showModuleError('Importovaný JSON nemá všechny povinné sekce: '+v.missing.join(', '));return}project=obj;render();log('Import JSON dokončen: '+(project.zakazka?.cisloZakazky||'bez čísla'))}catch(e){showModuleError('Import JSON selhal: '+e.message)}};reader.readAsText(f,'utf-8')}
+nav();render();log('v21 SHARED PROJECT MODEL inicializován bez bílé obrazovky');
+</script>
+</body>
+</html>

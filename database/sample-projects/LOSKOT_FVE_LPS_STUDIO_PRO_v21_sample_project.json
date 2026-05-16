@@ -1,0 +1,336 @@
+{
+  "schemaVersion": "21.0.0",
+  "appVersion": "v21 SHARED PROJECT MODEL",
+  "meta": {
+    "program": "LOSKOT FVE & LPS STUDIO PRO",
+    "projectId": "FVE-LPS-DEMO-021",
+    "createdAt": "2026-05-16T00:00:00+02:00",
+    "updatedAt": "2026-05-16T00:00:00+02:00",
+    "language": "cs-CZ",
+    "status": "preview",
+    "sourceBase": "v20 UNIFIED APP FOUNDATION"
+  },
+  "zakazka": {
+    "nazev": "Administrativní objekt - společný návrh FVE + LPS",
+    "cisloZakazky": "FVE-LPS-DEMO-021",
+    "investor": "Interní demo investor",
+    "projektant": "LOSKOT FVE & LPS STUDIO PRO",
+    "mistoStavby": "Česká republika",
+    "kraj": "Jihomoravský kraj",
+    "katastralniUzemi": "Demo KÚ",
+    "parcelniCisla": [
+      "123/4",
+      "123/5"
+    ],
+    "stupenDokumentace": "studie / návrh pro koordinaci",
+    "poznamka": "Ukázková data pro ověření sdíleného datového modelu."
+  },
+  "objekt": {
+    "typ": "administrativní objekt",
+    "pudorys": {
+      "delkaM": 42,
+      "sirkaM": 18,
+      "vyskaM": 9.5
+    },
+    "konstrukce": "zděná / ocelové prvky",
+    "pozarnaVyskaM": 7.8,
+    "umisteniTechnologie": "střecha + technická místnost 1.NP"
+  },
+  "strecha": {
+    "typ": "sedlová",
+    "krytina": "plechová krytina",
+    "sklonStupne": 22,
+    "orientaceHrebene": "V-Z",
+    "roviny": [
+      {
+        "id": "roof-a",
+        "nazev": "jižní rovina",
+        "azimut": 180,
+        "plochaM2": 330,
+        "vyuzitelnaPlochaM2": 210
+      },
+      {
+        "id": "roof-b",
+        "nazev": "severní rovina",
+        "azimut": 0,
+        "plochaM2": 330,
+        "vyuzitelnaPlochaM2": 35
+      }
+    ],
+    "prekazky": [
+      {
+        "typ": "komín",
+        "x": 18,
+        "y": 7
+      },
+      {
+        "typ": "výlez",
+        "x": 30,
+        "y": 10
+      }
+    ]
+  },
+  "fve": {
+    "aktivni": true,
+    "system": "střešní FVE bez akumulace",
+    "panely": {
+      "pocet": 36,
+      "vykonWp": 450,
+      "typ": "mono half-cut 450 Wp",
+      "orientace": "na výšku",
+      "sklonStupne": 22
+    },
+    "stringy": [
+      {
+        "id": "S1",
+        "pocetPanelu": 12,
+        "mppt": 1,
+        "dcTrasa": "DC-01"
+      },
+      {
+        "id": "S2",
+        "pocetPanelu": 12,
+        "mppt": 1,
+        "dcTrasa": "DC-02"
+      },
+      {
+        "id": "S3",
+        "pocetPanelu": 12,
+        "mppt": 2,
+        "dcTrasa": "DC-03"
+      }
+    ],
+    "menice": [
+      {
+        "id": "INV-01",
+        "vyrobce": "Sungrow",
+        "typ": "SG15RT demo",
+        "vykonKw": 15,
+        "umisteni": "technická místnost"
+      }
+    ],
+    "optimalizatory": {
+      "pouzity": false,
+      "poznamka": "připraveno pro pozdější doplnění"
+    },
+    "dcTrasy": [
+      {
+        "id": "DC-01",
+        "delkaM": 28
+      },
+      {
+        "id": "DC-02",
+        "delkaM": 31
+      },
+      {
+        "id": "DC-03",
+        "delkaM": 34
+      }
+    ],
+    "vypocty": {
+      "instalovanyVykonKwp": 16.2,
+      "predbeznyRocniVynosKwh": 15800
+    }
+  },
+  "lps": {
+    "aktivni": true,
+    "normovyZaklad": "ČSN EN 62305 - pracovní model, finální kontrola později",
+    "tridaLps": "LPS III",
+    "lpl": "LPL III",
+    "jimaciSoustava": {
+      "typ": "mřížová + tyčové jímače",
+      "jimacePocet": 8,
+      "vodiceM": 118
+    },
+    "svody": [
+      {
+        "id": "SV-01",
+        "typ": "FeZn / fasáda",
+        "delkaM": 10
+      },
+      {
+        "id": "SV-02",
+        "typ": "FeZn / fasáda",
+        "delkaM": 10
+      },
+      {
+        "id": "SV-03",
+        "typ": "FeZn / fasáda",
+        "delkaM": 10
+      },
+      {
+        "id": "SV-04",
+        "typ": "FeZn / fasáda",
+        "delkaM": 10
+      }
+    ],
+    "hvi": {
+      "pouzito": true,
+      "pocetTras": 2,
+      "poznamka": "koordinační placeholder pro oddálený hromosvod u FVE"
+    },
+    "uzemneni": {
+      "typ": "obvodový zemnič",
+      "material": "FeZn 30x4",
+      "delkaM": 122,
+      "stav": "návrh"
+    },
+    "riziko": {
+      "stav": "předběžný návrh",
+      "vysledek": "pro detailní výpočet doplnit vstupní rizikové parametry"
+    }
+  },
+  "spd": {
+    "dc": {
+      "typ": "T1+T2 DC",
+      "umisteni": "u měniče / rozvaděč R-FVE",
+      "stav": "navrženo"
+    },
+    "ac": {
+      "typ": "T1+T2 AC",
+      "umisteni": "hlavní rozvaděč / podružný rozvaděč",
+      "stav": "navrženo"
+    },
+    "datoveLinky": {
+      "typ": "připraveno",
+      "stav": "čeká na MaR rozsah"
+    }
+  },
+  "lpz": {
+    "zony": [
+      {
+        "id": "LPZ-0A",
+        "popis": "venkovní prostor vystavený přímému úderu"
+      },
+      {
+        "id": "LPZ-0B",
+        "popis": "chráněný venkovní prostor v ochranném prostoru LPS"
+      },
+      {
+        "id": "LPZ-1",
+        "popis": "vnitřní rozvody po SPD T1/T2"
+      },
+      {
+        "id": "LPZ-2",
+        "popis": "citlivá technologie / MaR / monitoring"
+      }
+    ],
+    "koordinace": "připravena vazba FVE DC, AC, MaR a datové komunikace"
+  },
+  "cad": {
+    "jednotky": "m",
+    "meritko": "pracovní preview",
+    "vrstvy": [
+      "objekt",
+      "střecha",
+      "FVE panely",
+      "stringy",
+      "DC trasy",
+      "jímače",
+      "svody",
+      "HVI",
+      "zemnění",
+      "LPZ",
+      "mapa"
+    ],
+    "objekty": [
+      {
+        "id": "B-01",
+        "typ": "building",
+        "x": 80,
+        "y": 80,
+        "w": 620,
+        "h": 300
+      },
+      {
+        "id": "PV-GROUP-01",
+        "typ": "pv-array",
+        "x": 225,
+        "y": 140,
+        "cols": 12,
+        "rows": 3
+      },
+      {
+        "id": "LPS-RING-01",
+        "typ": "earthing-ring",
+        "x": 72,
+        "y": 388,
+        "w": 636,
+        "h": 34
+      }
+    ],
+    "mapa": {
+      "stav": "technický placeholder",
+      "budouciZdroj": "mapový podklad / katastr / situace"
+    }
+  },
+  "dokumenty": {
+    "sablony": [
+      "Technická zpráva FVE",
+      "Technická zpráva LPS",
+      "Protokol SPD/LPZ",
+      "Výkaz zařízení",
+      "JSON export projektu"
+    ],
+    "stav": "připraveno pro napojení šablon DOCX/PDF"
+  },
+  "databaze": {
+    "cil": "SQLite",
+    "tabulky": [
+      "projects",
+      "objects",
+      "roofs",
+      "pv_arrays",
+      "pv_strings",
+      "inverters",
+      "lps_components",
+      "spd_devices",
+      "lpz_zones",
+      "cad_objects",
+      "documents",
+      "exports"
+    ],
+    "sampleProjectPath": "database/sample-projects/LOSKOT_FVE_LPS_STUDIO_PRO_v21_sample_project.json"
+  },
+  "exporty": {
+    "jsonImportExport": true,
+    "pdf": false,
+    "docx": false,
+    "zipPack": true
+  },
+  "qa": {
+    "stav": "preview vyhovuje",
+    "polozky": [
+      {
+        "id": "QA-01",
+        "nazev": "Classic PRO vzhled zachován",
+        "stav": "ok"
+      },
+      {
+        "id": "QA-02",
+        "nazev": "Přepínání obrazovek zachováno",
+        "stav": "ok"
+      },
+      {
+        "id": "QA-03",
+        "nazev": "Sdílený datový model projektu",
+        "stav": "ok"
+      },
+      {
+        "id": "QA-04",
+        "nazev": "JSON import/export připraven",
+        "stav": "ok"
+      },
+      {
+        "id": "QA-05",
+        "nazev": "SQLite pouze příprava",
+        "stav": "warning"
+      },
+      {
+        "id": "QA-06",
+        "nazev": "Normové výpočty čekají na další verzi",
+        "stav": "warning"
+      }
+    ]
+  }
+}
