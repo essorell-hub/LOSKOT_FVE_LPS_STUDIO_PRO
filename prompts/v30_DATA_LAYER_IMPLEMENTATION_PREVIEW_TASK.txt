@@ -1,0 +1,35 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Toto je prompt pro budoucí bezpečný v30 běh.
+
+Cíl:
+Připravit první implementační náhled datové vrstvy bez zásahu do vzhledu programu.
+
+Přísná pravidla pro v30:
+- Neměnit Classic PRO vzhled.
+- Neměnit HTML preview.
+- Neměnit CSS.
+- Neměnit menu.
+- Neměnit přepínání obrazovek.
+- Nesmí vzniknout bílá obrazovka.
+- Nezasahovat do FVE/LPS/CAD UI.
+- Nejprve vytvořit pouze samostatné datové moduly.
+- Každý krok malý, testovatelný, revertovatelný.
+
+Povolené cílové oblasti pro v30:
+- src/data/
+- src/validation/
+- src/importExport/
+- docs/data-layer/
+- tests/data/
+- package.json pouze pokud je nutné doplnit skripty.
+
+První v30 úkol:
+- vytvořit projectModel adapter,
+- načíst v29 sample project,
+- validovat proti základnímu kontraktu,
+- vrátit QA status,
+- bez napojení do UI.
+
+Po změně vytvořit malý commit:
+v30 data layer implementation preview prompt
