@@ -1,0 +1,49 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden soubor:
+src/data/projectStore.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřidávej závislosti do package.json.
+- Bezpečné chování: chyba dat nesmí shodit UI.
+
+Soubor má importovat:
+- createEmptyProject
+- normalizeProject
+- getProjectSummary
+ze src/data/projectModel.js
+
+Soubor má exportovat:
+- createProjectStore(initialProject)
+- createSafeProjectSnapshot(project)
+- getProjectStoreSummary(store)
+
+createProjectStore musí vracet objekt s metodami:
+- getProject()
+- setProject(nextProject)
+- updateProject(updater)
+- resetProject()
+- getSummary()
+- getWarnings()
+- subscribe(listener)
+- notify()
+
+Pravidla:
+- žádná metoda nesmí házet chybu do UI,
+- při chybě vrátit bezpečný fallback,
+- listeners volat přes try/catch,
+- zachovat původní data,
+- použít normalizeProject.
+
+Po dokončení vytvoř commit:
+v30 project store
