@@ -882,5 +882,104 @@ nav(); render(); log('v30 DATA LAYER UI BRIDGE PREVIEW inicializována bez bíl�
 })();
 </script>
 
+
+<!-- V31_TOP_QUICK_ACTIONS_PATCH -->
+<script>
+(function(){
+  function addTopButton(id, label, handlerName){
+    try{
+      if(document.getElementById(id)) return;
+
+      var top = document.querySelector(".topbar, header, .head, .toolbar");
+      if(!top){
+        var candidates = document.querySelectorAll("div");
+        for(var i=0;i<candidates.length;i++){
+          var txt = candidates[i].innerText || "";
+          if(txt.indexOf("FVE aktivní") !== -1 || txt.indexOf("Safe Module Loader") !== -1){
+            top = candidates[i];
+            break;
+          }
+        }
+      }
+
+      if(!top) top = document.body;
+
+      var btn = document.createElement("button");
+      btn.id = id;
+      btn.textContent = label;
+      btn.onclick = function(){
+        try{
+          if(typeof window[handlerName] === "function"){
+            window[handlerName]();
+          }else{
+            alert("Funkce zatím není načtená: " + handlerName);
+          }
+        }catch(err){
+          alert("Akce selhala bezpečně: " + err.message);
+        }
+      };
+
+      btn.style.marginLeft = "8px";
+      btn.style.border = "1px solid #36506b";
+      btn.style.background = "#0b1724";
+      btn.style.color = "#dbeafe";
+      btn.style.borderRadius = "10px";
+      btn.style.padding = "7px 12px";
+      btn.style.cursor = "pointer";
+
+      top.appendChild(btn);
+    }catch(e){
+      console.warn("Nepodařilo se přidat top button", id, e);
+    }
+  }
+
+  window.renderV31CadLayersWorkspace = window.renderV31CadLayersWorkspace || function(){
+    var view = document.getElementById("view");
+    if(!view) return;
+
+    view.innerHTML =
+      '<h1 class="module-title">CAD vrstvy — v31 preview</h1>'+
+      '<div class="split">'+
+        '<div class="card"><h2>Vrstvy</h2><div class="body">'+
+          '<table class="table">'+
+            '<tr><th>Vrstva</th><th>Stav</th><th>Typ</th></tr>'+
+            '<tr><td>Střecha</td><td>viditelná</td><td>roof</td></tr>'+
+            '<tr><td>FVE panely</td><td>viditelná</td><td>fve</td></tr>'+
+            '<tr><td>LPS jímací soustava</td><td>viditelná</td><td>lps</td></tr>'+
+            '<tr><td>DC trasy</td><td>viditelná</td><td>dc_route</td></tr>'+
+            '<tr><td>Poznámky</td><td>viditelná</td><td>notes</td></tr>'+
+          '</table>'+
+        '</div></div>'+
+        '<div class="card"><h2>Další krok</h2><div class="body">'+
+          '<div class="notice">Toto je bezpečný CAD layer preview. Další verze doplní vypínání/zapínání vrstev a výběr objektů.</div>'+
+        '</div></div>'+
+      '</div>';
+
+    try{
+      if(typeof window.inspector === "function") window.inspector();
+      if(typeof window.qa === "function") window.qa();
+    }catch(e){}
+  };
+
+  function apply(){
+    addTopButton("v30TopImportExportBtn", "v30 Import/Export", "showV30ImportExportDemo");
+    addTopButton("v31TopFvePanelsBtn", "v31 FVE panely", "renderV31FveWorkspace");
+    addTopButton("v31TopCadLayersBtn", "v31 CAD vrstvy", "renderV31CadLayersWorkspace");
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", apply);
+  }else{
+    apply();
+  }
+
+  setTimeout(apply, 100);
+  setTimeout(apply, 500);
+  setTimeout(apply, 1200);
+
+  console.log("V31_TOP_QUICK_ACTIONS_PATCH applied");
+})();
+</script>
+
 </body>
 </html>
