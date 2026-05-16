@@ -21,16 +21,13 @@ Přísná pravidla:
 Schéma LPS musí obsahovat:
 riskAssessment, lpsClass, airTermination, airTerminals, mesh, downConductors, hvi, earthing, spd, lpz, normativeChecks, warnings, qaStatus.
 
-Risk assessment musí obsahovat:
-riskAssessmentId, method, lpsClassResult, inputParameters, calculatedRisks, acceptedRisks, status, notes.
-
-Air terminal musí obsahovat:
+Air terminal:
 terminalId, roofPlaneId, type, height, position, protectionRadius, connectedTo, cadObjectRef, notes.
 
-Down conductor musí obsahovat:
+Down conductor:
 downConductorId, facadeRef, route, material, crossSection, connectionPoint, earthingRef, cadObjectRef, notes.
 
-LPZ musí obsahovat:
+LPZ:
 lpzId, name, level, boundaryDescription, relatedObjects, spdRefs, notes.
 
 Po dokončení vytvoř commit:
