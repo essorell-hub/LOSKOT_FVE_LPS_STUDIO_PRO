@@ -1,0 +1,6 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+Vytvoř pouze soubor src/documents/documentModel.js.
+Neměň HTML, CSS, preview, UI, PROJECT_STATE_UNIFIED.md ani CHANGELOG.md.
+Nepřidávej závislosti.
+Exportuj: createDocumentDefinition, normalizeDocumentDefinition, createProjectDocumentSet, getRequiredDocumentsForProject, validateDocumentReadiness, createDocumentSummary.
+Dokumenty: technická zpráva FVE, technická zpráva LPS, výpočet rizika, seznam zařízení, string report, SPD report, QA report, exportní protokol.
