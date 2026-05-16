@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loskot.com/schemas/v29/project",
+  "title": "Projektový model",
+  "description": "Hlavní schéma definující strukturu dat projektu LOSKOT FVE & LPS STUDIO PRO.",
+  "type": "object",
+  "properties": {
+    "projectId": {
+      "$ref": "shared-definitions.schema.json#/$defs/uuid",
+      "description": "Unikátní identifikátor projektu."
+    },
+    "dataModelVersion": {
+      "type": "string",
+      "description": "Verze datového modelu.",
+      "const": "v29"
+    },
+    "appVersion": {
+      "type": "string",
+      "description": "Verze aplikace, ve které byl projekt vytvořen nebo naposledy upraven."
+    },
+    "createdAt": {
+      "$ref": "shared-definitions.schema.json#/$defs/timestamp",
+      "description": "Datum a čas vytvoření projektu."
+    },
+    "updatedAt": {
+      "$ref": "shared-definitions.schema.json#/$defs/timestamp",
+      "description": "Datum a čas poslední úpravy projektu."
+    },
+    "projectInfo": {
+      "type": "object",
+      "description": "Základní informace o projektu.",
+      "properties": {
+        "projectName": {"type": "string"},
+        "customer": {"type": "string"},
+        "projectNumber": {"type": "string"},
+        "address": {"$ref": "shared-definitions.schema.json#/$defs/address"}
+      },
+      "required": ["projectName", "customer", "projectNumber", "address"]
+    },
+    "building": {
+      "type": "object",
+      "description": "Informace o budově.",
+      "properties": {
+        "name": {"type": "string"},
+        "type": {"type": "string"},
+        "address": {"$ref": "shared-definitions.schema.json#/$defs/address"},
+        "cadastralInfo": {"$ref": "shared-definitions.schema.json#/$defs/cadastralInfo"},
+        "constructionYear": {"type": "integer"},
+        "numberOfFloors": {"type": "integer"}
+      },
+      "required": ["name", "type", "address"]
+    },
+    "roofs": {
+      "type": "array",
+      "description": "Seznam střech objektu.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "roofId": {"$ref": "shared-definitions.schema.json#/$defs/id"},
+          "name": {"type": "string"},
+          "surfaceArea": {"type": "number"},
+          "pitchAngle": {"type": "number"},
+          "orientation": {"type": "number"},
+          "coordinates": {"$ref": "shared-definitions.schema.json#/$defs/polygon2d"},
+          "roofLayers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "layerId": {"$ref": "shared-definitions.schema.json#/$defs/id"},
+                "material": {"type": "string"},
+                "thickness": {"type": "number"},
+                "thermalResistance": {"type": "number"}
+              },
+              "required": ["layerId", "material", "thickness"]
+            }
+          }
+        },
+        "required": ["roofId", "name", "surfaceArea", "pitchAngle", "orientation", "coordinates"]
+      }
+    },
+    "fve": {
+      "type": "object",
+      "description": "Nastavení a komponenty pro s FVE.",
+      "properties": {
+        "arrays": {
+          "type": "array",
+          "items": { "$ref": "fve.schema.json#/properties/arrays/items" }
+        },
+        "inverters": {
+          "type": "array",
+          "items": { "$ref": "fve.schema.json#/properties/inverters/items" }
+        },
+        "dcSystems": {
+          "type": "array",
+          "items": { "$ref": "fve.schema.json#/properties/dcSystems/items" }
+        }
+      },
+      "required": ["arrays", "inverters", "dcSystems"]
+    },
+    "lps": {
+      "type": "object",
+      "description": "Nastavení a komponenty pro LPS (Lightning Protection System).",
+      "properties": {
+        "captureSystems": {
+          "type": "array",
+          "items": { "$ref": "lps.schema.json#/properties/captureSystems/items" }
+        },
+        "downConducts": {
+          "type": "array",
+          "items": { "$ref": "lps.schema.json#/properties/downConducts/items" }
+        },
+        "groundingSystems": {
+          "type": "array",
+          "items": { "$ref": "lps.schema.json#/properties/groundingSystems/items" }
+        },
+        "surgeProtectiveDevices": {
+          "type": "array",
+          "items": { "$ref": "lps.schema.json#/properties/surgeProtectiveDevices/items" }
+        }
+      },
+      "required": ["captureSystems", "downConducts", "groundingSystems", "surgeProtectiveDevices"]
+    },
+    "cad": {
+      "type": "object",
+      "description": "Nastavení pro CAD/mapový modul.",
+      "properties": {
+        "layers": {
+          "type": "array",
+          "items": { "$ref": "cad.schema.json#/properties/layers/items" }
+        },
+        "objects": {
+          "type": "array",
+          "items": { "$ref": "cad.schema.json#/properties/objects/items" }
+        }
+      },
+      "required": ["layers", "objects"]
+    },
+    "documents": {
+      "type": "array",
+      "description": "Seznam dokumentů projektu.",
+      "items": { "$ref": "shared-definitions.schema.json#/$defs/fileReference" }
+    },
+    "exports": {
+      "type": "array",
+      "description": "Seznam exportů projektu.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "exportId": {"$ref": "shared-definitions.schema.json#/$defs/id"},
+          "exportType": {"type": "string"},
+          "exportTimestamp": {"$ref": "shared-definitions.schema.json#/$defs/timestamp"},
+          "exportedBy": {"type": "string"},
+          "fileName": {"type": "string"}
+        },
+        "required": ["exportId", "exportType", "exportTimestamp", "exportedBy", "fileName"]
+      }
+    },
+    "qa": {
+      "type": "object",
+      "description": "Výsledky a stav kontrol kvality.",
+      "properties": {
+        "overallStatus": {"$ref": "shared-definitions.schema.json#/$defs/qaStatus"},
+        "moduleStatuses": {
+          "type": "object",
+          "additionalProperties": { "$ref": "shared-definitions.schema.json#/$defs/qaStatus" }
+        },
+        "qaChecklist": {
+          "type": "array",
+          "items": { "$ref": "shared-definitions.schema.json#/$defs/auditEntry" }
+        }
+      },
+      "required": ["overallStatus", "moduleStatuses", "qaChecklist"]
+    },
+    "migrationHistory": {
+      "type": "array",
+      "description": "Historie migrací datového modelu.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "version": {"type": "string"},
+          "migratedAt": {"$ref": "shared-definitions.schema.json#/$defs/timestamp"},
+          "migratedBy": {"type": "string"}
+        },
+        "required": ["version", "migratedAt", "migratedBy"]
+      }
+    }
+  },
+  "required": [
+    "projectId",
+    "dataModelVersion",
+    "appVersion",
+    "createdAt",
+    "updatedAt",
+    "projectInfo"
+  ]
+}
