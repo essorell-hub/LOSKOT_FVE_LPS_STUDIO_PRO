@@ -1,0 +1,39 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/qa/v29/v29_SAMPLE_PROJECTS_QA_CHECKLIST.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 160 řádků.
+
+Dokument musí obsahovat:
+1. Kontrola existence všech sample projektů.
+2. Kontrola validity JSON.
+3. Kontrola dataModelVersion.
+4. Kontrola projectInfo.
+5. Kontrola building.
+6. Kontrola roofs.
+7. Kontrola FVE.
+8. Kontrola LPS.
+9. Kontrola CAD.
+10. Kontrola documents.
+11. Kontrola exports.
+12. Kontrola qa.
+13. Kontrola referencí mezi entitami.
+14. Kontrola warning projektu.
+15. Kontrola importu.
+16. Kontrola exportu.
+17. Kontrola SQLite mapování.
+18. Tabulka: test / očekávaný výsledek / výsledek / stav.
+
+Po dokončení vytvoř commit:
+v29 sample projects qa checklist
