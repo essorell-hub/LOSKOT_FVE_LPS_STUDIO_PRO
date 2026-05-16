@@ -1,0 +1,12 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+Vytvoř pouze dokumenty:
+docs/night-build/NIGHT_MAX_SAFE_PROGRESS_REPORT.md
+docs/fve/v31_FVE_PANEL_EDITOR_NOTES.md
+docs/cad/v31_CAD_LAYER_OBJECT_NOTES.md
+docs/lps/v31_LPS_OBJECTS_NOTES.md
+docs/documents/v31_DOCUMENT_MODULE_FOUNDATION.md
+docs/database/v31_DATABASE_INTEGRATION_FOUNDATION.md
+docs/night-build/v31_FULL_SYSTEM_INTEGRATION_PLAN.md
+Neměň HTML, CSS, preview, UI, PROJECT_STATE_UNIFIED.md ani CHANGELOG.md.
+Piš česky, technicky a prakticky.
+Popiš: co vzniklo, co je funkční, co je preview, co je placeholder, rizika, další kroky k full verzi.
