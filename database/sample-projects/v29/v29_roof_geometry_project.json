@@ -1,0 +1,166 @@
+{
+  "project_name": "Sample Roof Geometry Project",
+  "description": "A project focused on demonstrating roof geometry for FVE and LPS.",
+  "version": "v29",
+  "building": {
+    "name": "Example Building",
+    "geometry": {
+      "type": "Polygon",
+      "coordinates": [
+        [
+          [10, 10],
+          [50, 10],
+          [50, 50],
+          [10, 50],
+          [10, 10]
+        ]
+      ]
+    }
+  },
+  "roof": {
+    "planes": [
+      {
+        "id": "roofPlane1",
+        "name": "Front Roof Plane",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [10, 10],
+              [30, 10],
+              [30, 30],
+              [10, 30],
+              [10, 10]
+            ]
+          ]
+        },
+        "ridge": {
+          "start": [10, 30],
+          "end": [30, 30]
+        },
+        "eaves": {
+          "start": [10, 10],
+          "end": [30, 10]
+        },
+        "fve_panels": [
+          {
+            "id": "fvePanel1",
+            "model": "FVE-ABC-300W",
+            "position": [15, 15],
+            "orientation": 180
+          },
+          {
+            "id": "fvePanel2",
+            "model": "FVE-ABC-300W",
+            "position": [25, 15],
+            "orientation": 180
+          }
+        ],
+        "lps_elements": [
+          {
+            "id": "lpsElement1",
+            "type": "airTermination",
+            "position": [30, 30],
+            "radius": 1
+          }
+        ]
+      },
+      {
+        "id": "roofPlane2",
+        "name": "Back Roof Plane",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [30, 10],
+              [50, 10],
+              [50, 30],
+              [30, 30],
+              [30, 10]
+            ]
+          ]
+        },
+        "ridge": {
+          "start": [30, 30],
+          "end": [50, 30]
+        },
+        "eaves": {
+          "start": [30, 10],
+          "end": [50, 10]
+        },
+        "fve_panels": [
+          {
+            "id": "fvePanel3",
+            "model": "FVE-XYZ-350W",
+            "position": [35, 15],
+            "orientation": 180
+          }
+        ],
+        "lps_elements": [
+          {
+            "id": "lpsElement2",
+            "type": "conductor",
+            "position": [40, 20],
+            "length": 5
+          }
+        ]
+      }
+    ],
+    "obstacles": [
+      {
+        "id": "roofObstacle1",
+        "name": "Chimney",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [20, 20],
+              [22, 20],
+              [22, 22],
+              [20, 22],
+              [20, 20]
+            ]
+          ]
+        }
+      }
+    ],
+    "safety_zone": {
+      "radius": 2,
+      "center": [30, 20]
+    }
+  },
+  "cad": {
+    "layers": [
+      {
+        "id": "cadLayer1",
+        "name": "FVE Layout",
+        "visible": true
+      },
+      {
+        "id": "cadLayer2",
+        "name": "LPS Layout",
+        "visible": true
+      }
+    ],
+    "objects": [
+      {
+        "id": "cadObject1",
+        "layer_id": "cadLayer1",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [15, 15]
+        },
+        "type": "fve_panel_marker"
+      },
+      {
+        "id": "cadObject2",
+        "layer_id": "cadLayer2",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [30, 30]
+        },
+        "type": "lps_point_marker"
+      }
+    ]
+  }
+}
