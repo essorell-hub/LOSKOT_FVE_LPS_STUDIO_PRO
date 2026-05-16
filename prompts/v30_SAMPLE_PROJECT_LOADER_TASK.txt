@@ -1,0 +1,49 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden soubor:
+src/data/sampleProjectLoader.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřidávej závislosti do package.json.
+- Kód musí být bezpečný.
+
+Soubor má importovat z:
+src/data/projectModel.js
+
+Soubor má exportovat:
+- SAMPLE_PROJECT_PATHS
+- getSampleProjectPath(sampleName)
+- loadSampleProjectFromObject(rawProject)
+- listKnownSampleProjects()
+
+Poznámka:
+V browser/preview prostředí zatím nenačítej soubory z disku. Připrav pouze helpery a cestovní mapu pro pozdější napojení.
+
+SAMPLE_PROJECT_PATHS musí obsahovat:
+- minimal
+- fullFveLps
+- roofGeometry
+- qaWarning
+
+Cesty:
+database/sample-projects/v29/v29_minimal_project.json
+database/sample-projects/v29/v29_full_fve_lps_project.json
+database/sample-projects/v29/v29_roof_geometry_project.json
+database/sample-projects/v29/v29_qa_warning_project.json
+
+loadSampleProjectFromObject:
+- zavolá normalizeProject,
+- vrátí { ok, project, warnings, source }.
+
+Po dokončení vytvoř commit:
+v30 sample project loader
