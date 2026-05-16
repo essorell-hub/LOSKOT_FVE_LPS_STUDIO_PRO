@@ -1,0 +1,6 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+Vytvoř pouze soubor src/cad/layerModel.js.
+Neměň HTML, CSS, preview, UI, PROJECT_STATE_UNIFIED.md ani CHANGELOG.md.
+Nepřidávej závislosti.
+Exportuj: createDefaultCadLayers, normalizeCadLayers, toggleLayerVisibility, toggleLayerLock, getLayerObjectCounts, getVisibleUnlockedLayers.
+Vrstvy: roof, fve, lps, dc_route, ac_route, notes, map.
