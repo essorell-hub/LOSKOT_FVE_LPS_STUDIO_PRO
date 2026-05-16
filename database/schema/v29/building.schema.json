@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loskot.com/schemas/v29/building",
+  "title": "Budova",
+  "description": "Schéma pro popis budovy v projektu LOSKOT FVE & LPS STUDIO PRO v29.",
+  "type": "object",
+  "properties": {
+    "buildingId": {
+      "$ref": "shared-definitions.schema.json#/$defs/id",
+      "description": "Unikátní identifikátor budovy."
+    },
+    "name": {
+      "type": "string",
+      "description": "Název budovy."
+    },
+    "description": {
+      "type": "string",
+      "description": "Podrobnější popis budovy."
+    },
+    "address": {
+      "$ref": "shared-definitions.schema.json#/$defs/address",
+      "description": "Adresa budovy."
+    },
+    "cadastral": {
+      "$ref": "shared-definitions.schema.json#/$defs/cadastralInfo",
+      "description": "Informace z katastru nemovitostí týkající se budovy."
+    },
+    "owner": {
+      "$ref": "shared-definitions.schema.json#/$defs/personOrCompany",
+      "description": "Informace o vlastníkovi budovy."
+    },
+    "investor": {
+      "$ref": "shared-definitions.schema.json#/$defs/personOrCompany",
+      "description": "Informace o investorovi stavby."
+    },
+    "designer": {
+      "$ref": "shared-definitions.schema.json#/$defs/personOrCompany",
+      "description": "Informace o projektantovi budovy."
+    },
+    "geometrySummary": {
+      "type": "object",
+      "description": "Souhrnné geometrické informace o budově.",
+      "properties": {
+        "area": {"type": "number", "description": "Plocha budovy."},
+        "volume": {"type": "number", "description": "Objem budovy."}
+      },
+      "required": ["area", "volume"]
+    },
+    "usageType": {
+      "type": "string",
+      "description": "Typ využití budovy (např. 'obytná', 'průmyslová', 'administrativní')."
+    },
+    "height": {
+      "type": "number",
+      "description": "Výška budovy v metrech."
+    },
+    "floors": {
+      "type": "integer",
+      "description": "Počet nadzemních podlaží."
+    },
+    "fireSafetyNotes": {
+      "type": "string",
+      "description": "Poznámky týkající se požární bezpečnosti budovy."
+    },
+    "notes": {
+      "type": "array",
+      "description": "Seznam poznámek k budově.",
+      "items": {"$ref": "shared-definitions.schema.json#/$defs/note"}
+    }
+  },
+  "required": [
+    "buildingId",
+    "name",
+    "address"
+  ]
+}
