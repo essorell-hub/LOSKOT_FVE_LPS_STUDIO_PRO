@@ -1,0 +1,141 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Toto je dlouhý bezpečný úkol:
+v29 DATA MODEL MASTER SPEC
+
+Cíl:
+Navrhnout hlavní datový model pro sjednocený program FVE + LPS/DEHN + CAD/mapa + dokumenty + databáze + exporty.
+
+Přísná pravidla:
+- Neupravuj žádné HTML soubory.
+- Neupravuj žádné CSS.
+- Neupravuj žádné JS/React aplikační soubory.
+- Neupravuj preview složku.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nevytvářej build/dist/node_modules.
+- Nevytvářej ZIP.
+- Pracuj pouze v docs/database/v29, docs/qa/v29 a prompts.
+- Výstup musí být česky, technicky, prakticky.
+- Uživatel není programátor, proto piš postupy konkrétně.
+
+Povoleno vytvořit/upravit pouze:
+- docs/database/v29/v29_DATA_MODEL_MASTER_SPEC.md
+- docs/database/v29/v29_ENTITY_RELATION_OVERVIEW.md
+- docs/database/v29/v29_DATA_VERSIONING_AND_MIGRATIONS.md
+- docs/qa/v29/v29_DATA_MODEL_QA_CHECKLIST.md
+- prompts/v29_JSON_SCHEMA_TASK.txt
+
+Vytvoř docs/database/v29/v29_DATA_MODEL_MASTER_SPEC.md.
+Obsah:
+1. Účel datového modelu.
+2. Zásada jednoho společného projektu pro FVE + LPS.
+3. Kořenový objekt project.
+4. Identifikace projektu.
+5. Objekt stavby.
+6. Katastrální a adresní údaje.
+7. Střecha a geometrie.
+8. Střešní roviny.
+9. FVE panely.
+10. Stringy.
+11. Střídače.
+12. Optimalizátory.
+13. DC trasy.
+14. AC trasy.
+15. Rozvaděče.
+16. SPD DC.
+17. SPD AC.
+18. LPS výpočet rizika.
+19. Třída LPS.
+20. Jímací soustava.
+21. Jímače.
+22. Svody.
+23. HVI vodiče.
+24. Uzemnění.
+25. LPZ zóny.
+26. CAD/mapové vrstvy.
+27. Dokumenty.
+28. Exporty.
+29. QA kontroly.
+30. Auditní stopa.
+31. Uživatelské nastavení.
+32. Verze datového modelu.
+33. JSON fallback.
+34. SQLite persistence.
+35. Import/export pravidla.
+36. Co je povinné a co volitelné.
+37. Doporučený minimální projekt.
+38. Doporučený plný projekt.
+39. Rizika nekonzistence dat.
+40. Doporučení pro v30.
+
+Vytvoř docs/database/v29/v29_ENTITY_RELATION_OVERVIEW.md.
+Obsah:
+1. Přehled entit.
+2. Vazba project → building.
+3. Vazba building → roofs.
+4. Vazba roofs → roofPlanes.
+5. Vazba roofPlanes → pvPanels.
+6. Vazba pvPanels → strings.
+7. Vazba strings → inverters.
+8. Vazba pvPanels → dcRoutes.
+9. Vazba LPS → roof geometry.
+10. Vazba air terminals → roofPlanes.
+11. Vazba downconductors → building facades.
+12. Vazba SPD → electrical boards.
+13. Vazba LPZ → FVE/LPS prvky.
+14. Vazba documents → project.
+15. Vazba exports → project.
+16. Vazba QA checks → všechny důležité entity.
+17. Tabulka entita / hlavní ID / rodič / účel.
+18. Doporučené pojmenování ID.
+19. Doporučené reference mezi entitami.
+20. Pravidla mazání entit.
+
+Vytvoř docs/database/v29/v29_DATA_VERSIONING_AND_MIGRATIONS.md.
+Obsah:
+1. Proč verzovat datový model.
+2. Pole dataModelVersion.
+3. Pole appVersion.
+4. Migrační pravidla.
+5. Jak převést starší JSON projekt.
+6. Jak zachovat kompatibilitu.
+7. Jak řešit chybějící pole.
+8. Jak řešit přejmenovaná pole.
+9. Jak řešit odstraněná pole.
+10. Jak řešit nový modul.
+11. Zásada: starý projekt se nesmí rozbít.
+12. Návrh migračních kroků v29 → v30.
+13. Návrh migračních kroků v30 → v31.
+14. Checklist migrace.
+15. Rizika migrací.
+
+Vytvoř docs/qa/v29/v29_DATA_MODEL_QA_CHECKLIST.md.
+Obsah:
+1. Kontrola kořenového objektu.
+2. Kontrola povinných polí.
+3. Kontrola ID.
+4. Kontrola vazeb.
+5. Kontrola FVE dat.
+6. Kontrola LPS dat.
+7. Kontrola CAD dat.
+8. Kontrola dokumentů.
+9. Kontrola exportů.
+10. Kontrola QA semaforu.
+11. Kontrola verzování.
+12. Kontrola importu.
+13. Kontrola exportu.
+14. Kontrola chybějících polí.
+15. Kontrola neznámých polí.
+16. Tabulka test / očekávaný výsledek / stav.
+
+Vytvoř prompts/v29_JSON_SCHEMA_TASK.txt.
+Obsah:
+Prompt pro další Aider úkol, který vytvoří JSON schémata.
+Prompt musí jasně zakázat HTML/CSS/preview změny.
+Prompt musí povolit pouze files v database/schema/v29 a docs/database/v29.
+Prompt musí chtít vytvořit JSON Schema pro project, building, roof, fve, lps, cad, documents, exports, qa.
+
+Po dokončení vytvoř commit:
+v29 data model master spec
