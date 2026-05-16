@@ -1,0 +1,36 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON soubor:
+database/validation/v29/validation-rules-contract.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+
+Kontrakt musí obsahovat:
+- contractVersion
+- dataModelVersion
+- validationLevels
+- ruleCategories
+- requiredChecks
+- warningChecks
+- errorChecks
+- entityReferenceChecks
+- importChecks
+- exportChecks
+- sqliteChecks
+- fallbackBehavior
+- notes
+
+Kategorie pravidel:
+schema, references, fve, lps, cad, documents, exports, qa, migration, sqlite.
+
+Po dokončení vytvoř commit:
+v29 validation rules contract
