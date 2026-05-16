@@ -1,0 +1,45 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON soubor:
+database/contracts/v29/qa-result-contract.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Popisy mohou být česky.
+- Výstup drž přiměřeně krátký.
+
+Kontrakt musí obsahovat:
+- contractVersion
+- qaRunId
+- projectId
+- dataModelVersion
+- appVersion
+- status
+- score
+- errors
+- warnings
+- checks
+- summary
+- createdAt
+- finishedAt
+- notes
+
+Check musí obsahovat:
+- checkId
+- category
+- severity
+- status
+- message
+- relatedEntityRef
+- recommendation
+
+Po dokončení vytvoř commit:
+v29 qa result contract
