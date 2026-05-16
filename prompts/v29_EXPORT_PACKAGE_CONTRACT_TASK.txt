@@ -1,0 +1,42 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON soubor:
+database/contracts/v29/export-package-contract.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Popisy mohou být česky.
+- Výstup drž přiměřeně krátký.
+
+Kontrakt musí obsahovat:
+- contractVersion
+- packageId
+- projectId
+- packageType
+- createdAt
+- createdByAppVersion
+- files
+- manifest
+- checksums
+- qaSummary
+- warnings
+- notes
+
+Files položka:
+- fileId
+- relativePath
+- fileType
+- required
+- checksum
+- relatedEntityRefs
+
+Po dokončení vytvoř commit:
+v29 export package contract
