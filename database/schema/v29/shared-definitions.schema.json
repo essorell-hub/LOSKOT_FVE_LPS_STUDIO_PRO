@@ -1,0 +1,176 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://loskot.com/schemas/v29/shared-definitions",
+  "title": "Sdílené definice",
+  "description": "Sdílené datové typy a definice pro JSON schéma projektu LOSKOT FVE & LPS STUDIO PRO v29.",
+  "type": "object",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "description": "Unikátní identifikátor entity (např. UUID)."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Časové razítko ve formátu ISO 8601."
+    },
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Standardní UUID."
+    },
+    "status": {
+      "type": "string",
+      "description": "Stav entity (např. 'aktivní', 'neaktivní', 'pozastaveno').",
+      "enum": ["aktivní", "neaktivní", "pozastaveno", "archivováno"]
+    },
+    "severity": {
+      "type": "string",
+      "description": "Úroveň závažnosti (např. 'informace', 'varování', 'chyba').",
+      "enum": ["informace", "varování", "chyba", "kritická"]
+    },
+    "point2d": {
+      "type": "object",
+      "description": "2D bod (souřadnice X, Y).",
+      "properties": {
+        "x": {"type": "number"},
+        "y": {"type": "number"}
+      },
+      "required": ["x", "y"]
+    },
+    "point3d": {
+      "type": "object",
+      "description": "3D bod (souřadnice X, Y, Z).",
+      "properties": {
+        "x": {"type": "number"},
+        "y": {"type": "number"},
+        "z": {"type": "number"}
+      },
+      "required": ["x", "y", "z"]
+    },
+    "polygon2d": {
+      "type": "array",
+      "description": "2D polygon definovaný seznamem bodů.",
+      "items": {"$ref": "#/$defs/point2d"},
+      "minItems": 3
+    },
+    "dimensions": {
+      "type": "object",
+      "description": "Rozměry (délka, šířka, výška).",
+      "properties": {
+        "length": {"type": "number"},
+        "width": {"type": "number"},
+        "height": {"type": "number"}
+      },
+      "required": ["length", "width", "height"]
+    },
+    "address": {
+      "type": "object",
+      "description": "Adresa.",
+      "properties": {
+        "street": {"type": "string"},
+        "city": {"type": "string"},
+        "postalCode": {"type": "string"},
+        "country": {"type": "string"}
+      },
+      "required": ["street", "city", "postalCode", "country"]
+    },
+    "cadastralInfo": {
+      "type": "object",
+      "description": "Informace z katastru nemovitostí.",
+      "properties": {
+        "cadastralDistrict": {"type": "string"},
+        "cadastralParcelNumber": {"type": "string"}
+      },
+      "required": ["cadastralDistrict", "cadastralParcelNumber"]
+    },
+    "personOrCompany": {
+      "type": "object",
+      "description": "Informace o osobě nebo firmě.",
+      "properties": {
+        "name": {"type": "string"},
+        "companyName": {"type": "string"}
+      },
+      "required": ["name"]
+    },
+    "contact": {
+      "type": "object",
+      "description": "Kontaktní informace.",
+      "properties": {
+        "email": {"type": "string", "format": "email"},
+        "phone": {"type": "string"}
+      },
+      "required": ["email"]
+    },
+    "layerRef": {
+      "type": "object",
+      "description": "Odkaz na vrstvu v CAD.",
+      "properties": {
+        "layerId": {"type": "string"},
+        "layerName": {"type": "string"}
+      },
+      "required": ["layerId"]
+    },
+    "objectRef": {
+      "type": "object",
+      "description": "Odkaz na obecný objekt.",
+      "properties": {
+        "objectId": {"type": "string"},
+        "objectType": {"type": "string"}
+      },
+      "required": ["objectId"]
+    },
+    "entityRef": {
+      "type": "object",
+      "description": "Odkaz na konkrétní entitu.",
+      "properties": {
+        "entityId": {"type": "string"},
+        "entityType": {"type": "string"}
+      },
+      "required": ["entityId"]
+    },
+    "qaStatus": {
+      "type": "object",
+      "description": "Stav kvality a kontroly.",
+      "properties": {
+        "status": {"$ref": "#/$defs/status"},
+        "checkedBy": {"type": "string"},
+        "checkedAt": {"$ref": "#/$defs/timestamp"}
+      },
+      "required": ["status", "checkedBy", "checkedAt"]
+    },
+    "auditEntry": {
+      "type": "object",
+      "description": "Záznam auditu.",
+      "properties": {
+        "timestamp": {"$ref": "#/$defs/timestamp"},
+        "user": {"type": "string"},
+        "action": {"type": "string"},
+        "details": {"type": "string"}
+      },
+      "required": ["timestamp", "user", "action"]
+    },
+    "fileReference": {
+      "type": "object",
+      "description": "Odkaz na soubor.",
+      "properties": {
+        "fileName": {"type": "string"},
+        "filePath": {"type": "string"},
+        "fileType": {"type": "string"},
+        "fileSize": {"type": "integer"}
+      },
+      "required": ["fileName", "filePath"]
+    },
+    "note": {
+      "type": "object",
+      "description": "Textová poznámka.",
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "text": {"type": "string"},
+        "createdAt": {"$ref": "#/$defs/timestamp"},
+        "createdBy": {"type": "string"}
+      },
+      "required": ["id", "text", "createdAt", "createdBy"]
+    }
+  }
+}
