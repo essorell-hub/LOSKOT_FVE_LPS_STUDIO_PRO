@@ -1,9 +1,32 @@
 {
-  "project_name": "Sample Roof Geometry Project",
-  "description": "A project focused on demonstrating roof geometry for FVE and LPS.",
-  "version": "v29",
+  "projectId": "roof-geometry-proj-001",
+  "dataModelVersion": "v29",
+  "appVersion": "v21.0.0",
+  "projectInfo": {
+    "name": "Sample Roof Geometry Project",
+    "description": "A project focused on demonstrating roof geometry for FVE and LPS.",
+    "customer": "Fictional Client Inc.",
+    "projectManager": "Architect A",
+    "address": {
+      "street": "456 Geometry Ave",
+      "city": "Planville",
+      "postalCode": "67890",
+      "country": "Imaginary Land"
+    },
+    "location": {
+      "latitude": 50.12345,
+      "longitude": 15.78901
+    }
+  },
   "building": {
-    "name": "Example Building",
+    "id": "building-roof-geometry",
+    "name": "Building with Complex Roof",
+    "type": "Industrial",
+    "address": "456 Geometry Ave, Planville, 67890, Imaginary Land",
+    "location": {
+      "latitude": 50.12345,
+      "longitude": 15.78901
+    },
     "geometry": {
       "type": "Polygon",
       "coordinates": [
@@ -17,117 +40,127 @@
       ]
     }
   },
-  "roof": {
-    "planes": [
-      {
-        "id": "roofPlane1",
-        "name": "Front Roof Plane",
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [10, 10],
-              [30, 10],
-              [30, 30],
-              [10, 30],
-              [10, 10]
-            ]
+  "roofs": [
+    {
+      "id": "roofPlane1",
+      "buildingId": "building-roof-geometry",
+      "name": "Front Roof Plane",
+      "pitch": 30,
+      "orientation": 180,
+      "surfaceArea": 120,
+      "covering": "Metal Sheet",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [10, 10],
+            [30, 10],
+            [30, 30],
+            [10, 30],
+            [10, 10]
           ]
-        },
-        "ridge": {
-          "start": [10, 30],
-          "end": [30, 30]
-        },
-        "eaves": {
-          "start": [10, 10],
-          "end": [30, 10]
-        },
-        "fve_panels": [
-          {
-            "id": "fvePanel1",
-            "model": "FVE-ABC-300W",
-            "position": [15, 15],
-            "orientation": 180
-          },
-          {
-            "id": "fvePanel2",
-            "model": "FVE-ABC-300W",
-            "position": [25, 15],
-            "orientation": 180
-          }
-        ],
-        "lps_elements": [
-          {
-            "id": "lpsElement1",
-            "type": "airTermination",
-            "position": [30, 30],
-            "radius": 1
-          }
         ]
       },
-      {
-        "id": "roofPlane2",
-        "name": "Back Roof Plane",
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [30, 10],
-              [50, 10],
-              [50, 30],
-              [30, 30],
-              [30, 10]
-            ]
+      "ridge": {
+        "start": [10, 30],
+        "end": [30, 30]
+      },
+      "eaves": {
+        "start": [10, 10],
+        "end": [30, 10]
+      },
+      "fve_panels": [
+        {
+          "id": "fvePanel1",
+          "model": "FVE-ABC-300W",
+          "position": [15, 15],
+          "orientation": 180
+        },
+        {
+          "id": "fvePanel2",
+          "model": "FVE-ABC-300W",
+          "position": [25, 15],
+          "orientation": 180
+        }
+      ],
+      "lps_elements": [
+        {
+          "id": "lpsElement1",
+          "type": "airTermination",
+          "position": [30, 30],
+          "radius": 1
+        }
+      ]
+    },
+    {
+      "id": "roofPlane2",
+      "buildingId": "building-roof-geometry",
+      "name": "Back Roof Plane",
+      "pitch": 25,
+      "orientation": 0,
+      "surfaceArea": 110,
+      "covering": "Metal Sheet",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [30, 10],
+            [50, 10],
+            [50, 30],
+            [30, 30],
+            [30, 10]
           ]
-        },
-        "ridge": {
-          "start": [30, 30],
-          "end": [50, 30]
-        },
-        "eaves": {
-          "start": [30, 10],
-          "end": [50, 10]
-        },
-        "fve_panels": [
-          {
-            "id": "fvePanel3",
-            "model": "FVE-XYZ-350W",
-            "position": [35, 15],
-            "orientation": 180
-          }
-        ],
-        "lps_elements": [
-          {
-            "id": "lpsElement2",
-            "type": "conductor",
-            "position": [40, 20],
-            "length": 5
-          }
+        ]
+      },
+      "ridge": {
+        "start": [30, 30],
+        "end": [50, 30]
+      },
+      "eaves": {
+        "start": [30, 10],
+        "end": [50, 10]
+      },
+      "fve_panels": [
+        {
+          "id": "fvePanel3",
+          "model": "FVE-XYZ-350W",
+          "position": [35, 15],
+          "orientation": 180
+        }
+      ],
+      "lps_elements": [
+        {
+          "id": "lpsElement2",
+          "type": "conductor",
+          "position": [40, 20],
+          "length": 5
+        }
+      ]
+    }
+  ],
+  "obstacles": [
+    {
+      "id": "roofObstacle1",
+      "buildingId": "building-roof-geometry",
+      "name": "Chimney",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [20, 20],
+            [22, 20],
+            [22, 22],
+            [20, 22],
+            [20, 20]
+          ]
         ]
       }
-    ],
-    "obstacles": [
-      {
-        "id": "roofObstacle1",
-        "name": "Chimney",
-        "geometry": {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [20, 20],
-              [22, 20],
-              [22, 22],
-              [20, 22],
-              [20, 20]
-            ]
-          ]
-        }
-      }
-    ],
-    "safety_zone": {
-      "radius": 2,
-      "center": [30, 20]
     }
+  ],
+  "safety_zone": {
+    "buildingId": "building-roof-geometry",
+    "radius": 2,
+    "center": [30, 20]
   },
   "cad": {
     "layers": [
@@ -140,27 +173,58 @@
         "id": "cadLayer2",
         "name": "LPS Layout",
         "visible": true
+      },
+      {
+        "id": "cadLayer3",
+        "name": "Roof Geometry",
+        "visible": true
       }
     ],
     "objects": [
       {
         "id": "cadObject1",
-        "layer_id": "cadLayer1",
+        "layerId": "cadLayer1",
+        "entityId": "fvePanel1",
+        "type": "marker",
         "geometry": {
           "type": "Point",
           "coordinates": [15, 15]
-        },
-        "type": "fve_panel_marker"
+        }
       },
       {
         "id": "cadObject2",
-        "layer_id": "cadLayer2",
+        "layerId": "cadLayer2",
+        "entityId": "lpsElement1",
+        "type": "marker",
         "geometry": {
           "type": "Point",
           "coordinates": [30, 30]
-        },
-        "type": "lps_point_marker"
+        }
+      },
+      {
+        "id": "cadObject3",
+        "layerId": "cadLayer3",
+        "entityId": "roofPlane1",
+        "type": "polygon",
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [10, 10],
+              [30, 10],
+              [30, 30],
+              [10, 30],
+              [10, 10]
+            ]
+          ]
+        }
       }
     ]
-  }
+  },
+  "migrationHistory": [
+    {
+      "version": "v29",
+      "timestamp": "2026-05-16T10:00:00Z"
+    }
+  ]
 }

@@ -1,58 +1,37 @@
 {
-  "project": {
+  "projectId": "qa-warning-proj-001",
+  "dataModelVersion": "v29",
+  "appVersion": "v21.0.0",
+  "projectInfo": {
     "name": "Sample QA Warning Project",
-    "version": "v29",
     "description": "A sample project intentionally containing QA warnings.",
-    "qa": {
-      "status": "warning",
-      "warnings": [
-        {
-          "code": "MISSING_DATASHEET",
-          "message": "Panel datasheet is missing.",
-          "component": "PV Array - String 1"
-        },
-        {
-          "code": "UNCLOSED_SPD_CHECK",
-          "message": "SPD check has not been finalized.",
-          "component": "SPD Device A"
-        },
-        {
-          "code": "VOLTAGE_CHECK_REQUIRED",
-          "message": "String voltage requires further inspection.",
-          "component": "PV Array - String 2"
-        }
-      ],
-      "checks": [
-        {
-          "code": "LPS_RISK_REVIEW",
-          "message": "LPS risk assessment is pending review.",
-          "status": "review"
-        },
-        {
-          "code": "CAD_OBJECT_VERIFICATION",
-          "message": "CAD object requires final verification.",
-          "status": "unverified"
-        },
-        {
-          "code": "EXPORT_PACKAGE_STATUS",
-          "message": "Export package is in draft status.",
-          "status": "draft"
-        }
-      ]
+    "customer": "Fictional Client Inc.",
+    "projectManager": "Jane Doe",
+    "address": {
+      "street": "123 Warning Lane",
+      "city": "Sampletown",
+      "country": "Fictionalia"
     }
   },
   "building": {
-    "address": "123 Warning Lane",
-    "city": "Sampletown",
-    "country": "Fictionalia"
+    "id": "building-qa-warning",
+    "name": "Building with Warnings",
+    "type": "Commercial",
+    "address": "123 Warning Lane, Sampletown, Fictionalia",
+    "location": null
   },
-  "roof": {
-    "type": "Gable",
-    "pitch": 30,
-    "area": 100
-  },
+  "roofs": [
+    {
+      "id": "roof-qa-warning",
+      "buildingId": "building-qa-warning",
+      "name": "Main Roof",
+      "type": "Gable",
+      "pitch": 30,
+      "surfaceArea": 100
+    }
+  ],
   "fve": {
-    "arrays": [
+    "dcArrays": [
       {
         "id": "array1",
         "name": "Main Array",
@@ -60,50 +39,65 @@
           {
             "id": "string1",
             "name": "String 1",
-            "panel_count": 10,
-            "panel_model": "FictionalPanel 300W"
+            "panelCount": 10,
+            "panelModel": "FictionalPanel 300W",
+            "panelDatasheetMissing": true
           },
           {
             "id": "string2",
             "name": "String 2",
-            "panel_count": 12,
-            "panel_model": "FictionalPanel 300W"
+            "panelCount": 12,
+            "panelModel": "FictionalPanel 300W",
+            "voltageCheckRequired": true
           }
         ],
-        "inverter": {
-          "model": "FictionalInverter 5kW"
-        }
+        "inverters": [
+          {
+            "id": "inverter1",
+            "model": "FictionalInverter 5kW"
+          }
+        ]
       }
     ]
   },
   "lps": {
-    "riskAssessment": {
-      "level": "medium",
-      "description": "Standard risk assessment for a medium-sized building."
+    "lightningProtectionSystem": {
+      "class": "III",
+      "riskAssessment": {
+        "level": "medium",
+        "description": "Standard risk assessment for a medium-sized building."
+      },
+      "protectionMeasures": {
+        "airTermination": "Simple mesh",
+        "downConductors": 2,
+        "earthElectrode": "Ring electrode"
+      }
     },
-    "protectionMeasures": {
-      "airTermination": "Simple mesh",
-      "downConductors": 2,
-      "earthElectrode": "Ring electrode"
-    }
-  },
-  "spd": {
-    "devices": [
+    "surgeProtectionDevices": [
       {
         "id": "spd_a",
         "name": "SPD Device A",
         "type": "Type 1",
-        "protectionLevel": "2.5kV"
+        "protectionLevel": "2.5kV",
+        "checkUnclosed": true
       }
     ]
   },
   "cad": {
-    "objects": [
+    "layers": [
       {
-        "id": "cad_obj_1",
+        "id": "cad-layer-building-outline",
         "name": "Building Outline",
-        "type": "Polygon",
-        "verified": false
+        "type": "building",
+        "visible": true,
+        "objects": [
+          {
+            "id": "cad_obj_1",
+            "name": "Building Outline",
+            "type": "Polygon",
+            "verified": false
+          }
+        ]
       }
     ]
   },
@@ -113,7 +107,60 @@
       "id": "export1",
       "name": "Main Export Package",
       "format": "PDF",
-      "status": "draft"
+      "status": "draft",
+      "packageStatus": "draft"
+    }
+  ],
+  "qa": {
+    "status": "warning",
+    "warnings": [
+      {
+        "code": "MISSING_DATASHEET",
+        "message": "Panel datasheet is missing.",
+        "componentId": "string1",
+        "componentType": "PV String"
+      },
+      {
+        "code": "UNCLOSED_SPD_CHECK",
+        "message": "SPD check has not been finalized.",
+        "componentId": "spd_a",
+        "componentType": "SPD Device"
+      },
+      {
+        "code": "VOLTAGE_CHECK_REQUIRED",
+        "message": "String voltage requires further inspection.",
+        "componentId": "string2",
+        "componentType": "PV String"
+      }
+    ],
+    "checks": [
+      {
+        "code": "LPS_RISK_REVIEW",
+        "message": "LPS risk assessment is pending review.",
+        "status": "review",
+        "componentId": "lps-risk-assessment",
+        "componentType": "LPS Risk Assessment"
+      },
+      {
+        "code": "CAD_OBJECT_VERIFICATION",
+        "message": "CAD object requires final verification.",
+        "status": "unverified",
+        "componentId": "cad_obj_1",
+        "componentType": "CAD Object"
+      },
+      {
+        "code": "EXPORT_PACKAGE_STATUS",
+        "message": "Export package is in draft status.",
+        "status": "draft",
+        "componentId": "export1",
+        "componentType": "Export"
+      }
+    ]
+  },
+  "migrationHistory": [
+    {
+      "version": "v29",
+      "timestamp": "2026-05-16T10:00:00Z"
     }
   ]
 }

@@ -3,12 +3,12 @@
   "dataModelVersion": "v29",
   "appVersion": "v21.0.0",
   "projectInfo": {
-    "projectName": "Example Solar & Lightning Protection Project",
-    "clientName": "Fictional Client Inc.",
-    "projectDate": "2023-10-27",
-    "contactPerson": "John Doe",
+    "name": "Example Solar & Lightning Protection Project",
+    "customer": "Fictional Client Inc.",
+    "date": "2023-10-27",
+    "projectManager": "John Doe",
     "contactEmail": "john.doe@example.com",
-    "projectAddress": {
+    "address": {
       "street": "123 Example St",
       "city": "Sampleville",
       "postalCode": "12345",
@@ -16,7 +16,11 @@
     }
   },
   "building": {
-    "buildingType": "Residential",
+    "id": "building-1",
+    "name": "Example Building",
+    "type": "Residential",
+    "address": "123 Example St, Sampleville, 12345, Imaginary Land",
+    "location": null,
     "constructionYear": 2010,
     "dimensions": {
       "width": 15,

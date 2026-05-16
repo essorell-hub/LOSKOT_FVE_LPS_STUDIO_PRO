@@ -7,8 +7,16 @@
   "projectInfo": {
     "name": "Fiktivní projekt minimum",
     "customer": "Fiktivní zákazník s.r.o.",
-    "address": "Fiktivní ulice 123, 123 45 Město",
-    "projectManager": "Jan Novák"
+    "address": {
+      "street": "Fiktivní ulice 123",
+      "city": "Město",
+      "postalCode": "123 45"
+    },
+    "projectManager": "Jan Novák",
+    "location": {
+      "latitude": 49.12345,
+      "longitude": 16.78901
+    }
   },
   "building": {
     "id": "building-1",
@@ -23,10 +31,10 @@
   "roofs": [
     {
       "id": "roof-1",
-      "name": "Sedlová střecha",
       "buildingId": "building-1",
-      "orientation": 0,
+      "name": "Sedlová střecha",
       "pitch": 30,
+      "orientation": 0,
       "surfaceArea": 100,
       "covering": "Taška"
     }
