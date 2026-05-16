@@ -1,0 +1,34 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/database/v29/v29_SAMPLE_PROJECTS_GUIDE.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 160 řádků.
+
+Dokument musí popsat:
+1. Účel sample projektů.
+2. v29_minimal_project.json.
+3. v29_full_fve_lps_project.json.
+4. v29_roof_geometry_project.json.
+5. v29_qa_warning_project.json.
+6. Jak sample projekty použít pro import.
+7. Jak sample projekty použít pro export.
+8. Jak sample projekty použít pro SQLite.
+9. Jak sample projekty použít pro QA semafor.
+10. Jak sample projekty použít pro test CAD/mapa.
+11. Očekávané výsledky.
+12. Rizika a omezení.
+13. Doporučení pro další vývoj.
+
+Po dokončení vytvoř commit:
+v29 sample projects guide
