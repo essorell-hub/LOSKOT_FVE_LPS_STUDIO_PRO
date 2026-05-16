@@ -1,0 +1,32 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden SQL soubor:
+database/sqlite/v29/003_seed_v29_reference_data.sql
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Pouze SQL textový soubor.
+- Používej SQLite syntaxi.
+- Seed musí být opakovatelný.
+- Použij INSERT OR IGNORE.
+
+Vlož referenční hodnoty do reference_values:
+- LPS třídy I, II, III, IV
+- QA severity: info, warning, error, critical
+- QA status: pending, ok, warning, error, skipped
+- CAD layer typy: roof, fve, lps, dc_route, ac_route, notes, map
+- typy dokumentů: report, protocol, datasheet, drawing, export_package
+- typy exportů: json, pdf, docx, zip, cad_preview
+- SPD typy: DC T1+T2, DC T2, AC T1+T2, AC T2
+- FVE komponenty: panel, string, inverter, optimizer, dc_route, ac_route
+- LPS komponenty: air_terminal, mesh, downconductor, hvi, earthing, lpz
+
+Po dokončení vytvoř commit:
+v29 sqlite seed reference data
