@@ -1,0 +1,7 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+Vytvoř pouze soubor src/lps/riskAssessmentPlaceholder.js.
+Neměň HTML, CSS, preview, UI, PROJECT_STATE_UNIFIED.md ani CHANGELOG.md.
+Nepřidávej závislosti.
+Neuváděj, že jde o plnohodnotný normový výpočet.
+Exportuj: createRiskInputDefaults, estimateLpsClassPlaceholder, createRiskAssessmentSummary, validateRiskInput.
+Vše označ jako placeholder pro budoucí normový výpočet.
