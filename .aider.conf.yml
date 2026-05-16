@@ -1,6 +1,6 @@
 # LOSKOT FVE & LPS STUDIO PRO - bezpečný Aider režim přes Gemini Flash-Lite
 
-model: gemini/gemini-2.0-flash-lite
+model: gemini/gemini-2.5-flash-lite
 
 git: true
 auto-commits: true
