@@ -1,0 +1,10 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+Vytvoř pouze tyto soubory:
+tests/fve/v31_fve_smoke_test.js
+tests/cad/v31_cad_smoke_test.js
+tests/lps/v31_lps_smoke_test.js
+tests/documents/v31_document_model_smoke_test.js
+tests/database/v31_database_repository_smoke_test.js
+Neměň HTML, CSS, preview, UI, PROJECT_STATE_UNIFIED.md ani CHANGELOG.md.
+Nepřidávej závislosti.
+Testy mají být spustitelné přes node a mají ověřit základní importy a základní funkce modulů.
