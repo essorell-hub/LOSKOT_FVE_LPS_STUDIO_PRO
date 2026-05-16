@@ -1,0 +1,115 @@
+# Prompt pro generování JSON schémat
+
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO. Tvým úkolem je vytvořit JSON schémata pro klíčové entity datového modelu.
+
+**Přísná pravidla:**
+- **NEUPRAVUJ** žádné HTML soubory.
+- **NEUPRAVUJ** žádné CSS.
+- **NEUPRAVUJ** žádné JS/React aplikační soubory.
+- **NEUPRAVUJ** `preview/` složku.
+- **NEUPRAVUJ** `PROJECT_STATE_UNIFIED.md`.
+- **NEUPRAVUJ** `CHANGELOG.md`.
+- **NEPOUŽÍVEJ** `docs/database/v29/v29_DATA_MODEL_MASTER_SPEC.md` ani `docs/database/v29/v29_ENTITY_RELATION_OVERVIEW.md` pro generování schémat, používej pouze názvy entit a jejich klíčová pole.
+- **NEPOUŽÍVEJ** `docs/qa/v29/v29_DATA_MODEL_QA_CHECKLIST.md`.
+- **NEMAŽ** žádné soubory.
+- **NEVYTVÁŘEJ** `build/`, `dist/`, `node_modules/`.
+- **NEVYTVÁŘEJ** ZIP archivy.
+- Pracuj **POUZE** v adresářích `database/schema/v29/` a `docs/database/v29/`. Vytvoř adresář `database/schema/v29/`, pokud neexistuje.
+- Výstup musí být technický a formální (JSON schémata).
+
+**Povoleno vytvořit/upravit pouze:**
+- `database/schema/v29/*.json` (JSON schémata pro jednotlivé entity)
+- `docs/database/v29/v29_DATA_MODEL_MASTER_SPEC.md` (může být aktualizováno s referencí na JSON schémata)
+
+**Úkol:**
+Vytvoř JSON schémata pro následující entity v adresáři `database/schema/v29/`:
+- `project.json`
+- `building.json`
+- `roof.json`
+- `roofPlane.json`
+- `pvPanel.json`
+- `string.json`
+- `inverter.json`
+- `optimizer.json`
+- `dcRoute.json`
+- `acRoute.json`
+- `electricalBoard.json`
+- `spdDc.json`
+- `spdAc.json`
+- `lpsRisk.json`
+- `lpsClass.json`
+- `airTerminalSystem.json`
+- `airTerminal.json`
+- `downconductor.json`
+- `hviConductor.json`
+- `earthing.json`
+- `lpzZone.json`
+- `cadLayer.json`
+- `document.json`
+- `export.json`
+- `qaCheck.json`
+- `auditLog.json`
+- `setting.json`
+
+Pro každé schéma definuj:
+1.  **`$schema`**: "http://json-schema.org/draft-07/schema#"
+2.  **`title`**: Název entity (např. "Project").
+3.  **`description`**: Krátký popis entity.
+4.  **`type`**: "object".
+5.  **`properties`**: Objekt definující jednotlivá pole entity.
+    - Pro každé pole uveď `type` (např. "string", "integer", "number", "boolean", "object", "array").
+    - Pro pole typu "string" s formátem UUID použij `format: "uuid"`.
+    - Pro pole typu "object" nebo "array" definuj jejich vnitřní strukturu (`properties`, `items` atd.).
+    - Pro pole obsahující ID jiných entit (cizí klíče) uveď typ "string" a formát "uuid".
+6.  **`required`**: Pole (array of strings) obsahující názvy povinných polí pro danou entitu.
+7.  **`additionalProperties`**: `false` (zakáže nepovolená pole).
+
+**Příklad pro `project.json` (pouze orientační):**
+```json
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Project",
+  "description": "Kořenový objekt projektu.",
+  "type": "object",
+  "properties": {
+    "projectId": {
+      "description": "Unikátní identifikátor projektu (UUID).",
+      "type": "string",
+      "format": "uuid"
+    },
+    "projectName": {
+      "description": "Název projektu.",
+      "type": "string"
+    },
+    "creationDate": {
+      "description": "Datum vytvoření projektu.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedDate": {
+      "description": "Datum poslední úpravy projektu.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "dataModelVersion": {
+      "description": "Verze datového modelu (např. 'v29.0.0').",
+      "type": "string"
+    },
+    "appVersion": {
+      "description": "Verze aplikace.",
+      "type": "string"
+    }
+    // ... další pole pro FVE, LPS, CAD, dokumenty, exporty atd.
+  },
+  "required": [
+    "projectId",
+    "projectName",
+    "dataModelVersion",
+    "appVersion"
+  ],
+  "additionalProperties": false
+}
+```
+
+Po dokončení těchto úkolů vytvoř commit s názvem:
+`v29 data model master spec and JSON schemas`
