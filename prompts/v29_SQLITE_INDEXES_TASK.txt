@@ -1,0 +1,39 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden SQL soubor:
+database/sqlite/v29/002_indexes_v29.sql
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Pouze SQL textový soubor.
+- Používej SQLite syntaxi.
+- Nepoužívej DROP INDEX.
+- Používej CREATE INDEX IF NOT EXISTS.
+
+Vytvoř indexy pro:
+- project_id ve všech projektových tabulkách,
+- building_id,
+- roof_id,
+- roof_plane_id,
+- string_id,
+- inverter_id,
+- lps_class,
+- lpz_id,
+- layer_id,
+- entity_ref,
+- qa status,
+- export status,
+- created_at,
+- updated_at.
+
+Přidej komentáře, proč index existuje.
+
+Po dokončení vytvoř commit:
+v29 sqlite indexes
