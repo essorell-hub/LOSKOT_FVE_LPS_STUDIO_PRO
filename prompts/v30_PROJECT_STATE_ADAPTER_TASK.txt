@@ -1,0 +1,50 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden soubor:
+src/data/projectStateAdapter.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřidávej závislosti do package.json.
+
+Soubor má připravit bezpečný adapter mezi datovou vrstvou a budoucím UI.
+
+Importuj:
+- createProjectStore ze src/data/projectStore.js
+- runProjectQa ze src/validation/qaStatusEngine.js
+
+Exportuj:
+- createAppProjectState(initialProject)
+- getSafeInspectorData(appState)
+- getSafeQaData(appState)
+- getSafeModuleData(appState, moduleName)
+
+createAppProjectState musí vracet objekt:
+- store
+- getInspectorData()
+- getQaData()
+- getModuleData(moduleName)
+- setProject(project)
+- updateProject(updater)
+
+getSafeInspectorData má vracet:
+- project summary
+- projectInfo
+- building summary
+- counts: roofs, panels, strings, lps prvky, cad objects, documents, qa warnings
+
+getSafeQaData:
+- spustí runProjectQa
+- při chybě vrátí warning/error objekt, ne výjimku.
+
+Po dokončení vytvoř commit:
+v30 project state adapter
