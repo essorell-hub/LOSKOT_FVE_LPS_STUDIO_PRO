@@ -1,0 +1,44 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden soubor:
+src/validation/referenceValidation.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřidávej závislosti do package.json.
+- Bezpečné chování.
+
+Soubor má exportovat:
+- collectEntityIds(project)
+- validatePanelStringReferences(project)
+- validateCadEntityReferences(project)
+- validateQaEntityReferences(project)
+- validateProjectReferences(project)
+
+validateProjectReferences musí vracet:
+{
+  ok,
+  status,
+  errors,
+  warnings,
+  summary
+}
+
+Kontroly:
+- panel.stringId existuje v strings,
+- string.inverterId existuje v inverters,
+- cad object layerId existuje v layers,
+- qa relatedEntityRef nepadá při chybějícím objektu, ale vytvoří warning,
+- žádná chyba nesmí shodit aplikaci.
+
+Po dokončení vytvoř commit:
+v30 reference validation
