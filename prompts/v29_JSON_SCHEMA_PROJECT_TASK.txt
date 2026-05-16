@@ -1,0 +1,28 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON Schema soubor:
+database/schema/v29/project.schema.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Použij JSON Schema Draft 2020-12.
+- Používej odkazy na shared-definitions.schema.json, pokud to dává smysl.
+- Piš popisy česky.
+- Výstup drž přiměřeně krátký.
+
+Schéma project musí obsahovat:
+projectId, dataModelVersion, appVersion, createdAt, updatedAt, projectInfo, building, roofs, fve, lps, cad, documents, exports, qa, migrationHistory.
+
+Povinné položky:
+projectId, dataModelVersion, appVersion, createdAt, updatedAt, projectInfo.
+
+Po dokončení vytvoř commit:
+v29 json schema project
