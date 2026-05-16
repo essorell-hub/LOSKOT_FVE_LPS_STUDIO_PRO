@@ -1,0 +1,41 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/database/v29/v29_JSON_TO_SQLITE_MAPPING.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 180 řádků.
+
+Dokument musí obsahovat:
+1. Účel mapování.
+2. Zásadu: JSON fallback zůstává zdroj přenositelnosti.
+3. Zásadu: SQLite je pracovní úložiště Windows aplikace.
+4. Tabulku JSON path / SQLite table / hlavní klíč / poznámka.
+5. Mapování projectInfo.
+6. Mapování building.
+7. Mapování roofs.
+8. Mapování roofPlanes.
+9. Mapování FVE panels.
+10. Mapování FVE strings.
+11. Mapování inverters.
+12. Mapování LPS.
+13. Mapování CAD layers/objects.
+14. Mapování documents/datasheets.
+15. Mapování exports.
+16. Mapování QA checks.
+17. Mapování audit log.
+18. Importní postup.
+19. Exportní postup.
+20. Rizika a doporučení.
+
+Po dokončení vytvoř commit:
+v29 json to sqlite mapping
