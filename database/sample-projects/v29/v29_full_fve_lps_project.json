@@ -1,0 +1,335 @@
+{
+  "projectId": "fve-lps-proj-001",
+  "dataModelVersion": "v29",
+  "appVersion": "v21.0.0",
+  "projectInfo": {
+    "projectName": "Example Solar & Lightning Protection Project",
+    "clientName": "Fictional Client Inc.",
+    "projectDate": "2023-10-27",
+    "contactPerson": "John Doe",
+    "contactEmail": "john.doe@example.com",
+    "projectAddress": {
+      "street": "123 Example St",
+      "city": "Sampleville",
+      "postalCode": "12345",
+      "country": "Imaginary Land"
+    }
+  },
+  "building": {
+    "buildingType": "Residential",
+    "constructionYear": 2010,
+    "dimensions": {
+      "width": 15,
+      "length": 20,
+      "height": 8
+    },
+    "insulationType": "Standard"
+  },
+  "roofs": [
+    {
+      "roofId": "roof-001",
+      "roofType": "Gable",
+      "material": "Shingles",
+      "pitchDegrees": 30,
+      "area": 300,
+      "orientation": 180,
+      "hasObstacles": false
+    }
+  ],
+  "fve": {
+    "panels": [
+      {
+        "panelId": "panel-001",
+        "manufacturer": "Fictional PV",
+        "model": "PV-450W",
+        "quantity": 12,
+        "dimensions": {
+          "width": 1.1,
+          "length": 2.2
+        },
+        "powerOutputWp": 450,
+        "efficiency": 0.21,
+        "datasheet": "PV-450W-datasheet.pdf"
+      }
+    ],
+    "strings": [
+      {
+        "stringId": "string-001",
+        "panelIds": ["panel-001"],
+        "numberOfPanels": 6,
+        "voltage": 400,
+        "current": 10.5
+      },
+      {
+        "stringId": "string-002",
+        "panelIds": ["panel-001"],
+        "numberOfPanels": 6,
+        "voltage": 400,
+        "current": 10.5
+      }
+    ],
+    "inverters": [
+      {
+        "inverterId": "inverter-001",
+        "manufacturer": "Fictional Energy",
+        "model": "INV-10K",
+        "maxPowerOutputKw": 10,
+        "efficiency": 0.98,
+        "datasheet": "INV-10K-datasheet.pdf"
+      }
+    ],
+    "dcRoutings": [
+      {
+        "dcRouteId": "dc-route-001",
+        "from": "string-001",
+        "to": "inverter-001",
+        "cableType": "PV1-F 4mm2",
+        "lengthKm": 0.05
+      },
+      {
+        "dcRouteId": "dc-route-002",
+        "from": "string-002",
+        "to": "inverter-001",
+        "cableType": "PV1-F 4mm2",
+        "lengthKm": 0.05
+      }
+    ],
+    "acRouting": {
+      "acRouteId": "ac-route-001",
+      "from": "inverter-001",
+      "to": "main-distribution-board",
+      "cableType": "NYM 5x10mm2",
+      "lengthKm": 0.02
+    },
+    "dcSpd": {
+      "spdId": "spd-dc-001",
+      "type": "Type 1+2",
+      "manufacturer": "Fictional Protect",
+      "model": "SPD-DC-1000V",
+      "datasheet": "SPD-DC-1000V-datasheet.pdf"
+    },
+    "acSpd": {
+      "spdId": "spd-ac-001",
+      "type": "Type 1+2",
+      "manufacturer": "Fictional Protect",
+      "model": "SPD-AC-400V",
+      "datasheet": "SPD-AC-400V-datasheet.pdf"
+    },
+    "calculationValues": {
+      "annualProductionKwh": 6000,
+      "peakPowerKw": 5.4
+    }
+  },
+  "lps": {
+    "lpsClass": "III",
+    "riskAssessment": {
+      "level": "medium",
+      "componentsToProtect": ["building", "fve-equipment", "ac-grid"],
+      "protectionMeasures": ["air-termination", "down-conductors", "earthing", "surge-protection"]
+    },
+    "airTerminals": [
+      {
+        "airTerminalId": "at-001",
+        "type": "Franklin Rod",
+        "heightM": 5,
+        "material": "Copper",
+        "placement": "ridge"
+      }
+    ],
+    "downConductors": [
+      {
+        "downConductorId": "dc-lps-001",
+        "from": "at-001",
+        "to": "earthing-001",
+        "cableType": "Copper Cable 50mm2",
+        "lengthM": 15,
+        "route": "wall-mounted"
+      }
+    ],
+    "hvi": null,
+    "earthing": {
+      "earthingId": "earthing-001",
+      "type": "Ring Electrode",
+      "resistanceOhm": 5,
+      "material": "Galvanized Steel",
+      "electrodeLengthM": 50
+    },
+    "spd": [
+      {
+        "spdId": "spd-lps-001",
+        "type": "Type 1",
+        "manufacturer": "Fictional Protect",
+        "model": "SPD-LPS-100kA",
+        "datasheet": "SPD-LPS-100kA-datasheet.pdf"
+      }
+    ],
+    "lpz": [
+      {
+        "lpzId": "lpz-0",
+        "zone": "LPZ 0",
+        "description": "Directly struck by lightning, full lightning current"
+      },
+      {
+        "lpzId": "lpz-1",
+        "zone": "LPZ 1",
+        "description": "Reduced lightning current, high dI/dt"
+      }
+    ],
+    "normativeChecks": [
+      {
+        "checkId": "norm-check-001",
+        "standard": "IEC 62305",
+        "component": "Air Terminals",
+        "result": "Passed"
+      },
+      {
+        "checkId": "norm-check-002",
+        "standard": "IEC 62305",
+        "component": "Down Conductors",
+        "result": "Passed"
+      }
+    ]
+  },
+  "cad": {
+    "layers": [
+      {
+        "layerId": "layer-roof",
+        "name": "Roof Geometry",
+        "visible": true,
+        "objects": []
+      },
+      {
+        "layerId": "layer-fve-panels",
+        "name": "FVE Panels",
+        "visible": true,
+        "objects": []
+      },
+      {
+        "layerId": "layer-lps",
+        "name": "LPS Components",
+        "visible": true,
+        "objects": []
+      },
+      {
+        "layerId": "layer-dc-routes",
+        "name": "DC Routes",
+        "visible": true,
+        "objects": []
+      },
+      {
+        "layerId": "layer-notes",
+        "name": "Notes",
+        "visible": false,
+        "objects": []
+      }
+    ],
+    "objects": [
+      {
+        "objectId": "obj-roof-001",
+        "layerId": "layer-roof",
+        "entityId": "roof-001",
+        "type": "polygon",
+        "coordinates": [[0,0], [20,0], [20,15], [0,15]],
+        "label": "Main Roof"
+      },
+      {
+        "objectId": "obj-panel-layout-001",
+        "layerId": "layer-fve-panels",
+        "entityId": "panel-001",
+        "type": "array",
+        "position": {"x": 5, "y": 5},
+        "rows": 2,
+        "cols": 6,
+        "spacing": 0.1,
+        "label": "PV Array 1"
+      },
+      {
+        "objectId": "obj-at-001",
+        "layerId": "layer-lps",
+        "entityId": "at-001",
+        "type": "point",
+        "position": {"x": 10, "y": 7.5},
+        "label": "Air Terminal"
+      },
+      {
+        "objectId": "obj-dc-route-001",
+        "layerId": "layer-dc-routes",
+        "entityId": "dc-route-001",
+        "type": "line",
+        "coordinates": [[7.5, 5], [7.5, 8], [12, 8]],
+        "label": "DC Cable 1"
+      }
+    ]
+  },
+  "documents": [
+    {
+      "documentId": "doc-001",
+      "name": "FVE Datasheet PV-450W",
+      "type": "Datasheet",
+      "filePath": "datasheets/PV-450W-datasheet.pdf"
+    },
+    {
+      "documentId": "doc-002",
+      "name": "Inverter Datasheet INV-10K",
+      "type": "Datasheet",
+      "filePath": "datasheets/INV-10K-datasheet.pdf"
+    },
+    {
+      "documentId": "doc-003",
+      "name": "Project Proposal",
+      "type": "Report",
+      "filePath": "reports/project_proposal.docx"
+    }
+  ],
+  "exports": [],
+  "qa": {
+    "checks": [
+      {
+        "checkId": "qa-check-001",
+        "module": "fve",
+        "description": "Panel quantity check",
+        "status": "OK",
+        "details": "12 panels confirmed."
+      },
+      {
+        "checkId": "qa-check-002",
+        "module": "fve",
+        "description": "Inverter compatibility",
+        "status": "WARNING",
+        "details": "Inverter max power slightly lower than total panel peak power."
+      },
+      {
+        "checkId": "qa-check-003",
+        "module": "lps",
+        "description": "Earthing resistance",
+        "status": "OK",
+        "details": "Earthing resistance is within acceptable limits."
+      },
+      {
+        "checkId": "qa-check-004",
+        "module": "cad",
+        "description": "Object-entity linkage",
+        "status": "OK",
+        "details": "All CAD objects are linked to a valid entity."
+      }
+    ],
+    "overallStatus": "WARNING"
+  },
+  "migrationHistory": [
+    {
+      "version": "v20",
+      "timestamp": "2023-01-15T10:00:00Z",
+      "description": "Initial migration from v20"
+    },
+    {
+      "version": "v21",
+      "timestamp": "2023-03-20T11:30:00Z",
+      "description": "Update to v21 data model"
+    },
+    {
+      "version": "v29",
+      "timestamp": "2023-10-27T09:00:00Z",
+      "description": "Update to v29 data model"
+    }
+  ]
+}
