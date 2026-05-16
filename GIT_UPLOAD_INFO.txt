@@ -1,0 +1,12 @@
+LOSKOT FVE & LPS STUDIO PRO - v21 SHARED PROJECT MODEL
+
+Obsah balíku:
+- preview/LOSKOT_FVE_LPS_STUDIO_PRO_v21_SHARED_PROJECT_MODEL.html
+- PROJECT_STATE_UNIFIED.md
+- CHANGELOG.md
+- database/sample-projects/LOSKOT_FVE_LPS_STUDIO_PRO_v21_sample_project.json
+
+Doporučené uložení do repozitáře:
+D:\Projekty\LOSKOT_FVE_LPS_STUDIO_PRO
+
+Pokud pracuješ ručně přes Git, zkopíruj obsah balíku do kořene repozitáře a nahraj změny.
