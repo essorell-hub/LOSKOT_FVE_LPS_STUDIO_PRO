@@ -1,0 +1,59 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Uprav pouze tento soubor:
+preview/LOSKOT_FVE_LPS_STUDIO_PRO_v30_DATA_LAYER_UI_BRIDGE_PREVIEW.html
+
+Přísná pravidla:
+- Neupravuj žádný jiný soubor.
+- Neměň CSS vzhled.
+- Neměň Classic PRO layout.
+- Neměň menu.
+- Neměň přepínání obrazovek.
+- Neměň CAD SVG vzhled.
+- Neměň mapu.
+- Neměň názvy modulů.
+- Nesmí vzniknout bílá obrazovka.
+- Zachovej safeModuleLoader.
+- Zachovej funkční render().
+- Zachovej funkční inspector().
+- Zachovej funkční qa().
+- Pokud chyba, zobraz fallback v pravém panelu, ne shození aplikace.
+
+Cíl:
+V tomto novém v30 HTML preview doplň lokální bezpečnou datovou vrstvu inspirovanou v30 src/data a src/validation, ale neimportuj ES moduly z HTML.
+
+Doplň přímo do HTML tyto jednoduché helpery:
+- createV30EmptyProject()
+- normalizeV30Project(project)
+- getV30InspectorData(project)
+- runV30Qa(project)
+
+Napoj:
+- inspector() má zobrazovat data z getV30InspectorData(project)
+- qa() má zobrazovat výsledek runV30Qa(project)
+
+Požadované chování:
+- Pokud project.meta/project.fve/project.lps existuje ve starém formátu, zachovej kompatibilitu.
+- Pokud chybí část dat, doplň fallback.
+- Project Inspector má zobrazit:
+  - Verze: v30 DATA LAYER UI BRIDGE PREVIEW
+  - Projekt
+  - dataModelVersion
+  - FVE výkon
+  - počet panelů
+  - LPS třída
+  - počet modulů
+  - QA status
+- QA semafor má zobrazit:
+  - OK pokud základní data existují
+  - WARNING pokud chybí některá sekce
+  - ERROR pouze při zásadní chybě projektu
+- Vše přes try/catch.
+
+Důležité:
+Toto je pouze HTML preview bridge, ne finální React/Tauri implementace.
+Neměň schválenou grafiku.
+
+Po dokončení vytvoř commit:
+v30 data layer ui bridge preview
