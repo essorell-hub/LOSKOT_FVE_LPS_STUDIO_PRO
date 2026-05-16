@@ -397,5 +397,221 @@ nav(); render(); log('v30 DATA LAYER UI BRIDGE PREVIEW inicializována bez bíl�
 })();
 </script>
 
+
+<!-- V30_IMPORT_EXPORT_FORCE_FIX -->
+<script>
+(function(){
+  function esc(v){
+    try{
+      if(v === undefined || v === null) return "";
+      return String(v).replace(/[&<>"']/g, function(c){
+        return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+      });
+    }catch(e){ return ""; }
+  }
+
+  function byId(id){
+    return document.getElementById(id);
+  }
+
+  function getProjectSafe(){
+    try{
+      if(window.project && typeof window.project === "object") return window.project;
+    }catch(e){}
+    return {
+      projectId:"LOSKOT-V30-EXPORT-FALLBACK",
+      dataModelVersion:"v29",
+      appVersion:"v30 DATA LAYER UI BRIDGE PREVIEW",
+      projectInfo:{ name:"Fallback export project" },
+      fve:{},
+      lps:{},
+      cad:{},
+      qa:{ status:"warning" }
+    };
+  }
+
+  function createV30ExportObject(){
+    var p = getProjectSafe();
+    var clone;
+    try{
+      clone = JSON.parse(JSON.stringify(p));
+    }catch(e){
+      clone = {
+        projectId:"LOSKOT-V30-EXPORT-SAFE",
+        dataModelVersion:"v29",
+        appVersion:"v30 DATA LAYER UI BRIDGE PREVIEW",
+        exportWarning:"Původní projekt nešel serializovat, použit fallback."
+      };
+    }
+
+    clone.exportMetadata = {
+      exportedAt:new Date().toISOString(),
+      exportedBy:"LOSKOT FVE & LPS STUDIO PRO",
+      exportMode:"v30-html-preview",
+      note:"Preview export bez změny projektu."
+    };
+
+    if(!clone.dataModelVersion) clone.dataModelVersion = "v29";
+    if(!clone.appVersion) clone.appVersion = "v30 DATA LAYER UI BRIDGE PREVIEW";
+
+    return {
+      ok:true,
+      fileName:(clone.projectId || "loskot_project") + "_v30_preview_export.json",
+      project:clone,
+      text:JSON.stringify(clone, null, 2)
+    };
+  }
+
+  window.exportJson = function(){
+    try{
+      var out = createV30ExportObject();
+      var target = byId("jsonPreview") || byId("technicalLog") || byId("log");
+      if(target){
+        target.textContent = out.text;
+      }else{
+        alert(out.text.substring(0, 1200));
+      }
+      console.log("V30 export preview created", out.fileName);
+      return out;
+    }catch(err){
+      console.error("Export failed safely:", err);
+      alert("Export selhal bezpečně: " + err.message);
+      return { ok:false, errors:[err.message] };
+    }
+  };
+
+  window.createV30ImportPanel = function(){
+    return ''+
+      '<div class="card"><h2>v30 JSON import preview</h2><div class="body">'+
+      '<div class="notice">Import je zatím bezpečný náhled. Projekt se nepřepíše bez dalšího kroku.</div>'+
+      '<textarea id="v30ImportText" style="width:100%;min-height:120px;background:#07111c;color:#dbeafe;border:1px solid #26384f;border-radius:10px;padding:10px;font-family:monospace;" placeholder="Sem vlož JSON projektu..."></textarea>'+
+      '<div class="tools" style="margin-top:10px">'+
+      '<button class="primary" onclick="previewV30Import()">Zkontrolovat import JSON</button>'+
+      '<button onclick="clearV30Import()">Vyčistit</button>'+
+      '</div>'+
+      '<pre id="v30ImportResult" class="log"></pre>'+
+      '</div></div>';
+  };
+
+  window.previewV30Import = function(){
+    try{
+      var input = byId("v30ImportText");
+      var result = byId("v30ImportResult");
+      var text = input ? input.value : "";
+      if(!text.trim()){
+        if(result) result.textContent = "WARNING: Importní pole je prázdné.";
+        return { ok:false, status:"warning" };
+      }
+
+      var obj = JSON.parse(text);
+      var warnings = [];
+      var errors = [];
+
+      if(!obj.projectId && !(obj.meta && obj.meta.projectId)) warnings.push("Chybí projectId / meta.projectId.");
+      if(!obj.dataModelVersion) warnings.push("Chybí dataModelVersion, bude použit fallback v29.");
+      if(!obj.fve) warnings.push("Chybí FVE sekce.");
+      if(!obj.lps) warnings.push("Chybí LPS sekce.");
+
+      var status = errors.length ? "ERROR" : warnings.length ? "WARNING" : "OK";
+
+      var report = {
+        ok:errors.length === 0,
+        status:status,
+        projectId:obj.projectId || (obj.meta && obj.meta.projectId) || "—",
+        dataModelVersion:obj.dataModelVersion || "v29 fallback",
+        warnings:warnings,
+        errors:errors,
+        note:"Import preview neprovedl zápis do aktuálního projektu."
+      };
+
+      if(result) result.textContent = JSON.stringify(report, null, 2);
+      return report;
+    }catch(err){
+      var r = byId("v30ImportResult");
+      if(r) r.textContent = "ERROR: Neplatný JSON nebo chyba import preview: " + err.message;
+      return { ok:false, status:"error", errors:[err.message] };
+    }
+  };
+
+  window.clearV30Import = function(){
+    var input = byId("v30ImportText");
+    var result = byId("v30ImportResult");
+    if(input) input.value = "";
+    if(result) result.textContent = "";
+  };
+
+  function patchExportArea(){
+    try{
+      var buttons = document.querySelectorAll("button");
+      buttons.forEach(function(btn){
+        var t = (btn.textContent || "").toLowerCase();
+        if(t.indexOf("export json") !== -1 || t.indexOf("exportovat projekt json") !== -1){
+          btn.onclick = window.exportJson;
+        }
+      });
+
+      var view = byId("view");
+      if(view && view.innerHTML.indexOf("v30 JSON import preview") === -1){
+        var activeText = document.body.innerText || "";
+        if(activeText.toLowerCase().indexOf("export") !== -1){
+          // nepřepisovat celý view, jen přidat panel pokud je v export obrazovce nebo prázdno
+        }
+      }
+    }catch(e){}
+  }
+
+  var oldRender = window.render;
+  if(typeof oldRender === "function"){
+    window.render = function(){
+      try{
+        oldRender();
+        patchExportArea();
+      }catch(err){
+        console.error("render fallback after import/export patch:", err);
+      }
+    };
+  }
+
+  window.showV30ImportExportDemo = function(){
+    var view = byId("view");
+    if(!view) return;
+    view.innerHTML =
+      '<h1 class="module-title">Exporty / Importy v30</h1>'+
+      '<div class="grid">'+
+      '<div class="card"><h2>JSON export</h2><div class="body">'+
+      '<button class="primary" onclick="exportJson()">Export JSON preview</button>'+
+      '<pre id="jsonPreview" class="log"></pre>'+
+      '</div></div>'+
+      createV30ImportPanel()+
+      '</div>';
+  };
+
+  function addQuickButton(){
+    try{
+      var footer = document.querySelector(".bottom, footer, .statusbar");
+      if(!footer || document.getElementById("v30ImportExportQuickBtn")) return;
+      var btn = document.createElement("button");
+      btn.id = "v30ImportExportQuickBtn";
+      btn.textContent = "v30 Import/Export";
+      btn.onclick = window.showV30ImportExportDemo;
+      btn.style.marginLeft = "8px";
+      footer.appendChild(btn);
+    }catch(e){}
+  }
+
+  setTimeout(function(){
+    patchExportArea();
+    addQuickButton();
+  }, 100);
+
+  setTimeout(function(){
+    patchExportArea();
+    addQuickButton();
+  }, 500);
+
+  console.log("V30_IMPORT_EXPORT_FORCE_FIX applied");
+})();
+</script>
+
 </body>
 </html>
