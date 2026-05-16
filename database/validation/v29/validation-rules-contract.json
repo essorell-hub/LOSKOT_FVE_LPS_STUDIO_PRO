@@ -1,0 +1,208 @@
+{
+  "contractVersion": "1.0.0",
+  "dataModelVersion": "v29",
+  "validationLevels": {
+    "schema": "JSON schema validation",
+    "references": "Referential integrity checks",
+    "fve": "FVE specific business logic validation",
+    "lps": "LPS specific business logic validation",
+    "cad": "CAD specific business logic validation",
+    "documents": "Document related validation",
+    "exports": "Export package validation",
+    "qa": "Quality Assurance checks",
+    "migration": "Data migration validation",
+    "sqlite": "SQLite integrity and consistency checks"
+  },
+  "ruleCategories": [
+    "schema",
+    "references",
+    "fve",
+    "lps",
+    "cad",
+    "documents",
+    "exports",
+    "qa",
+    "migration",
+    "sqlite"
+  ],
+  "requiredChecks": [
+    "schema",
+    "references"
+  ],
+  "warningChecks": [
+    "fve",
+    "lps",
+    "cad",
+    "documents",
+    "exports",
+    "qa"
+  ],
+  "errorChecks": [],
+  "entityReferenceChecks": {
+    "project": [
+      "object",
+      "roof",
+      "fve",
+      "lps",
+      "cad",
+      "documents",
+      "exports",
+      "qa"
+    ],
+    "object": [
+      "roof",
+      "fve",
+      "lps",
+      "cad",
+      "documents"
+    ],
+    "roof": [
+      "fve",
+      "lps",
+      "cad"
+    ],
+    "fve": [
+      "roof",
+      "documents"
+    ],
+    "lps": [
+      "roof",
+      "documents"
+    ],
+    "cad": [
+      "roof",
+      "documents"
+    ],
+    "documents": [],
+    "exports": [
+      "project"
+    ],
+    "qa": [
+      "project"
+    ]
+  },
+  "importChecks": {
+    "project": [
+      "schema",
+      "references",
+      "fve",
+      "lps",
+      "cad",
+      "documents",
+      "exports",
+      "qa"
+    ],
+    "object": [
+      "schema",
+      "references",
+      "fve",
+      "lps",
+      "cad",
+      "documents"
+    ],
+    "roof": [
+      "schema",
+      "references",
+      "fve",
+      "lps",
+      "cad"
+    ],
+    "fve": [
+      "schema",
+      "references",
+      "documents"
+    ],
+    "lps": [
+      "schema",
+      "references",
+      "documents"
+    ],
+    "cad": [
+      "schema",
+      "references",
+      "documents"
+    ],
+    "documents": [
+      "schema"
+    ],
+    "exports": [
+      "schema",
+      "project"
+    ],
+    "qa": [
+      "schema",
+      "project"
+    ]
+  },
+  "exportChecks": {
+    "project": [
+      "schema",
+      "references",
+      "fve",
+      "lps",
+      "cad",
+      "documents",
+      "exports",
+      "qa"
+    ]
+  },
+  "sqliteChecks": {
+    "projects": [
+      "schema",
+      "references"
+    ],
+    "objects": [
+      "schema",
+      "references"
+    ],
+    "roofs": [
+      "schema",
+      "references"
+    ],
+    "pv_arrays": [
+      "schema",
+      "references"
+    ],
+    "pv_strings": [
+      "schema",
+      "references"
+    ],
+    "inverters": [
+      "schema",
+      "references"
+    ],
+    "lps_components": [
+      "schema",
+      "references"
+    ],
+    "spd_devices": [
+      "schema",
+      "references"
+    ],
+    "lpz_zones": [
+      "schema",
+      "references"
+    ],
+    "cad_objects": [
+      "schema",
+      "references"
+    ],
+    "documents": [
+      "schema",
+      "references"
+    ],
+    "exports": [
+      "schema",
+      "references"
+    ]
+  },
+  "fallbackBehavior": {
+    "onSchemaError": "error",
+    "onReferenceError": "error",
+    "onBusinessLogicError": "warning",
+    "onQARuleViolation": "warning",
+    "onMigrationError": "error",
+    "onSqliteError": "error"
+  },
+  "notes": "This contract defines the validation rules and levels for the v29 data model. It includes checks for schema, references, business logic (FVE, LPS, CAD), documents, exports, QA, migrations, and SQLite integrity. The fallback behavior specifies how errors at different levels are treated."
+}
