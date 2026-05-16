@@ -1,0 +1,26 @@
+{
+  "contractVersion": "v29",
+  "qaRunId": "string",
+  "projectId": "string",
+  "dataModelVersion": "string",
+  "appVersion": "string",
+  "status": "string",
+  "score": 0,
+  "errors": [],
+  "warnings": [],
+  "checks": [
+    {
+      "checkId": "string",
+      "category": "string",
+      "severity": "string",
+      "status": "string",
+      "message": "string",
+      "relatedEntityRef": "string",
+      "recommendation": "string"
+    }
+  ],
+  "summary": "string",
+  "createdAt": "string",
+  "finishedAt": "string",
+  "notes": "string"
+}
