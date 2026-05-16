@@ -1,0 +1,32 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+database/sqlite/v29/v29_sqlite_schema_notes.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 160 řádků.
+
+Dokument musí obsahovat:
+1. Účel SQLite schématu.
+2. Popis 001_init_v29_schema.sql.
+3. Popis 002_indexes_v29.sql.
+4. Popis 003_seed_v29_reference_data.sql.
+5. Jak SQL soubory spouštět.
+6. Proč nepoužívat destruktivní DROP.
+7. Jak řešit migrace.
+8. Jak řešit JSON fallback.
+9. Jak řešit chybu při inicializaci databáze.
+10. Doporučení pro Tauri/Windows.
+11. Kontrolní checklist.
+
+Po dokončení vytvoř commit:
+v29 sqlite schema notes
