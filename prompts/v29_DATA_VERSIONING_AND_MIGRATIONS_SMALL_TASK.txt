@@ -1,0 +1,60 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden dokument:
+docs/database/v29/v29_DATA_VERSIONING_AND_MIGRATIONS.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nevytvářej build/dist/node_modules.
+- Nevytvářej ZIP.
+- Výstup max 160 řádků.
+- Piš česky, technicky a prakticky.
+- Uživatel není programátor, proto piš konkrétní kroky.
+
+Obsah dokumentu:
+1. Účel verzování datového modelu.
+2. Rozdíl mezi appVersion a dataModelVersion.
+3. Doporučená pole v projektu:
+   - dataModelVersion
+   - appVersion
+   - createdAt
+   - updatedAt
+   - migrationHistory
+4. Pravidlo: starý projekt se nesmí rozbít.
+5. Pravidlo: chybějící pole doplnit výchozí hodnotou.
+6. Pravidlo: neznámá pole nezahazovat bez varování.
+7. Pravidlo: každá migrace musí být idempotentní.
+8. Migrace v28 → v29.
+9. Migrace v29 → v30.
+10. Migrace JSON fallbacku.
+11. Migrace SQLite vrstvy.
+12. Jak řešit přejmenovaná pole.
+13. Jak řešit odstraněná pole.
+14. Jak řešit nové moduly.
+15. Jak řešit FVE data.
+16. Jak řešit LPS/DEHN data.
+17. Jak řešit CAD/mapa data.
+18. Jak řešit dokumenty a exporty.
+19. Jak řešit QA výsledky.
+20. Návrh migrationHistory záznamu.
+21. Doporučený postup importu staršího projektu.
+22. Doporučený postup exportu po migraci.
+23. Rizika migrací.
+24. Checklist před spuštěním migrace.
+25. Checklist po migraci.
+26. Doporučení pro další krok: JSON Schema.
+
+V dokumentu přidej krátké ukázky JSON:
+- ukázka dataModelVersion,
+- ukázka migrationHistory položky,
+- ukázka default hodnoty pro chybějící modul.
+
+Po dokončení vytvoř commit:
+v29 data versioning and migrations
