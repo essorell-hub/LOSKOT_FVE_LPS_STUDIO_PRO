@@ -1,0 +1,28 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř nebo uprav pouze jeden soubor:
+src/validation/index.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřidávej závislosti.
+
+Soubor má exportovat veřejné API validace:
+- basicProjectValidation.js
+- referenceValidation.js
+- qaStatusEngine.js
+
+Použij přehledné ES module exporty.
+Soubor nesmí obsahovat UI logiku.
+
+Po dokončení vytvoř commit:
+v30 validation index
