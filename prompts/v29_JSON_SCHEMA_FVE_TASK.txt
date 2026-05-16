@@ -1,0 +1,34 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON Schema soubor:
+database/schema/v29/fve.schema.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Použij JSON Schema Draft 2020-12.
+- Používej odkazy na shared-definitions.schema.json, pokud to dává smysl.
+- Piš popisy česky.
+- Výstup drž přiměřeně krátký.
+
+Schéma FVE musí obsahovat:
+panels, strings, inverters, optimizers, dcRoutes, acRoutes, spdDc, spdAc, calculations, datasheets, warnings, qaStatus.
+
+Panel musí obsahovat:
+panelId, roofPlaneId, manufacturer, model, powerWp, voc, isc, vmpp, impp, dimensions, position, rotation, stringId, optimizerId, cadObjectRef, notes.
+
+String musí obsahovat:
+stringId, inverterId, panelIds, panelCount, vocTotal, vmppTotal, currentA, polarity, dcRouteId, warnings.
+
+Inverter musí obsahovat:
+inverterId, manufacturer, model, acPowerKw, mpptCount, stringInputs, location, datasheetRef, notes.
+
+Po dokončení vytvoř commit:
+v29 json schema fve
