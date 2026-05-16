@@ -1,0 +1,34 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden JSON soubor:
+database/sample-projects/v29/v29_qa_warning_project.json
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- JSON musí být validní.
+- Data musí být fiktivní.
+- Výstup drž přiměřeně krátký.
+
+Projekt má být validní JSON, ale záměrně má obsahovat QA varování:
+- chybějící datasheet panelu,
+- neuzavřená kontrola SPD,
+- string s upozorněním na kontrolu napětí,
+- LPS riskAssessment ve stavu review,
+- CAD objekt bez finálního ověření,
+- export package ve stavu draft,
+- QA status warning.
+
+Důležité:
+- nesmí to být rozbitý JSON,
+- cílem je testovat QA semafor,
+- chyby popiš v qa.warnings nebo qa.checks.
+
+Po dokončení vytvoř commit:
+v29 sample qa warning project
