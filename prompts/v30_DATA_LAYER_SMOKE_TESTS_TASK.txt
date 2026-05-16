@@ -1,0 +1,34 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden soubor:
+tests/data/v30_data_layer_smoke_test.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřidávej závislosti do package.json.
+- Test má být spustitelný přes node, pokud projekt používá ES moduly.
+- Pokud není jasný module systém, napiš test jako dokumentovaný smoke test skript s bezpečným importem.
+
+Test má ověřit:
+- createEmptyProject vrací projekt,
+- normalizeProject doplní sekce,
+- validateBasicProject doběhne,
+- runProjectQa doběhne,
+- createImportPreviewFromObject doběhne,
+- createProjectExportObject doběhne.
+
+Test nesmí vyžadovat UI.
+Test nesmí vyžadovat internet.
+Test nesmí vytvářet build.
+
+Po dokončení vytvoř commit:
+v30 data layer smoke tests
