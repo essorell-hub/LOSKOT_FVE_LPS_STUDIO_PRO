@@ -1,0 +1,74 @@
+{
+  "projectId": "fictional-project-id-12345",
+  "dataModelVersion": "v29",
+  "appVersion": "v21.0.0",
+  "createdAt": "2026-05-16T10:00:00Z",
+  "updatedAt": "2026-05-16T10:00:00Z",
+  "projectInfo": {
+    "name": "Fiktivní projekt minimum",
+    "customer": "Fiktivní zákazník s.r.o.",
+    "address": "Fiktivní ulice 123, 123 45 Město",
+    "projectManager": "Jan Novák"
+  },
+  "building": {
+    "id": "building-1",
+    "name": "Rodinný dům",
+    "type": "Dům",
+    "address": "Fiktivní ulice 123, 123 45 Město",
+    "location": {
+      "latitude": 49.12345,
+      "longitude": 16.78901
+    }
+  },
+  "roofs": [
+    {
+      "id": "roof-1",
+      "name": "Sedlová střecha",
+      "buildingId": "building-1",
+      "orientation": 0,
+      "pitch": 30,
+      "surfaceArea": 100,
+      "covering": "Taška"
+    }
+  ],
+  "fve": {
+    "dcArrays": [],
+    "inverters": [],
+    "moduleConfiguration": null,
+    "calculations": {}
+  },
+  "lps": {
+    "lightningProtectionSystem": null,
+    "equipotentialBonding": null,
+    "surgeProtectionDevices": [],
+    "cableRoutes": []
+  },
+  "cad": {
+    "layers": [
+      {
+        "id": "cad-layer-building",
+        "name": "Stavba",
+        "type": "building",
+        "visible": true
+      },
+      {
+        "id": "cad-layer-roof",
+        "name": "Střecha",
+        "type": "roof",
+        "visible": true
+      }
+    ]
+  },
+  "documents": [],
+  "exports": [],
+  "qa": {
+    "status": "pending",
+    "checks": {}
+  },
+  "migrationHistory": [
+    {
+      "version": "v29",
+      "timestamp": "2026-05-16T10:00:00Z"
+    }
+  ]
+}
