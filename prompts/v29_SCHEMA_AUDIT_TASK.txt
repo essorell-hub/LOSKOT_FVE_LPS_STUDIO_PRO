@@ -1,0 +1,40 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden Markdown dokument:
+docs/audit/v29/v29_SCHEMA_AUDIT.md
+
+Přísná pravidla:
+- Neupravuj HTML.
+- Neupravuj CSS.
+- Neupravuj preview.
+- Neupravuj JS/React.
+- Neupravuj PROJECT_STATE_UNIFIED.md.
+- Neupravuj CHANGELOG.md.
+- Nemaž žádné soubory.
+- Piš česky, technicky a prakticky.
+- Výstup max 220 řádků.
+
+Proveď audit existujících schémat:
+- shared-definitions.schema.json
+- project.schema.json
+- building.schema.json
+- roof.schema.json
+- fve.schema.json
+- lps.schema.json
+- cad.schema.json
+- documents.schema.json
+- exports.schema.json
+- qa.schema.json
+
+Popiš:
+1. Účel každého schématu.
+2. Hlavní entity.
+3. Vazby mezi schématy.
+4. Chybějící nebo rizikové oblasti.
+5. Doporučené opravy před implementací.
+6. Co nechat až do v30.
+7. Checklist validace.
+
+Po dokončení vytvoř commit:
+v29 schema audit
