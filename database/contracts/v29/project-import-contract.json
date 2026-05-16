@@ -1,0 +1,67 @@
+{
+  "contractVersion": "v29",
+  "name": "Project Import Contract",
+  "description": "Definuje pravidla pro import projektových dat.",
+  "acceptedDataModelVersions": [
+    "v21",
+    "v22",
+    "v23",
+    "v24",
+    "v25",
+    "v26",
+    "v27",
+    "v28",
+    "v29"
+  ],
+  "requiredSections": [
+    "zakazka",
+    "objekt",
+    "strecha",
+    "fve",
+    "lps",
+    "spd",
+    "lpz",
+    "cad",
+    "dokumenty",
+    "databaze",
+    "exporty"
+  ],
+  "optionalSections": [],
+  "validationSteps": [
+    "Validace JSON syntaxe",
+    "Kontrola přítomnosti povinných sekcí",
+    "Validace datového modelu dle schémat pro danou verzi",
+    "Kontrola referenční integrity dat",
+    "Přiřazení QA semaforu dle pravidel"
+  ],
+  "migrationSteps": [
+    "Pokus o migraci dat z předchozích verzí datového modelu na v29.",
+    "Logování případných chyb migrace."
+  ],
+  "errorHandling": {
+    "invalidJson": "Import bude zamítnut, původní projekt zůstane nedotčen.",
+    "missingRequiredSections": "Import bude zamítnut, uživatel bude informován o chybějících sekcích.",
+    "dataModelValidationFailed": "Import bude zamítnut, uživatel dostane detailní report o chybách validace.",
+    "integrityChecksFailed": "Import bude zamítnut, uživatel bude informován o problémech s integritou dat.",
+    "migrationFailed": "Uživatel bude informován o selhání migrace. Možnost pokračovat s nekompletními daty nebo import zrušit."
+  },
+  "fallbackBehavior": {
+    "onImportError": "Původní projekt zůstane nezměněn. Uživatel je informován o chybě a možných krocích.",
+    "onMigrationError": "Umožnit uživateli rozhodnout, zda chce pokračovat s částečně migrovanými daty, nebo import zrušit."
+  },
+  "rejectedConditions": [
+    "Import neplatného JSON souboru.",
+    "Chybějící povinné sekce v importovaném JSON.",
+    "Data neodpovídající schématu datového modelu cílové verze.",
+    "Porušení referenční integrity dat."
+  ],
+  "warnings": [
+    "Neznámá pole v importovaném JSON budou zaznamenána a ignorována, pokud neodpovídají definovaným polím v datovém modelu.",
+    "Použití starší verze datového modelu může vést k upozorněním během migrace."
+  ],
+  "notes": [
+    "Tento kontrakt zajišťuje bezpečný a kontrolovaný import projektových dat.",
+    "Důraz je kladen na zachování integrity stávajícího projektu a poskytnutí jasné zpětné vazby uživateli.",
+    "Import bude vždy zahrnovat krok pro náhled a potvrzení uživatelem před finálním zápisem."
+  ]
+}
