@@ -1,0 +1,54 @@
+{
+  "contractVersion": "v29",
+  "name": "LOSKOT FVE & LPS STUDIO PRO Project Export Contract",
+  "exportFormat": "JSON",
+  "includedSections": [
+    "zakazka",
+    "objekt",
+    "strecha",
+    "fve",
+    "lps",
+    "spd",
+    "lpz",
+    "cad",
+    "dokumenty",
+    "databaze",
+    "exporty",
+    "qa"
+  ],
+  "optionalSections": [
+    "historie_revizi",
+    "zalohy_dat"
+  ],
+  "excludedSections": [],
+  "metadata": {
+    "timestamp": "now",
+    "dataModelVersion": "v29",
+    "origin": "LOSKOT_FVE_LPS_STUDIO_PRO"
+  },
+  "integrityChecks": {
+    "checksumAlgorithm": "SHA256",
+    "manifestRequired": true
+  },
+  "fileNamingRules": {
+    "projectName": "[nazev_zakazky]",
+    "dateSuffix": "YYYYMMDD",
+    "fileFormat": "{projectName}_{section}_{dateSuffix}.json"
+  },
+  "packageRules": {
+    "fullProjectPackage": true,
+    "partialPackage": true,
+    "archiveFormat": "zip"
+  },
+  "errorHandling": {
+    "onValidationError": "log_warning",
+    "onExportFailure": "fail_and_report"
+  },
+  "notes": [
+    "Export nesmí měnit stav původního projektu.",
+    "Export musí obsahovat pole dataModelVersion.",
+    "Export musí umožnit export plného projektu i částečného balíku.",
+    "Export musí vytvořit manifest pro ověření integrity.",
+    "Export musí označit případné warningy v datech."
+  ]
+}
