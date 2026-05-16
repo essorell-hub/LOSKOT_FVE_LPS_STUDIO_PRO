@@ -1,0 +1,39 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze jeden soubor:
+src/importExport/jsonExportProject.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň Classic PRO vzhled.
+- Neměň přepínání obrazovek.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nemaž žádné soubory.
+- Nepřidávej závislosti do package.json.
+- Export nesmí měnit původní projekt.
+- Bezpečné chování.
+
+Soubor má importovat:
+- normalizeProject z src/data/projectModel.js
+- runProjectQa z src/validation/qaStatusEngine.js
+
+Soubor má exportovat:
+- createProjectExportObject(project, options)
+- stringifyProjectExport(project, options)
+- createExportManifest(project, qa, options)
+
+Export musí:
+- normalizovat kopii projektu,
+- doplnit export metadata,
+- spustit QA,
+- vrátit manifest,
+- umět pretty JSON,
+- při chybě vrátit { ok:false, errors:[...] }, neházet výjimku do UI.
+
+Po dokončení vytvoř commit:
+v30 json export helper
