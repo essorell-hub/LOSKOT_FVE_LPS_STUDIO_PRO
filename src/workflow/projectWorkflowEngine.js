@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import * as fveIndex from '../fve/index';
-import * as cadIndex from '../cad/index';
-import * as lpsIndex from '../lps/index';
-import * as documentModel from '../documents/documentModel';
-import * as projectRepositoryPreview from '../database/projectRepositoryPreview';
-import * as exportPackageModel from '../export/exportPackageModel';
+import * as fveIndex from '../fve/index.js';
+import * as cadIndex from '../cad/index.js';
+import * as lpsIndex from '../lps/index.js';
+import * as documentModel from '../documents/documentModel.js';
+import * as projectRepositoryPreview from '../database/projectRepositoryPreview.js';
+import * as exportPackageModel from '../export/exportPackageModel.js';
 
 // Placeholder for LPS risk assessment - not a full norm calculation
 const LPS_RISK_PLACEHOLDER = "placeholder_risk_assessment";

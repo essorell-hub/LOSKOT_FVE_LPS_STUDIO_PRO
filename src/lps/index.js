@@ -1,5 +1,5 @@
-import * as lpsObjectModel from './lpsObjectModel';
-import * as riskAssessmentPlaceholder from './riskAssessmentPlaceholder';
+import * as lpsObjectModel from './lpsObjectModel.js';
+import * as riskAssessmentPlaceholder from './riskAssessmentPlaceholder.js';
 // Import other LPS related modules here as needed
 
 export {

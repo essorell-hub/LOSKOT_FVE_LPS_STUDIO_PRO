@@ -7,7 +7,7 @@ import {
     createWorkflowExportManifest,
     runFullWorkflowPreview,
     WORKFLOW_STATUS
-} from '../workflow'; // Assuming projectWorkflowEngine is the default export or correctly aliased
+} from '../workflow.js'; // Assuming projectWorkflowEngine is the default export or correctly aliased
 
 // Mock the projectRepositoryPreview store for testing save/load
 const mockProjectRepositoryPreview = {

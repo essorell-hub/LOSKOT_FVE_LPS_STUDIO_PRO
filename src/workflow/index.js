@@ -1,4 +1,4 @@
-import * as projectWorkflowEngine from './projectWorkflowEngine';
+import * as projectWorkflowEngine from './projectWorkflowEngine.js';
 
 // Export the public API of the workflow engine
 export const {

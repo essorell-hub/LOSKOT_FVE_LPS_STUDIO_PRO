@@ -1,4 +1,4 @@
-import * as documentModel from './documentModel';
+import * as documentModel from './documentModel.js';
 
 export {
     documentModel,

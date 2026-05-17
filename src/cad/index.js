@@ -1,5 +1,5 @@
-import * as layerModel from './layerModel';
-import * as objectModel from './objectModel';
+import * as layerModel from './layerModel.js';
+import * as objectModel from './objectModel.js';
 
 export {
     layerModel,
