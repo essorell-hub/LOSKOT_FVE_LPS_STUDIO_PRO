@@ -58,3 +58,9 @@ export {
   safeFveCadAppConnector
 } from "./fveCadAppConnector.js";
 export * from "./cadSymbolRegistry.js";
+
+export {
+  CAD_SYMBOL_RENDERER_VERSION,
+  createCadSymbolRenderer,
+  safeCadSymbolRenderer
+} from "./cadSymbolRenderer.js";
