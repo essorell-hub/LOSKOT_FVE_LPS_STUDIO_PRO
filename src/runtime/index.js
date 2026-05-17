@@ -52,3 +52,8 @@ export {
   createFveCadDomBinding,
   safeFveCadDomBinding
 } from "./fveCadDomBinding.js";
+export {
+  FVE_CAD_APP_CONNECTOR_VERSION,
+  createFveCadAppConnector,
+  safeFveCadAppConnector
+} from "./fveCadAppConnector.js";
