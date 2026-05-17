@@ -40,3 +40,9 @@ export {
   createFveCadPanelInteractionBridge,
   safeFveCadPanelInteractionBridge
 } from "./fveCadPanelInteraction.js";
+
+export {
+  FVE_CAD_VISUAL_BINDING_VERSION,
+  createFveCadVisualBinding,
+  safeFveCadVisualBinding
+} from "./fveCadVisualBinding.js";
