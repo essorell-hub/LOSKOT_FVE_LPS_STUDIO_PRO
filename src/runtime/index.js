@@ -46,3 +46,9 @@ export {
   createFveCadVisualBinding,
   safeFveCadVisualBinding
 } from "./fveCadVisualBinding.js";
+
+export {
+  FVE_CAD_DOM_BINDING_VERSION,
+  createFveCadDomBinding,
+  safeFveCadDomBinding
+} from "./fveCadDomBinding.js";
