@@ -133,3 +133,56 @@ export default {
   createRiskAssessmentSummary,
   isRiskAssessmentPlaceholder
 };
+
+
+export function estimateLpsClassPlaceholder(input = {}) {
+  const result = createRiskAssessmentPlaceholder(input);
+  const objects = result.counts?.objects || 0;
+  const spd = result.counts?.spdObjects || 0;
+  const hvi = result.counts?.hviObjects || 0;
+
+  let lpsClass = "LPS III/IV preview";
+  if (objects >= 8 && spd >= 1) lpsClass = "LPS II preview";
+  if (objects >= 12 && spd >= 1 && hvi >= 1) lpsClass = "LPS I preview";
+
+  return {
+    ok: true,
+    isPlaceholder: true,
+    normative: false,
+    lpsClass,
+    warnings: [
+      "Orientační placeholder. Nenahrazuje výpočet podle ČSN EN 62305-2."
+    ],
+    errors: []
+  };
+}
+
+
+export function validateRiskInput(input = {}) {
+  const errors = [];
+  const warnings = [];
+
+  if (!input || typeof input !== "object") {
+    errors.push("Risk input musí být objekt.");
+  }
+
+  const objects = Array.isArray(input)
+    ? input
+    : Array.isArray(input.objects)
+      ? input.objects
+      : input.lps && Array.isArray(input.lps.objects)
+        ? input.lps.objects
+        : [];
+
+  if (objects.length === 0) {
+    warnings.push("LPS risk input neobsahuje žádné LPS objekty.");
+  }
+
+  return {
+    ok: errors.length === 0,
+    isPlaceholder: true,
+    normative: false,
+    warnings,
+    errors
+  };
+}

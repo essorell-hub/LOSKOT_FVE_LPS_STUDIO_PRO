@@ -40,7 +40,7 @@ function createBaseLpsObject({ type, name, geometryType, geometry, layerId, prop
     };
 }
 
-function normalizeLpsObject(lpsObject, updateTimestamp = true) {
+export function normalizeLpsObject(lpsObject, updateTimestamp = true) {
     if (!lpsObject) return null;
 
     const now = new Date();

@@ -147,3 +147,9 @@ export function addLayer(layers = [], layerInput = {}) {
   list.push(layer);
   return list;
 }
+
+
+export function getLayerById(layers = [], layerId = "") {
+  const list = Array.isArray(layers) ? layers : [];
+  return list.find((layer) => layer && layer.id === layerId) || null;
+}

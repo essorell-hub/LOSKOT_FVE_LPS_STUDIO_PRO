@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { createLocalId } from "../shared/localId.js";
 
 // Define supported geometry types
 const SUPPORTED_GEOMETRY_TYPES = ['point', 'polyline', 'polygon', 'rect', 'circle'];
@@ -13,32 +14,47 @@ const SUPPORTED_GEOMETRY_TYPES = ['point', 'polyline', 'polygon', 'rect', 'circl
  * @param {object} [options.properties] - Additional custom properties.
  * @returns {object} The created CAD object.
  */
-export function createCadObject({ name, geometryType, geometry, layerId, properties = {} }) {
-    if (!name) throw new Error("CAD object must have a name.");
-    if (!geometryType) throw new Error("CAD object must have a geometryType.");
-    if (!SUPPORTED_GEOMETRY_TYPES.includes(geometryType)) {
-        throw new Error(`Unsupported geometryType: ${geometryType}. Supported types are: ${SUPPORTED_GEOMETRY_TYPES.join(', ')}.`);
-    }
-    if (!geometry) throw new Error("CAD object must have geometry data.");
+export function createCadObject(input = {}) {
+  const geometryAliases = {
+    Point: "point",
+    point: "point",
+    POINT: "point",
+    LineString: "polyline",
+    linestring: "polyline",
+    LINESTRING: "polyline",
+    Polyline: "polyline",
+    polyline: "polyline",
+    Polygon: "polygon",
+    polygon: "polygon",
+    Rect: "rect",
+    Rectangle: "rect",
+    rectangle: "rect",
+    Circle: "circle",
+    circle: "circle"
+  };
 
-    const now = new Date();
-    const timestamp = now.toISOString();
+  const rawGeometryType = input.geometryType || input.type || "point";
+  const normalizedGeometryType = geometryAliases[rawGeometryType] || String(rawGeometryType).toLowerCase();
+  const supported = ["point", "polyline", "polygon", "rect", "circle"];
 
-    return {
-        id: uuidv4(),
-        name: name,
-        geometryType: geometryType,
-        geometry: geometry,
-        layerId: layerId || null, // Default to null if not provided
-        properties: {
-            ...properties,
-            createdAt: timestamp,
-            updatedAt: timestamp,
-        },
-        selected: false,
-        visible: true, // Default visibility
-        locked: false, // Default lock status
-    };
+  if (!supported.includes(normalizedGeometryType)) {
+    throw new Error(`Unsupported geometryType: ${rawGeometryType}. Supported types are: ${supported.join(", ")}.`);
+  }
+
+  return {
+    id: input.id || createLocalId("cad"),
+    type: input.type || normalizedGeometryType,
+    geometryType: normalizedGeometryType,
+    name: input.name || "CAD objekt",
+    layerId: input.layerId || null,
+    points: Array.isArray(input.points) ? input.points : [],
+    x: Number(input.x || 0),
+    y: Number(input.y || 0),
+    width: Number(input.width || 0),
+    height: Number(input.height || 0),
+    radius: Number(input.radius || 0),
+    metadata: input.metadata || {}
+  };
 }
 
 /**
