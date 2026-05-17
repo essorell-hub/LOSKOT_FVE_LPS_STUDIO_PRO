@@ -64,3 +64,9 @@ export {
   createCadSymbolRenderer,
   safeCadSymbolRenderer
 } from "./cadSymbolRenderer.js";
+
+export {
+  REAL_CAD_SYMBOL_DISPLAY_VERSION,
+  createRealCadSymbolDisplay,
+  safeRealCadSymbolDisplay
+} from "./realCadSymbolDisplay.js";
