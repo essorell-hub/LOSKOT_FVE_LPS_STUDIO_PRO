@@ -1,0 +1,33 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř nebo uprav pouze tyto soubory:
+src/workflow/index.js
+tests/workflow/v32_workflow_smoke_test.js
+docs/workflow/v32_PROJECT_WORKFLOW_ENGINE.md
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nepřidávej závislosti.
+
+Požadavky:
+1. src/workflow/index.js má exportovat public API z projectWorkflowEngine.js.
+2. Smoke test má být spustitelný přes node.
+3. Smoke test má ověřit:
+   - vytvoření workflow projektu
+   - QA workflow
+   - summary
+   - save/load přes preview repository
+   - export manifest
+   - runFullWorkflowPreview
+4. Dokumentace česky:
+   - co workflow engine propojuje
+   - co je reálně funkční
+   - co je preview
+   - co je placeholder
+   - další kroky k full verzi
