@@ -12,3 +12,8 @@ export {
 } from "./appRuntimeBridge.js";
 
 export { default } from "./appRuntimeBridge.js";
+
+export {
+  APP_STATE_CONTROLLER_VERSION,
+  createAppStateController
+} from "./appStateController.js";
