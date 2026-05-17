@@ -70,3 +70,9 @@ export {
   createRealCadSymbolDisplay,
   safeRealCadSymbolDisplay
 } from "./realCadSymbolDisplay.js";
+
+export {
+  PROJECT_INSPECTOR_LAYERS_VERSION,
+  createProjectInspectorLayers,
+  safeProjectInspectorLayers
+} from "./projectInspectorLayers.js";
