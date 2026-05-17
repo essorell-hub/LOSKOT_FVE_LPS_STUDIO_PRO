@@ -22,3 +22,9 @@ export {
   CLASSIC_UI_RUNTIME_ADAPTER_VERSION,
   createClassicUiRuntimeAdapter
 } from "./classicUiRuntimeAdapter.js";
+
+export {
+  RUNTIME_BOOTSTRAP_VERSION,
+  createRuntimeBootstrap,
+  safeRuntimeBootstrap
+} from "./runtimeBootstrap.js";
