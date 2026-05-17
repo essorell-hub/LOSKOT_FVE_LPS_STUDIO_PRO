@@ -17,3 +17,8 @@ export {
   APP_STATE_CONTROLLER_VERSION,
   createAppStateController
 } from "./appStateController.js";
+
+export {
+  CLASSIC_UI_RUNTIME_ADAPTER_VERSION,
+  createClassicUiRuntimeAdapter
+} from "./classicUiRuntimeAdapter.js";
