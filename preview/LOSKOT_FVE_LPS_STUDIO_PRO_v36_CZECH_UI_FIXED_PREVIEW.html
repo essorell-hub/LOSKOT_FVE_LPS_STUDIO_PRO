@@ -1,0 +1,1205 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>LOSKOT FVE & LPS STUDIO PRO v36 ČESKÉ UI — ULOŽENÍ A EXPORT</title>
+<style>
+:root{--bg:#0b1118;--panel:#111b26;--panel2:#162230;--panel3:#0f1823;--line:#26384a;--txt:#e7eef7;--muted:#93a6ba;--acc:#f3b33d;--acc2:#ffd36b;--ok:#4ade80;--warn:#facc15;--bad:#fb7185;--blue:#60a5fa;--pv:#38bdf8;--lps:#f59e0b;--spd:#a78bfa}*{box-sizing:border-box}html,body{height:100%}body{margin:0;background:radial-gradient(circle at 30% 0,#182638,#0b1118 45%,#070b10);color:var(--txt);font:14px/1.45 Segoe UI,Roboto,Arial,sans-serif;overflow:hidden}.app{height:100vh;display:grid;grid-template-columns:270px 1fr 340px;grid-template-rows:60px 1fr 132px}.top{grid-column:1/4;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid var(--line);background:linear-gradient(90deg,#0d1621,#111d2a)}.brand{display:flex;gap:12px;align-items:center}.logo{width:36px;height:36px;border-radius:10px;background:conic-gradient(from 160deg,var(--acc),#fff1b8,var(--pv),var(--lps),var(--acc));box-shadow:0 0 24px #f3b33d55}.brand h1{font-size:16px;margin:0;letter-spacing:.4px}.brand small{color:var(--muted)}.status{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.pill{padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:#0d1722;color:var(--muted);white-space:nowrap}.pill.ok{color:var(--ok);border-color:#285c3a}.pill.fve{color:var(--pv);border-color:#1e4e62}.pill.lps{color:var(--lps);border-color:#6b4a13}.side{border-right:1px solid var(--line);background:#0b131d;padding:12px;overflow:auto}.section-title{font-size:11px;color:#72869a;margin:14px 8px 7px;text-transform:uppercase;letter-spacing:.12em}.nav button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:8px;border:1px solid transparent;background:transparent;color:#b8c8d8;padding:10px 11px;border-radius:10px;cursor:pointer;text-align:left}.nav button:hover{background:#122032}.nav button.active{background:linear-gradient(90deg,#1b2c3e,#132032);border-color:#36506b;color:#fff}.nav .tag{font-size:10px;padding:2px 6px;border-radius:999px;background:#1e3043;color:#9fb3c8}.main{padding:14px;overflow:auto}.right{border-left:1px solid var(--line);background:#0b131d;padding:12px;overflow:auto}.bottom{grid-column:1/4;border-top:1px solid var(--line);background:#081018;display:grid;grid-template-columns:270px 1fr 340px}.mini{padding:10px 12px;border-right:1px solid var(--line);overflow:auto}.log,pre{font-family:Consolas,Menlo,monospace;font-size:12px;color:#98abc0}.module-title{font-size:24px;margin:2px 0 4px}.sub{color:var(--muted);margin:0 0 12px}.grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.split{display:grid;grid-template-columns:1fr 1fr;gap:12px}.card{background:linear-gradient(180deg,#121e2b,#0f1823);border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 40px #0006;overflow:hidden}.card h2{font-size:15px;margin:0;padding:14px 15px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}.card .body{padding:14px}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.kpi{background:#0c1520;border:1px solid #223346;border-radius:14px;padding:12px}.kpi b{display:block;font-size:22px}.kpi span{color:var(--muted);font-size:12px}.table{width:100%;border-collapse:collapse}.table td,.table th{border-bottom:1px solid #213144;padding:8px;text-align:left;vertical-align:top}.table th{color:#8fa4b8;font-size:12px}.notice{border:1px dashed #425a72;background:#0c1722;border-radius:14px;padding:12px;color:#b8c8d8}.cadWrap{height:430px;border-radius:14px;border:1px solid #2b4055;background:#09111a;overflow:hidden}.tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}.tools button,.primary,label.fileBtn{border:1px solid #36506b;background:#132236;color:#dce8f5;border-radius:10px;padding:8px 10px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;text-decoration:none}.tools button:hover,.primary:hover,label.fileBtn:hover{border-color:var(--acc)}input[type=file]{display:none}.qaRow{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #223346;padding:9px 0;gap:10px}.dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:8px}.okdot{background:var(--ok)}.warndot{background:var(--warn)}.baddot{background:var(--bad)}.muted{color:var(--muted)}.badge{font-size:11px;border:1px solid #32475d;background:#101b27;border-radius:999px;padding:3px 7px;color:#9fb3c8}.schema{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}.schemaItem{border:1px solid #2b4055;background:#0c1520;border-radius:12px;padding:10px}.schemaItem b{display:block;color:#fff}.schemaItem span{font-size:11px;color:var(--muted)}.err{position:fixed;inset:auto 20px 20px auto;background:#2a1118;border:1px solid #7f1d1d;color:#fecdd3;border-radius:12px;padding:12px;max-width:560px;z-index:99}.fallback{border:1px solid #7f1d1d;background:#1c1118;border-radius:14px;padding:14px;color:#fecdd3}textarea{width:100%;min-height:245px;background:#071019;color:#cfe2f6;border:1px solid #30475e;border-radius:12px;padding:12px;resize:vertical}.lock{color:#f7c86a}.twoTone{display:inline-flex;gap:6px}.twoTone i{font-style:normal;padding:2px 7px;border-radius:999px;border:1px solid #28445c}.twoTone i:first-child{color:var(--pv)}.twoTone i:last-child{color:var(--lps)}@media(max-width:1100px){body{overflow:auto}.app{height:auto;min-height:100vh;grid-template-columns:1fr;grid-template-rows:auto}.top,.bottom{grid-column:auto}.side,.right{border:0}.bottom{grid-template-columns:1fr}.grid,.split,.grid3{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.schema{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<div id="app" class="app">
+<header class="top"><div class="brand"><div class="logo"></div><div><h1>LOSKOT FVE & LPS STUDIO PRO</h1><small>v36 ČESKÉ UI — ULOŽENÍ A EXPORT / společný FVE + LPS program</small></div></div><div class="status"><span class="pill fve">FVE aktivní</span><span class="pill lps">LPS / DEHN aktivní</span><span class="pill ok">Safe Module Loader</span><span class="pill">React/Tauri příprava</span></div></header>
+<aside class="side"><div class="section-title">Hlavní moduly</div><nav class="nav" id="nav"></nav><div class="section-title">Zámek vzhledu</div><div class="notice"><b class="lock">Classic PRO vzhled je zachován.</b><br>v36 ČESKÉ UI — ULOŽENÍ A EXPORT nemění tmavý shell, menu ani přepínání obrazovek.</div><div class="section-title">Fokus verze</div><div class="notice">Produkční předávací balík, release checklist a Git workflow<br><br>Production handoff: připraven release checklist, Git upload postup a balicí skripty.</div></aside>
+<main class="main"><div id="view"></div></main>
+<aside class="right"><div class="card"><h2>Project Inspector <span>LIVE</span></h2><div class="body" id="inspector"></div></div><br><div class="card"><h2>QA semafor</h2><div class="body" id="qa"></div></div><br><div class="card"><h2>Module health</h2><div class="body" id="health"></div></div></aside>
+<footer class="bottom"><div class="mini"><b>Náhledy</b><div class="log">[HTML] záložní kontrola<br>[REACT] src/app připraveno<br>[TAURI] src-tauri připraveno</div></div><div class="mini"><b>Technický log</b><div id="log" class="log"></div></div><div class="mini"><b>Export / import</b><br><button class="primary" onclick="exportJson()">Export JSON</button> <button class="primary" onclick="testModuleFailure()">Test pádu modulu</button></div></footer>
+</div>
+<script id="projectJson" type="application/json">{"schemaVersion": "27.0.0", "appVersion": "v36 ČESKÉ UI — ULOŽENÍ A EXPORT", "meta": {"program": "LOSKOT FVE & LPS STUDIO PRO", "projectId": "FVE-LPS-DEMO-027", "createdAt": "2026-05-16T00:00:00+02:00", "updatedAt": "2026-05-16T00:00:00+02:00", "language": "cs-CZ", "status": "preview", "sourceBase": "v22 MODULE REGISTRY + SAFE MODULE LOADER"}, "zakazka": {"nazev": "Administrativní objekt - společný návrh FVE + LPS", "cisloZakazky": "FVE-LPS-DEMO-027", "investor": "Interní demo investor", "projektant": "LOSKOT FVE & LPS STUDIO PRO", "mistoStavby": "Česká republika", "kraj": "Jihomoravský kraj", "katastralniUzemi": "Demo KÚ", "parcelniCisla": ["123/4", "123/5"], "stupenDokumentace": "studie / návrh pro koordinaci"}, "objekt": {"typ": "administrativní objekt", "delkaM": 42, "sirkaM": 18, "vyskaM": 9.5, "umisteniTechnologie": "střecha + technická místnost"}, "strecha": {"typ": "sedlová", "krytina": "plech", "sklonStupne": 22, "roviny": ["jižní", "severní"], "prekazky": ["komín", "výlez"]}, "fve": {"aktivni": true, "panely": {"pocet": 36, "vykonWp": 450}, "instalovanyVykonKwp": 16.2, "stringy": [{"id": "S1", "pocetPanelu": 12}, {"id": "S2", "pocetPanelu": 12}, {"id": "S3", "pocetPanelu": 12}], "menice": [{"id": "INV-01", "typ": "SG15RT demo", "vykonKw": 15}], "dcTrasy": ["DC-01", "DC-02", "DC-03"]}, "lps": {"aktivni": true, "tridaLps": "LPS III", "lpl": "LPL III", "jimacePocet": 8, "svodyPocet": 4, "hviTrasy": 2, "uzemneni": "obvodový zemnič FeZn 30x4"}, "spd": {"dc": "T1+T2 DC", "ac": "T1+T2 AC", "datoveLinky": "připraveno"}, "lpz": {"zony": ["LPZ-0A", "LPZ-0B", "LPZ-1", "LPZ-2"]}, "cad": {"vrstvy": ["objekt", "střecha", "FVE panely", "stringy", "DC trasy", "jímače", "svody", "HVI", "zemnění", "LPZ", "mapa"], "selected": [], "mapa": "technický placeholder"}, "dokumenty": {"sablony": ["Technická zpráva FVE", "Technická zpráva LPS", "SPD/LPZ protokol", "Výkaz zařízení"], "stav": "příprava"}, "databaze": {"cil": "SQLite", "stav": "adapter preview", "tabulky": ["projects", "objects", "roofs", "pv_arrays", "pv_strings", "inverters", "lps_components", "spd_devices", "lpz_zones", "cad_objects", "documents", "exports"]}, "exporty": {"json": true, "docx": true, "pdf": true, "zip": true}, "runtime": {"safeModuleLoader": true, "moduleRegistry": true, "whiteScreenProtection": true}, "qa": {"stav": "preview", "classicProZachovan": true, "prepinaniObrazovek": true, "fallbackModulu": true}}</script>
+<script id="moduleRegistryJson" type="application/json">{"schemaVersion": "27.0.0", "appVersion": "v36 ČESKÉ UI — ULOŽENÍ A EXPORT", "registryMode": "central-module-registry", "safeModuleLoader": {"enabled": true, "fallback": "ModuleFallbackPanel", "whiteScreenProtection": true, "errorBoundaryReady": true}, "modules": [{"id": "dashboard", "label": "Dashboard", "tag": "CORE", "component": "DashboardModule", "path": "src/modules/dashboard/DashboardModule.jsx", "enabled": true, "status": "ready", "description": "Přehled projektu, KPI a stav aplikace", "order": 1}, {"id": "project-model", "label": "Sdílený model", "tag": "MODEL", "component": "ProjectModelModule", "path": "src/modules/project-model/ProjectModelModule.jsx", "enabled": true, "status": "ready", "description": "Zakázka, objekt, střecha, FVE, LPS, SPD, LPZ, CAD a exporty", "order": 2}, {"id": "fve", "label": "FVE modul", "tag": "FVE", "component": "FveModule", "path": "src/modules/fve/FveModule.jsx", "enabled": true, "status": "ready", "description": "Panely, stringy, měnič, DC trasy a výpočty výkonu", "order": 3}, {"id": "lps", "label": "LPS / DEHN", "tag": "LPS", "component": "LpsModule", "path": "src/modules/lps/LpsModule.jsx", "enabled": true, "status": "ready", "description": "Jímací soustava, svody, HVI, uzemnění a riziko", "order": 4}, {"id": "spd-lpz", "label": "SPD / LPZ", "tag": "SPD", "component": "SpdLpzModule", "path": "src/modules/spd-lpz/SpdLpzModule.jsx", "enabled": true, "status": "ready", "description": "Svodiče, ochranné zóny a koordinace přepětí", "order": 5}, {"id": "cad-map", "label": "CAD / Mapa", "tag": "CAD", "component": "CadMapModule", "path": "src/modules/cad-map/CadMapModule.jsx", "enabled": true, "status": "ready", "description": "CAD náhled, vrstvy, mapa a objekty", "order": 6}, {"id": "documents", "label": "Dokumenty", "tag": "DOC", "component": "DocumentsModule", "path": "src/modules/documents/DocumentsModule.jsx", "enabled": true, "status": "ready", "description": "Technické zprávy, protokoly a výstupy", "order": 7}, {"id": "database", "label": "Databáze", "tag": "DB", "component": "DatabaseModule", "path": "src/modules/database/DatabaseModule.jsx", "enabled": true, "status": "ready", "description": "Zařízení, registry, SQLite příprava a datasheety", "order": 8}, {"id": "exports", "label": "Exporty", "tag": "EXP", "component": "ExportsModule", "path": "src/modules/exports/ExportsModule.jsx", "enabled": true, "status": "ready", "description": "JSON/DOCX/PDF/ZIP exportní fronta", "order": 9}, {"id": "settings", "label": "Registry Manager", "tag": "CFG", "component": "SettingsModule", "path": "src/modules/settings/SettingsModule.jsx", "enabled": true, "status": "ready", "description": "Přehled modulů, bezpečné načítání a nastavení", "order": 10}]}</script>
+<script>
+'use strict';
+let project = JSON.parse(document.getElementById('projectJson').textContent);
+let registry = JSON.parse(document.getElementById('moduleRegistryJson').textContent);
+let active = 'dashboard';
+let faultMode = false;
+function el(id){return document.getElementById(id)}
+function log(t){el('log').innerHTML='['+new Date().toLocaleTimeString()+'] '+escapeHtml(t)+'<br>'+el('log').innerHTML}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+window.addEventListener('error',e=>showModuleError('Globální chyba: '+e.message));
+window.addEventListener('unhandledrejection',e=>showModuleError('Promise chyba: '+(e.reason && e.reason.message ? e.reason.message : e.reason)));
+function showModuleError(msg){const d=document.createElement('div');d.className='err';d.textContent=msg+' — aplikace zůstává spuštěná.';document.body.appendChild(d);setTimeout(()=>d.remove(),6500)}
+function nav(){el('nav').innerHTML=registry.modules.map(m=>`<button class="${active===m.id?'active':''}" onclick="openModule('${m.id}')"><span>${m.label}</span><span class="tag">${m.tag}</span></button>`).join('')}
+function openModule(id){active=id; nav(); render(); log('Přepnut modul: '+id)}
+function safeModuleLoader(id, fn){try{ if(faultMode && id==='cad-map') throw new Error('Testovací chyba CAD/mapa modulu'); return fn(); }catch(err){showModuleError('Chyba modulu '+id+': '+err.message); return `<div class="fallback"><h2>Modul ${escapeHtml(id)} spadl bezpečně</h2><p>Bílá obrazovka nevznikla. Shell, menu, Project Inspector a QA zůstávají aktivní.</p><pre>${escapeHtml(err.stack||err.message)}</pre></div>`;}}
+function rows(obj){return Object.entries(obj).map(([k,v])=>`<tr><td>${escapeHtml(k)}</td><td>${escapeHtml(Array.isArray(v)?v.join(', '):(typeof v==='object'?JSON.stringify(v):v))}</td></tr>`).join('')}
+function kpis(){return `<div class="kpis"><div class="kpi"><b>${project.fve.instalovanyVykonKwp}</b><span>kWp FVE</span></div><div class="kpi"><b>${project.fve.panely.pocet}</b><span>panelů</span></div><div class="kpi"><b>${project.lps.jimacePocet}</b><span>jímačů</span></div><div class="kpi"><b>${registry.modules.length}</b><span>modulů</span></div></div>`}
+function cadSvg(){let panels='';for(let r=0;r<3;r++){for(let c=0;c<12;c++){panels+=`<rect x="${160+c*34}" y="${105+r*48}" width="28" height="42" rx="3" fill="#12365b" stroke="#60a5fa"/>`;}}let rods='';[[135,90],[590,90],[130,270],[595,270],[360,78],[360,285],[80,180],[640,180]].forEach(p=>{rods+=`<circle cx="${p[0]}" cy="${p[1]}" r="7" fill="#f3b33d"/><line x1="${p[0]}" y1="${p[1]}" x2="${p[0]}" y2="${p[1]-36}" stroke="#f3b33d" stroke-width="3"/>`;});return `<svg viewBox="0 0 720 360" width="100%" height="100%"><rect width="720" height="360" fill="#08111a"/><path d="M90 285 L360 55 L630 285 Z" fill="#152436" stroke="#435b73" stroke-width="3"/><path d="M360 55 L360 285" stroke="#708aa3" stroke-dasharray="6 6"/>${panels}${rods}<polyline points="115,300 200,322 360,330 520,322 610,300" fill="none" stroke="#4ade80" stroke-width="3"/><text x="24" y="32" fill="#93a6ba">CAD preview: FVE panely + LPS jímací soustava + uzemnění</text><text x="24" y="340" fill="#93a6ba">v36 ČESKÉ UI — ULOŽENÍ A EXPORT</text></svg>`}
+const views={
+'dashboard':()=>`<h1 class="module-title">Dashboard</h1><p class="sub">v36 ČESKÉ UI — ULOŽENÍ A EXPORT — Produkční předávací balík, release checklist a Git workflow</p>${kpis()}<br><div class="grid"><div class="card"><h2>CAD / mapa záložní náhled</h2><div class="body"><div class="cadWrap">${cadSvg()}</div></div></div><div class="card"><h2>Stav migrace</h2><div class="body"><table class="table"><tr><td>Classic PRO</td><td>zachováno</td></tr><tr><td>Module Registry</td><td>aktivní</td></tr><tr><td>Safe Module Loader</td><td>aktivní</td></tr><tr><td>React struktura</td><td>připravena</td></tr><tr><td>Tauri</td><td>bez ostrého buildu</td></tr></table></div></div></div>`,
+'project-model':()=>`<h1 class="module-title">Sdílený projektový model</h1><div class="schema">${Object.keys(project).map(k=>`<div class="schemaItem"><b>${escapeHtml(k)}</b><span>sekce JSON modelu</span></div>`).join('')}</div><br><div class="card"><h2>Model JSON preview</h2><div class="body"><textarea readonly>${escapeHtml(JSON.stringify(project,null,2))}</textarea></div></div>`,
+'fve':()=>`<h1 class="module-title">FVE modul</h1><div class="split"><div class="card"><h2>FVE data</h2><div class="body"><table class="table">${rows(project.fve)}</table></div></div><div class="card"><h2>Stringy / DC</h2><div class="body"><table class="table">${project.fve.stringy.map(s=>`<tr><td>${s.id}</td><td>${s.pocetPanelu} panelů</td></tr>`).join('')}</table></div></div></div>`,
+'lps':()=>`<h1 class="module-title">LPS / DEHN modul</h1><div class="card"><h2>LPS data</h2><div class="body"><table class="table">${rows(project.lps)}</table></div></div>`,
+'spd-lpz':()=>`<h1 class="module-title">SPD / LPZ</h1><div class="split"><div class="card"><h2>SPD</h2><div class="body"><table class="table">${rows(project.spd)}</table></div></div><div class="card"><h2>LPZ</h2><div class="body">${project.lpz.zony.map(z=>`<span class="badge">${z}</span> `).join('')}</div></div></div>`,
+'cad-map':()=>`<h1 class="module-title">CAD / Mapa</h1><div class="tools"><button onclick="log('Vybrány FVE panely')">Označit FVE panely</button><button onclick="log('Vybrány LPS prvky')">Označit LPS prvky</button><button onclick="log('Simulace posunu objektů')">Posunout výběr</button></div><div class="card"><h2>CAD engine preview</h2><div class="body"><div class="cadWrap">${cadSvg()}</div></div></div>`,
+'documents':()=>`<h1 class="module-title">Dokumenty</h1><div class="card"><h2>Šablony</h2><div class="body"><table class="table">${project.dokumenty.sablony.map(x=>`<tr><td>${escapeHtml(x)}</td><td>připraveno</td></tr>`).join('')}</table></div></div>`,
+'database':()=>`<h1 class="module-title">Databáze</h1><div class="card"><h2>SQLite příprava</h2><div class="body"><table class="table">${project.databaze.tabulky.map(x=>`<tr><td>${escapeHtml(x)}</td><td>návrh tabulky</td></tr>`).join('')}</table></div></div>`,
+'exports':()=>`<h1 class="module-title">Exporty</h1><div class="card"><h2>Exportní fronta</h2><div class="body"><table class="table">${rows(project.exporty)}</table><br><button class="primary" onclick="exportJson()">Export JSON</button></div></div>`,
+'settings':()=>`<h1 class="module-title">Registry Manager</h1><p class="sub">Centrální registr modulů a bezpečné načítání.</p><div class="card"><h2>Moduly</h2><div class="body"><table class="table"><tr><th>ID</th><th>Komponenta</th><th>Stav</th></tr>${registry.modules.map(m=>`<tr><td>${m.id}</td><td>${m.component}</td><td>${m.enabled?'enabled':'disabled'}</td></tr>`).join('')}</table></div></div>`
+};
+function render(){const mod=registry.modules.find(m=>m.id===active)||registry.modules[0]; el('view').innerHTML=safeModuleLoader(mod.id, views[mod.id]||views.dashboard); inspector(); qa(); health();}
+function inspector(){el('inspector').innerHTML=`<div class="qaRow"><span>Verze</span><b>v36 ČESKÉ UI — ULOŽENÍ A EXPORT</b></div><div class="qaRow"><span>Projekt</span><b>${project.meta.projectId}</b></div><div class="qaRow"><span>FVE výkon</span><b>${project.fve.instalovanyVykonKwp} kWp</b></div><div class="qaRow"><span>LPS</span><b>${project.lps.tridaLps}</b></div><div class="qaRow"><span>Moduly</span><b>${registry.modules.length}</b></div>`}
+function qa(){const rows=[['Classic PRO vzhled','okdot','zachován'],['Přepínání obrazovek','okdot','funkční'],['Module Registry','okdot','aktivní'],['Safe Module Loader','okdot','aktivní'],['React/Tauri','warndot','příprava'],['Ostrý Windows build','warndot','později']];el('qa').innerHTML=rows.map(r=>`<div class="qaRow"><span><i class="dot ${r[1]}"></i>${r[0]}</span><b>${r[2]}</b></div>`).join('')}
+function health(){el('health').innerHTML=registry.modules.map(m=>`<div class="qaRow"><span>${escapeHtml(m.label)}</span><b>${m.enabled?'OK':'OFF'}</b></div>`).join('')}
+function exportJson(){const txt=JSON.stringify(project,null,2); const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([txt],{type:'application/json'})); a.download='LOSKOT_FVE_LPS_STUDIO_PRO_27_project.json'; a.click(); log('Export JSON dokončen')}
+function testModuleFailure(){faultMode=true; openModule('cad-map'); setTimeout(()=>{faultMode=false},1000)}
+nav(); render(); log('v36 ČESKÉ UI — ULOŽENÍ A EXPORT inicializována bez bílé obrazovky');
+</script>
+
+<!-- V31_FULL_EDITOR_PREVIEW_PATCH -->
+<script>
+(function(){
+  function esc(value){
+    if(value === undefined || value === null) return "—";
+    return String(value).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+    });
+  }
+
+  function byId(id){ return document.getElementById(id); }
+
+  function ensureProject(){
+    if(!window.project || typeof window.project !== "object") window.project = {};
+    if(!window.project.fve || typeof window.project.fve !== "object") window.project.fve = {};
+    if(!window.project.cad || typeof window.project.cad !== "object") window.project.cad = {};
+    if(!window.project.lps || typeof window.project.lps !== "object") window.project.lps = {};
+    return window.project;
+  }
+
+  function ensureFvePanels(){
+    var p = ensureProject();
+    if(!Array.isArray(p.fve.v31Panels)){
+      p.fve.v31Panels = [];
+      for(var i=0;i<18;i++){
+        var col = i % 6;
+        var row = Math.floor(i / 6);
+        p.fve.v31Panels.push({
+          id:"P-" + String(i+1).padStart(2,"0"),
+          label:String(i+1),
+          x:70 + col*70,
+          y:74 + row*50,
+          w:54,
+          h:34,
+          stringId:i < 9 ? "S1" : "S2"
+        });
+      }
+    }
+    if(!Array.isArray(window.v31SelectedPanelIds)) window.v31SelectedPanelIds = [];
+    return p.fve.v31Panels;
+  }
+
+  function ensureCadLayers(){
+    var p = ensureProject();
+    if(!Array.isArray(p.cad.v31Layers)){
+      p.cad.v31Layers = [
+        {id:"roof", name:"Střecha", visible:true, locked:false, count:3},
+        {id:"fve", name:"FVE panely", visible:true, locked:false, count:18},
+        {id:"lps", name:"LPS jímací soustava", visible:true, locked:false, count:8},
+        {id:"dc_route", name:"DC trasy", visible:true, locked:false, count:4},
+        {id:"ac_route", name:"AC trasy", visible:true, locked:false, count:2},
+        {id:"notes", name:"Poznámky", visible:true, locked:false, count:6}
+      ];
+    }
+    return p.cad.v31Layers;
+  }
+
+  function ensureLpsObjects(){
+    var p = ensureProject();
+    if(!Array.isArray(p.lps.v31Objects)){
+      p.lps.v31Objects = [
+        {id:"J-01", type:"jímač", x:95, y:72, status:"ok"},
+        {id:"J-02", type:"jímač", x:515, y:72, status:"ok"},
+        {id:"J-03", type:"jímač", x:95, y:278, status:"warning"},
+        {id:"J-04", type:"jímač", x:515, y:278, status:"ok"},
+        {id:"S-01", type:"svod", x:75, y:175, status:"ok"},
+        {id:"S-02", type:"svod", x:535, y:175, status:"ok"},
+        {id:"HVI-01", type:"HVI", x:300, y:92, status:"review"}
+      ];
+    }
+    return p.lps.v31Objects;
+  }
+
+  function selected(id){
+    return window.v31SelectedPanelIds.indexOf(id) >= 0;
+  }
+
+  window.v31TogglePanelSelection = function(id){
+    ensureFvePanels();
+    var i = window.v31SelectedPanelIds.indexOf(id);
+    if(i >= 0) window.v31SelectedPanelIds.splice(i, 1);
+    else window.v31SelectedPanelIds.push(id);
+    window.renderV31FveWorkspace();
+  };
+
+  window.v31SelectAllPanels = function(){
+    window.v31SelectedPanelIds = ensureFvePanels().map(function(p){return p.id;});
+    window.renderV31FveWorkspace();
+  };
+
+  window.v31SelectPartialPanels = function(){
+    window.v31SelectedPanelIds = ensureFvePanels().filter(function(p,i){return i%2===0;}).map(function(p){return p.id;});
+    window.renderV31FveWorkspace();
+  };
+
+  window.v31ClearPanelSelection = function(){
+    window.v31SelectedPanelIds = [];
+    window.renderV31FveWorkspace();
+  };
+
+  window.v31MoveSelectedPanels = function(dx, dy){
+    var panels = ensureFvePanels();
+    var moved = 0;
+    panels.forEach(function(p){
+      if(selected(p.id)){
+        p.x = Number(p.x)+dx;
+        p.y = Number(p.y)+dy;
+        moved++;
+      }
+    });
+    if(typeof window.log === "function") window.log("v31 FVE: posunuto panelů " + moved);
+    window.renderV31FveWorkspace();
+  };
+
+  function roofSvgContent(extra){
+    return `
+      <svg viewBox="0 0 620 340" style="width:100%;height:390px;background:#07111c;border:1px solid #26384f;border-radius:14px">
+        <rect x="42" y="38" width="510" height="245" rx="12" fill="#0f172a" stroke="#334155" stroke-width="2"></rect>
+        <text x="58" y="62" fill="#94a3b8" font-size="12" font-family="monospace">v36 české UI — uložení a export</text>
+        ${extra}
+      </svg>`;
+  }
+
+  function panelSvg(){
+    return ensureFvePanels().map(function(p){
+      var sel = selected(p.id);
+      var fill = sel ? "#fbbf24" : "#1e40af";
+      var stroke = sel ? "#fde68a" : "#93c5fd";
+      var text = sel ? "#111827" : "#e0f2fe";
+      return `
+        <g onclick="v31TogglePanelSelection('${esc(p.id)}')" style="cursor:pointer">
+          <rect x="${p.x}" y="${p.y}" width="${p.w}" height="${p.h}" rx="4" fill="${fill}" stroke="${stroke}" stroke-width="2"></rect>
+          <text x="${Number(p.x)+Number(p.w)/2}" y="${Number(p.y)+Number(p.h)/2+4}" text-anchor="middle" fill="${text}" font-size="11" font-family="monospace">${esc(p.label)}</text>
+        </g>`;
+    }).join("");
+  }
+
+  function fveStats(){
+    var panels = ensureFvePanels();
+    return `
+      <table class="table">
+        <tr><td>Panely celkem</td><td>${panels.length}</td></tr>
+        <tr><td>Vybrané panely</td><td>${window.v31SelectedPanelIds.length}</td></tr>
+        <tr><td>Stringy</td><td>2</td></tr>
+        <tr><td>Režim</td><td>v31 bulk move</td></tr>
+      </table>`;
+  }
+
+  window.renderV31FveWorkspace = function(){
+    try{
+      var view = byId("view");
+      if(!view) return alert("Nenalezen hlavní panel view.");
+      view.innerHTML = `
+        <h1 class="module-title">FVE panely — výběr a hromadný přesun v31</h1>
+        <div class="tools">
+          <button class="primary" onclick="v31SelectAllPanels()">Označit vše</button>
+          <button onclick="v31SelectPartialPanels()">Označit část</button>
+          <button onclick="v31ClearPanelSelection()">Zrušit výběr</button>
+          <button onclick="v31MoveSelectedPanels(-10,0)">←</button>
+          <button onclick="v31MoveSelectedPanels(10,0)">→</button>
+          <button onclick="v31MoveSelectedPanels(0,-10)">↑</button>
+          <button onclick="v31MoveSelectedPanels(0,10)">↓</button>
+        </div>
+        <div class="split">
+          <div class="card"><h2>CAD/FVE náhled</h2><div class="body">${roofSvgContent(panelSvg())}</div></div>
+          <div class="card"><h2>Výběr panelů</h2><div class="body"><div class="notice">Klikni na panel pro výběr. Šipkami posuneš všechny vybrané panely.</div>${fveStats()}</div></div>
+        </div>`;
+      if(typeof window.inspector === "function") window.inspector();
+      if(typeof window.qa === "function") window.qa();
+    }catch(err){
+      var view = byId("view");
+      if(view) view.innerHTML = `<div class="fallback"><h2>FVE editor spadl bezpečně</h2><pre>${esc(err.message)}</pre></div>`;
+    }
+  };
+
+  window.v31ToggleLayer = function(id){
+    ensureCadLayers().forEach(function(l){ if(l.id===id && !l.locked) l.visible = !l.visible; });
+    window.renderV31CadLayersWorkspace();
+  };
+
+  window.v31ToggleLayerLock = function(id){
+    ensureCadLayers().forEach(function(l){ if(l.id===id) l.locked = !l.locked; });
+    window.renderV31CadLayersWorkspace();
+  };
+
+  window.renderV31CadLayersWorkspace = function(){
+    var layers = ensureCadLayers();
+    var rows = layers.map(function(l){
+      return `<tr>
+        <td>${esc(l.name)}</td>
+        <td>${l.visible ? "viditelná" : "skrytá"}</td>
+        <td>${l.locked ? "zamčeno" : "odemčeno"}</td>
+        <td>${esc(l.count)}</td>
+        <td><button onclick="v31ToggleLayer('${esc(l.id)}')">${l.visible ? "Skrýt" : "Zobrazit"}</button></td>
+        <td><button onclick="v31ToggleLayerLock('${esc(l.id)}')">${l.locked ? "Odemknout" : "Zamknout"}</button></td>
+      </tr>`;
+    }).join("");
+
+    var view = byId("view");
+    if(!view) return;
+    view.innerHTML = `
+      <h1 class="module-title">CAD vrstvy — v31 preview</h1>
+      <div class="split">
+        <div class="card"><h2>Správa vrstev</h2><div class="body">
+          <table class="table"><tr><th>Vrstva</th><th>Viditelnost</th><th>Zámek</th><th>Objekty</th><th></th><th></th></tr>${rows}</table>
+        </div></div>
+        <div class="card"><h2>CAD náhled</h2><div class="body">${roofSvgContent('<text x="90" y="160" fill="#e0f2fe">CAD vrstvy v31 — bezpečný preview režim</text>')}</div></div>
+      </div>`;
+    if(typeof window.inspector === "function") window.inspector();
+    if(typeof window.qa === "function") window.qa();
+  };
+
+  window.renderV31LpsWorkspace = function(){
+    var objects = ensureLpsObjects();
+    var items = objects.map(function(o){
+      var color = o.type === "jímač" ? "#f97316" : o.type === "svod" ? "#22c55e" : "#a855f7";
+      return `<g>
+        <circle cx="${o.x}" cy="${o.y}" r="9" fill="${color}" stroke="#fff" stroke-width="1"></circle>
+        <text x="${Number(o.x)+13}" y="${Number(o.y)+4}" fill="#e5e7eb" font-size="11">${esc(o.id)}</text>
+      </g>`;
+    }).join("");
+
+    var rows = objects.map(function(o){
+      return `<tr><td>${esc(o.id)}</td><td>${esc(o.type)}</td><td>${esc(o.status)}</td></tr>`;
+    }).join("");
+
+    var view = byId("view");
+    if(!view) return;
+    view.innerHTML = `
+      <h1 class="module-title">LPS / DEHN objekty — v31 preview</h1>
+      <div class="split">
+        <div class="card"><h2>LPS náhled</h2><div class="body">${roofSvgContent(items)}</div></div>
+        <div class="card"><h2>Objekty LPS</h2><div class="body">
+          <table class="table"><tr><th>ID</th><th>Typ</th><th>Stav</th></tr>${rows}</table>
+        </div></div>
+      </div>`;
+    if(typeof window.inspector === "function") window.inspector();
+    if(typeof window.qa === "function") window.qa();
+  };
+
+  function addBtn(id, label, fn){
+    if(document.getElementById(id)) return;
+    var top = document.querySelector(".topbar, header, .head, .toolbar");
+    if(!top){
+      var divs = document.querySelectorAll("div");
+      for(var i=0;i<divs.length;i++){
+        var txt = divs[i].innerText || "";
+        if(txt.indexOf("FVE aktivní") !== -1 || txt.indexOf("Safe Module Loader") !== -1){
+          top = divs[i];
+          break;
+        }
+      }
+    }
+    if(!top) top = document.body;
+    var b = document.createElement("button");
+    b.id = id;
+    b.textContent = label;
+    b.onclick = fn;
+    b.style.marginLeft = "8px";
+    b.style.border = "1px solid #36506b";
+    b.style.background = "#0b1724";
+    b.style.color = "#dbeafe";
+    b.style.borderRadius = "10px";
+    b.style.padding = "7px 12px";
+    b.style.cursor = "pointer";
+    top.appendChild(b);
+  }
+
+  function boot(){
+    addBtn("v31CleanFvePanelsBtn", "v31 FVE panely", window.renderV31FveWorkspace);
+    addBtn("v31CleanCadLayersBtn", "v31 CAD vrstvy", window.renderV31CadLayersWorkspace);
+    addBtn("v31CleanLpsBtn", "v31 LPS objekty", window.renderV31LpsWorkspace);
+    console.log("V31 full editor preview loaded");
+  }
+
+  if(document.readyState === "loading") document.addEventListener("DOMContentLoaded", boot);
+  else boot();
+  setTimeout(boot, 300);
+})();
+</script>
+
+
+<!-- V33_WORKFLOW_APP_PREVIEW_PATCH -->
+<script>
+(function(){
+  function esc(value){
+    if(value === undefined || value === null) return "—";
+    return String(value).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+    });
+  }
+
+  function byId(id){
+    return document.getElementById(id);
+  }
+
+  function ensureWorkflowProject(){
+    if(!window.project || typeof window.project !== "object"){
+      window.project = {};
+    }
+
+    var p = window.project;
+
+    if(!p.projectId) p.projectId = "LOSKOT-V33-WORKFLOW-DEMO";
+    if(!p.dataModelVersion) p.dataModelVersion = "v33-preview";
+    if(!p.projectInfo) p.projectInfo = {};
+    if(!p.projectInfo.name) p.projectInfo.name = "Ukázkový workflow projekt v33";
+
+    if(!p.fve) p.fve = {};
+    if(!p.cad) p.cad = {};
+    if(!p.lps) p.lps = {};
+    if(!p.documents) p.documents = {};
+    if(!p.database) p.database = {};
+    if(!p.exports) p.exports = {};
+    if(!p.qa) p.qa = {};
+
+    if(!Array.isArray(p.fve.v31Panels)){
+      p.fve.v31Panels = [];
+      for(var i = 0; i < 18; i++){
+        var col = i % 6;
+        var row = Math.floor(i / 6);
+        p.fve.v31Panels.push({
+          id:"P-" + String(i + 1).padStart(2,"0"),
+          label:String(i + 1),
+          x:70 + col * 70,
+          y:74 + row * 50,
+          w:54,
+          h:34,
+          wp:450,
+          stringId:i < 9 ? "S1" : "S2"
+        });
+      }
+    }
+
+    if(!Array.isArray(p.cad.layers)){
+      p.cad.layers = [
+        {id:"roof", name:"Střecha", visible:true, locked:false, count:3},
+        {id:"fve", name:"FVE panely", visible:true, locked:false, count:18},
+        {id:"lps", name:"LPS jímací soustava", visible:true, locked:false, count:8},
+        {id:"dc_route", name:"DC trasy", visible:true, locked:false, count:4},
+        {id:"notes", name:"Poznámky", visible:true, locked:false, count:6}
+      ];
+    }
+
+    if(!Array.isArray(p.lps.objects)){
+      p.lps.objects = [
+        {id:"J-01", type:"jímač", status:"ok"},
+        {id:"J-02", type:"jímač", status:"ok"},
+        {id:"S-01", type:"svod", status:"ok"},
+        {id:"HVI-01", type:"HVI", status:"review"},
+        {id:"SPD-01", type:"SPD", status:"review"}
+      ];
+    }
+
+    if(!Array.isArray(p.documents.required)){
+      p.documents.required = [
+        "Technická zpráva FVE",
+        "Technická zpráva LPS",
+        "Seznam zařízení",
+        "String report",
+        "SPD report",
+        "QA report",
+        "Exportní protokol"
+      ];
+    }
+
+    return p;
+  }
+
+  function calculateWorkflowPreview(project){
+    var panels = Array.isArray(project.fve.v31Panels) ? project.fve.v31Panels : [];
+    var totalKwp = panels.reduce(function(sum, panel){
+      return sum + Number(panel.wp || 0) / 1000;
+    }, 0);
+
+    var strings = {};
+    panels.forEach(function(panel){
+      strings[panel.stringId || "bez stringu"] = true;
+    });
+
+    var warnings = [];
+    var errors = [];
+
+    if(!project.projectId) errors.push("Chybí ID projektu.");
+    if(panels.length === 0) warnings.push("Projekt neobsahuje FVE panely.");
+    if(!project.lps || !Array.isArray(project.lps.objects) || project.lps.objects.length === 0) warnings.push("Projekt neobsahuje LPS objekty.");
+    if(!project.documents || !Array.isArray(project.documents.required)) warnings.push("Chybí dokumentový seznam.");
+    if(!project.cad || !Array.isArray(project.cad.layers)) warnings.push("Chybí CAD vrstvy.");
+
+    var status = errors.length ? "ERROR" : warnings.length ? "WARNING" : "OK";
+
+    return {
+      status: status,
+      projectId: project.projectId,
+      projectName: project.projectInfo && project.projectInfo.name ? project.projectInfo.name : "—",
+      dataModelVersion: project.dataModelVersion || "—",
+      fve: {
+        panels: panels.length,
+        strings: Object.keys(strings).length,
+        totalKwp: Math.round(totalKwp * 1000) / 1000
+      },
+      cad: {
+        layers: project.cad.layers.length,
+        visibleLayers: project.cad.layers.filter(function(layer){ return layer.visible; }).length
+      },
+      lps: {
+        objects: project.lps.objects.length,
+        reviewObjects: project.lps.objects.filter(function(o){ return o.status !== "ok"; }).length
+      },
+      documents: {
+        required: project.documents.required.length
+      },
+      database: {
+        mode: "preview repository",
+        saveReady: true
+      },
+      exportPackage: {
+        items: [
+          "project-json",
+          "technical-report-pdf",
+          "technical-report-docx",
+          "drawings",
+          "datasheets",
+          "qa-report",
+          "database-backup"
+        ]
+      },
+      qa: {
+        warnings: warnings,
+        errors: errors
+      }
+    };
+  }
+
+  function row(label, value){
+    return '<tr><td>' + esc(label) + '</td><td>' + esc(value) + '</td></tr>';
+  }
+
+  function renderSummaryTable(summary){
+    return ''+
+      '<table class="table">'+
+        row("Projekt", summary.projectId)+
+        row("Název", summary.projectName)+
+        row("Datový model", summary.dataModelVersion)+
+        row("Workflow stav", summary.status)+
+        row("FVE panely", summary.fve.panels)+
+        row("FVE výkon", summary.fve.totalKwp + " kWp")+
+        row("Stringy", summary.fve.strings)+
+        row("CAD vrstvy", summary.cad.layers)+
+        row("Viditelné vrstvy", summary.cad.visibleLayers)+
+        row("LPS objekty", summary.lps.objects)+
+        row("LPS k revizi", summary.lps.reviewObjects)+
+        row("Dokumenty", summary.documents.required)+
+        row("Export položky", summary.exportPackage.items.length)+
+      '</table>';
+  }
+
+  function renderQaBox(summary){
+    var warnings = summary.qa.warnings;
+    var errors = summary.qa.errors;
+
+    return ''+
+      '<div class="card"><h2>QA souhrn workflow</h2><div class="body">'+
+        '<div class="notice">Stav: <b>' + esc(summary.status) + '</b></div>'+
+        '<table class="table">'+
+          row("Warnings", warnings.length)+
+          row("Errors", errors.length)+
+        '</table>'+
+        '<pre class="log">' + esc(JSON.stringify({warnings:warnings, errors:errors}, null, 2)) + '</pre>'+
+      '</div></div>';
+  }
+
+  window.renderV33WorkflowApp = function(){
+    try{
+      var project = ensureWorkflowProject();
+      var summary = calculateWorkflowPreview(project);
+
+      var view = byId("view");
+      if(!view){
+        alert("Nenalezen hlavní panel view.");
+        return;
+      }
+
+      view.innerHTML =
+        '<h1 class="module-title">v33 Workflow App Preview</h1>'+
+        '<div class="tools">'+
+          '<button class="primary" onclick="renderV33WorkflowApp()">Spustit workflow preview</button>'+
+          '<button onclick="renderV33ExportManifest()">Vytvořit export manifest</button>'+
+          '<button onclick="renderV31FveWorkspace()">FVE editor</button>'+
+          '<button onclick="renderV31CadLayersWorkspace()">CAD vrstvy</button>'+
+          '<button onclick="renderV31LpsWorkspace()">LPS objekty</button>'+
+        '</div>'+
+        '<div class="split">'+
+          '<div class="card"><h2>Společný projektový workflow</h2><div class="body">'+
+            '<div class="notice">Tento náhled propojuje FVE, CAD, LPS, dokumenty, databázi, export a QA do jednoho celku.</div>'+
+            renderSummaryTable(summary)+
+          '</div></div>'+
+          renderQaBox(summary)+
+        '</div>'+
+        '<div class="grid">'+
+          '<div class="card"><h2>FVE</h2><div class="body">Panely, stringy a výkon jsou zahrnuté do workflow summary.</div></div>'+
+          '<div class="card"><h2>CAD</h2><div class="body">Vrstvy a objekty tvoří grafický základ projektu.</div></div>'+
+          '<div class="card"><h2>LPS / DEHN</h2><div class="body">Objekty LPS jsou zahrnuté jako preview. Výpočet rizika zůstává placeholder.</div></div>'+
+          '<div class="card"><h2>Dokumenty</h2><div class="body">Dokumentový modul určuje požadované výstupy projektu.</div></div>'+
+          '<div class="card"><h2>Databáze</h2><div class="body">Preview repository připravuje budoucí SQLite/Tauri vrstvu.</div></div>'+
+          '<div class="card"><h2>Export</h2><div class="body">Export manifest připravuje budoucí ZIP balík zakázky.</div></div>'+
+        '</div>';
+
+      try{
+        if(typeof window.inspector === "function") window.inspector();
+        if(typeof window.qa === "function") window.qa();
+      }catch(e){}
+    }catch(err){
+      var view = byId("view");
+      if(view){
+        view.innerHTML = '<div class="fallback"><h2>v33 workflow preview spadl bezpečně</h2><pre>' + esc(err.message) + '</pre></div>';
+      }
+    }
+  };
+
+  window.renderV33ExportManifest = function(){
+    try{
+      var project = ensureWorkflowProject();
+      var summary = calculateWorkflowPreview(project);
+
+      var manifest = {
+        manifestVersion: "v33-preview",
+        createdAt: new Date().toISOString(),
+        projectId: project.projectId,
+        projectName: project.projectInfo.name,
+        workflowStatus: summary.status,
+        items: summary.exportPackage.items.map(function(type, index){
+          return {
+            id: "EXP-" + String(index + 1).padStart(2, "0"),
+            type: type,
+            status: "planned"
+          };
+        }),
+        qa: summary.qa,
+        note: "Preview export manifest. Nejde o finální produkční export."
+      };
+
+      var view = byId("view");
+      if(!view) return;
+
+      view.innerHTML =
+        '<h1 class="module-title">v33 Export Manifest Preview</h1>'+
+        '<div class="tools">'+
+          '<button onclick="renderV33WorkflowApp()">Zpět na workflow</button>'+
+        '</div>'+
+        '<div class="card"><h2>Exportní manifest</h2><div class="body">'+
+          '<pre class="log">' + esc(JSON.stringify(manifest, null, 2)) + '</pre>'+
+        '</div></div>';
+    }catch(err){
+      alert("Export manifest selhal bezpečně: " + err.message);
+    }
+  };
+
+  function addV33Button(){
+    if(document.getElementById("v33WorkflowAppBtn")) return;
+
+    var top = document.querySelector(".topbar, header, .head, .toolbar");
+
+    if(!top){
+      var divs = document.querySelectorAll("div");
+      for(var i=0;i<divs.length;i++){
+        var text = divs[i].innerText || "";
+        if(text.indexOf("FVE aktivní") !== -1 || text.indexOf("Safe Module Loader") !== -1){
+          top = divs[i];
+          break;
+        }
+      }
+    }
+
+    if(!top) top = document.body;
+
+    var btn = document.createElement("button");
+    btn.id = "v33WorkflowAppBtn";
+    btn.textContent = "v33 Workflow";
+    btn.onclick = window.renderV33WorkflowApp;
+    btn.style.marginLeft = "8px";
+    btn.style.border = "1px solid #36506b";
+    btn.style.background = "#0b1724";
+    btn.style.color = "#dbeafe";
+    btn.style.borderRadius = "10px";
+    btn.style.padding = "7px 12px";
+    btn.style.cursor = "pointer";
+
+    top.appendChild(btn);
+  }
+
+  function boot(){
+    addV33Button();
+    console.log("V33 workflow app preview loaded");
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", boot);
+  }else{
+    boot();
+  }
+
+  setTimeout(boot, 300);
+})();
+</script>
+
+
+<!-- V34_PROJECT_STORAGE_EXPORT_PREVIEW_PATCH -->
+<script>
+(function(){
+  const STORAGE_KEY = "LOSKOT_FVE_LPS_STUDIO_PRO_v34_PROJECT";
+
+  function esc(value){
+    if(value === undefined || value === null) return "—";
+    return String(value).replace(/[&<>"']/g, function(c){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c];
+    });
+  }
+
+  function byId(id){
+    return document.getElementById(id);
+  }
+
+  function ensureV34Project(){
+    if(!window.project || typeof window.project !== "object"){
+      window.project = {};
+    }
+
+    var p = window.project;
+
+    if(!p.projectId) p.projectId = "LOSKOT-V34-STORAGE-DEMO";
+    if(!p.dataModelVersion) p.dataModelVersion = "v34-preview";
+    if(!p.appVersion) p.appVersion = "v36 ČESKÉ UI — ULOŽENÍ A EXPORT";
+
+    if(!p.projectInfo) p.projectInfo = {};
+    if(!p.projectInfo.name) p.projectInfo.name = "Ukázkový projekt v34";
+    if(!p.projectInfo.investor) p.projectInfo.investor = "Investor demo";
+    if(!p.projectInfo.site) p.projectInfo.site = "Místo stavby demo";
+
+    if(!p.fve) p.fve = {};
+    if(!p.cad) p.cad = {};
+    if(!p.lps) p.lps = {};
+    if(!p.documents) p.documents = {};
+    if(!p.exports) p.exports = {};
+    if(!p.qa) p.qa = {};
+
+    if(!Array.isArray(p.fve.v31Panels)){
+      p.fve.v31Panels = [];
+      for(var i = 0; i < 18; i++){
+        var col = i % 6;
+        var row = Math.floor(i / 6);
+        p.fve.v31Panels.push({
+          id:"P-" + String(i + 1).padStart(2,"0"),
+          label:String(i + 1),
+          x:70 + col * 70,
+          y:74 + row * 50,
+          w:54,
+          h:34,
+          wp:450,
+          stringId:i < 9 ? "S1" : "S2"
+        });
+      }
+    }
+
+    if(!Array.isArray(p.documents.required)){
+      p.documents.required = [
+        "Technická zpráva FVE",
+        "Technická zpráva LPS",
+        "Seznam zařízení",
+        "String report",
+        "SPD report",
+        "QA report",
+        "Exportní protokol"
+      ];
+    }
+
+    return p;
+  }
+
+  function createV34WorkflowSummary(project){
+    var panels = Array.isArray(project.fve && project.fve.v31Panels) ? project.fve.v31Panels : [];
+    var totalKwp = panels.reduce(function(sum, panel){
+      return sum + Number(panel.wp || 0) / 1000;
+    }, 0);
+
+    var strings = {};
+    panels.forEach(function(panel){
+      strings[panel.stringId || "bez stringu"] = true;
+    });
+
+    var warnings = [];
+    var errors = [];
+
+    if(!project.projectId) errors.push("Chybí projectId.");
+    if(!project.projectInfo || !project.projectInfo.name) warnings.push("Chybí název projektu.");
+    if(panels.length === 0) warnings.push("Projekt nemá FVE panely.");
+    if(!project.lps) warnings.push("Chybí LPS sekce.");
+    if(!project.documents || !Array.isArray(project.documents.required)) warnings.push("Chybí dokumentový seznam.");
+
+    var status = errors.length ? "ERROR" : warnings.length ? "WARNING" : "OK";
+
+    return {
+      status: status,
+      projectId: project.projectId,
+      projectName: project.projectInfo && project.projectInfo.name ? project.projectInfo.name : "—",
+      investor: project.projectInfo && project.projectInfo.investor ? project.projectInfo.investor : "—",
+      site: project.projectInfo && project.projectInfo.site ? project.projectInfo.site : "—",
+      appVersion: project.appVersion || "v34-preview",
+      dataModelVersion: project.dataModelVersion || "v34-preview",
+      fve: {
+        panels: panels.length,
+        strings: Object.keys(strings).length,
+        totalKwp: Math.round(totalKwp * 1000) / 1000
+      },
+      documents: {
+        required: project.documents && Array.isArray(project.documents.required) ? project.documents.required.length : 0
+      },
+      qa: {
+        warnings: warnings,
+        errors: errors
+      }
+    };
+  }
+
+  function row(label, value){
+    return '<tr><td>' + esc(label) + '</td><td>' + esc(value) + '</td></tr>';
+  }
+
+  function renderSummaryTable(summary){
+    return ''+
+      '<table class="table">'+
+        row("Projekt", summary.projectId)+
+        row("Název", summary.projectName)+
+        row("Investor", summary.investor)+
+        row("Místo stavby", summary.site)+
+        row("Verze aplikace", summary.appVersion)+
+        row("Datový model", summary.dataModelVersion)+
+        row("Stav QA", summary.status)+
+        row("FVE panely", summary.fve.panels)+
+        row("FVE výkon", summary.fve.totalKwp + " kWp")+
+        row("Stringy", summary.fve.strings)+
+        row("Dokumenty", summary.documents.required)+
+      '</table>';
+  }
+
+  function createExportObject(){
+    var project = ensureV34Project();
+    var summary = createV34WorkflowSummary(project);
+
+    return {
+      exportVersion: "v34-preview",
+      exportedAt: new Date().toISOString(),
+      project: project,
+      workflowSummary: summary,
+      manifest: {
+        items: [
+          {id:"EXP-01", type:"project-json", status:"ready"},
+          {id:"EXP-02", type:"technical-report-pdf", status:"planned"},
+          {id:"EXP-03", type:"technical-report-docx", status:"planned"},
+          {id:"EXP-04", type:"drawings", status:"planned"},
+          {id:"EXP-05", type:"datasheets", status:"planned"},
+          {id:"EXP-06", type:"qa-report", status:"ready"},
+          {id:"EXP-07", type:"database-backup", status:"planned"}
+        ]
+      },
+      note: "Preview export. Finální produkční export bude řešen v Tauri/SQLite vrstvě."
+    };
+  }
+
+  window.v34SaveProject = function(){
+    try{
+      var project = ensureV34Project();
+      project.updatedAt = new Date().toISOString();
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(project, null, 2));
+      window.renderV34StorageWorkflow();
+    }catch(err){
+      alert("Uložení projektu selhalo bezpečně: " + err.message);
+    }
+  };
+
+  window.v34LoadProject = function(){
+    try{
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if(!raw){
+        alert("V localStorage zatím není uložený projekt.");
+        return;
+      }
+      window.project = JSON.parse(raw);
+      window.renderV34StorageWorkflow();
+    }catch(err){
+      alert("Načtení projektu selhalo bezpečně: " + err.message);
+    }
+  };
+
+  window.v34ClearSavedProject = function(){
+    try{
+      localStorage.removeItem(STORAGE_KEY);
+      alert("Uložený projekt byl odstraněn z localStorage.");
+      window.renderV34StorageWorkflow();
+    }catch(err){
+      alert("Mazání uloženého projektu selhalo bezpečně: " + err.message);
+    }
+  };
+
+  window.v34RenderExportJson = function(){
+    try{
+      var view = byId("view");
+      if(!view) return;
+
+      var exportObject = createExportObject();
+
+      view.innerHTML =
+        '<h1 class="module-title">v34 Export JSON Preview</h1>'+
+        '<div class="tools">'+
+          '<button onclick="renderV34StorageWorkflow()">Zpět na workflow</button>'+
+          '<button onclick="v34CopyExportJson()">Kopírovat JSON do schránky</button>'+
+        '</div>'+
+        '<div class="card"><h2>Export projektu</h2><div class="body">'+
+          '<pre id="v34ExportJsonBox" class="log">' + esc(JSON.stringify(exportObject, null, 2)) + '</pre>'+
+        '</div></div>';
+    }catch(err){
+      alert("Export JSON selhal bezpečně: " + err.message);
+    }
+  };
+
+  window.v34CopyExportJson = function(){
+    try{
+      var box = byId("v34ExportJsonBox");
+      if(!box) return;
+      navigator.clipboard.writeText(box.textContent || "");
+      alert("JSON byl zkopírován do schránky.");
+    }catch(err){
+      alert("Kopírování selhalo. JSON lze označit ručně.");
+    }
+  };
+
+  window.v34RenderImportJson = function(){
+    var view = byId("view");
+    if(!view) return;
+
+    view.innerHTML =
+      '<h1 class="module-title">v34 Import JSON Preview</h1>'+
+      '<div class="tools">'+
+        '<button onclick="renderV34StorageWorkflow()">Zpět na workflow</button>'+
+        '<button class="primary" onclick="v34PreviewImportJson()">Zkontrolovat JSON</button>'+
+        '<button onclick="v34ApplyImportJson()">Použít JSON jako projekt</button>'+
+      '</div>'+
+      '<div class="card"><h2>Import projektu</h2><div class="body">'+
+        '<div class="notice">Import je bezpečný. Nejdřív proveď kontrolu JSON. Poté lze JSON použít jako aktuální projekt.</div>'+
+        '<textarea id="v34ImportJsonText" style="width:100%;min-height:180px;background:#07111c;color:#dbeafe;border:1px solid #26384f;border-radius:10px;padding:10px;font-family:monospace;" placeholder="Sem vlož JSON exportu nebo přímo JSON projektu..."></textarea>'+
+        '<pre id="v34ImportResult" class="log"></pre>'+
+      '</div></div>';
+  };
+
+  window.v34PreviewImportJson = function(){
+    try{
+      var text = byId("v34ImportJsonText").value || "";
+      var result = byId("v34ImportResult");
+
+      if(!text.trim()){
+        result.textContent = "WARNING: Importní pole je prázdné.";
+        return;
+      }
+
+      var parsed = JSON.parse(text);
+      var project = parsed.project || parsed;
+      var summary = createV34WorkflowSummary(project);
+
+      result.textContent = JSON.stringify({
+        ok: summary.qa.errors.length === 0,
+        status: summary.status,
+        projectId: summary.projectId,
+        projectName: summary.projectName,
+        warnings: summary.qa.warnings,
+        errors: summary.qa.errors,
+        note: "Preview kontrola importu neprovedla zápis."
+      }, null, 2);
+    }catch(err){
+      byId("v34ImportResult").textContent = "ERROR: Neplatný JSON nebo chyba importu: " + err.message;
+    }
+  };
+
+  window.v34ApplyImportJson = function(){
+    try{
+      var text = byId("v34ImportJsonText").value || "";
+      if(!text.trim()){
+        alert("Importní pole je prázdné.");
+        return;
+      }
+
+      var parsed = JSON.parse(text);
+      var project = parsed.project || parsed;
+
+      if(!project || typeof project !== "object"){
+        alert("JSON neobsahuje projektový objekt.");
+        return;
+      }
+
+      window.project = project;
+      ensureV34Project();
+      window.v34SaveProject();
+      window.renderV34StorageWorkflow();
+    }catch(err){
+      alert("Použití importu selhalo bezpečně: " + err.message);
+    }
+  };
+
+  window.renderV34StorageWorkflow = function(){
+    try{
+      var project = ensureV34Project();
+      var summary = createV34WorkflowSummary(project);
+      var hasSaved = !!localStorage.getItem(STORAGE_KEY);
+
+      var view = byId("view");
+      if(!view) return;
+
+      view.innerHTML =
+        '<h1 class="module-title">v34 Project Storage + Export Workflow</h1>'+
+        '<div class="tools">'+
+          '<button class="primary" onclick="v34SaveProject()">Uložit projekt</button>'+
+          '<button onclick="v34LoadProject()">Načíst projekt</button>'+
+          '<button onclick="v34ClearSavedProject()">Smazat uložený</button>'+
+          '<button onclick="v34RenderExportJson()">Export JSON</button>'+
+          '<button onclick="v34RenderImportJson()">Import JSON</button>'+
+          '<button onclick="renderV33WorkflowApp()">v33 Workflow</button>'+
+          '<button onclick="renderV31FveWorkspace()">FVE editor</button>'+
+        '</div>'+
+        '<div class="split">'+
+          '<div class="card"><h2>Projektové workflow</h2><div class="body">'+
+            '<div class="notice">Tato verze přidává lokální uložení, načtení, import a export projektu. Uloženo v prohlížeči: <b>' + (hasSaved ? 'ANO' : 'NE') + '</b></div>'+
+            renderSummaryTable(summary)+
+          '</div></div>'+
+          '<div class="card"><h2>QA / Storage stav</h2><div class="body">'+
+            '<table class="table">'+
+              row("QA stav", summary.status)+
+              row("Warnings", summary.qa.warnings.length)+
+              row("Errors", summary.qa.errors.length)+
+              row("Storage", hasSaved ? "projekt uložen" : "zatím neuloženo")+
+            '</table>'+
+            '<pre class="log">' + esc(JSON.stringify(summary.qa, null, 2)) + '</pre>'+
+          '</div></div>'+
+        '</div>';
+    }catch(err){
+      var view = byId("view");
+      if(view){
+        view.innerHTML = '<div class="fallback"><h2>v34 storage workflow spadl bezpečně</h2><pre>' + esc(err.message) + '</pre></div>';
+      }
+    }
+  };
+
+  function addV34Button(){
+    if(document.getElementById("v34StorageWorkflowBtn")) return;
+
+    var top = document.querySelector(".topbar, header, .head, .toolbar");
+
+    if(!top){
+      var divs = document.querySelectorAll("div");
+      for(var i=0;i<divs.length;i++){
+        var text = divs[i].innerText || "";
+        if(text.indexOf("FVE aktivní") !== -1 || text.indexOf("Safe Module Loader") !== -1){
+          top = divs[i];
+          break;
+        }
+      }
+    }
+
+    if(!top) top = document.body;
+
+    var btn = document.createElement("button");
+    btn.id = "v34StorageWorkflowBtn";
+    btn.textContent = "v34 Storage/Export";
+    btn.onclick = window.renderV34StorageWorkflow;
+    btn.style.marginLeft = "8px";
+    btn.style.border = "1px solid #36506b";
+    btn.style.background = "#0b1724";
+    btn.style.color = "#dbeafe";
+    btn.style.borderRadius = "10px";
+    btn.style.padding = "7px 12px";
+    btn.style.cursor = "pointer";
+
+    top.appendChild(btn);
+  }
+
+  function boot(){
+    addV34Button();
+    console.log("V34 project storage export preview loaded");
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", boot);
+  }else{
+    boot();
+  }
+
+  setTimeout(boot, 300);
+})();
+</script>
+
+
+<!-- V36_CZECH_UI_SAFE_LABELS_PATCH -->
+<script>
+(function(){
+  function safeRelabelButton(id, label){
+    try{
+      var btn = document.getElementById(id);
+      if(btn) btn.textContent = label;
+    }catch(e){}
+  }
+
+  function addInfoBadge(){
+    try{
+      if(document.getElementById("v36CzechUiBadge")) return;
+
+      var top = document.querySelector(".topbar, header, .head, .toolbar");
+
+      if(!top){
+        var divs = document.querySelectorAll("div");
+        for(var i = 0; i < divs.length; i++){
+          var text = divs[i].innerText || "";
+          if(text.indexOf("FVE aktivní") !== -1 || text.indexOf("Safe Module Loader") !== -1){
+            top = divs[i];
+            break;
+          }
+        }
+      }
+
+      if(!top) top = document.body;
+
+      var badge = document.createElement("span");
+      badge.id = "v36CzechUiBadge";
+      badge.textContent = "v36 české UI";
+      badge.style.marginLeft = "10px";
+      badge.style.padding = "6px 10px";
+      badge.style.border = "1px solid #36506b";
+      badge.style.borderRadius = "10px";
+      badge.style.color = "#dbeafe";
+      badge.style.background = "#07111c";
+
+      top.appendChild(badge);
+    }catch(e){}
+  }
+
+  function translateVisibleButtons(){
+    safeRelabelButton("v34StorageWorkflowBtn", "v36 Projekt / Uložení / Export");
+    safeRelabelButton("v33WorkflowAppBtn", "v33 Společný postup");
+    safeRelabelButton("v31CleanFvePanelsBtn", "v31 FVE panely");
+    safeRelabelButton("v31CleanCadLayersBtn", "v31 CAD vrstvy");
+    safeRelabelButton("v31CleanLpsBtn", "v31 LPS objekty");
+  }
+
+  function translateCurrentView(){
+    try{
+      var replacements = [
+        ["v34 Project Storage + Export Workflow", "v36 Projektové uložení a export"],
+        ["v34 Export JSON Preview", "v36 Náhled exportu JSON"],
+        ["v34 Import JSON Preview", "v36 Náhled importu JSON"],
+        ["Project Storage", "Uložení projektu"],
+        ["Storage stav", "Stav uložení"],
+        ["Workflow", "Společný postup"],
+        ["Export JSON", "Exportovat JSON"],
+        ["Import JSON", "Importovat JSON"],
+        ["Export projektu", "Export projektu"],
+        ["Import projektu", "Import projektu"],
+        ["Save", "Uložit"],
+        ["Load", "Načíst"],
+        ["Storage", "Uložení"],
+        ["Preview", "Náhled"],
+        ["Manifest", "Exportní seznam"],
+        ["planned", "plánováno"],
+        ["ready", "připraveno"],
+        ["project-json", "JSON projektu"],
+        ["technical-report-pdf", "Technická zpráva PDF"],
+        ["technical-report-docx", "Technická zpráva DOCX"],
+        ["drawings", "Výkresy"],
+        ["datasheets", "Datasheety"],
+        ["qa-report", "QA protokol"],
+        ["database-backup", "Záloha databáze"]
+      ];
+
+      var view = document.getElementById("view");
+      if(!view) return;
+
+      // Překládáme pouze viditelné HTML v hlavním panelu po vykreslení.
+      // Nepřepisujeme celé document.body a neničíme skripty.
+      var html = view.innerHTML;
+      replacements.forEach(function(pair){
+        html = html.split(pair[0]).join(pair[1]);
+      });
+      view.innerHTML = html;
+    }catch(e){}
+  }
+
+  function wrapRenderFunction(name){
+    try{
+      var original = window[name];
+      if(typeof original !== "function") return;
+      if(original.__v36Wrapped) return;
+
+      var wrapped = function(){
+        var result = original.apply(this, arguments);
+        setTimeout(function(){
+          translateVisibleButtons();
+          translateCurrentView();
+          addInfoBadge();
+        }, 0);
+        return result;
+      };
+
+      wrapped.__v36Wrapped = true;
+      window[name] = wrapped;
+    }catch(e){}
+  }
+
+  function apply(){
+    document.title = "LOSKOT FVE & LPS STUDIO PRO — v36 české UI";
+    translateVisibleButtons();
+    addInfoBadge();
+
+    wrapRenderFunction("renderV34StorageWorkflow");
+    wrapRenderFunction("v34RenderExportJson");
+    wrapRenderFunction("v34RenderImportJson");
+    wrapRenderFunction("renderV33WorkflowApp");
+    wrapRenderFunction("renderV33ExportManifest");
+    wrapRenderFunction("renderV31FveWorkspace");
+    wrapRenderFunction("renderV31CadLayersWorkspace");
+    wrapRenderFunction("renderV31LpsWorkspace");
+
+    // Pokud už je nějaká obrazovka vykreslená, přeložit ji.
+    translateCurrentView();
+  }
+
+  if(document.readyState === "loading"){
+    document.addEventListener("DOMContentLoaded", apply);
+  }else{
+    apply();
+  }
+
+  setTimeout(apply, 300);
+  setTimeout(apply, 1000);
+
+  console.log("V36 Czech UI safe labels loaded");
+})();
+</script>
+
+</body>
+</html>
