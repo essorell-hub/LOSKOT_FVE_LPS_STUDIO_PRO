@@ -34,3 +34,9 @@ export {
   createFvePanelEditor,
   safeFvePanelEditor
 } from "./fvePanelEditor.js";
+
+export {
+  FVE_CAD_PANEL_INTERACTION_VERSION,
+  createFveCadPanelInteractionBridge,
+  safeFveCadPanelInteractionBridge
+} from "./fveCadPanelInteraction.js";
