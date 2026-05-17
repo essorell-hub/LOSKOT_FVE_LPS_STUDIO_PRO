@@ -57,3 +57,4 @@ export {
   createFveCadAppConnector,
   safeFveCadAppConnector
 } from "./fveCadAppConnector.js";
+export * from "./cadSymbolRegistry.js";

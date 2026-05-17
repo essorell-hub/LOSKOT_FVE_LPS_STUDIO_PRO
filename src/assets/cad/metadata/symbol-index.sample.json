@@ -1,0 +1,48 @@
+{
+  "version": "v49-symbol-index-sample",
+  "source": "LOSKOT internal CAD symbol registry sample",
+  "classicProUnchanged": true,
+  "profiles": ["cad", "documentation", "map", "ui"],
+  "states": ["normal", "selected", "warning", "error", "disabled", "printBw"],
+  "symbols": [
+    {
+      "id": "fve.panel.basic",
+      "name": "FVE panel basic",
+      "category": "fve",
+      "usage": ["cad", "documentation"],
+      "layerId": "fve.panels",
+      "state": "normal",
+      "svgPath": "src/assets/cad/symbols/fve/fve_panel_basic.svg",
+      "png": { "32": "src/assets/cad/png/32/fve_panel_basic.png", "64": "src/assets/cad/png/64/fve_panel_basic.png" },
+      "viewBox": "0 0 64 64",
+      "tags": ["panel", "pv", "module"],
+      "fallback": false
+    },
+    {
+      "id": "lps.air_terminal.basic",
+      "name": "LPS air terminal basic",
+      "category": "lps",
+      "usage": ["cad", "documentation"],
+      "layerId": "lps.airTerminals",
+      "state": "normal",
+      "svgPath": "src/assets/cad/symbols/lps/lps_air_terminal_basic.svg",
+      "png": { "32": "src/assets/cad/png/32/lps_air_terminal_basic.png", "64": "src/assets/cad/png/64/lps_air_terminal_basic.png" },
+      "viewBox": "0 0 64 64",
+      "tags": ["jimaci tyc", "air terminal", "lps"],
+      "fallback": false
+    },
+    {
+      "id": "electro.spd.dc.basic",
+      "name": "SPD DC basic",
+      "category": "electro",
+      "usage": ["cad", "documentation"],
+      "layerId": "electro.spd",
+      "state": "normal",
+      "svgPath": "src/assets/cad/symbols/electro/spd_dc_basic.svg",
+      "png": { "32": "src/assets/cad/png/32/spd_dc_basic.png", "64": "src/assets/cad/png/64/spd_dc_basic.png" },
+      "viewBox": "0 0 64 64",
+      "tags": ["spd", "dc", "surge protection"],
+      "fallback": false
+    }
+  ]
+}
