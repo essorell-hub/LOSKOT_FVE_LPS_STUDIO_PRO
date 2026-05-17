@@ -1,7 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
+import { createLocalId } from "../shared/localId.js";
 
 // Define supported LPS object geometry types
-const SUPPORTED_LPS_GEOMETRY_TYPES = [
+export const SUPPORTED_LPS_GEOMETRY_TYPES = [
     "point", // For air terminals, earthing points, HVI points
     "line",  // For down conductors, HVI routes
     "polygon" // For LPZ zones, SPD areas
@@ -291,4 +292,17 @@ export function validateBasicLpsObjects(lpsObjects) {
     });
 
     return issues;
+}
+
+
+export function createLpsObject(input = {}) {
+  return {
+    id: input.id || createLocalId("lps"),
+    type: input.type || input.geometryType || "note",
+    geometryType: input.geometryType || input.type || "note",
+    name: input.name || "LPS objekt",
+    points: Array.isArray(input.points) ? input.points : [],
+    metadata: input.metadata || {},
+    status: input.status || "ok"
+  };
 }

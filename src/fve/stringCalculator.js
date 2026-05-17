@@ -1,5 +1,6 @@
-import { VALIDATION_STATUS } from '../validation/validationStatus';
-import { createValidationIssue } from '../validation/basicProjectValidation';
+import { VALIDATION_STATUS } from '../validation/validationStatus.js';
+import { createValidationIssue } from '../validation/basicProjectValidation.js';
+import { createLocalId } from "../shared/localId.js";
 
 // Constants for calculations
 const MIN_STRING_PANELS = 1; // Minimum number of panels in a string
@@ -213,3 +214,28 @@ export {
     validateStringVoltage,
     createFveCalculationSummary,
 };
+
+
+export function calculateStrings(input = {}) {
+  const panels = Array.isArray(input.panels) ? input.panels : [];
+  const stringSize = Math.max(1, Number(input.stringSize || input.panelsPerString || 10));
+  const strings = [];
+
+  for (let i = 0; i < panels.length; i += stringSize) {
+    const group = panels.slice(i, i + stringSize);
+    strings.push({
+      id: createLocalId("string"),
+      panels: group,
+      panelCount: group.length
+    });
+  }
+
+  return {
+    ok: true,
+    strings,
+    stringCount: strings.length,
+    panelCount: panels.length,
+    warnings: [],
+    errors: []
+  };
+}

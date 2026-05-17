@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'; // Assuming uuid is available for generating IDs
-import { VALIDATION_STATUS } from '../validation/validationConstants'; // Assuming this path is correct
+import { VALIDATION_STATUS } from '../validation/validationConstants.js'; // Assuming this path is correct
 
 // Define the types of exportable items
 export const EXPORT_ITEM_TYPES = {

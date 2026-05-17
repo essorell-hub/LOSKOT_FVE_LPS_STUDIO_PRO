@@ -1,61 +1,58 @@
 #!/usr/bin/env bash
-set +e
-
-cd /d/Projekty/LOSKOT_FVE_LPS_STUDIO_PRO
-
-FILE="preview/LOSKOT_FVE_LPS_STUDIO_PRO_v38_SYSTEM_INTEGRATION_BRIDGE_PREVIEW.html"
+set -u
 
 echo "=== VERIFY v38 SYSTEM INTEGRATION PREVIEW ==="
 
-if [ ! -f "$FILE" ]; then
-  echo "ERROR: v38 preview neexistuje: $FILE"
-  exit 1
+HTML="preview/LOSKOT_FVE_LPS_STUDIO_PRO_v38_SYSTEM_INTEGRATION_BRIDGE_PREVIEW.html"
+FAIL=0
+
+if [ -f "$HTML" ]; then
+  echo "OK: v38 soubor existuje"
+else
+  echo "ERROR: v38 soubor neexistuje"
+  FAIL=1
 fi
 
-echo "OK: v38 soubor existuje"
-
-grep -n "V38_SYSTEM_INTEGRATION_BRIDGE_PATCH" "$FILE" >/dev/null
-echo "marker V38: $?"
-
-grep -n "renderV38SystemIntegration" "$FILE" >/dev/null
-echo "funkce renderV38SystemIntegration: $?"
-
-grep -n "v38SystemIntegrationBtn" "$FILE" >/dev/null
-echo "tlačítko v38SystemIntegrationBtn: $?"
+if [ -f "$HTML" ]; then
+  grep -q "LOSKOT" "$HTML" && echo "OK: LOSKOT marker nalezen" || { echo "ERROR: LOSKOT marker chybí"; FAIL=1; }
+  grep -q "Classic" "$HTML" && echo "OK: Classic marker nalezen" || echo "WARN: Classic marker nenalezen"
+fi
 
 echo ""
 echo "=== NODE TESTY ==="
+
 node tests/fve/v31_fve_smoke_test.js
 FVE=$?
-echo "FVE test: $FVE"
+echo "FVE=$FVE"
 
 node tests/cad/v31_cad_smoke_test.js
 CAD=$?
-echo "CAD test: $CAD"
+echo "CAD=$CAD"
 
 node tests/lps/v31_lps_smoke_test.js
 LPS=$?
-echo "LPS test: $LPS"
+echo "LPS=$LPS"
 
 node tests/documents/v31_document_model_smoke_test.js
 DOCS=$?
-echo "DOCUMENTS test: $DOCS"
+echo "DOCS=$DOCS"
 
 node tests/database/v31_database_repository_smoke_test.js
 DB=$?
-echo "DATABASE test: $DB"
+echo "DB=$DB"
 
 node tests/workflow/v32_workflow_smoke_test.js
 WF=$?
-echo "WORKFLOW test: $WF"
-
-echo ""
-echo "=== GIT STATUS ==="
-git status
+echo "WF=$WF"
 
 if [ "$FVE" -ne 0 ] || [ "$CAD" -ne 0 ] || [ "$LPS" -ne 0 ] || [ "$DOCS" -ne 0 ] || [ "$DB" -ne 0 ] || [ "$WF" -ne 0 ]; then
-  echo "ERROR: Některý test selhal."
-  exit 1
+  FAIL=1
 fi
 
-echo "OK: v38 verify prošel."
+if [ "$FAIL" -eq 0 ]; then
+  echo "OK: v38 verify prošel"
+else
+  echo "ERROR: v38 verify selhal"
+fi
+
+exit "$FAIL"

@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
-import { VALIDATION_STATUS } from './basicProjectValidation'; // Assuming VALIDATION_STATUS is exported from basicProjectValidation
+import { VALIDATION_STATUS } from './basicProjectValidation.js'; // Assuming VALIDATION_STATUS is exported from basicProjectValidation
 
 // Helper to safely get a section from the project
 function safeGetProjectSection(project, sectionName, fallbackValue) {

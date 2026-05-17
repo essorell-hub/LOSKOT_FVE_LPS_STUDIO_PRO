@@ -1,10 +1,10 @@
 import {
     VALIDATION_STATUS,
     validateBasicProject,
-} from './basicProjectValidation';
+} from './basicProjectValidation.js';
 import {
     validateProjectReferences,
-} from './referenceValidation';
+} from './referenceValidation.js';
 
 // Define QA statuses, including custom ones for this engine
 const QA_STATUS = {

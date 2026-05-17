@@ -1,6 +1,6 @@
-import { normalizeProject } from '../data/projectModel';
-import { runProjectQa } from '../validation/qaStatusEngine';
-import { VALIDATION_STATUS } from '../validation/basicProjectValidation'; // Assuming this is needed for QA status types
+import { normalizeProject } from '../data/projectModel.js';
+import { runProjectQa } from '../validation/qaStatusEngine.js';
+import { VALIDATION_STATUS } from '../validation/basicProjectValidation.js'; // Assuming this is needed for QA status types
 
 /**
  * Creates a project export object, including normalized project data, QA results, and manifest.

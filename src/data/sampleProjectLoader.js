@@ -1,4 +1,4 @@
-import { normalizeProject, DATA_MODEL_VERSION, APP_VERSION } from './projectModel';
+import { normalizeProject, DATA_MODEL_VERSION, APP_VERSION } from './projectModel.js';
 
 // Define the paths to the sample project JSON files
 const SAMPLE_PROJECT_PATHS = {

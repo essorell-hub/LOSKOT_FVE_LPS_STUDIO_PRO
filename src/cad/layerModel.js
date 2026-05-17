@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { createLocalId } from "../shared/localId.js";
 
 const DEFAULT_LAYER_VISIBILITY = true;
 const DEFAULT_LAYER_LOCK = false;
@@ -125,4 +126,24 @@ export function getLayerObjectCounts(currentLayers, allObjects) {
  */
 export function getVisibleUnlockedLayers(currentLayers) {
     return currentLayers.filter(layer => layer.visible && !layer.locked);
+}
+
+
+export function createLayer(input = {}) {
+  return {
+    id: input.id || createLocalId("layer"),
+    name: input.name || "Vrstva",
+    visible: input.visible !== false,
+    locked: input.locked === true,
+    objects: Array.isArray(input.objects) ? input.objects : [],
+    metadata: input.metadata || {}
+  };
+}
+
+
+export function addLayer(layers = [], layerInput = {}) {
+  const list = Array.isArray(layers) ? [...layers] : [];
+  const layer = layerInput && layerInput.id ? layerInput : createLayer(layerInput);
+  list.push(layer);
+  return list;
 }

@@ -7,7 +7,7 @@ import {
     createWorkflowExportManifest,
     runFullWorkflowPreview,
     WORKFLOW_STATUS
-} from '../workflow.js'; // Assuming projectWorkflowEngine is the default export or correctly aliased
+} from '../../src/workflow/index.js'; // Assuming projectWorkflowEngine is the default export or correctly aliased
 
 // Mock the projectRepositoryPreview store for testing save/load
 const mockProjectRepositoryPreview = {
@@ -249,7 +249,7 @@ async function runSmokeTests() {
 }
 
 // Execute the tests if this script is run directly
-if (require.main === module) {
+if (true) {
     runSmokeTests().catch(error => {
         console.error("An unexpected error occurred during smoke test execution:", error);
         process.exit(1);
@@ -257,6 +257,3 @@ if (require.main === module) {
 }
 
 // Export the function to be used by other modules if needed (though typically run directly)
-module.exports = {
-    runSmokeTests
-};

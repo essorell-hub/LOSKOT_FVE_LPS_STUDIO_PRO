@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@firebase/util": "^1.15.1",
+    "uuid": "^14.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node tests/fve/v31_fve_smoke_test.js && node tests/cad/v31_cad_smoke_test.js && node tests/lps/v31_lps_smoke_test.js && node tests/documents/v31_document_model_smoke_test.js && node tests/database/v31_database_repository_smoke_test.js && node tests/workflow/v32_workflow_smoke_test.js"
+  }
+}

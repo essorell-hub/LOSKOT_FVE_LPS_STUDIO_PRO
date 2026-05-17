@@ -1,3 +1,3 @@
-export * from './basicProjectValidation';
-export * from './referenceValidation';
-export * from './qaStatusEngine';
+export * from './basicProjectValidation.js';
+export * from './referenceValidation.js';
+export * from './qaStatusEngine.js';

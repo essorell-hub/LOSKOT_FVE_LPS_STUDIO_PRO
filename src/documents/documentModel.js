@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
-import { SUPPORTED_LPS_GEOMETRY_TYPES } from '../lps/lpsObjectModel'; // Assuming this is needed for validation or type checking
-import { VALIDATION_STATUS } from '../validation/basicProjectValidation'; // Assuming this is needed for validation issues
+import { SUPPORTED_LPS_GEOMETRY_TYPES } from '../lps/lpsObjectModel.js'; // Assuming this is needed for validation or type checking
+import { VALIDATION_STATUS } from '../validation/basicProjectValidation.js'; // Assuming this is needed for validation issues
 
 // Define known document types
 export const DOCUMENT_TYPES = {
