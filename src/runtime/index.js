@@ -28,3 +28,9 @@ export {
   createRuntimeBootstrap,
   safeRuntimeBootstrap
 } from "./runtimeBootstrap.js";
+
+export {
+  FVE_PANEL_EDITOR_VERSION,
+  createFvePanelEditor,
+  safeFvePanelEditor
+} from "./fvePanelEditor.js";
