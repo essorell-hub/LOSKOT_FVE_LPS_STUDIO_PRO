@@ -1,0 +1,48 @@
+Pracuješ na projektu LOSKOT FVE & LPS STUDIO PRO.
+
+Úkol:
+Vytvoř pouze soubor:
+src/workflow/projectWorkflowEngine.js
+
+Přísná pravidla:
+- Neměň HTML.
+- Neměň CSS.
+- Neměň preview.
+- Neměň UI.
+- Neměň PROJECT_STATE_UNIFIED.md.
+- Neměň CHANGELOG.md.
+- Nepřidávej závislosti.
+
+Cíl:
+Vytvořit první společný workflow engine, který propojí:
+- FVE výpočty
+- CAD vrstvy/objekty
+- LPS objekty
+- dokumenty
+- database preview repository
+- export package manifest
+
+Použij existující moduly:
+src/fve/index.js
+src/cad/index.js
+src/lps/index.js
+src/documents/index.js
+src/database/index.js
+src/export/index.js
+
+Exportuj funkce:
+- createWorkflowProject(input)
+- normalizeWorkflowProject(project)
+- runWorkflowQa(project)
+- createWorkflowSummary(project)
+- saveWorkflowProject(store, project)
+- loadWorkflowProject(store, projectId)
+- createWorkflowExportManifest(project)
+- runFullWorkflowPreview(store, project)
+
+Požadavky:
+- bezpečné fallbacky
+- žádná chyba nesmí shodit UI
+- vracet warnings/errors pole
+- neříkat, že placeholder LPS risk je normový výpočet
+- české názvy statusů v summary
