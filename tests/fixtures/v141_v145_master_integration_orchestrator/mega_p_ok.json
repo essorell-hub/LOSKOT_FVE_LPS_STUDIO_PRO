@@ -1,0 +1,64 @@
+{
+  "packs": [
+    {
+      "code": "A",
+      "status": "INTEGRATED"
+    },
+    {
+      "code": "B",
+      "status": "INTEGRATED"
+    },
+    {
+      "code": "C",
+      "status": "INTEGRATED"
+    },
+    {
+      "code": "D",
+      "status": "INTEGRATED"
+    },
+    {
+      "code": "E",
+      "status": "PENDING"
+    },
+    {
+      "code": "F",
+      "status": "PENDING"
+    },
+    {
+      "code": "G",
+      "status": "PENDING"
+    },
+    {
+      "code": "H",
+      "status": "PENDING"
+    },
+    {
+      "code": "I",
+      "status": "PENDING"
+    },
+    {
+      "code": "J",
+      "status": "PENDING"
+    },
+    {
+      "code": "K",
+      "status": "PENDING"
+    },
+    {
+      "code": "L",
+      "status": "PENDING"
+    },
+    {
+      "code": "M",
+      "status": "PENDING"
+    },
+    {
+      "code": "N",
+      "status": "PENDING"
+    },
+    {
+      "code": "O",
+      "status": "PENDING"
+    }
+  ]
+}
