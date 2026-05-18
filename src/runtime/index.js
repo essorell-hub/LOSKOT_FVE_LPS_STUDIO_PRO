@@ -173,3 +173,9 @@ export {
   createFveUiCalculationBinding,
   safeFveUiCalculationBinding
 } from "./fveUiCalculationBinding.js";
+
+export {
+  V69_LPS_SPD_UI_BINDING_VERSION,
+  createLpsSpdUiBinding,
+  safeLpsSpdUiBinding
+} from "./lpsSpdUiBinding.js";
