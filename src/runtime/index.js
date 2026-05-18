@@ -101,3 +101,9 @@ export {
   createLpsSpdDataEngine,
   safeLpsSpdDataEngine
 } from "./lpsSpdDataEngine.js";
+
+export {
+  ROOF_GEOMETRY_OBSTACLE_ENGINE_VERSION,
+  createRoofGeometryObstacleEngine,
+  safeRoofGeometryObstacleEngine
+} from "./roofGeometryObstacleEngine.js";
