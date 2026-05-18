@@ -1,0 +1,12 @@
+[
+  {
+    "id": "node_check",
+    "status": "PASS",
+    "blocks_release": false
+  },
+  {
+    "id": "smoke",
+    "status": "PASS",
+    "blocks_release": false
+  }
+]
