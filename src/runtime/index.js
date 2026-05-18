@@ -113,3 +113,9 @@ export {
   createCableRoutingEngine,
   safeCableRoutingEngine
 } from "./cableRoutingEngine.js";
+
+export {
+  PROJECT_PACKAGE_BUILDER_VERSION,
+  createProjectPackageBuilder,
+  safeProjectPackageBuilder
+} from "./projectPackageBuilder.js";
