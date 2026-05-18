@@ -197,3 +197,9 @@ export {
   createFullQaDashboardRuntime,
   safeFullQaDashboardRuntime
 } from "./fullQaDashboardRuntime.js";
+
+export {
+  V73_FULL_INTEGRATION_SMOKE_TEST_VERSION,
+  createFullIntegrationSmokeTestRuntime,
+  safeFullIntegrationSmokeTestRuntime
+} from "./fullIntegrationSmokeTestRuntime.js";
