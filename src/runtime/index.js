@@ -125,3 +125,9 @@ export {
   createPdfDocxReportGenerator,
   safePdfDocxReportGenerator
 } from "./pdfDocxReportGenerator.js";
+
+export {
+  IMPORT_EXPORT_BACKUP_ENGINE_VERSION,
+  createImportExportBackupEngine,
+  safeImportExportBackupEngine
+} from "./importExportBackupEngine.js";
