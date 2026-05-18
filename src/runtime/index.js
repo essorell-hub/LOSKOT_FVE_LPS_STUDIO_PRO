@@ -131,3 +131,9 @@ export {
   createImportExportBackupEngine,
   safeImportExportBackupEngine
 } from "./importExportBackupEngine.js";
+
+export {
+  USER_WORKFLOW_AUTOMATION_VERSION,
+  createUserWorkflowAutomation,
+  safeUserWorkflowAutomation
+} from "./userWorkflowAutomation.js";
