@@ -155,3 +155,9 @@ export {
   createUnifiedAppIntegration,
   safeUnifiedAppIntegration
 } from "./unifiedAppIntegration.js";
+
+export {
+  V66_REAL_PROJECT_SAVE_LOAD_VERSION,
+  createRealProjectSaveLoad,
+  safeRealProjectSaveLoad
+} from "./realProjectSaveLoad.js";
