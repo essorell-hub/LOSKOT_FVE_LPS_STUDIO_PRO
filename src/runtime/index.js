@@ -83,3 +83,9 @@ export {
   createSqliteDataModel,
   safeSqliteDataModel
 } from "./sqliteDataModel.js";
+
+export {
+  DOCUMENTS_EXPORT_QA_VERSION,
+  createDocumentsExportQa,
+  safeDocumentsExportQa
+} from "./documentsExportQa.js";
