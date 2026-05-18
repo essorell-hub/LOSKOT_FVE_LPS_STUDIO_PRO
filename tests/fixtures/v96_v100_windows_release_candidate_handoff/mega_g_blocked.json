@@ -1,0 +1,42 @@
+{
+  "pack": "G",
+  "project": {
+    "project_code": "MEGA-G-OK",
+    "project_name": "MEGA PACK G — V96–V100 Windows Release Candidate Handoff",
+    "schema_version": "v81-v100"
+  },
+  "qa": {
+    "results": [
+      {
+        "id": "qa_block_01",
+        "severity": "ERROR",
+        "message": "Demo blokující chyba",
+        "blocks_export": true
+      }
+    ],
+    "summary": {
+      "blocks_export": 1
+    }
+  },
+  "documents": {
+    "templates": [
+      {
+        "id": "tpl_qa",
+        "name": "QA report"
+      }
+    ],
+    "generated": []
+  },
+  "export_package": {
+    "status": "draft",
+    "files": []
+  },
+  "diagnostics": {
+    "errors": [],
+    "warnings": []
+  },
+  "release": {
+    "candidate": true,
+    "manual_checks": []
+  }
+}
