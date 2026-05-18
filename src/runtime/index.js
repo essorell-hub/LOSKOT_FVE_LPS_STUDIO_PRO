@@ -149,3 +149,9 @@ export {
   createReleasePackagingHandoff,
   safeReleasePackagingHandoff
 } from "./releasePackagingHandoff.js";
+
+export {
+  V65_UNIFIED_APP_INTEGRATION_FOUNDATION_VERSION,
+  createUnifiedAppIntegration,
+  safeUnifiedAppIntegration
+} from "./unifiedAppIntegration.js";
