@@ -1,0 +1,24 @@
+{
+  "cad": {
+    "objects": [
+      {
+        "id": "o1"
+      }
+    ]
+  },
+  "fve": {
+    "panels": [
+      {
+        "id": "p1"
+      }
+    ],
+    "strings": [
+      {
+        "id": "s1"
+      }
+    ]
+  },
+  "qa": {
+    "results": []
+  }
+}
