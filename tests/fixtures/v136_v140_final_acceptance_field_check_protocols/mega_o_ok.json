@@ -1,0 +1,13 @@
+{
+  "checks": [
+    {
+      "id": "c1",
+      "required": true,
+      "status": "PASS"
+    },
+    {
+      "id": "c2",
+      "required": false
+    }
+  ]
+}
