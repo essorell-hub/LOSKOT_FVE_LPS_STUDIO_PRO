@@ -1,0 +1,10 @@
+[
+  {
+    "id": "step_01",
+    "status": "DONE"
+  },
+  {
+    "id": "step_02",
+    "status": "PENDING"
+  }
+]
