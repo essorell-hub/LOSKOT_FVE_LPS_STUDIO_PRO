@@ -1,0 +1,26 @@
+{
+  "pv_modules": [
+    {
+      "id": "mod_450",
+      "manufacturer": "DEMO",
+      "model": "450M",
+      "datasheet": "datasheets/mod_450.pdf"
+    }
+  ],
+  "inverters": [
+    {
+      "id": "inv_10k",
+      "manufacturer": "DEMO",
+      "model": "10K",
+      "datasheet": "datasheets/inv_10k.pdf"
+    }
+  ],
+  "spd_dc": [
+    {
+      "id": "spd_dc_1100",
+      "manufacturer": "DEMO",
+      "model": "PV SPD",
+      "datasheet": "datasheets/spd_dc.pdf"
+    }
+  ]
+}
