@@ -119,3 +119,9 @@ export {
   createProjectPackageBuilder,
   safeProjectPackageBuilder
 } from "./projectPackageBuilder.js";
+
+export {
+  PDF_DOCX_REPORT_GENERATOR_VERSION,
+  createPdfDocxReportGenerator,
+  safePdfDocxReportGenerator
+} from "./pdfDocxReportGenerator.js";
