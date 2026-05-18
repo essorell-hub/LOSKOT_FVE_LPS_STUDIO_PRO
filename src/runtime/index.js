@@ -89,3 +89,9 @@ export {
   createDocumentsExportQa,
   safeDocumentsExportQa
 } from "./documentsExportQa.js";
+
+export {
+  FVE_CALCULATION_ENGINE_VERSION,
+  createFveCalculationEngine,
+  safeFveCalculationEngine
+} from "./fveCalculationEngine.js";
