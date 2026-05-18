@@ -1,0 +1,420 @@
+{
+  "export_schema": "loskot.project.schema.v74_v85",
+  "app_version": "v85-ui-binding-core",
+  "project": {
+    "id": "mega_c_ok",
+    "project_code": "MEGA-C-OK",
+    "project_name": "MEGA PACK C UI projekt",
+    "schema_version": "v74-v85"
+  },
+  "building": {
+    "has_lps": true
+  },
+  "roof": {
+    "planes": [
+      {
+        "id": "roof_1",
+        "name": "Jižní rovina"
+      }
+    ]
+  },
+  "cad": {
+    "layers": [
+      "10_fve_panels",
+      "11_fve_strings",
+      "12_dc_routes",
+      "30_spd_ac",
+      "31_spd_dc",
+      "32_lpz_zones",
+      "22_lps_hvi_routes",
+      "23_lps_grounding"
+    ],
+    "objects": [
+      {
+        "id": "cad_panel_01",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_01"
+      },
+      {
+        "id": "cad_panel_02",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_02"
+      },
+      {
+        "id": "cad_panel_03",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_03"
+      },
+      {
+        "id": "cad_panel_04",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_04"
+      },
+      {
+        "id": "cad_panel_05",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_05"
+      },
+      {
+        "id": "cad_panel_06",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_06"
+      },
+      {
+        "id": "cad_panel_07",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_07"
+      },
+      {
+        "id": "cad_panel_08",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_08"
+      },
+      {
+        "id": "cad_panel_09",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_09"
+      },
+      {
+        "id": "cad_panel_10",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_10"
+      },
+      {
+        "id": "cad_panel_11",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_11"
+      },
+      {
+        "id": "cad_panel_12",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_12"
+      },
+      {
+        "id": "cad_panel_13",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_13"
+      },
+      {
+        "id": "cad_panel_14",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_14"
+      },
+      {
+        "id": "cad_panel_15",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_15"
+      },
+      {
+        "id": "cad_panel_16",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_16"
+      },
+      {
+        "id": "cad_panel_17",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_17"
+      },
+      {
+        "id": "cad_panel_18",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_18"
+      },
+      {
+        "id": "cad_spd_ac_01",
+        "layer": "30_spd_ac",
+        "object_type": "spd_ac",
+        "linked_table": "spd_ac",
+        "linked_id": "spd_ac_01"
+      },
+      {
+        "id": "cad_spd_dc_01",
+        "layer": "31_spd_dc",
+        "object_type": "spd_dc",
+        "linked_table": "spd_dc",
+        "linked_id": "spd_dc_01"
+      },
+      {
+        "id": "cad_hvi_01",
+        "layer": "22_lps_hvi_routes",
+        "object_type": "hvi_route",
+        "linked_table": "hvi_routes",
+        "linked_id": "hvi_01"
+      }
+    ]
+  },
+  "fve": {
+    "panels": [
+      {
+        "id": "panel_01",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_01"
+      },
+      {
+        "id": "panel_02",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_01"
+      },
+      {
+        "id": "panel_03",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_01"
+      },
+      {
+        "id": "panel_04",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_01"
+      },
+      {
+        "id": "panel_05",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_01"
+      },
+      {
+        "id": "panel_06",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_01"
+      },
+      {
+        "id": "panel_07",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_01"
+      },
+      {
+        "id": "panel_08",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_01"
+      },
+      {
+        "id": "panel_09",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_01"
+      },
+      {
+        "id": "panel_10",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_02"
+      },
+      {
+        "id": "panel_11",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_02"
+      },
+      {
+        "id": "panel_12",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_02"
+      },
+      {
+        "id": "panel_13",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_02"
+      },
+      {
+        "id": "panel_14",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_02"
+      },
+      {
+        "id": "panel_15",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_02"
+      },
+      {
+        "id": "panel_16",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_02"
+      },
+      {
+        "id": "panel_17",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_02"
+      },
+      {
+        "id": "panel_18",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_02"
+      }
+    ],
+    "strings": [
+      {
+        "id": "str_01",
+        "module_count_series": 9,
+        "mppt_id": "mppt_1"
+      },
+      {
+        "id": "str_02",
+        "module_count_series": 9,
+        "mppt_id": "mppt_2"
+      }
+    ],
+    "inverters": [
+      {
+        "id": "inv_01"
+      }
+    ],
+    "mppts": [
+      {
+        "id": "mppt_1"
+      },
+      {
+        "id": "mppt_2"
+      }
+    ],
+    "dc_routes": [
+      {
+        "id": "dc_01",
+        "lpz_from": "LPZ_0B",
+        "lpz_to": "LPZ_1",
+        "spd_dc_id": "spd_dc_01"
+      }
+    ]
+  },
+  "lps_spd_lpz": {
+    "lpz_zones": [
+      {
+        "id": "lpz_0b",
+        "zone_code": "LPZ_0B"
+      },
+      {
+        "id": "lpz_1",
+        "zone_code": "LPZ_1"
+      }
+    ],
+    "spd_dc": [
+      {
+        "id": "spd_dc_01",
+        "spd_type": "T1+T2 PV DC",
+        "ucpv_v": 1100
+      }
+    ],
+    "spd_ac": [
+      {
+        "id": "spd_ac_01",
+        "spd_type": "T1+T2",
+        "uc_v": 275
+      }
+    ],
+    "lps_elements": [
+      {
+        "id": "lps_01",
+        "connected_to_earth": true
+      }
+    ],
+    "hvi_routes": [
+      {
+        "id": "hvi_01",
+        "total_length_m": 12
+      }
+    ],
+    "earthing_systems": [
+      {
+        "id": "earth_01",
+        "connected_to_lps": true,
+        "connected_to_pe": true
+      }
+    ]
+  },
+  "qa": {
+    "results": [
+      {
+        "id": "qa_info_01",
+        "check_id": "QA-DCA-001",
+        "severity": "INFO",
+        "message": "DC/AC poměr je v běžném rozsahu.",
+        "blocks_export": false
+      },
+      {
+        "id": "qa_warn_01",
+        "check_id": "QA-DOC-001",
+        "severity": "WARNING",
+        "message": "Datasheet zatím není připojen.",
+        "blocks_export": false
+      },
+      {
+        "id": "qa_err_01",
+        "check_id": "QA-EXP-001",
+        "severity": "ERROR",
+        "message": "Export blokován testovací chybou.",
+        "blocks_export": true
+      }
+    ],
+    "summary": {
+      "info": 1,
+      "warning": 1,
+      "error": 1,
+      "blocks_export": 1
+    }
+  },
+  "documents": {
+    "templates": [
+      {
+        "id": "doc_tpl_qa",
+        "name": "QA report"
+      }
+    ],
+    "generated": [
+      {
+        "path": "documents/04_qa_report.md",
+        "type": "md"
+      }
+    ]
+  },
+  "export_package": {
+    "status": "draft"
+  }
+}
