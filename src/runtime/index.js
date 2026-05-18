@@ -137,3 +137,9 @@ export {
   createUserWorkflowAutomation,
   safeUserWorkflowAutomation
 } from "./userWorkflowAutomation.js";
+
+export {
+  ERROR_RECOVERY_DIAGNOSTICS_VERSION,
+  createErrorRecoveryDiagnostics,
+  safeErrorRecoveryDiagnostics
+} from "./errorRecoveryDiagnostics.js";
