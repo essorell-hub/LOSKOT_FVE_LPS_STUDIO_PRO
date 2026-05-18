@@ -1,0 +1,35 @@
+{
+  "pack": "F",
+  "project": {
+    "project_code": "MEGA-F-OK",
+    "project_name": "MEGA PACK F — V91–V95 Release Hardening / Diagnostics / Backup",
+    "schema_version": "v81-v100"
+  },
+  "qa": {
+    "results": [],
+    "summary": {
+      "blocks_export": 0
+    }
+  },
+  "documents": {
+    "templates": [
+      {
+        "id": "tpl_qa",
+        "name": "QA report"
+      }
+    ],
+    "generated": []
+  },
+  "export_package": {
+    "status": "draft",
+    "files": []
+  },
+  "diagnostics": {
+    "errors": [],
+    "warnings": []
+  },
+  "release": {
+    "candidate": true,
+    "manual_checks": []
+  }
+}
