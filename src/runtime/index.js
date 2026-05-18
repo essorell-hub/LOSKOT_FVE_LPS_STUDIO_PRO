@@ -76,3 +76,10 @@ export {
   createProjectInspectorLayers,
   safeProjectInspectorLayers
 } from "./projectInspectorLayers.js";
+
+export {
+  SQLITE_DATA_MODEL_VERSION,
+  getV53InitialSchemaSql,
+  createSqliteDataModel,
+  safeSqliteDataModel
+} from "./sqliteDataModel.js";
