@@ -143,3 +143,9 @@ export {
   createErrorRecoveryDiagnostics,
   safeErrorRecoveryDiagnostics
 } from "./errorRecoveryDiagnostics.js";
+
+export {
+  RELEASE_PACKAGING_HANDOFF_VERSION,
+  createReleasePackagingHandoff,
+  safeReleasePackagingHandoff
+} from "./releasePackagingHandoff.js";
