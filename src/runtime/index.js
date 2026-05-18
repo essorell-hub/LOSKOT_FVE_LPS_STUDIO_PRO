@@ -209,3 +209,9 @@ export {
   createFullAppPreviewRuntime,
   safeFullAppPreviewRuntime
 } from "./fullAppPreviewRuntime.js";
+
+export {
+  V75_FULL_APP_CANDIDATE_VERSION,
+  createFullAppCandidateRuntime,
+  safeFullAppCandidateRuntime
+} from "./fullAppCandidateRuntime.js";
