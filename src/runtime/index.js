@@ -107,3 +107,9 @@ export {
   createRoofGeometryObstacleEngine,
   safeRoofGeometryObstacleEngine
 } from "./roofGeometryObstacleEngine.js";
+
+export {
+  CABLE_ROUTING_ENGINE_VERSION,
+  createCableRoutingEngine,
+  safeCableRoutingEngine
+} from "./cableRoutingEngine.js";
