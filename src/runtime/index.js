@@ -203,3 +203,9 @@ export {
   createFullIntegrationSmokeTestRuntime,
   safeFullIntegrationSmokeTestRuntime
 } from "./fullIntegrationSmokeTestRuntime.js";
+
+export {
+  V74_FULL_APP_PREVIEW_VERSION,
+  createFullAppPreviewRuntime,
+  safeFullAppPreviewRuntime
+} from "./fullAppPreviewRuntime.js";
