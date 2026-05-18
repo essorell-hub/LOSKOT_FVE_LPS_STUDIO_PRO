@@ -167,3 +167,9 @@ export {
   createCadObjectsDatabaseBinding,
   safeCadObjectsDatabaseBinding
 } from "./cadObjectsDatabaseBinding.js";
+
+export {
+  V68_FVE_UI_CALCULATION_BINDING_VERSION,
+  createFveUiCalculationBinding,
+  safeFveUiCalculationBinding
+} from "./fveUiCalculationBinding.js";
