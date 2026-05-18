@@ -161,3 +161,9 @@ export {
   createRealProjectSaveLoad,
   safeRealProjectSaveLoad
 } from "./realProjectSaveLoad.js";
+
+export {
+  V67_CAD_OBJECTS_DATABASE_BINDING_VERSION,
+  createCadObjectsDatabaseBinding,
+  safeCadObjectsDatabaseBinding
+} from "./cadObjectsDatabaseBinding.js";
