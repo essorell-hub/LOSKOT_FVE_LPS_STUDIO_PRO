@@ -1,0 +1,23 @@
+{
+  "checks": [
+    {
+      "id": "v54_v64",
+      "status": "PASS"
+    },
+    {
+      "id": "mega_a",
+      "status": "PASS"
+    }
+  ],
+  "logs": [
+    {
+      "level": "INFO"
+    }
+  ],
+  "workPcItems": [
+    {
+      "id": "grafika",
+      "status": "OPEN"
+    }
+  ]
+}

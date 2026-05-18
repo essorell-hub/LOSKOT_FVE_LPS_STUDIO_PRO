@@ -1,0 +1,19 @@
+{
+  "checks": [
+    {
+      "id": "verify",
+      "status": "FAIL"
+    }
+  ],
+  "logs": [
+    {
+      "level": "ERROR"
+    }
+  ],
+  "workPcItems": [
+    {
+      "id": "fix",
+      "status": "OPEN"
+    }
+  ]
+}
