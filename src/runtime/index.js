@@ -191,3 +191,9 @@ export {
   createExportPackageUiBinding,
   safeExportPackageUiBinding
 } from "./exportPackageUiBinding.js";
+
+export {
+  V72_FULL_QA_DASHBOARD_VERSION,
+  createFullQaDashboardRuntime,
+  safeFullQaDashboardRuntime
+} from "./fullQaDashboardRuntime.js";
