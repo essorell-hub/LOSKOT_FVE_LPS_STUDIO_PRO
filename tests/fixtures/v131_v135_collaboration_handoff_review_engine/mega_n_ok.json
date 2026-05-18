@@ -1,0 +1,20 @@
+{
+  "checklist": [
+    {
+      "id": "c1",
+      "status": "DONE"
+    }
+  ],
+  "comments": [
+    {
+      "id": "m1",
+      "status": "RESOLVED"
+    }
+  ],
+  "approvals": [
+    {
+      "id": "a1",
+      "status": "APPROVED"
+    }
+  ]
+}
