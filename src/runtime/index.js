@@ -185,3 +185,9 @@ export {
   createDocumentsUiBinding,
   safeDocumentsUiBinding
 } from "./documentsUiBinding.js";
+
+export {
+  V71_EXPORT_PACKAGE_UI_BINDING_VERSION,
+  createExportPackageUiBinding,
+  safeExportPackageUiBinding
+} from "./exportPackageUiBinding.js";
