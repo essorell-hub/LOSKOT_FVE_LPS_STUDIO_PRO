@@ -95,3 +95,9 @@ export {
   createFveCalculationEngine,
   safeFveCalculationEngine
 } from "./fveCalculationEngine.js";
+
+export {
+  LPS_SPD_DATA_ENGINE_VERSION,
+  createLpsSpdDataEngine,
+  safeLpsSpdDataEngine
+} from "./lpsSpdDataEngine.js";
