@@ -179,3 +179,9 @@ export {
   createLpsSpdUiBinding,
   safeLpsSpdUiBinding
 } from "./lpsSpdUiBinding.js";
+
+export {
+  V70_DOCUMENTS_UI_BINDING_VERSION,
+  createDocumentsUiBinding,
+  safeDocumentsUiBinding
+} from "./documentsUiBinding.js";
