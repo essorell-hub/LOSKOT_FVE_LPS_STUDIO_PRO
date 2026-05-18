@@ -1,0 +1,47 @@
+{
+  "pv_modules": [
+    {
+      "id": "mod_demo_450",
+      "manufacturer": "DEMO Solar",
+      "model": "DS-450M",
+      "pmax_stc_w": 450,
+      "voc_stc_v": 41.2,
+      "vmp_stc_v": 34.5
+    },
+    {
+      "id": "mod_demo_500",
+      "manufacturer": "DEMO Solar",
+      "model": "DS-500M",
+      "pmax_stc_w": 500,
+      "voc_stc_v": 45.0,
+      "vmp_stc_v": 37.8
+    }
+  ],
+  "inverters": [
+    {
+      "id": "inv_demo_10k",
+      "manufacturer": "DEMO Inverter",
+      "model": "DI-10K-3P",
+      "ac_nominal_power_w": 10000,
+      "max_dc_voltage_v": 1100
+    }
+  ],
+  "spd_dc": [
+    {
+      "id": "spd_dc_pv_1100_t1t2",
+      "manufacturer": "DEMO SPD",
+      "model": "PV T1+T2 1100",
+      "spd_type": "T1+T2 PV DC",
+      "ucpv_v": 1100
+    }
+  ],
+  "spd_ac": [
+    {
+      "id": "spd_ac_t1t2_tns",
+      "manufacturer": "DEMO SPD",
+      "model": "AC T1+T2 TN-S",
+      "spd_type": "T1+T2",
+      "uc_v": 275
+    }
+  ]
+}

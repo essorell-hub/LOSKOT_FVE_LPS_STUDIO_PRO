@@ -1,0 +1,91 @@
+{
+  "export_schema": "loskot.project.schema.v66_v80",
+  "app_version": "v80-project-storage-core",
+  "project": {
+    "id": "mega_b_ok",
+    "project_code": "MEGA-B-OK",
+    "project_name": "MEGA PACK B OK projekt",
+    "schema_version": "v66-v80"
+  },
+  "building": {
+    "has_lps": true
+  },
+  "roof": {
+    "planes": [
+      {
+        "id": "roof_1"
+      }
+    ],
+    "obstacles": []
+  },
+  "cad": {
+    "layers": [
+      "10_fve_panels"
+    ],
+    "objects": [
+      {
+        "id": "cad_panel_01",
+        "layer": "10_fve_panels",
+        "object_type": "pv_panel",
+        "linked_table": "pv_panel_instances",
+        "linked_id": "panel_01"
+      }
+    ],
+    "symbols": []
+  },
+  "fve": {
+    "module_type": null,
+    "inverter_type": null,
+    "panels": [
+      {
+        "id": "panel_01",
+        "module_type_id": "mod_450",
+        "roof_plane_id": "roof_1",
+        "string_id": "str_01"
+      }
+    ],
+    "strings": [
+      {
+        "id": "str_01",
+        "module_count_series": 9,
+        "mppt_id": "mppt_1"
+      }
+    ],
+    "inverters": [],
+    "mppts": [
+      {
+        "id": "mppt_1"
+      }
+    ],
+    "dc_routes": [],
+    "optimizers": []
+  },
+  "lps_spd_lpz": {
+    "lpz_zones": [],
+    "spd_dc": [],
+    "spd_ac": [],
+    "lps_elements": [],
+    "hvi_routes": [],
+    "down_conductors": [],
+    "earthing_systems": [],
+    "bonding": []
+  },
+  "qa": {
+    "results": [],
+    "summary": {
+      "info": 0,
+      "warning": 0,
+      "error": 0,
+      "blocks_export": 0
+    }
+  },
+  "documents": {
+    "templates": [],
+    "generated": []
+  },
+  "export_package": {
+    "status": "draft",
+    "files": []
+  },
+  "audit_log": []
+}
