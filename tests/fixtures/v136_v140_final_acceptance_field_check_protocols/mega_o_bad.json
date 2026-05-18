@@ -1,0 +1,14 @@
+{
+  "checks": [
+    {
+      "id": "c1",
+      "required": true,
+      "status": "FAIL"
+    },
+    {
+      "id": "c2",
+      "required": true,
+      "status": "MISSING"
+    }
+  ]
+}
