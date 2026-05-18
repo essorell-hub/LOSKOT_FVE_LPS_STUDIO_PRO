@@ -1,0 +1,8 @@
+[
+  {
+    "id": "QA-EXP-001",
+    "severity": "ERROR",
+    "blocks_export": true,
+    "requires_manual_review": true
+  }
+]

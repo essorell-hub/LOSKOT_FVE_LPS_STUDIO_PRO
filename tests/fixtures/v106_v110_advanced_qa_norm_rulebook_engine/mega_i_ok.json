@@ -1,0 +1,14 @@
+[
+  {
+    "id": "QA-DATA-001",
+    "severity": "INFO",
+    "blocks_export": false,
+    "requires_manual_review": false
+  },
+  {
+    "id": "QA-DOC-001",
+    "severity": "WARNING",
+    "blocks_export": false,
+    "requires_manual_review": false
+  }
+]
