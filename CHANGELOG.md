@@ -1,4 +1,11 @@
 
+## V206-V220 SAFE VISIBLE SHELL ATTACHMENT
+
+- Added safe visible shell attachment models V206-V220.
+- Added smoke and deep audit tests with repeated local audit support.
+- Scope remains runtime/data attachment models only.
+- No visual, CSS, HTML, image, JSX/TSX, package or scripts/verify changes.
+
 ## V191-V205 LONG WORK APP SHELL RUNTIME MODELS
 
 - Added app shell runtime mount, route, module, menu, workspace, QA, inspector, synchronization, event, command, diagnostics, deep audit, release gate, work plan and milestone models.

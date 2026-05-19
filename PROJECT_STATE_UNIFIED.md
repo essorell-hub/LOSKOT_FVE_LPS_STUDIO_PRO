@@ -266,3 +266,10 @@ Doporučený cíl:
 - V191-V205 moves from preparatory shell binding into practical runtime models for existing app shell regions.
 - The milestone status is READY_FOR_SAFE_VISIBLE_ATTACHMENT.
 - This still does not modify approved Classic PRO graphics or visible UI components.
+
+
+## V206_V220_SAFE_VISIBLE_SHELL_ATTACHMENT_COMMITTED
+
+- V206-V220 adds safe visible shell attachment models for left menu, workspace, QA panel, inspector and status regions.
+- Milestone status is READY_FOR_CONTROLLED_APP_INTEGRATION.
+- This still does not modify approved Classic PRO graphics or visible UI components.
