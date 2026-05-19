@@ -1,4 +1,11 @@
 
+## V381-V400 SAFE FUNCTIONAL NIGHT DOCUMENTS EXPORT FUNCTIONAL CORE
+
+- Added V381-V400 documents export functional core functional self-contained runtime models.
+- Added functional smoke and deep audit tests.
+- Checkpoint phase; no approved visual/package/scripts/push/merge changes.
+
+
 ## V361-V380 SAFE FUNCTIONAL NIGHT LPS SPD FUNCTIONAL CORE
 
 - Added V361-V380 LPS SPD functional core functional self-contained runtime models.

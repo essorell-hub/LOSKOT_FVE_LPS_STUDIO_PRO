@@ -316,3 +316,9 @@ Doporučený cíl:
 
 - V361-V380 LPS SPD functional core is prepared as functional night-builder checkpoint layer.
 - No approved Classic PRO UI screen is modified.
+
+
+## V381_V400_SAFE_FUNCTIONAL_NIGHT_READY
+
+- V381-V400 documents export functional core is prepared as functional night-builder checkpoint layer.
+- No approved Classic PRO UI screen is modified.
