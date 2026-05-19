@@ -1,4 +1,13 @@
 
+## V153 UI BOOTSTRAP BINDING
+
+- Added runtime bootstrap binding adapter built from V152 app-shell binding and existing runtimeBootstrap module.
+- Added smoke test validating bootstrap bridge metadata, active-route propagation, visual-lock contract, and runtime module availability.
+- No change to approved Classic PRO visual style.
+- No CSS/HTML/image/JSX/TSX visual file changes.
+- No package.json changes.
+- Purpose: prepare safe integration between approved UI app-shell binding and the existing runtime bootstrap layer.
+
 ## V152 UI APP SHELL BINDING
 
 - Added app-shell binding view-model built from V151 approved UI foundation registry.

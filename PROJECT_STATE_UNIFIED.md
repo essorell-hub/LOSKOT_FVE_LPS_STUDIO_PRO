@@ -194,3 +194,11 @@ Doporučený cíl:
 - Binding produces navigation modules, active screen state, workflow sequence, and QA panel contract.
 - This does not alter approved screen graphics, CSS, layout, or visual style.
 - This prepares the next safe step: real shell integration into the existing app runtime.
+
+
+## V153_UI_BOOTSTRAP_BINDING_READY
+
+- V152 app-shell binding is now bridged to the existing runtime bootstrap module through an additive adapter.
+- The adapter exposes bootstrap metadata, app-shell binding state, active route, visual-lock state, and QA/bootstrap readiness.
+- This does not modify approved screen graphics, CSS, layout, image assets, React/JSX components, or the locked Classic PRO visual baseline.
+- This prepares the next safe step: controlled runtime integration without visual redesign.
