@@ -322,3 +322,9 @@ Doporučený cíl:
 
 - V381-V400 documents export functional core is prepared as functional night-builder checkpoint layer.
 - No approved Classic PRO UI screen is modified.
+
+
+## V401_V420_SAFE_FUNCTIONAL_NIGHT_READY
+
+- V401-V420 QA workflow integration functional core is prepared as functional night-builder checkpoint layer.
+- No approved Classic PRO UI screen is modified.
