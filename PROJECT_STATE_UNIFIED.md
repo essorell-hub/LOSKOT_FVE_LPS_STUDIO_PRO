@@ -304,3 +304,9 @@ Doporučený cíl:
 
 - V321-V340 documents export runtime production layer is prepared as safe max-create checkpoint runtime layer.
 - No approved Classic PRO UI screen is modified.
+
+
+## V341_V360_SAFE_FUNCTIONAL_NIGHT_READY
+
+- V341-V360 FVE functional core is prepared as functional night-builder checkpoint layer.
+- No approved Classic PRO UI screen is modified.
