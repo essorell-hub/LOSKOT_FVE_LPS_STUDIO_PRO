@@ -1,7 +1,8 @@
+
 import { v4 as uuidv4 } from 'uuid';
 
 const DATA_MODEL_VERSION = "v29";
-const APP_VERSION = "v30"; // Assuming this is the current app version based on the prompt context
+export const APP_VERSION = "v30";
 
 function createEmptyProject() {
     const now = new Date();
@@ -81,7 +82,6 @@ function normalizeProject(project) {
     }
 }
 
-
 function getProjectSummary(project) {
     if (!project) {
         return {
@@ -123,9 +123,9 @@ function safeGetProjectSection(project, sectionName, fallbackValue) {
 }
 
 export {
-    DATA_MODEL_VERSION,
-    createEmptyProject,
-    normalizeProject,
-    getProjectSummary,
-    safeGetProjectSection
+  DATA_MODEL_VERSION,
+  createEmptyProject,
+  normalizeProject,
+  getProjectSummary,
+  safeGetProjectSection
 };

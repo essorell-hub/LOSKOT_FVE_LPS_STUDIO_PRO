@@ -46,8 +46,8 @@ function listKnownSampleProjects() {
 }
 
 export {
-    SAMPLE_PROJECT_PATHS,
-    getSampleProjectPath,
-    loadSampleProjectFromObject,
-    listKnownSampleProjects
+  SAMPLE_PROJECT_PATHS,
+  getSampleProjectPath,
+  loadSampleProjectFromObject,
+  listKnownSampleProjects
 };
