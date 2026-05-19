@@ -298,3 +298,9 @@ Doporučený cíl:
 
 - V301-V320 LPS SPD runtime production layer is prepared as safe max-create checkpoint runtime layer.
 - No approved Classic PRO UI screen is modified.
+
+
+## V321_V340_SAFE_MAX_CREATE_READY
+
+- V321-V340 documents export runtime production layer is prepared as safe max-create checkpoint runtime layer.
+- No approved Classic PRO UI screen is modified.

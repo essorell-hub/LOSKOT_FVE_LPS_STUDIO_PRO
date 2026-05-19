@@ -1,4 +1,11 @@
 
+## V321-V340 SAFE MAX CREATE DOCUMENTS EXPORT RUNTIME PRODUCTION LAYER
+
+- Added V321-V340 documents export runtime production layer self-contained runtime models.
+- Added smoke and deep audit tests.
+- Checkpoint phase; no visual/package/scripts/push/merge changes.
+
+
 ## V301-V320 SAFE MAX CREATE LPS SPD RUNTIME PRODUCTION LAYER
 
 - Added V301-V320 LPS SPD runtime production layer self-contained runtime models.
