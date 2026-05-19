@@ -286,3 +286,9 @@ Doporučený cíl:
 
 - V261-V280 project runtime core is prepared as safe max-create checkpoint runtime layer.
 - No approved Classic PRO UI screen is modified.
+
+
+## V281_V300_SAFE_MAX_CREATE_READY
+
+- V281-V300 FVE runtime production layer is prepared as safe max-create checkpoint runtime layer.
+- No approved Classic PRO UI screen is modified.
