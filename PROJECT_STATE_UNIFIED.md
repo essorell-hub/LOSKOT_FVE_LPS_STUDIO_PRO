@@ -310,3 +310,9 @@ Doporučený cíl:
 
 - V341-V360 FVE functional core is prepared as functional night-builder checkpoint layer.
 - No approved Classic PRO UI screen is modified.
+
+
+## V361_V380_SAFE_FUNCTIONAL_NIGHT_READY
+
+- V361-V380 LPS SPD functional core is prepared as functional night-builder checkpoint layer.
+- No approved Classic PRO UI screen is modified.
