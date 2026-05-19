@@ -1,4 +1,12 @@
 
+## V152 UI APP SHELL BINDING
+
+- Added app-shell binding view-model built from V151 approved UI foundation registry.
+- Added smoke test for navigation order, active route resolution, locked screen policy, and QA panel contract.
+- No change to approved Classic PRO visual style.
+- No package.json changes.
+- Purpose: connect approved UI registry to future real app shell without touching visual implementation.
+
 ## V151 UI FOUNDATION REGISTRY
 
 - Added runtime registry for approved UI baseline and approved main screens.

@@ -186,3 +186,11 @@ Doporučený cíl:
 - Approved baseline: APPROVED_UI_STYLE_BASELINE_01.
 - Approved main-screen package is ready for next app-shell implementation step.
 - This state does not unlock or change any approved screen; it only formalizes approved identifiers for implementation and QA.
+
+
+## V152_UI_APP_SHELL_BINDING_READY
+
+- V151 approved UI registry is now consumable by a runtime app-shell binding layer.
+- Binding produces navigation modules, active screen state, workflow sequence, and QA panel contract.
+- This does not alter approved screen graphics, CSS, layout, or visual style.
+- This prepares the next safe step: real shell integration into the existing app runtime.
