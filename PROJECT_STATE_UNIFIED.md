@@ -259,3 +259,10 @@ Doporučený cíl:
 
 - V181-V190 prepares read-only runtime data attachment packets for existing shell regions.
 - This still does not modify approved Classic PRO graphics or visible UI components.
+
+
+## V191_V205_LONG_WORK_APP_SHELL_RUNTIME_MODELS_COMMITTED
+
+- V191-V205 moves from preparatory shell binding into practical runtime models for existing app shell regions.
+- The milestone status is READY_FOR_SAFE_VISIBLE_ATTACHMENT.
+- This still does not modify approved Classic PRO graphics or visible UI components.

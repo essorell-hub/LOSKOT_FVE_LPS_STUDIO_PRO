@@ -1,4 +1,11 @@
 
+## V191-V205 LONG WORK APP SHELL RUNTIME MODELS
+
+- Added app shell runtime mount, route, module, menu, workspace, QA, inspector, synchronization, event, command, diagnostics, deep audit, release gate, work plan and milestone models.
+- Added main smoke test and deeper route audit test.
+- Long runner repeats deep audit locally to make the PC work longer while keeping one SHORT report.
+- No visual, CSS, HTML, image, JSX/TSX, package or scripts/verify changes.
+
 ## V181-V190 LONG AUTO APP SHELL RUNTIME BINDING
 
 - Added read-only runtime data binding chain for existing app shell regions.
