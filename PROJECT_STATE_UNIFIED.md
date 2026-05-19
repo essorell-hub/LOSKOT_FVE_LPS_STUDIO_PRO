@@ -280,3 +280,9 @@ Doporučený cíl:
 - V221-V260 adds controlled app integration models and night-work supervisor support.
 - Runner enforces long local audit runtime after commit.
 - This still does not modify approved Classic PRO graphics or visible UI components.
+
+
+## V261_V280_SAFE_MAX_CREATE_READY
+
+- V261-V280 project runtime core is prepared as safe max-create checkpoint runtime layer.
+- No approved Classic PRO UI screen is modified.

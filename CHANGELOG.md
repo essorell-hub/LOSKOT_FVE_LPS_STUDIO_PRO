@@ -1,4 +1,11 @@
 
+## V261-V280 SAFE MAX CREATE PROJECT RUNTIME CORE
+
+- Added V261-V280 project runtime core self-contained runtime models.
+- Added smoke and deep audit tests.
+- Checkpoint phase; no visual/package/scripts/push/merge changes.
+
+
 ## V221-V260 NIGHT WORK CONTROLLED APP INTEGRATION
 
 - Added controlled app integration and night-work runtime supervision models V221-V260.
