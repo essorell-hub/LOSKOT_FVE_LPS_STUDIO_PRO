@@ -1,3 +1,11 @@
+
+## V151 UI FOUNDATION REGISTRY
+
+- Added runtime registry for approved UI baseline and approved main screens.
+- Added smoke test validating locked UI baseline identifiers and main-screen order.
+- No package.json changes.
+- No change to approved Classic PRO visual style.
+- Purpose: create a safe source-of-truth bridge for upcoming real UI implementation.
 # CHANGELOG
 
 ## v21 SHARED PROJECT MODEL

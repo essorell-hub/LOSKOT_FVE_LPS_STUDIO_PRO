@@ -178,3 +178,11 @@ Doporučený cíl:
 - zachovat Classic PRO vzhled,
 - vytvořit první Tauri-ready strukturu,
 - připravit SQLite adapter bez ostrého zápisu do databáze.
+
+
+## V151_UI_FOUNDATION_REGISTRY_READY
+
+- UI foundation baseline is represented in runtime code as a registry, not as a replacement of the approved visual style.
+- Approved baseline: APPROVED_UI_STYLE_BASELINE_01.
+- Approved main-screen package is ready for next app-shell implementation step.
+- This state does not unlock or change any approved screen; it only formalizes approved identifiers for implementation and QA.
