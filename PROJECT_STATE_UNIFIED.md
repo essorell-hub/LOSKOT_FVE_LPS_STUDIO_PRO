@@ -273,3 +273,10 @@ Doporučený cíl:
 - V206-V220 adds safe visible shell attachment models for left menu, workspace, QA panel, inspector and status regions.
 - Milestone status is READY_FOR_CONTROLLED_APP_INTEGRATION.
 - This still does not modify approved Classic PRO graphics or visible UI components.
+
+
+## V221_V260_NIGHT_WORK_CONTROLLED_APP_INTEGRATION_COMMITTED
+
+- V221-V260 adds controlled app integration models and night-work supervisor support.
+- Runner enforces long local audit runtime after commit.
+- This still does not modify approved Classic PRO graphics or visible UI components.

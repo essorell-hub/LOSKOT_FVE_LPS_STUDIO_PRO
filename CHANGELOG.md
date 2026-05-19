@@ -1,4 +1,11 @@
 
+## V221-V260 NIGHT WORK CONTROLLED APP INTEGRATION
+
+- Added controlled app integration and night-work runtime supervision models V221-V260.
+- Added smoke and deep audit tests.
+- Runner commits development block first and then keeps PC busy with minimum-time audit loop.
+- No visual, CSS, HTML, image, JSX/TSX, package or scripts/verify changes.
+
 ## V206-V220 SAFE VISIBLE SHELL ATTACHMENT
 
 - Added safe visible shell attachment models V206-V220.
