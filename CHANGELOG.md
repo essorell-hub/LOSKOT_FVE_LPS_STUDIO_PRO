@@ -1,4 +1,13 @@
 
+## V154 UI UNIFIED INTEGRATION BINDING
+
+- Added additive runtime adapter connecting V153 UI bootstrap binding to the existing unifiedAppIntegration module.
+- Added smoke test validating unified integration metadata, app-shell route propagation, visual-lock contract, and QA readiness.
+- No change to approved Classic PRO visual style.
+- No CSS/HTML/image/JSX/TSX visual file changes.
+- No package.json changes.
+- Purpose: prepare the real unified application runtime composition while keeping approved UI graphics locked.
+
 ## V153 UI BOOTSTRAP BINDING
 
 - Added runtime bootstrap binding adapter built from V152 app-shell binding and existing runtimeBootstrap module.

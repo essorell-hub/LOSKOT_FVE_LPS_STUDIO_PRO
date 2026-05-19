@@ -202,3 +202,11 @@ Doporučený cíl:
 - The adapter exposes bootstrap metadata, app-shell binding state, active route, visual-lock state, and QA/bootstrap readiness.
 - This does not modify approved screen graphics, CSS, layout, image assets, React/JSX components, or the locked Classic PRO visual baseline.
 - This prepares the next safe step: controlled runtime integration without visual redesign.
+
+
+## V154_UI_UNIFIED_INTEGRATION_READY
+
+- V153 UI bootstrap binding is now bridged to the existing unified app integration module through an additive runtime adapter.
+- The adapter exposes unified-app metadata, active UI route, app-shell/bootstrap readiness, visual-lock state, and integration QA status.
+- This does not modify approved screen graphics, CSS, HTML, image assets, JSX/TSX UI components, or the locked Classic PRO visual baseline.
+- This prepares the next safe step: controlled UI runtime composition into the application shell without redesign.
