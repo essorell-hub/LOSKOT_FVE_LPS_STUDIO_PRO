@@ -253,3 +253,9 @@ Doporučený cíl:
 
 - V172-V180 prepares read-only data feeds and contracts for later visible shell attachment.
 - This does not modify approved Classic PRO graphics or visible UI components.
+
+
+## V181_V190_LONG_AUTO_APP_SHELL_RUNTIME_BINDING_COMMITTED
+
+- V181-V190 prepares read-only runtime data attachment packets for existing shell regions.
+- This still does not modify approved Classic PRO graphics or visible UI components.

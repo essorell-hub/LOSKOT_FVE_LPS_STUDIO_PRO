@@ -1,4 +1,10 @@
 
+## V181-V190 LONG AUTO APP SHELL RUNTIME BINDING
+
+- Added read-only runtime data binding chain for existing app shell regions.
+- Added combined smoke test.
+- No visual, CSS, HTML, image, JSX/TSX, package or scripts/verify changes.
+
 ## V172-V180 LONG AUTO VISIBLE SHELL READINESS
 
 - Added read-only visible shell readiness chain V172-V180.
