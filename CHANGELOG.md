@@ -1,4 +1,15 @@
 
+## V157-V159 FAST RUNTIME MINIPACK
+
+- V157: Added runtime action dispatcher contract for state-driven shell operations.
+- V158: Added project context bridge contract for active project metadata and shell context.
+- V159: Added QA panel runtime feed contract for shell/state/project diagnostics.
+- Added combined FAST smoke test for V157-V159 runtime minipack.
+- No change to approved Classic PRO visual style.
+- No CSS/HTML/image/JSX/TSX visual file changes.
+- No package.json changes.
+- Purpose: accelerate safe runtime wiring while keeping approved UI graphics locked.
+
 ## V156 FAST APP STATE SHELL CONNECTOR
 
 - Added connector between V155 app runtime shell and existing app state/controller runtime metadata.

@@ -226,3 +226,10 @@ Doporučený cíl:
 - The connector exposes active route, shell summary, runtime state snapshot, controller/module inspection, action contract and QA status.
 - This remains additive and does not modify approved screen graphics, CSS, HTML, images, JSX/TSX components, or the locked Classic PRO UI baseline.
 - This prepares later controlled runtime action handling and visible shell attachment.
+
+
+## V157_V159_FAST_RUNTIME_MINIPACK_READY
+
+- V157 runtime action dispatcher, V158 project context bridge, and V159 QA panel runtime feed are added as one controlled FAST minipack.
+- The minipack extends the state-driven app runtime shell without modifying approved graphics, CSS, HTML, image assets, JSX/TSX components, or the locked Classic PRO UI baseline.
+- This prepares controlled runtime navigation actions, project context propagation, and QA panel feed composition.
