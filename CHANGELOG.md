@@ -1,4 +1,11 @@
 
+## V301-V320 SAFE MAX CREATE LPS SPD RUNTIME PRODUCTION LAYER
+
+- Added V301-V320 LPS SPD runtime production layer self-contained runtime models.
+- Added smoke and deep audit tests.
+- Checkpoint phase; no visual/package/scripts/push/merge changes.
+
+
 ## V281-V300 SAFE MAX CREATE FVE RUNTIME PRODUCTION LAYER
 
 - Added V281-V300 FVE runtime production layer self-contained runtime models.

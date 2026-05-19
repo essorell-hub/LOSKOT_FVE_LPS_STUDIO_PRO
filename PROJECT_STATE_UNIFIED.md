@@ -292,3 +292,9 @@ Doporučený cíl:
 
 - V281-V300 FVE runtime production layer is prepared as safe max-create checkpoint runtime layer.
 - No approved Classic PRO UI screen is modified.
+
+
+## V301_V320_SAFE_MAX_CREATE_READY
+
+- V301-V320 LPS SPD runtime production layer is prepared as safe max-create checkpoint runtime layer.
+- No approved Classic PRO UI screen is modified.
