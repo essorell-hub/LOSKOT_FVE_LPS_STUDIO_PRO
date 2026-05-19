@@ -210,3 +210,11 @@ Doporučený cíl:
 - The adapter exposes unified-app metadata, active UI route, app-shell/bootstrap readiness, visual-lock state, and integration QA status.
 - This does not modify approved screen graphics, CSS, HTML, image assets, JSX/TSX UI components, or the locked Classic PRO visual baseline.
 - This prepares the next safe step: controlled UI runtime composition into the application shell without redesign.
+
+
+## V155_FAST_APP_RUNTIME_SHELL_READY
+
+- V154 unified integration binding is now exposed as a first app runtime shell view-model.
+- The runtime shell exposes active route, screen metadata, navigation, QA panel, startup plan, and runtime composition state.
+- This remains additive and does not modify approved screen graphics, CSS, HTML, images, JSX/TSX components, or the locked Classic PRO UI baseline.
+- This prepares later controlled attachment to the visible application shell.

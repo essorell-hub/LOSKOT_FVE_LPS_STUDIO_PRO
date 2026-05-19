@@ -1,4 +1,13 @@
 
+## V155 FAST APP RUNTIME SHELL
+
+- Added app runtime shell view-model built on V154 unified integration binding.
+- Added FAST smoke test for route state, runtime composition contract, visual-lock policy and shell readiness.
+- No change to approved Classic PRO visual style.
+- No CSS/HTML/image/JSX/TSX visual file changes.
+- No package.json changes.
+- Purpose: prepare the first real runtime shell contract for the application without touching the approved graphics.
+
 ## V154 UI UNIFIED INTEGRATION BINDING
 
 - Added additive runtime adapter connecting V153 UI bootstrap binding to the existing unifiedAppIntegration module.
