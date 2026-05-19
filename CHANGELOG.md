@@ -1,4 +1,10 @@
 
+## V172-V180 LONG AUTO VISIBLE SHELL READINESS
+
+- Added read-only visible shell readiness chain V172-V180.
+- Added combined smoke test.
+- No visual, CSS, HTML, image, JSX/TSX, package or scripts/verify changes.
+
 ## V166-V170 AUTO FAST RUNTIME READINESS PIPELINE
 
 - V166: Added app runtime composition controller.

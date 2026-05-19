@@ -247,3 +247,9 @@ Doporučený cíl:
 - V166-V170 adds a controlled runtime readiness layer: composition controller, read-only shell binding, module data availability matrix, release candidate gate and full runtime audit snapshot.
 - The pipeline remains additive and does not modify approved screen graphics, CSS, HTML, image assets, JSX/TSX components, or the locked Classic PRO UI baseline.
 - This prepares safer attachment of runtime data into the existing visible shell in later guarded work.
+
+
+## V172_V180_LONG_AUTO_VISIBLE_SHELL_READINESS_COMMITTED
+
+- V172-V180 prepares read-only data feeds and contracts for later visible shell attachment.
+- This does not modify approved Classic PRO graphics or visible UI components.
