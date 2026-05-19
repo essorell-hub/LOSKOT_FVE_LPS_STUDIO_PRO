@@ -218,3 +218,11 @@ Doporučený cíl:
 - The runtime shell exposes active route, screen metadata, navigation, QA panel, startup plan, and runtime composition state.
 - This remains additive and does not modify approved screen graphics, CSS, HTML, images, JSX/TSX components, or the locked Classic PRO UI baseline.
 - This prepares later controlled attachment to the visible application shell.
+
+
+## V156_FAST_APP_STATE_SHELL_CONNECTOR_READY
+
+- V155 app runtime shell is now connected to application state/controller metadata through an additive runtime connector.
+- The connector exposes active route, shell summary, runtime state snapshot, controller/module inspection, action contract and QA status.
+- This remains additive and does not modify approved screen graphics, CSS, HTML, images, JSX/TSX components, or the locked Classic PRO UI baseline.
+- This prepares later controlled runtime action handling and visible shell attachment.

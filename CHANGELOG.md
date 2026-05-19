@@ -1,4 +1,13 @@
 
+## V156 FAST APP STATE SHELL CONNECTOR
+
+- Added connector between V155 app runtime shell and existing app state/controller runtime metadata.
+- Added FAST smoke test for active-route propagation, state snapshot, action contract, QA readiness and visual-lock policy.
+- No change to approved Classic PRO visual style.
+- No CSS/HTML/image/JSX/TSX visual file changes.
+- No package.json changes.
+- Purpose: prepare controlled state-driven runtime shell operation without touching approved graphics.
+
 ## V155 FAST APP RUNTIME SHELL
 
 - Added app runtime shell view-model built on V154 unified integration binding.
