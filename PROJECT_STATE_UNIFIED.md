@@ -240,3 +240,10 @@ Doporučený cíl:
 - V160-V165 introduces a larger controlled runtime pipeline: module registry, workspace router, QA aggregator, persistence bridge, export manifest and app readiness model.
 - The pipeline is additive and does not modify approved screen graphics, CSS, HTML, image assets, JSX/TSX components, or the locked Classic PRO UI baseline.
 - This prepares a more useful internal runtime composition while still keeping visible UI attachment separate and guarded.
+
+
+## V166_V170_AUTO_FAST_RUNTIME_READINESS_PIPELINE_COMMITTED
+
+- V166-V170 adds a controlled runtime readiness layer: composition controller, read-only shell binding, module data availability matrix, release candidate gate and full runtime audit snapshot.
+- The pipeline remains additive and does not modify approved screen graphics, CSS, HTML, image assets, JSX/TSX components, or the locked Classic PRO UI baseline.
+- This prepares safer attachment of runtime data into the existing visible shell in later guarded work.

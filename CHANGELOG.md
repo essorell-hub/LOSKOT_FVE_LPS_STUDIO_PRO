@@ -1,4 +1,17 @@
 
+## V166-V170 AUTO FAST RUNTIME READINESS PIPELINE
+
+- V166: Added app runtime composition controller.
+- V167: Added read-only shell binding contract for visible shell attachment preparation.
+- V168: Added module data availability matrix.
+- V169: Added release candidate gate.
+- V170: Added full runtime audit snapshot.
+- Added combined smoke test for V166-V170.
+- Auto runner applies, tests, exact-stages and locally commits the readiness pipeline.
+- No change to approved Classic PRO visual style.
+- No CSS/HTML/image/JSX/TSX visual file changes.
+- No package.json changes.
+
 ## V160-V165 AUTO FAST RUNTIME PIPELINE
 
 - V160: Added module runtime registry.
