@@ -233,3 +233,10 @@ Doporučený cíl:
 - V157 runtime action dispatcher, V158 project context bridge, and V159 QA panel runtime feed are added as one controlled FAST minipack.
 - The minipack extends the state-driven app runtime shell without modifying approved graphics, CSS, HTML, image assets, JSX/TSX components, or the locked Classic PRO UI baseline.
 - This prepares controlled runtime navigation actions, project context propagation, and QA panel feed composition.
+
+
+## V160_V165_AUTO_FAST_RUNTIME_PIPELINE_COMMITTED
+
+- V160-V165 introduces a larger controlled runtime pipeline: module registry, workspace router, QA aggregator, persistence bridge, export manifest and app readiness model.
+- The pipeline is additive and does not modify approved screen graphics, CSS, HTML, image assets, JSX/TSX components, or the locked Classic PRO UI baseline.
+- This prepares a more useful internal runtime composition while still keeping visible UI attachment separate and guarded.

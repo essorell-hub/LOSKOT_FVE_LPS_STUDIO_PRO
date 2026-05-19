@@ -1,4 +1,18 @@
 
+## V160-V165 AUTO FAST RUNTIME PIPELINE
+
+- V160: Added module runtime registry.
+- V161: Added workspace runtime router.
+- V162: Added QA runtime aggregator.
+- V163: Added project persistence bridge contract.
+- V164: Added export package manifest contract.
+- V165: Added app readiness model.
+- Added combined smoke test for V160-V165.
+- Auto runner applies, tests, exact-stages and locally commits the mini-pipeline.
+- No change to approved Classic PRO visual style.
+- No CSS/HTML/image/JSX/TSX visual file changes.
+- No package.json changes.
+
 ## V157-V159 FAST RUNTIME MINIPACK
 
 - V157: Added runtime action dispatcher contract for state-driven shell operations.
