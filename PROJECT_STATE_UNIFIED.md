@@ -328,3 +328,8 @@ Doporučený cíl:
 
 - V401-V420 QA workflow integration functional core is prepared as functional night-builder checkpoint layer.
 - No approved Classic PRO UI screen is modified.
+
+
+## V421_V440_SAFE_REAL_BINDING_READY
+
+- V421-V440 project model real binding adapters is ready as safe real binding adapter layer.
