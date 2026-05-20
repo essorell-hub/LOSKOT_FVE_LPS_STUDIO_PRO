@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "V501_UNIFIED_PROJECT_MODEL",
+  "projectId": "orch-ok-001",
+  "name": "LOSKOT orchestration OK project",
+  "metadata": {
+    "sourceStage": "V821-V920"
+  },
+  "fve": {
+    "panelCount": 20,
+    "moduleWp": 450,
+    "inverterKw": 8,
+    "strings": [
+      {
+        "id": "S1",
+        "modules": 10
+      },
+      {
+        "id": "S2",
+        "modules": 10
+      }
+    ],
+    "inverters": [
+      {
+        "code": "INV-8K",
+        "name": "Three phase inverter",
+        "quantity": 1
+      }
+    ]
+  },
+  "lps": {
+    "lpsClass": "III",
+    "riskLevel": "accepted",
+    "riskCalculation": {
+      "kind": "placeholder",
+      "isPlaceholder": true,
+      "normative": false
+    }
+  },
+  "spd": {
+    "devices": [
+      {
+        "type": "T1+T2",
+        "code": "SPD-T1T2",
+        "quantity": 1
+      }
+    ]
+  },
+  "grounding": {
+    "resistanceOhm": 7.5,
+    "bonding": "main-equipotential"
+  },
+  "documents": {
+    "technicalReportReady": true
+  },
+  "qa": {
+    "findings": []
+  }
+}

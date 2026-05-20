@@ -1,0 +1,32 @@
+[
+  {
+    "type": "PROJECT_CREATE",
+    "payload": {
+      "seed": {
+        "projectId": "cmd-seq-001",
+        "name": "Command sequence project"
+      }
+    }
+  },
+  {
+    "type": "PROJECT_UPDATE_SECTION",
+    "payload": {
+      "section": "fve",
+      "value": {
+        "panelCount": 6,
+        "moduleWp": 400,
+        "inverterKw": 3
+      }
+    }
+  },
+  {
+    "type": "PROJECT_VALIDATE",
+    "payload": {}
+  },
+  {
+    "type": "SNAPSHOT_CREATE",
+    "payload": {
+      "snapshotId": "cmd-seq-snapshot"
+    }
+  }
+]
