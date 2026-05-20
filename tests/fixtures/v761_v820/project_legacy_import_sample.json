@@ -1,0 +1,25 @@
+{
+  "projectId": "LOS-LEGACY-IMPORT",
+  "projectName": "LOSKOT Legacy Import Sample",
+  "unifiedProject": {
+    "project": {
+      "projectId": "LOS-LEGACY-IMPORT",
+      "projectName": "LOSKOT Legacy Import Sample"
+    },
+    "building": {},
+    "fve": {
+      "strings": []
+    },
+    "lps": {
+      "objects": []
+    },
+    "spd": {},
+    "grounding": {}
+  },
+  "documents": [],
+  "bom": {},
+  "exportManifest": {
+    "version": "legacy",
+    "artifacts": []
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "formatVersion": "LOSKOT_PROJECT_PERSISTENCE_V761",
+  "projectId": "LOS-V761-OK",
+  "projectName": "LOSKOT V761 Persistence OK",
+  "savedAt": "2026-05-20T00:00:00.000Z",
+  "sourceApp": "LOSKOT_FVE_LPS_STUDIO_PRO",
+  "unifiedProject": {
+    "project": {
+      "projectId": "LOS-V761-OK",
+      "projectName": "LOSKOT V761 Persistence OK"
+    },
+    "building": {
+      "type": "administrative",
+      "address": "Local test address"
+    },
+    "fve": {
+      "strings": [
+        {
+          "id": "PV-STRING-1",
+          "moduleCount": 12
+        }
+      ]
+    },
+    "lps": {
+      "objects": [
+        {
+          "id": "LPS-OBJECT-1",
+          "type": "air-terminal"
+        }
+      ],
+      "riskCalculation": {
+        "isPlaceholder": true,
+        "normative": false,
+        "note": "placeholder calculation for runtime baseline only"
+      }
+    },
+    "spd": {
+      "devices": []
+    },
+    "grounding": {
+      "electrodes": []
+    },
+    "cad": {
+      "objects": [
+        {
+          "id": "CAD-OBJECT-1",
+          "type": "roof-area"
+        }
+      ]
+    },
+    "references": {
+      "fveStringId": "PV-STRING-1",
+      "cadObjectId": "CAD-OBJECT-1",
+      "lpsObjectId": "LPS-OBJECT-1"
+    }
+  },
+  "documents": [],
+  "bom": {
+    "items": []
+  },
+  "qaSummary": {
+    "ok": true,
+    "errors": [],
+    "warnings": [],
+    "qaFindings": []
+  },
+  "exportManifest": {
+    "version": "V761",
+    "artifacts": []
+  },
+  "metadata": {
+    "fixture": "project_persistence_ok"
+  },
+  "integrity": {
+    "checksumLikeFingerprint": "fixture"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "V501_UNIFIED_PROJECT_MODEL",
+  "projectId": "orch-error-001",
+  "name": "Veolia imported FQ1 project S01BHE03 DA",
+  "fve": {
+    "panelCount": 12,
+    "moduleWp": 430
+  },
+  "lps": {
+    "riskCalculation": {
+      "kind": "placeholder"
+    }
+  },
+  "spd": {
+    "devices": []
+  },
+  "grounding": {},
+  "documents": {
+    "technicalReportReady": true
+  },
+  "qa": {
+    "findings": [
+      {
+        "code": "MANUAL_ERROR",
+        "severity": "ERROR",
+        "message": "Manual blocking error for orchestration test.",
+        "path": "$.qa.findings[0]",
+        "source": "fixture"
+      }
+    ]
+  }
+}

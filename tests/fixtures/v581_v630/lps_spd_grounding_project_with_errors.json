@@ -1,0 +1,52 @@
+{
+  "projectId": "fixture-v581-v630-errors",
+  "pvArray": {
+    "collisionWithLps": true
+  },
+  "lps": {
+    "groundingLinked": false,
+    "lpzClear": false,
+    "airTermination": {
+      "present": false,
+      "connectedToDownConductors": false
+    },
+    "downConductors": {
+      "present": false,
+      "connectedToGrounding": false,
+      "items": []
+    },
+    "separationDistance": {
+      "verified": false,
+      "collisionWithPv": true
+    }
+  },
+  "spd": {
+    "longCableRun": true,
+    "groundingLinked": false,
+    "bondingLinked": false,
+    "lpzClear": false,
+    "lpZones": [],
+    "transitions": [{ "from": "LPZ 0B" }],
+    "t1": {
+      "present": false
+    },
+    "ac": {
+      "present": false
+    },
+    "dc": {
+      "present": false
+    },
+    "supplementary": []
+  },
+  "grounding": {
+    "connectedToLps": false,
+    "connectedToPe": false
+  },
+  "bonding": {
+    "mainEquipotentialBusbarPresent": false,
+    "pvFramesBonded": false,
+    "spdPePasLinked": false,
+    "lpsGroundingLinked": false,
+    "metalParts": [{ "id": "unbonded-roof-rail", "bonded": false }]
+  }
+}
