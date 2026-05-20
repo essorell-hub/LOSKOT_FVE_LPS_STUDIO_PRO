@@ -1,0 +1,22 @@
+{
+  "projectId": "",
+  "projectName": "",
+  "generatedAt": "2026-05-20T00:00:00.000Z",
+  "fve": {
+    "panels": [
+      { "id": "panel-error", "itemCode": "", "name": "Invalid PV module", "quantity": 0, "unit": "pcs" }
+    ]
+  },
+  "lps": {
+    "riskAssessment": { "isPlaceholder": true, "normative": true }
+  },
+  "qaFindings": [
+    {
+      "id": "QA-ERROR-001",
+      "severity": "ERROR",
+      "sourceModule": "fixture",
+      "sourceId": "fixture-error",
+      "message": "Fixture contains expected release gate error"
+    }
+  ]
+}

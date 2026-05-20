@@ -1,0 +1,52 @@
+{
+  "projectId": "LOS-V631-OK",
+  "projectName": "LOSKOT FVE LPS Studio V631 OK",
+  "generatedAt": "2026-05-20T00:00:00.000Z",
+  "customerName": "Demo customer",
+  "siteName": "Demo site",
+  "fve": {
+    "nominalPowerKwp": 12.3,
+    "panels": [
+      { "id": "panel-1", "itemCode": "PV-MOD-001", "name": "PV module", "quantity": 24, "unit": "pcs" }
+    ],
+    "strings": [
+      { "id": "string-1", "itemCode": "PV-STR-001", "name": "PV string", "quantity": 2, "unit": "pcs" }
+    ],
+    "dcRoutes": [
+      { "id": "dc-1", "itemCode": "PV-DC-001", "name": "DC cable route", "quantity": 60, "unit": "m" }
+    ],
+    "inverters": [
+      { "id": "inv-1", "itemCode": "PV-INV-001", "name": "PV inverter", "quantity": 1, "unit": "pcs" }
+    ]
+  },
+  "lps": {
+    "protectionClass": "III",
+    "riskAssessment": { "isPlaceholder": true, "normative": false },
+    "airTerminals": [
+      { "id": "at-1", "itemCode": "LPS-AT-001", "name": "Air terminal", "quantity": 4, "unit": "pcs" }
+    ],
+    "downConductors": [
+      { "id": "down-1", "itemCode": "LPS-DC-001", "name": "Down conductor", "quantity": 20, "unit": "m" }
+    ]
+  },
+  "spd": {
+    "devices": [
+      { "id": "spd-1", "itemCode": "SPD-T2-001", "name": "SPD type 2", "quantity": 1, "unit": "pcs" }
+    ]
+  },
+  "grounding": {
+    "electrodes": [
+      { "id": "ge-1", "itemCode": "GND-EL-001", "name": "Grounding electrode", "quantity": 3, "unit": "pcs" }
+    ],
+    "conductors": [
+      { "id": "gc-1", "itemCode": "GND-CU-001", "name": "Grounding conductor", "quantity": 35, "unit": "m" }
+    ],
+    "resistanceOhm": 4.2
+  },
+  "bonding": {
+    "connections": [
+      { "id": "bond-1", "itemCode": "BOND-001", "name": "Bonding connection", "quantity": 6, "unit": "pcs" }
+    ]
+  },
+  "qaFindings": []
+}
