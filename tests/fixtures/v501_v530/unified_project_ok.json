@@ -1,0 +1,67 @@
+{
+  "project": {
+    "projectId": "LOCAL-V501-001",
+    "projectName": "Local Unified Baseline"
+  },
+  "building": {
+    "buildingId": "building-1",
+    "name": "Workshop",
+    "hasLps": true
+  },
+  "roof": {
+    "roofId": "roof-1",
+    "planes": [{ "id": "plane-1", "areaM2": 120 }]
+  },
+  "designConditions": {
+    "minTempC": -10,
+    "maxTempC": 70
+  },
+  "fve": {
+    "modules": [
+      {
+        "moduleId": "module-1",
+        "Voc_STC": 40,
+        "Vmp_STC": 34,
+        "Isc_STC": 11,
+        "Imp_STC": 10.4,
+        "tempCoeffVocPctPerC": -0.28,
+        "tempCoeffVmpPctPerC": -0.35
+      }
+    ],
+    "inverters": [{ "inverterId": "inverter-1", "maxDcVoltage": 600 }],
+    "mppts": [{ "mpptId": "mppt-1", "inverterId": "inverter-1", "mpptMinVoltage": 250, "mpptMaxVoltage": 500, "maxMpptInputCurrent": 13 }],
+    "strings": [{ "stringId": "string-1", "moduleId": "module-1", "mpptId": "mppt-1", "moduleCount": 10 }],
+    "dcRoutes": [{ "id": "route-1", "lengthM": 8, "hasSupplementarySpd": false }],
+    "panels": [{ "id": "panel-1" }]
+  },
+  "cad": {
+    "layers": [{ "id": "fve", "name": "FVE" }],
+    "objects": [{ "id": "cad-1", "name": "Panel mark", "geometryType": "point", "layerId": "fve", "x": 1, "y": 2 }]
+  },
+  "lps": {
+    "objects": [{ "id": "lps-1", "name": "Air terminal", "type": "air_terminal", "geometryType": "point", "geometry": { "x": 0, "y": 0 } }],
+    "downConductors": [{ "id": "down-1" }],
+    "airTermination": [{ "id": "air-1" }],
+    "riskAssessment": { "placeholder": true, "normative": false }
+  },
+  "spd": {
+    "devices": [
+      { "id": "spd-main", "type": "T1", "location": "building-entry", "side": "AC", "Up": 1.5, "Uc": 275, "grounded": true },
+      { "id": "spd-dc", "type": "T2", "location": "pv-dc", "side": "DC", "Up": 2.5, "Uc": 1000, "bonded": true }
+    ],
+    "lpz": [{ "id": "LPZ0" }, { "id": "LPZ1", "from": "LPZ0" }]
+  },
+  "grounding": {
+    "connected": true,
+    "systems": [{ "id": "gnd-1" }]
+  },
+  "bonding": {
+    "connected": true,
+    "connections": [{ "id": "bond-1" }]
+  },
+  "documents": [{ "id": "doc-1", "type": "FVE_TECHNICAL_REPORT", "name": "FVE Technical Report" }],
+  "bom": [{ "id": "bom-1", "name": "PV module", "quantity": 10 }],
+  "export": {
+    "files": [{ "path": "exports/local-baseline.json" }]
+  }
+}

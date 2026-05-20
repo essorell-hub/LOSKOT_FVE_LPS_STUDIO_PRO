@@ -1,0 +1,31 @@
+{
+  "export_schema": "loskot.project.schema.v66_v80",
+  "project": {
+    "id": "LEGACY-001",
+    "project_code": "LEGACY-001",
+    "project_name": "Legacy Local Baseline",
+    "schema_version": "v66-v80"
+  },
+  "building": { "has_lps": true },
+  "roof": { "planes": [{ "id": "legacy-plane" }], "obstacles": [] },
+  "cad": { "layers": [{ "id": "fve", "name": "FVE" }], "objects": [] },
+  "fve": {
+    "panels": [],
+    "strings": [],
+    "inverters": [],
+    "mppts": [],
+    "dc_routes": []
+  },
+  "lps_spd_lpz": {
+    "lpz_zones": [],
+    "spd_dc": [],
+    "spd_ac": [],
+    "lps_elements": [],
+    "down_conductors": [],
+    "earthing_systems": [],
+    "bonding": []
+  },
+  "qa": { "results": [], "summary": { "info": 0, "warning": 0, "error": 0, "blocks_export": 0 } },
+  "documents": { "templates": [], "generated": [] },
+  "export_package": { "status": "draft", "files": [] }
+}
