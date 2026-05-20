@@ -1,4 +1,11 @@
 
+## V461-V480 SAFE REAL BINDING LPS SPD REAL BINDING ADAPTERS
+
+- Added V461-V480 LPS SPD real binding adapters safe real binding adapters.
+- Added smoke and deep audit tests.
+- No approved visual/package/scripts/push/merge changes.
+
+
 ## V441-V460 SAFE REAL BINDING FVE REAL BINDING ADAPTERS
 
 - Added V441-V460 FVE real binding adapters safe real binding adapters.

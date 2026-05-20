@@ -338,3 +338,8 @@ Doporučený cíl:
 ## V441_V460_SAFE_REAL_BINDING_READY
 
 - V441-V460 FVE real binding adapters is ready as safe real binding adapter layer.
+
+
+## V461_V480_SAFE_REAL_BINDING_READY
+
+- V461-V480 LPS SPD real binding adapters is ready as safe real binding adapter layer.
