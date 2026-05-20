@@ -1,0 +1,47 @@
+{
+  "formatVersion": "LEGACY_UNKNOWN",
+  "projectId": "",
+  "projectName": "",
+  "savedAt": "2026-05-20T00:00:00.000Z",
+  "sourceApp": "LOSKOT_FVE_LPS_STUDIO_PRO",
+  "unifiedProject": {
+    "project": {},
+    "building": {},
+    "fve": {
+      "strings": [
+        {
+          "id": "PV-STRING-1"
+        }
+      ]
+    },
+    "lps": {
+      "objects": [
+        {
+          "id": "LPS-OBJECT-1"
+        }
+      ],
+      "riskCalculation": {
+        "description": "placeholder risk calculation"
+      }
+    },
+    "spd": {},
+    "grounding": {},
+    "cad": {
+      "objects": [
+        {
+          "id": "CAD-OBJECT-1"
+        }
+      ]
+    },
+    "references": {
+      "fveStringId": "PV-STRING-MISSING",
+      "cadObjectId": "CAD-OBJECT-MISSING",
+      "lpsObjectId": "LPS-OBJECT-MISSING"
+    },
+    "notes": "foreign guard synthetic marker"
+  },
+  "documents": [],
+  "bom": {},
+  "metadata": {},
+  "integrity": {}
+}
