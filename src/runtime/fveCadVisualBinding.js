@@ -590,3 +590,16 @@ export default {
   createFveCadVisualBinding,
   safeFveCadVisualBinding
 };
+// POST-MEGA AUTOPILOT C CAD MAP MODEL BRIDGE START
+// Minimal read-only runtime registration. No Classic PRO layout, CSS theme or CAD/MAPA core mutation.
+(function loskotPostMegaAutopilotCBridge(root) {
+  if (!root || root.LOSKOT_POST_MEGA_C_BRIDGE) return;
+  root.LOSKOT_POST_MEGA_C_BRIDGE = {
+    version: "post-mega-autopilot-c",
+    candidate: "src/runtime/fveCadVisualBinding.js",
+    load: function load() {
+      return import("./postMegaCadMapModelBridge.mjs");
+    }
+  };
+})(typeof globalThis !== "undefined" ? globalThis : undefined);
+// POST-MEGA AUTOPILOT C CAD MAP MODEL BRIDGE END

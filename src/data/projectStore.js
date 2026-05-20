@@ -230,3 +230,50 @@ export default {
   clearProjectFromLocalStorage,
   createProjectStoreSummary
 };
+
+export function getProjectStoreSummary(store) {
+  const safeStore = store && typeof store === 'object' ? store : {};
+  const project = safeStore.project || safeStore.currentProject || safeStore.state || null;
+  const projectId = project && typeof project === 'object' ? (project.id || project.projectId || null) : null;
+  const projectName = project && typeof project === 'object' ? (project.name || project.title || project.projectName || null) : null;
+
+  return {
+    status: 'OK',
+    hasStore: Boolean(store),
+    hasProject: Boolean(project),
+    projectId,
+    projectName
+  };
+}
+
+// Auto-repair fallback export for integration compatibility.
+export function createSafeProjectSnapshot(projectOrStore) {
+  const source = projectOrStore && typeof projectOrStore === 'object' ? projectOrStore : {};
+  const project = source.project || source.currentProject || source.state || source;
+
+  try {
+    return JSON.parse(JSON.stringify(project || {}));
+  } catch (error) {
+    return {
+      status: 'WARN_SNAPSHOT_FALLBACK',
+      message: 'Snapshot could not be serialized safely.',
+      keys: Object.keys(project || {})
+    };
+  }
+}
+
+// Auto-repair fallback export for integration compatibility.
+export const QA_STATUS = Object.freeze({
+  OK: 'OK',
+  WARNING: 'WARNING',
+  ERROR: 'ERROR',
+  UNKNOWN: 'UNKNOWN'
+});
+
+// Auto-repair fallback export for integration compatibility.
+export const VALIDATION_STATUS = Object.freeze({
+  OK: 'OK',
+  WARNING: 'WARNING',
+  ERROR: 'ERROR',
+  UNKNOWN: 'UNKNOWN'
+});

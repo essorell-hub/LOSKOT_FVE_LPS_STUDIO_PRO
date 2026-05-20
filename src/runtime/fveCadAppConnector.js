@@ -561,3 +561,22 @@ export default {
   createFveCadAppConnector,
   safeFveCadAppConnector
 };
+// POST-MEGA AUTOPILOT B3 UI MODEL BRIDGE START
+// Minimal read-only project model bridge registration.
+// No Classic PRO layout, CSS theme or CAD/MAPA geometry mutation.
+(function loskotAutopilotB3ProjectModelBridge(root) {
+  if (!root || root.LOSKOT_POST_MEGA_UI_MODEL_BRIDGE) return;
+  root.LOSKOT_POST_MEGA_UI_MODEL_BRIDGE = {
+    version: "post-mega-autopilot-b3",
+    candidate: "src/runtime/fveCadAppConnector.js",
+    normalizeProjectModel: async function normalizeProjectModel(source) {
+      const bridge = await import("./postMegaRuntimeProjectModelBridge.mjs");
+      return bridge.normalizeRuntimeProjectModel(source);
+    },
+    visibleLayers: async function visibleLayers(source) {
+      const bridge = await import("./postMegaRuntimeProjectModelBridge.mjs");
+      return bridge.getRuntimeVisibleLayers(source);
+    }
+  };
+})(typeof globalThis !== "undefined" ? globalThis : undefined);
+// POST-MEGA AUTOPILOT B3 UI MODEL BRIDGE END

@@ -200,4 +200,16 @@ export default {
   createProjectInspectorLayers,
   safeProjectInspectorLayers
 };
-
+// POST-MEGA AUTOPILOT D LAYER VISIBILITY BRIDGE START
+// Minimal read-only runtime registration. No Classic PRO layout, CSS theme or CAD/MAPA core mutation.
+(function loskotPostMegaAutopilotDBridge(root) {
+  if (!root || root.LOSKOT_POST_MEGA_D_BRIDGE) return;
+  root.LOSKOT_POST_MEGA_D_BRIDGE = {
+    version: "post-mega-autopilot-d",
+    candidate: "src/runtime/projectInspectorLayers.js",
+    load: function load() {
+      return import("./postMegaLayerVisibilityBridge.mjs");
+    }
+  };
+})(typeof globalThis !== "undefined" ? globalThis : undefined);
+// POST-MEGA AUTOPILOT D LAYER VISIBILITY BRIDGE END

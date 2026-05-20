@@ -178,3 +178,173 @@ Doporučený cíl:
 - zachovat Classic PRO vzhled,
 - vytvořit první Tauri-ready strukturu,
 - připravit SQLite adapter bez ostrého zápisu do databáze.
+
+
+## V151_UI_FOUNDATION_REGISTRY_READY
+
+- UI foundation baseline is represented in runtime code as a registry, not as a replacement of the approved visual style.
+- Approved baseline: APPROVED_UI_STYLE_BASELINE_01.
+- Approved main-screen package is ready for next app-shell implementation step.
+- This state does not unlock or change any approved screen; it only formalizes approved identifiers for implementation and QA.
+
+
+## V152_UI_APP_SHELL_BINDING_READY
+
+- V151 approved UI registry is now consumable by a runtime app-shell binding layer.
+- Binding produces navigation modules, active screen state, workflow sequence, and QA panel contract.
+- This does not alter approved screen graphics, CSS, layout, or visual style.
+- This prepares the next safe step: real shell integration into the existing app runtime.
+
+
+## V153_UI_BOOTSTRAP_BINDING_READY
+
+- V152 app-shell binding is now bridged to the existing runtime bootstrap module through an additive adapter.
+- The adapter exposes bootstrap metadata, app-shell binding state, active route, visual-lock state, and QA/bootstrap readiness.
+- This does not modify approved screen graphics, CSS, layout, image assets, React/JSX components, or the locked Classic PRO visual baseline.
+- This prepares the next safe step: controlled runtime integration without visual redesign.
+
+
+## V154_UI_UNIFIED_INTEGRATION_READY
+
+- V153 UI bootstrap binding is now bridged to the existing unified app integration module through an additive runtime adapter.
+- The adapter exposes unified-app metadata, active UI route, app-shell/bootstrap readiness, visual-lock state, and integration QA status.
+- This does not modify approved screen graphics, CSS, HTML, image assets, JSX/TSX UI components, or the locked Classic PRO visual baseline.
+- This prepares the next safe step: controlled UI runtime composition into the application shell without redesign.
+
+
+## V155_FAST_APP_RUNTIME_SHELL_READY
+
+- V154 unified integration binding is now exposed as a first app runtime shell view-model.
+- The runtime shell exposes active route, screen metadata, navigation, QA panel, startup plan, and runtime composition state.
+- This remains additive and does not modify approved screen graphics, CSS, HTML, images, JSX/TSX components, or the locked Classic PRO UI baseline.
+- This prepares later controlled attachment to the visible application shell.
+
+
+## V156_FAST_APP_STATE_SHELL_CONNECTOR_READY
+
+- V155 app runtime shell is now connected to application state/controller metadata through an additive runtime connector.
+- The connector exposes active route, shell summary, runtime state snapshot, controller/module inspection, action contract and QA status.
+- This remains additive and does not modify approved screen graphics, CSS, HTML, images, JSX/TSX components, or the locked Classic PRO UI baseline.
+- This prepares later controlled runtime action handling and visible shell attachment.
+
+
+## V157_V159_FAST_RUNTIME_MINIPACK_READY
+
+- V157 runtime action dispatcher, V158 project context bridge, and V159 QA panel runtime feed are added as one controlled FAST minipack.
+- The minipack extends the state-driven app runtime shell without modifying approved graphics, CSS, HTML, image assets, JSX/TSX components, or the locked Classic PRO UI baseline.
+- This prepares controlled runtime navigation actions, project context propagation, and QA panel feed composition.
+
+
+## V160_V165_AUTO_FAST_RUNTIME_PIPELINE_COMMITTED
+
+- V160-V165 introduces a larger controlled runtime pipeline: module registry, workspace router, QA aggregator, persistence bridge, export manifest and app readiness model.
+- The pipeline is additive and does not modify approved screen graphics, CSS, HTML, image assets, JSX/TSX components, or the locked Classic PRO UI baseline.
+- This prepares a more useful internal runtime composition while still keeping visible UI attachment separate and guarded.
+
+
+## V166_V170_AUTO_FAST_RUNTIME_READINESS_PIPELINE_COMMITTED
+
+- V166-V170 adds a controlled runtime readiness layer: composition controller, read-only shell binding, module data availability matrix, release candidate gate and full runtime audit snapshot.
+- The pipeline remains additive and does not modify approved screen graphics, CSS, HTML, image assets, JSX/TSX components, or the locked Classic PRO UI baseline.
+- This prepares safer attachment of runtime data into the existing visible shell in later guarded work.
+
+
+## V172_V180_LONG_AUTO_VISIBLE_SHELL_READINESS_COMMITTED
+
+- V172-V180 prepares read-only data feeds and contracts for later visible shell attachment.
+- This does not modify approved Classic PRO graphics or visible UI components.
+
+
+## V181_V190_LONG_AUTO_APP_SHELL_RUNTIME_BINDING_COMMITTED
+
+- V181-V190 prepares read-only runtime data attachment packets for existing shell regions.
+- This still does not modify approved Classic PRO graphics or visible UI components.
+
+
+## V191_V205_LONG_WORK_APP_SHELL_RUNTIME_MODELS_COMMITTED
+
+- V191-V205 moves from preparatory shell binding into practical runtime models for existing app shell regions.
+- The milestone status is READY_FOR_SAFE_VISIBLE_ATTACHMENT.
+- This still does not modify approved Classic PRO graphics or visible UI components.
+
+
+## V206_V220_SAFE_VISIBLE_SHELL_ATTACHMENT_COMMITTED
+
+- V206-V220 adds safe visible shell attachment models for left menu, workspace, QA panel, inspector and status regions.
+- Milestone status is READY_FOR_CONTROLLED_APP_INTEGRATION.
+- This still does not modify approved Classic PRO graphics or visible UI components.
+
+
+## V221_V260_NIGHT_WORK_CONTROLLED_APP_INTEGRATION_COMMITTED
+
+- V221-V260 adds controlled app integration models and night-work supervisor support.
+- Runner enforces long local audit runtime after commit.
+- This still does not modify approved Classic PRO graphics or visible UI components.
+
+
+## V261_V280_SAFE_MAX_CREATE_READY
+
+- V261-V280 project runtime core is prepared as safe max-create checkpoint runtime layer.
+- No approved Classic PRO UI screen is modified.
+
+
+## V281_V300_SAFE_MAX_CREATE_READY
+
+- V281-V300 FVE runtime production layer is prepared as safe max-create checkpoint runtime layer.
+- No approved Classic PRO UI screen is modified.
+
+
+## V301_V320_SAFE_MAX_CREATE_READY
+
+- V301-V320 LPS SPD runtime production layer is prepared as safe max-create checkpoint runtime layer.
+- No approved Classic PRO UI screen is modified.
+
+
+## V321_V340_SAFE_MAX_CREATE_READY
+
+- V321-V340 documents export runtime production layer is prepared as safe max-create checkpoint runtime layer.
+- No approved Classic PRO UI screen is modified.
+
+
+## V341_V360_SAFE_FUNCTIONAL_NIGHT_READY
+
+- V341-V360 FVE functional core is prepared as functional night-builder checkpoint layer.
+- No approved Classic PRO UI screen is modified.
+
+
+## V361_V380_SAFE_FUNCTIONAL_NIGHT_READY
+
+- V361-V380 LPS SPD functional core is prepared as functional night-builder checkpoint layer.
+- No approved Classic PRO UI screen is modified.
+
+
+## V381_V400_SAFE_FUNCTIONAL_NIGHT_READY
+
+- V381-V400 documents export functional core is prepared as functional night-builder checkpoint layer.
+- No approved Classic PRO UI screen is modified.
+
+
+## V401_V420_SAFE_FUNCTIONAL_NIGHT_READY
+
+- V401-V420 QA workflow integration functional core is prepared as functional night-builder checkpoint layer.
+- No approved Classic PRO UI screen is modified.
+
+
+## V421_V440_SAFE_REAL_BINDING_READY
+
+- V421-V440 project model real binding adapters is ready as safe real binding adapter layer.
+
+
+## V441_V460_SAFE_REAL_BINDING_READY
+
+- V441-V460 FVE real binding adapters is ready as safe real binding adapter layer.
+
+
+## V461_V480_SAFE_REAL_BINDING_READY
+
+- V461-V480 LPS SPD real binding adapters is ready as safe real binding adapter layer.
+
+
+## V481_V500_SAFE_REAL_BINDING_READY
+
+- V481-V500 documents database export real binding adapters is ready as safe real binding adapter layer.

@@ -141,4 +141,16 @@ export default {
   createFullQaDashboardRuntime,
   safeFullQaDashboardRuntime
 };
-
+// POST-MEGA AUTOPILOT E RUNTIME QA SNAPSHOT BRIDGE START
+// Minimal read-only runtime registration. No Classic PRO layout, CSS theme or CAD/MAPA core mutation.
+(function loskotPostMegaAutopilotEBridge(root) {
+  if (!root || root.LOSKOT_POST_MEGA_E_BRIDGE) return;
+  root.LOSKOT_POST_MEGA_E_BRIDGE = {
+    version: "post-mega-autopilot-e",
+    candidate: "src/runtime/fullQaDashboardRuntime.js",
+    load: function load() {
+      return import("./postMegaRuntimeQaSnapshotBridge.mjs");
+    }
+  };
+})(typeof globalThis !== "undefined" ? globalThis : undefined);
+// POST-MEGA AUTOPILOT E RUNTIME QA SNAPSHOT BRIDGE END
