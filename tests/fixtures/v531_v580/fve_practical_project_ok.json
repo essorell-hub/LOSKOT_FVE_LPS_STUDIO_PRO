@@ -1,0 +1,50 @@
+{
+  "project": {
+    "projectId": "LOCAL-FVE-531-OK",
+    "projectName": "Local FVE Practical OK"
+  },
+  "roof": {
+    "roofId": "roof-1",
+    "planes": [{ "id": "plane-1", "areaM2": 80 }]
+  },
+  "designConditions": {
+    "minTempC": -10,
+    "maxTempC": 70
+  },
+  "fve": {
+    "modules": [
+      {
+        "moduleId": "module-1",
+        "model": "PV-400",
+        "powerWp": 400,
+        "Voc_STC": 40,
+        "Vmp_STC": 34,
+        "Isc_STC": 11,
+        "Imp_STC": 10.4,
+        "tempCoeffVocPctPerC": -0.28,
+        "tempCoeffVmpPctPerC": -0.35
+      }
+    ],
+    "inverters": [{ "inverterId": "inverter-1", "maxDcVoltage": 600 }],
+    "mppts": [{ "mpptId": "mppt-1", "inverterId": "inverter-1", "mpptMinVoltage": 250, "mpptMaxVoltage": 500, "maxMpptInputCurrent": 13, "maxStrings": 2 }],
+    "panels": [
+      { "panelId": "panel-1", "moduleId": "module-1", "roofPlaneId": "plane-1", "powerWp": 400, "x": 1, "y": 1, "stringId": "string-1" },
+      { "panelId": "panel-2", "moduleId": "module-1", "roofPlaneId": "plane-1", "powerWp": 400, "x": 2, "y": 1, "stringId": "string-1" }
+    ],
+    "strings": [{ "stringId": "string-1", "moduleId": "module-1", "mpptId": "mppt-1", "moduleCount": 10, "panelIds": ["panel-1", "panel-2"] }],
+    "dcRoutes": [{ "routeId": "route-1", "stringId": "string-1", "lengthM": 12, "from": "string-1", "to": "inverter-1" }],
+    "optimizers": [{ "optimizerId": "optimizer-placeholder-1", "placeholder": true, "finalDesign": false }]
+  },
+  "cad": {
+    "layers": [{ "id": "fve", "name": "FVE" }],
+    "objects": []
+  },
+  "lps": {
+    "riskAssessment": { "placeholder": true, "normative": false }
+  },
+  "spd": { "devices": [], "lpz": [] },
+  "grounding": { "connected": false },
+  "bonding": { "connected": false },
+  "documents": [],
+  "bom": []
+}
