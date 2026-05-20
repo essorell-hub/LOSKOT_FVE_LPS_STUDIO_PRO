@@ -343,3 +343,8 @@ Doporučený cíl:
 ## V461_V480_SAFE_REAL_BINDING_READY
 
 - V461-V480 LPS SPD real binding adapters is ready as safe real binding adapter layer.
+
+
+## V481_V500_SAFE_REAL_BINDING_READY
+
+- V481-V500 documents database export real binding adapters is ready as safe real binding adapter layer.
