@@ -146,3 +146,12 @@ vite.config.ts.timestamp-*
 # Keep Aider project config tracked
 !.aider.conf.yml
 !.aiderignore
+
+# LOSKOT local generated files
+_loskot_backups/
+_loskot_backups_*/
+_loskot_reports/
+scripts/local/
+
+# accidental local artifact
+e persistence runtime baseline*
