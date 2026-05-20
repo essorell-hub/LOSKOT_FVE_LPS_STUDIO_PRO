@@ -1,0 +1,95 @@
+{
+  "projectId": "fixture-v581-v630-ok",
+  "pvArray": {
+    "collisionWithLps": false
+  },
+  "lps": {
+    "lpsClass": "III",
+    "groundingLinked": true,
+    "lpz": "LPZ 0B -> LPZ 1",
+    "lpzClear": true,
+    "airTermination": {
+      "present": true,
+      "method": "rod_and_conductor",
+      "material": "AlMgSi",
+      "crossSectionMm2": 50,
+      "rods": [{ "id": "rod-1" }],
+      "conductors": [{ "id": "wire-1" }],
+      "protectsPvArray": true,
+      "connectedToDownConductors": true
+    },
+    "downConductors": {
+      "present": true,
+      "material": "AlMgSi",
+      "crossSectionMm2": 50,
+      "connectedToGrounding": true,
+      "items": [
+        { "id": "svod-1", "connected": true },
+        { "id": "svod-2", "connected": true }
+      ]
+    },
+    "separationDistance": {
+      "verified": true,
+      "requiredDistanceM": 0.45,
+      "availableDistanceM": 0.8,
+      "collisionWithPv": false
+    }
+  },
+  "spd": {
+    "longCableRun": false,
+    "groundingLinked": true,
+    "bondingLinked": true,
+    "lpzClear": true,
+    "lpZones": ["LPZ 0B", "LPZ 1", "LPZ 2"],
+    "transitions": [
+      { "from": "LPZ 0B", "to": "LPZ 1" },
+      { "from": "LPZ 1", "to": "LPZ 2" }
+    ],
+    "t1": {
+      "present": true,
+      "type": "T1+T2",
+      "uc": 275,
+      "up": 1.5,
+      "backupProtection": "gG 125 A",
+      "connectedToPe": true,
+      "bonded": true
+    },
+    "ac": {
+      "present": true,
+      "type": "T2",
+      "uc": 275,
+      "up": 1.5,
+      "backupProtection": "MCB C32",
+      "connectedToPe": true,
+      "bonded": true
+    },
+    "dc": {
+      "present": true,
+      "type": "T2 PV",
+      "uc": 1000,
+      "up": 4,
+      "backupProtection": "integrated",
+      "connectedToPe": true,
+      "bonded": true
+    },
+    "supplementary": []
+  },
+  "grounding": {
+    "electrodeType": "foundation",
+    "resistanceOhm": 6.2,
+    "material": "FeZn",
+    "crossSectionMm2": 100,
+    "connectedToLps": true,
+    "connectedToPe": true
+  },
+  "bonding": {
+    "mainEquipotentialBusbarPresent": true,
+    "pvFramesBonded": true,
+    "spdPePasLinked": true,
+    "lpsGroundingLinked": true,
+    "material": "Cu",
+    "crossSectionMm2": 16,
+    "bondedParts": [{ "id": "pv-frame" }, { "id": "inverter-frame" }],
+    "metalParts": [{ "id": "pv-frame", "bonded": true }]
+  }
+}
