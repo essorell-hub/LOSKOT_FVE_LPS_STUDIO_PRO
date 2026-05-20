@@ -1,0 +1,52 @@
+{
+  "project": {
+    "projectId": "LOCAL-FVE-531-BAD",
+    "projectName": "Local FVE Practical Errors"
+  },
+  "roof": {
+    "roofId": "roof-1",
+    "planes": [{ "id": "plane-1" }]
+  },
+  "designConditions": {
+    "minTempC": -10,
+    "maxTempC": 70
+  },
+  "fve": {
+    "modules": [
+      {
+        "moduleId": "module-1",
+        "Voc_STC": 40,
+        "Vmp_STC": 34,
+        "Isc_STC": 11,
+        "Imp_STC": 10.4,
+        "tempCoeffVocPctPerC": -0.28,
+        "tempCoeffVmpPctPerC": -0.35
+      }
+    ],
+    "inverters": [{ "inverterId": "inverter-1", "maxDcVoltage": 600 }],
+    "mppts": [{ "mpptId": "mppt-1", "inverterId": "inverter-1", "mpptMinVoltage": 250, "mpptMaxVoltage": 500, "maxMpptInputCurrent": 13, "maxStrings": 1 }],
+    "panels": [
+      { "panelId": "panel-bad-power", "roofPlaneId": "plane-1", "powerWp": 0, "stringId": "empty-string" },
+      { "panelId": "panel-bad-placement", "moduleId": "module-1", "roofPlaneId": "missing-plane", "powerWp": 400, "stringId": "string-overload-1" }
+    ],
+    "strings": [
+      { "stringId": "empty-string", "moduleId": "module-1", "mpptId": "missing-mppt", "moduleCount": 0, "panelIds": [] },
+      { "stringId": "string-overload-1", "moduleId": "module-1", "mpptId": "mppt-1", "moduleCount": 10, "panelIds": ["panel-bad-placement"] },
+      { "stringId": "string-overload-2", "moduleId": "module-1", "mpptId": "mppt-1", "moduleCount": 10, "panelIds": ["panel-bad-power"] }
+    ],
+    "dcRoutes": [{ "routeId": "route-bad", "stringId": "empty-string", "lengthM": 0 }],
+    "optimizers": [{ "optimizerId": "optimizer-final-bad", "placeholder": false, "finalDesign": true }]
+  },
+  "cad": {
+    "layers": [{ "id": "fve", "name": "FVE" }],
+    "objects": []
+  },
+  "lps": {
+    "riskAssessment": { "placeholder": true, "normative": false }
+  },
+  "spd": { "devices": [], "lpz": [] },
+  "grounding": { "connected": false },
+  "bonding": { "connected": false },
+  "documents": [],
+  "bom": []
+}
